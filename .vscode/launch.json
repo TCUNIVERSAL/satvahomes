@@ -5,7 +5,7 @@
       "name": "Run Coral Homes (Dev Server)",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/coral homes",
+      "cwd": "${workspaceFolder}/coral_homes",
       "runtimeExecutable": "npm.cmd",
       "runtimeArgs": ["run", "dev"]
     }

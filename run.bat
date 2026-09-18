@@ -7,7 +7,7 @@ echo.
 echo Starting local development server...
 echo.
 
-cd /d "%~dp0coral homes"
+cd /d "%~dp0coral_homes"
 
 timeout /t 2 /nobreak >nul 2>&1
 start "" http://localhost:5173

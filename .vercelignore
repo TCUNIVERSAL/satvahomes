@@ -2,5 +2,5 @@ node_modules
 __MACOSX
 .vscode
 .claude
-actual layouts
+**/actual layouts
 run.bat

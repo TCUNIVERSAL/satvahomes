@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "npm --prefix \"coral homes\" install",
+  "installCommand": "npm --prefix coral_homes install",
   "buildCommand": "npm run build",
   "outputDirectory": "dist"
 }
