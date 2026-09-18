@@ -1,0 +1,8116 @@
+{
+ "roofTiles": [
+  {
+   "id": "designer-vanilla",
+   "profile": "designer",
+   "name": "Vanilla",
+   "tone": "Light",
+   "hex": "#dcd6cc",
+   "img": "swatches/roof-designer-vanilla.webp",
+   "rec": true
+  },
+  {
+   "id": "designer-aspen",
+   "profile": "designer",
+   "name": "Aspen",
+   "tone": "Light",
+   "hex": "#cbced0",
+   "img": "swatches/roof-designer-aspen.webp",
+   "rec": true
+  },
+  {
+   "id": "designer-alabaster",
+   "profile": "designer",
+   "name": "Alabaster",
+   "tone": "Light",
+   "hex": "#e4dfd7",
+   "img": "swatches/roof-designer-alabaster.webp",
+   "rec": true
+  },
+  {
+   "id": "designer-chestnut",
+   "profile": "designer",
+   "name": "Chestnut",
+   "tone": "Dark",
+   "hex": "#7c6d5d",
+   "img": "swatches/roof-designer-chestnut.webp",
+   "rec": false
+  },
+  {
+   "id": "designer-linen",
+   "profile": "designer",
+   "name": "Linen",
+   "tone": "Medium",
+   "hex": "#b8ad9d",
+   "img": "swatches/roof-designer-linen.webp",
+   "rec": false
+  },
+  {
+   "id": "designer-silver-gum",
+   "profile": "designer",
+   "name": "Silver Gum",
+   "tone": "Dark",
+   "hex": "#cdd0d2",
+   "img": "swatches/roof-designer-silver-gum.webp",
+   "rec": false
+  },
+  {
+   "id": "designer-late-mist",
+   "profile": "designer",
+   "name": "Late Mist",
+   "tone": "Dark",
+   "hex": "#747474",
+   "img": "swatches/roof-designer-late-mist.webp",
+   "rec": false
+  },
+  {
+   "id": "designer-storm-grey",
+   "profile": "designer",
+   "name": "Storm Grey",
+   "tone": "Dark",
+   "hex": "#6e6b67",
+   "img": "swatches/roof-designer-storm-grey.webp",
+   "rec": false
+  },
+  {
+   "id": "designer-cool-smoke",
+   "profile": "designer",
+   "name": "Cool Smoke",
+   "tone": "Dark",
+   "hex": "#4b4844",
+   "img": "swatches/roof-designer-cool-smoke.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-vanilla",
+   "profile": "classic",
+   "name": "Vanilla",
+   "tone": "Light",
+   "hex": "#e1dace",
+   "img": "swatches/roof-classic-vanilla.webp",
+   "rec": true
+  },
+  {
+   "id": "classic-aspen",
+   "profile": "classic",
+   "name": "Aspen",
+   "tone": "Light",
+   "hex": "#c8cccb",
+   "img": "swatches/roof-classic-aspen.webp",
+   "rec": true
+  },
+  {
+   "id": "classic-alabaster",
+   "profile": "classic",
+   "name": "Alabaster",
+   "tone": "Light",
+   "hex": "#ebe3db",
+   "img": "swatches/roof-classic-alabaster.webp",
+   "rec": true
+  },
+  {
+   "id": "classic-linen",
+   "profile": "classic",
+   "name": "Linen",
+   "tone": "Medium",
+   "hex": "#c7bfac",
+   "img": "swatches/roof-classic-linen.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-silver-gum",
+   "profile": "classic",
+   "name": "Silver Gum",
+   "tone": "Dark",
+   "hex": "#c6cbc9",
+   "img": "swatches/roof-classic-silver-gum.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-chestnut",
+   "profile": "classic",
+   "name": "Chestnut",
+   "tone": "Dark",
+   "hex": "#795f4e",
+   "img": "swatches/roof-classic-chestnut.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-storm-grey",
+   "profile": "classic",
+   "name": "Storm Grey",
+   "tone": "Dark",
+   "hex": "#726e6b",
+   "img": "swatches/roof-classic-storm-grey.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-cool-smoke",
+   "profile": "classic",
+   "name": "Cool Smoke",
+   "tone": "Dark",
+   "hex": "#5d5a55",
+   "img": "swatches/roof-classic-cool-smoke.webp",
+   "rec": false
+  },
+  {
+   "id": "classic-late-mist",
+   "profile": "classic",
+   "name": "Late Mist",
+   "tone": "Dark",
+   "hex": "#848180",
+   "img": "swatches/roof-classic-late-mist.webp",
+   "rec": false
+  },
+  {
+   "id": "prestige-silver-gum",
+   "profile": "prestige",
+   "name": "Silver Gum",
+   "tone": "Dark",
+   "hex": "#c4c4c6",
+   "img": "swatches/roof-prestige-silver-gum.webp",
+   "rec": false
+  },
+  {
+   "id": "prestige-aspen",
+   "profile": "prestige",
+   "name": "Aspen",
+   "tone": "Light",
+   "hex": "#d2d1cb",
+   "img": "swatches/roof-prestige-aspen.webp",
+   "rec": true
+  },
+  {
+   "id": "prestige-late-mist",
+   "profile": "prestige",
+   "name": "Late Mist",
+   "tone": "Dark",
+   "hex": "#74706d",
+   "img": "swatches/roof-prestige-late-mist.webp",
+   "rec": false
+  },
+  {
+   "id": "prestige-storm-grey",
+   "profile": "prestige",
+   "name": "Storm Grey",
+   "tone": "Dark",
+   "hex": "#676b6e",
+   "img": "swatches/roof-prestige-storm-grey.webp",
+   "rec": false
+  },
+  {
+   "id": "prestige-deep-shadow",
+   "profile": "prestige",
+   "name": "Deep Shadow",
+   "tone": "Dark",
+   "hex": "#3b3b3b",
+   "img": "swatches/roof-prestige-deep-shadow.webp",
+   "rec": false
+  },
+  {
+   "id": "prestige-cool-smoke",
+   "profile": "prestige",
+   "name": "Cool Smoke",
+   "tone": "Dark",
+   "hex": "#3b3b3b",
+   "img": "swatches/roof-prestige-cool-smoke.webp",
+   "rec": false
+  }
+ ],
+ "colorbond": [
+  {
+   "id": "surfmist",
+   "name": "Surfmist",
+   "tone": "Light",
+   "hex": "#e5e2d5",
+   "rec": true,
+   "note": null
+  },
+  {
+   "id": "dover-white",
+   "name": "Dover White",
+   "tone": "Light",
+   "hex": "#f8fbf1",
+   "rec": true,
+   "note": null
+  },
+  {
+   "id": "southerly",
+   "name": "Southerly",
+   "tone": "Light",
+   "hex": "#d4d2cc",
+   "rec": true,
+   "note": null
+  },
+  {
+   "id": "classic-cream",
+   "name": "Classic Cream",
+   "tone": "Light",
+   "hex": "#f0ddb9",
+   "rec": true,
+   "note": null
+  },
+  {
+   "id": "paper-bark",
+   "name": "Paper Bark",
+   "tone": "Medium",
+   "hex": "#cfc0a3",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "evening-haze",
+   "name": "Evening Haze",
+   "tone": "Medium",
+   "hex": "#cac3ac",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "dune",
+   "name": "Dune",
+   "tone": "Medium",
+   "hex": "#b4afa5",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "windspray",
+   "name": "Windspray",
+   "tone": "Medium",
+   "hex": "#878c8b",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "shale-grey",
+   "name": "Shale Grey",
+   "tone": "Medium",
+   "hex": "#bec0bb",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "bluegum",
+   "name": "Bluegum",
+   "tone": "Medium",
+   "hex": "#97989b",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "pale-eucalypt",
+   "name": "Pale Eucalypt",
+   "tone": "Medium",
+   "hex": "#79856b",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "wallaby",
+   "name": "Wallaby",
+   "tone": "Dark",
+   "hex": "#817d78",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "gully",
+   "name": "Gully",
+   "tone": "Dark",
+   "hex": "#888073",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "jasper",
+   "name": "Jasper",
+   "tone": "Dark",
+   "hex": "#726151",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "woodland-grey",
+   "name": "Woodland Grey",
+   "tone": "Dark",
+   "hex": "#494b44",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "basalt",
+   "name": "Basalt",
+   "tone": "Dark",
+   "hex": "#6d6d70",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "monument",
+   "name": "Monument",
+   "tone": "Dark",
+   "hex": "#303033",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "ironstone",
+   "name": "Ironstone",
+   "tone": "Dark",
+   "hex": "#3b414b",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "deep-ocean",
+   "name": "Deep Ocean",
+   "tone": "Dark",
+   "hex": "#2d3f53",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "cottage-green",
+   "name": "Cottage Green",
+   "tone": "Dark",
+   "hex": "#154b3a",
+   "rec": false,
+   "note": null
+  },
+  {
+   "id": "night-sky",
+   "name": "Night Sky",
+   "tone": "Dark",
+   "hex": "#000000",
+   "rec": false,
+   "note": "Only available with timber frames"
+  },
+  {
+   "id": "manor-red",
+   "name": "Manor Red",
+   "tone": "Dark",
+   "hex": "#6e1706",
+   "rec": false,
+   "note": null
+  }
+ ],
+ "garageProfiles": [
+  {
+   "id": "ranch",
+   "name": "Ranch",
+   "img": "swatches/garage-ranch.webp"
+  },
+  {
+   "id": "slimline",
+   "name": "Slimline",
+   "img": "swatches/garage-slimline.webp"
+  },
+  {
+   "id": "heritage",
+   "name": "Heritage",
+   "img": "swatches/garage-heritage.webp"
+  },
+  {
+   "id": "vertical-battens",
+   "name": "Vertical Battens",
+   "img": "swatches/garage-vertical-battens.webp"
+  },
+  {
+   "id": "flatline",
+   "name": "Flatline",
+   "img": "swatches/garage-flatline.webp"
+  }
+ ],
+ "frames": [
+  {
+   "id": "surfmist",
+   "name": "Surfmist",
+   "tone": "Light",
+   "hex": "#f8f7f3",
+   "rec": true,
+   "qldOnly": false
+  },
+  {
+   "id": "dune",
+   "name": "Dune",
+   "tone": "Medium",
+   "hex": "#c1bab4",
+   "rec": false,
+   "qldOnly": false
+  },
+  {
+   "id": "shale-grey",
+   "name": "Shale Grey",
+   "tone": "Medium",
+   "hex": "#d0d1cb",
+   "rec": false,
+   "qldOnly": true
+  },
+  {
+   "id": "silver",
+   "name": "Silver",
+   "tone": "Medium",
+   "hex": "#acabab",
+   "rec": false,
+   "qldOnly": false
+  },
+  {
+   "id": "monument",
+   "name": "Monument",
+   "tone": "Dark",
+   "hex": "#3d3d3b",
+   "rec": false,
+   "qldOnly": false
+  },
+  {
+   "id": "black",
+   "name": "Black",
+   "tone": "Dark",
+   "hex": "#1d1d1b",
+   "rec": false,
+   "qldOnly": false
+  },
+  {
+   "id": "woodland-grey",
+   "name": "Woodland Grey",
+   "tone": "Dark",
+   "hex": "#6a6c69",
+   "rec": false,
+   "qldOnly": false
+  }
+ ],
+ "glazing": [
+  {
+   "id": "clear",
+   "name": "Clear",
+   "hex": "#f6f7f6",
+   "img": "swatches/glass-clear.webp"
+  },
+  {
+   "id": "satinlite",
+   "name": "Satinlite",
+   "hex": "#d6d6d6",
+   "img": "swatches/glass-satinlite.webp"
+  },
+  {
+   "id": "translucent",
+   "name": "Translucent",
+   "hex": "#dbd6d3",
+   "img": "swatches/glass-translucent.webp"
+  },
+  {
+   "id": "grey-tint",
+   "name": "Grey Tint",
+   "hex": "#c5c4c1",
+   "img": "swatches/glass-grey-tint.webp"
+  },
+  {
+   "id": "ultra-grey",
+   "name": "Ultra Grey",
+   "hex": "#a1a29f",
+   "img": "swatches/glass-ultra-grey.webp"
+  }
+ ],
+ "deepPaints": [
+  {
+   "id": "tristan",
+   "name": "Tristan",
+   "hex": "#7a7975"
+  },
+  {
+   "id": "castlecliff",
+   "name": "Castlecliff",
+   "hex": "#4f4f4f"
+  },
+  {
+   "id": "domino",
+   "name": "Domino",
+   "hex": "#3c3c3c"
+  },
+  {
+   "id": "133mm-axon-smooth",
+   "name": "133mm Axon Smooth",
+   "hex": "#4e5347"
+  },
+  {
+   "id": "405mm-stria",
+   "name": "405mm Stria",
+   "hex": "#727b81"
+  },
+  {
+   "id": "180mm-linea-weatherboard",
+   "name": "180mm Linea Weatherboard",
+   "hex": "#52585c"
+  }
+ ],
+ "claddingProfiles": [
+  {
+   "id": "405mm-stria",
+   "name": "405mm Stria",
+   "img": "swatches/clad-405mm-stria.webp"
+  },
+  {
+   "id": "180mm-linea-weatherboard",
+   "name": "180mm Linea Weatherboard",
+   "img": "swatches/clad-180mm-linea-weatherboard.webp"
+  },
+  {
+   "id": "133mm-axon-smooth",
+   "name": "133mm Axon Smooth",
+   "img": "swatches/clad-133mm-axon-smooth.webp"
+  }
+ ],
+ "stains": [
+  {
+   "id": "bondi-sand",
+   "name": "Bondi Sand",
+   "hex": "#bead83",
+   "img": "swatches/timber-bondi-sand.webp",
+   "tex": "swatches/timber-bondi-sand-full.webp"
+  },
+  {
+   "id": "teak",
+   "name": "Teak",
+   "hex": "#945531",
+   "img": "swatches/timber-teak.webp",
+   "tex": "swatches/timber-teak-full.webp"
+  },
+  {
+   "id": "light-oak",
+   "name": "Light Oak",
+   "hex": "#a97034",
+   "img": "swatches/timber-light-oak.webp",
+   "tex": "swatches/timber-light-oak-full.webp"
+  },
+  {
+   "id": "jarrah",
+   "name": "Jarrah",
+   "hex": "#7c291e",
+   "img": "swatches/timber-jarrah.webp",
+   "tex": "swatches/timber-jarrah-full.webp"
+  },
+  {
+   "id": "walnut",
+   "name": "Walnut",
+   "hex": "#7c3a23",
+   "img": "swatches/timber-walnut.webp",
+   "tex": "swatches/timber-walnut-full.webp"
+  },
+  {
+   "id": "merbau",
+   "name": "Merbau",
+   "hex": "#69322a",
+   "img": "swatches/timber-merbau.webp",
+   "tex": "swatches/timber-merbau-full.webp"
+  },
+  {
+   "id": "ebony",
+   "name": "Ebony",
+   "hex": "#362b2a",
+   "img": "swatches/timber-ebony.webp",
+   "tex": "swatches/timber-ebony-full.webp"
+  },
+  {
+   "id": "rich-chocolate",
+   "name": "Rich Chocolate",
+   "hex": "#372a23",
+   "img": "swatches/timber-rich-chocolate.webp",
+   "tex": "swatches/timber-rich-chocolate-full.webp"
+  },
+  {
+   "id": "charcoal",
+   "name": "Charcoal",
+   "hex": "#363227",
+   "img": "swatches/timber-charcoal.webp",
+   "tex": "swatches/timber-charcoal-full.webp"
+  },
+  {
+   "id": "redwood",
+   "name": "Redwood",
+   "hex": "#a35431",
+   "img": "swatches/timber-redwood.webp",
+   "tex": "swatches/timber-redwood-full.webp"
+  }
+ ],
+ "bricks": [
+  {
+   "id": "qld-pgh-washed-white",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Washed White",
+   "tone": "Light",
+   "hex": "#e8e3dc",
+   "palette": [
+    {
+     "c": "#e9e6e1",
+     "w": 0.243
+    },
+    {
+     "c": "#e7e1d9",
+     "w": 0.241
+    },
+    {
+     "c": "#ede9e4",
+     "w": 0.184
+    },
+    {
+     "c": "#e2dcd3",
+     "w": 0.163
+    },
+    {
+     "c": "#ebe5dd",
+     "w": 0.119
+    },
+    {
+     "c": "#d8d2ca",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-washed-white.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-perisher-single-height",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Perisher - Single Height",
+   "tone": "Light",
+   "hex": "#e0dbcc",
+   "palette": [
+    {
+     "c": "#e4dfce",
+     "w": 0.393
+    },
+    {
+     "c": "#eae6d9",
+     "w": 0.266
+    },
+    {
+     "c": "#dad4c3",
+     "w": 0.152
+    },
+    {
+     "c": "#c8c1af",
+     "w": 0.075
+    },
+    {
+     "c": "#f4f1e6",
+     "w": 0.071
+    },
+    {
+     "c": "#aaa38f",
+     "w": 0.043
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-perisher-single-height.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-airlie",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Airlie",
+   "tone": "Light",
+   "hex": "#f1e1d0",
+   "palette": [
+    {
+     "c": "#efddcb",
+     "w": 0.276
+    },
+    {
+     "c": "#ead8c6",
+     "w": 0.265
+    },
+    {
+     "c": "#f3e2d2",
+     "w": 0.168
+    },
+    {
+     "c": "#fef9ed",
+     "w": 0.125
+    },
+    {
+     "c": "#e3d1bf",
+     "w": 0.097
+    },
+    {
+     "c": "#f8eddf",
+     "w": 0.069
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-airlie.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-frost",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Frost",
+   "tone": "Light",
+   "hex": "#e0d0bb",
+   "palette": [
+    {
+     "c": "#e5d5c0",
+     "w": 0.34
+    },
+    {
+     "c": "#e1d1ba",
+     "w": 0.324
+    },
+    {
+     "c": "#dbcab3",
+     "w": 0.15
+    },
+    {
+     "c": "#e9d9c6",
+     "w": 0.111
+    },
+    {
+     "c": "#c9b9a6",
+     "w": 0.048
+    },
+    {
+     "c": "#b4a490",
+     "w": 0.028
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-frost.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-giraween",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Giraween",
+   "tone": "Light",
+   "hex": "#e5d1b8",
+   "palette": [
+    {
+     "c": "#eadac5",
+     "w": 0.321
+    },
+    {
+     "c": "#e4d0b8",
+     "w": 0.198
+    },
+    {
+     "c": "#f1e2d0",
+     "w": 0.181
+    },
+    {
+     "c": "#dcc5a6",
+     "w": 0.179
+    },
+    {
+     "c": "#d9b891",
+     "w": 0.075
+    },
+    {
+     "c": "#cca47a",
+     "w": 0.045
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-giraween.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-ocean-mist-double-height",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Ocean Mist - Double Height",
+   "tone": "Medium",
+   "hex": "#ded1c4",
+   "palette": [
+    {
+     "c": "#e1d6ca",
+     "w": 0.248
+    },
+    {
+     "c": "#dbcdbe",
+     "w": 0.205
+    },
+    {
+     "c": "#e5dcd3",
+     "w": 0.2
+    },
+    {
+     "c": "#d4c3b3",
+     "w": 0.17
+    },
+    {
+     "c": "#f4e4d2",
+     "w": 0.109
+    },
+    {
+     "c": "#c7b5a3",
+     "w": 0.069
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-ocean-mist-double-height.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": true
+  },
+  {
+   "id": "qld-pgh-perisher-double-height",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Perisher - Double Height",
+   "tone": "Light",
+   "hex": "#d3ccbe",
+   "palette": [
+    {
+     "c": "#d2cabb",
+     "w": 0.342
+    },
+    {
+     "c": "#d6d0c2",
+     "w": 0.257
+    },
+    {
+     "c": "#cdc3b3",
+     "w": 0.185
+    },
+    {
+     "c": "#dad3c8",
+     "w": 0.14
+    },
+    {
+     "c": "#bfb4a5",
+     "w": 0.045
+    },
+    {
+     "c": "#a89d8f",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-perisher-double-height.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": true
+  },
+  {
+   "id": "qld-pgh-emerald",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Emerald",
+   "tone": "Medium",
+   "hex": "#b09f89",
+   "palette": [
+    {
+     "c": "#a28b6e",
+     "w": 0.286
+    },
+    {
+     "c": "#a89175",
+     "w": 0.242
+    },
+    {
+     "c": "#aa987f",
+     "w": 0.158
+    },
+    {
+     "c": "#9b8467",
+     "w": 0.142
+    },
+    {
+     "c": "#a18f77",
+     "w": 0.1
+    },
+    {
+     "c": "#afa18e",
+     "w": 0.072
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-emerald.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-montauk",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Montauk",
+   "tone": "Light",
+   "hex": "#d1cac0",
+   "palette": [
+    {
+     "c": "#d4cdc2",
+     "w": 0.517
+    },
+    {
+     "c": "#d8d1c7",
+     "w": 0.236
+    },
+    {
+     "c": "#cec7bc",
+     "w": 0.162
+    },
+    {
+     "c": "#a59e91",
+     "w": 0.04
+    },
+    {
+     "c": "#bfb7ab",
+     "w": 0.039
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-montauk.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-crescent",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Crescent",
+   "tone": "Dark",
+   "hex": "#706f70",
+   "palette": [
+    {
+     "c": "#464650",
+     "w": 0.383
+    },
+    {
+     "c": "#3f3e47",
+     "w": 0.244
+    },
+    {
+     "c": "#504f58",
+     "w": 0.193
+    },
+    {
+     "c": "#37343c",
+     "w": 0.093
+    },
+    {
+     "c": "#686464",
+     "w": 0.045
+    },
+    {
+     "c": "#4b4648",
+     "w": 0.043
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-crescent.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-driftwood-grey",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Driftwood Grey",
+   "tone": "Medium",
+   "hex": "#c2b9af",
+   "palette": [
+    {
+     "c": "#bbb3ab",
+     "w": 0.366
+    },
+    {
+     "c": "#c1b8b1",
+     "w": 0.225
+    },
+    {
+     "c": "#b6aea5",
+     "w": 0.22
+    },
+    {
+     "c": "#e6dbcd",
+     "w": 0.074
+    },
+    {
+     "c": "#ada499",
+     "w": 0.058
+    },
+    {
+     "c": "#d6ccbe",
+     "w": 0.056
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-driftwood-grey.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-grey-stone",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Grey Stone",
+   "tone": "Dark",
+   "hex": "#737266",
+   "palette": [
+    {
+     "c": "#42483c",
+     "w": 0.401
+    },
+    {
+     "c": "#3e4236",
+     "w": 0.262
+    },
+    {
+     "c": "#444537",
+     "w": 0.124
+    },
+    {
+     "c": "#4b4d40",
+     "w": 0.107
+    },
+    {
+     "c": "#3a3c2f",
+     "w": 0.07
+    },
+    {
+     "c": "#656253",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-grey-stone.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-breaking-dawn",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Breaking Dawn",
+   "tone": "Dark",
+   "hex": "#6e625c",
+   "palette": [
+    {
+     "c": "#3a261e",
+     "w": 0.326
+    },
+    {
+     "c": "#3f2b23",
+     "w": 0.262
+    },
+    {
+     "c": "#332018",
+     "w": 0.192
+    },
+    {
+     "c": "#443129",
+     "w": 0.13
+    },
+    {
+     "c": "#4a3931",
+     "w": 0.062
+    },
+    {
+     "c": "#55473f",
+     "w": 0.027
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-breaking-dawn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-titanium",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range B",
+   "name": "Titanium",
+   "tone": "Dark",
+   "hex": "#85817b",
+   "palette": [
+    {
+     "c": "#61615f",
+     "w": 0.248
+    },
+    {
+     "c": "#585857",
+     "w": 0.218
+    },
+    {
+     "c": "#6b6a69",
+     "w": 0.215
+    },
+    {
+     "c": "#4f4f4e",
+     "w": 0.143
+    },
+    {
+     "c": "#787774",
+     "w": 0.122
+    },
+    {
+     "c": "#434442",
+     "w": 0.054
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-titanium.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-elkhorn",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Elkhorn",
+   "tone": "Medium",
+   "hex": "#bdaca2",
+   "palette": [
+    {
+     "c": "#bba397",
+     "w": 0.256
+    },
+    {
+     "c": "#cfc2b9",
+     "w": 0.233
+    },
+    {
+     "c": "#c5b2a7",
+     "w": 0.232
+    },
+    {
+     "c": "#ab9185",
+     "w": 0.135
+    },
+    {
+     "c": "#734e47",
+     "w": 0.079
+    },
+    {
+     "c": "#8f6f66",
+     "w": 0.064
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-elkhorn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-salt",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Salt",
+   "tone": "Light",
+   "hex": "#dccec4",
+   "palette": [
+    {
+     "c": "#e5d6cc",
+     "w": 0.326
+    },
+    {
+     "c": "#ded0c6",
+     "w": 0.313
+    },
+    {
+     "c": "#d5c7bd",
+     "w": 0.169
+    },
+    {
+     "c": "#eaddd3",
+     "w": 0.129
+    },
+    {
+     "c": "#c3b5ab",
+     "w": 0.053
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-salt.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-ocean-mist",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Ocean Mist",
+   "tone": "Medium",
+   "hex": "#d7cec3",
+   "palette": [
+    {
+     "c": "#d7cfc5",
+     "w": 0.331
+    },
+    {
+     "c": "#ddd6cd",
+     "w": 0.312
+    },
+    {
+     "c": "#d2c7ba",
+     "w": 0.201
+    },
+    {
+     "c": "#cabbac",
+     "w": 0.109
+    },
+    {
+     "c": "#b5a595",
+     "w": 0.033
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-ocean-mist.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-rockhampton",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Rockhampton",
+   "tone": "Medium",
+   "hex": "#bab0a2",
+   "palette": [
+    {
+     "c": "#aea291",
+     "w": 0.283
+    },
+    {
+     "c": "#b4a899",
+     "w": 0.262
+    },
+    {
+     "c": "#bab1a2",
+     "w": 0.149
+    },
+    {
+     "c": "#d6d0c3",
+     "w": 0.123
+    },
+    {
+     "c": "#a69a89",
+     "w": 0.113
+    },
+    {
+     "c": "#c5beb1",
+     "w": 0.069
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-rockhampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-ginseng",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Ginseng",
+   "tone": "Medium",
+   "hex": "#b3a396",
+   "palette": [
+    {
+     "c": "#a7978a",
+     "w": 0.29
+    },
+    {
+     "c": "#b0a093",
+     "w": 0.223
+    },
+    {
+     "c": "#a18f83",
+     "w": 0.221
+    },
+    {
+     "c": "#ded0c3",
+     "w": 0.113
+    },
+    {
+     "c": "#98877a",
+     "w": 0.099
+    },
+    {
+     "c": "#c9baac",
+     "w": 0.054
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-ginseng.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-sea-fossil",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sea Fossil",
+   "tone": "Medium",
+   "hex": "#a79f98",
+   "palette": [
+    {
+     "c": "#a29993",
+     "w": 0.27
+    },
+    {
+     "c": "#988f89",
+     "w": 0.25
+    },
+    {
+     "c": "#8b827b",
+     "w": 0.189
+    },
+    {
+     "c": "#ada5a0",
+     "w": 0.125
+    },
+    {
+     "c": "#797069",
+     "w": 0.099
+    },
+    {
+     "c": "#625753",
+     "w": 0.067
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-sea-fossil.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-agave",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Agave",
+   "tone": "Dark",
+   "hex": "#96928a",
+   "palette": [
+    {
+     "c": "#767871",
+     "w": 0.319
+    },
+    {
+     "c": "#7c7d77",
+     "w": 0.262
+    },
+    {
+     "c": "#70726b",
+     "w": 0.211
+    },
+    {
+     "c": "#85857f",
+     "w": 0.109
+    },
+    {
+     "c": "#6a6961",
+     "w": 0.073
+    },
+    {
+     "c": "#99938a",
+     "w": 0.026
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-agave.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-eclipse",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Eclipse",
+   "tone": "Dark",
+   "hex": "#7f7976",
+   "palette": [
+    {
+     "c": "#362d2c",
+     "w": 0.367
+    },
+    {
+     "c": "#3f3634",
+     "w": 0.284
+    },
+    {
+     "c": "#2d2523",
+     "w": 0.16
+    },
+    {
+     "c": "#4e4542",
+     "w": 0.108
+    },
+    {
+     "c": "#69615c",
+     "w": 0.049
+    },
+    {
+     "c": "#908884",
+     "w": 0.032
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-eclipse.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-east-hampton",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range D",
+   "name": "East Hampton",
+   "tone": "Medium",
+   "hex": "#dab99c",
+   "palette": [
+    {
+     "c": "#e2c6a9",
+     "w": 0.3
+    },
+    {
+     "c": "#e7cdb2",
+     "w": 0.231
+    },
+    {
+     "c": "#debd9e",
+     "w": 0.218
+    },
+    {
+     "c": "#d3b091",
+     "w": 0.13
+    },
+    {
+     "c": "#c39c7d",
+     "w": 0.083
+    },
+    {
+     "c": "#a97d5f",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-east-hampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-tribeca",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range D",
+   "name": "Tribeca",
+   "tone": "Medium",
+   "hex": "#ca8e6f",
+   "palette": [
+    {
+     "c": "#ca6f4c",
+     "w": 0.256
+    },
+    {
+     "c": "#b86142",
+     "w": 0.185
+    },
+    {
+     "c": "#ca997e",
+     "w": 0.168
+    },
+    {
+     "c": "#d7ae8f",
+     "w": 0.143
+    },
+    {
+     "c": "#c78363",
+     "w": 0.141
+    },
+    {
+     "c": "#954a36",
+     "w": 0.107
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-tribeca.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-chelsea",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range D",
+   "name": "Chelsea",
+   "tone": "Medium",
+   "hex": "#bea186",
+   "palette": [
+    {
+     "c": "#b69a80",
+     "w": 0.255
+    },
+    {
+     "c": "#bea78e",
+     "w": 0.229
+    },
+    {
+     "c": "#ae8c71",
+     "w": 0.183
+    },
+    {
+     "c": "#cfb396",
+     "w": 0.142
+    },
+    {
+     "c": "#a47e61",
+     "w": 0.131
+    },
+    {
+     "c": "#98694d",
+     "w": 0.06
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-chelsea.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-brooklyn",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "Range D",
+   "name": "Brooklyn",
+   "tone": "Dark",
+   "hex": "#987f74",
+   "palette": [
+    {
+     "c": "#684741",
+     "w": 0.233
+    },
+    {
+     "c": "#775750",
+     "w": 0.193
+    },
+    {
+     "c": "#8a6c63",
+     "w": 0.16
+    },
+    {
+     "c": "#5b3b34",
+     "w": 0.144
+    },
+    {
+     "c": "#bca295",
+     "w": 0.14
+    },
+    {
+     "c": "#a1847b",
+     "w": 0.13
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-brooklyn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-blanco",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Blanco",
+   "tone": "Light",
+   "hex": "#f1ede5",
+   "palette": [
+    {
+     "c": "#f3eee6",
+     "w": 0.432
+    },
+    {
+     "c": "#f5f0eb",
+     "w": 0.231
+    },
+    {
+     "c": "#f0ebe3",
+     "w": 0.229
+    },
+    {
+     "c": "#ded9d0",
+     "w": 0.049
+    },
+    {
+     "c": "#e8e3da",
+     "w": 0.044
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-blanco.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-pgh-nero",
+   "region": "qld",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Nero",
+   "tone": "Dark",
+   "hex": "#76716b",
+   "palette": [
+    {
+     "c": "#3d3f40",
+     "w": 0.328
+    },
+    {
+     "c": "#424345",
+     "w": 0.263
+    },
+    {
+     "c": "#393b3c",
+     "w": 0.175
+    },
+    {
+     "c": "#484949",
+     "w": 0.173
+    },
+    {
+     "c": "#5e5a56",
+     "w": 0.034
+    },
+    {
+     "c": "#857f78",
+     "w": 0.028
+    }
+   ],
+   "img": "swatches/brick-qld-pgh-nero.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-silver",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Silver",
+   "tone": "Medium",
+   "hex": "#b5aca9",
+   "palette": [
+    {
+     "c": "#aea4a1",
+     "w": 0.294
+    },
+    {
+     "c": "#a49a96",
+     "w": 0.287
+    },
+    {
+     "c": "#b8aeab",
+     "w": 0.156
+    },
+    {
+     "c": "#968c88",
+     "w": 0.121
+    },
+    {
+     "c": "#ded8d3",
+     "w": 0.09
+    },
+    {
+     "c": "#ccc4c1",
+     "w": 0.052
+    }
+   ],
+   "img": "swatches/brick-qld-austral-silver.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-shoreline",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Shoreline",
+   "tone": "Medium",
+   "hex": "#d7cec8",
+   "palette": [
+    {
+     "c": "#d0c7c0",
+     "w": 0.247
+    },
+    {
+     "c": "#dcd2cd",
+     "w": 0.237
+    },
+    {
+     "c": "#c3bab2",
+     "w": 0.208
+    },
+    {
+     "c": "#e6ddd9",
+     "w": 0.164
+    },
+    {
+     "c": "#b0a79f",
+     "w": 0.094
+    },
+    {
+     "c": "#f3ebe7",
+     "w": 0.051
+    }
+   ],
+   "img": "swatches/brick-qld-austral-shoreline.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-surf-wash",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Surf Wash",
+   "tone": "Light",
+   "hex": "#d0c8c1",
+   "palette": [
+    {
+     "c": "#d2c9c2",
+     "w": 0.258
+    },
+    {
+     "c": "#ccc3bc",
+     "w": 0.22
+    },
+    {
+     "c": "#c5bcb4",
+     "w": 0.186
+    },
+    {
+     "c": "#d8cfc8",
+     "w": 0.186
+    },
+    {
+     "c": "#dfd7d1",
+     "w": 0.08
+    },
+    {
+     "c": "#bbb2aa",
+     "w": 0.07
+    }
+   ],
+   "img": "swatches/brick-qld-austral-surf-wash.webp",
+   "rec": true,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-chiffon",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Chiffon",
+   "tone": "Dark",
+   "hex": "#7f7875",
+   "palette": [
+    {
+     "c": "#564f4c",
+     "w": 0.285
+    },
+    {
+     "c": "#504946",
+     "w": 0.243
+    },
+    {
+     "c": "#5c5551",
+     "w": 0.177
+    },
+    {
+     "c": "#625b57",
+     "w": 0.133
+    },
+    {
+     "c": "#47413d",
+     "w": 0.113
+    },
+    {
+     "c": "#6b6461",
+     "w": 0.049
+    }
+   ],
+   "img": "swatches/brick-qld-austral-chiffon.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-grey-gum",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Grey Gum",
+   "tone": "Dark",
+   "hex": "#918e88",
+   "palette": [
+    {
+     "c": "#76736d",
+     "w": 0.374
+    },
+    {
+     "c": "#7f7c76",
+     "w": 0.34
+    },
+    {
+     "c": "#dad7d0",
+     "w": 0.089
+    },
+    {
+     "c": "#6b6962",
+     "w": 0.081
+    },
+    {
+     "c": "#918d87",
+     "w": 0.064
+    },
+    {
+     "c": "#b8b4ab",
+     "w": 0.053
+    }
+   ],
+   "img": "swatches/brick-qld-austral-grey-gum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-escape",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Escape",
+   "tone": "Medium",
+   "hex": "#baa187",
+   "palette": [
+    {
+     "c": "#b39473",
+     "w": 0.358
+    },
+    {
+     "c": "#bb9c7a",
+     "w": 0.244
+    },
+    {
+     "c": "#aa8b69",
+     "w": 0.16
+    },
+    {
+     "c": "#b39e89",
+     "w": 0.097
+    },
+    {
+     "c": "#dacbbf",
+     "w": 0.086
+    },
+    {
+     "c": "#c2b2a2",
+     "w": 0.055
+    }
+   ],
+   "img": "swatches/brick-qld-austral-escape.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-pepper",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Pepper",
+   "tone": "Dark",
+   "hex": "#897e76",
+   "palette": [
+    {
+     "c": "#65584f",
+     "w": 0.312
+    },
+    {
+     "c": "#6d5f57",
+     "w": 0.294
+    },
+    {
+     "c": "#5c4f46",
+     "w": 0.163
+    },
+    {
+     "c": "#e1d8cf",
+     "w": 0.102
+    },
+    {
+     "c": "#a59b92",
+     "w": 0.065
+    },
+    {
+     "c": "#796c64",
+     "w": 0.063
+    }
+   ],
+   "img": "swatches/brick-qld-austral-pepper.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-silver-birch",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Silver Birch",
+   "tone": "Dark",
+   "hex": "#867c7a",
+   "palette": [
+    {
+     "c": "#706664",
+     "w": 0.296
+    },
+    {
+     "c": "#685e5c",
+     "w": 0.231
+    },
+    {
+     "c": "#796f6d",
+     "w": 0.181
+    },
+    {
+     "c": "#5d5351",
+     "w": 0.122
+    },
+    {
+     "c": "#c8c0bd",
+     "w": 0.11
+    },
+    {
+     "c": "#9d9491",
+     "w": 0.061
+    }
+   ],
+   "img": "swatches/brick-qld-austral-silver-birch.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-stimulate",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Stimulate",
+   "tone": "Dark",
+   "hex": "#987a6e",
+   "palette": [
+    {
+     "c": "#875d4d",
+     "w": 0.271
+    },
+    {
+     "c": "#7b5847",
+     "w": 0.198
+    },
+    {
+     "c": "#835545",
+     "w": 0.193
+    },
+    {
+     "c": "#764f3e",
+     "w": 0.172
+    },
+    {
+     "c": "#916454",
+     "w": 0.124
+    },
+    {
+     "c": "#907063",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-qld-austral-stimulate.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-grecian-gold",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Grecian Gold",
+   "tone": "Dark",
+   "hex": "#9b8f86",
+   "palette": [
+    {
+     "c": "#8c7d72",
+     "w": 0.296
+    },
+    {
+     "c": "#827368",
+     "w": 0.292
+    },
+    {
+     "c": "#97897e",
+     "w": 0.142
+    },
+    {
+     "c": "#75665b",
+     "w": 0.124
+    },
+    {
+     "c": "#dfd7ce",
+     "w": 0.097
+    },
+    {
+     "c": "#b9b0a7",
+     "w": 0.049
+    }
+   ],
+   "img": "swatches/brick-qld-austral-grecian-gold.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-blackbutt",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Blackbutt",
+   "tone": "Dark",
+   "hex": "#77726d",
+   "palette": [
+    {
+     "c": "#372f2d",
+     "w": 0.326
+    },
+    {
+     "c": "#332b29",
+     "w": 0.242
+    },
+    {
+     "c": "#3b3332",
+     "w": 0.236
+    },
+    {
+     "c": "#352f31",
+     "w": 0.093
+    },
+    {
+     "c": "#2d2523",
+     "w": 0.058
+    },
+    {
+     "c": "#48403b",
+     "w": 0.045
+    }
+   ],
+   "img": "swatches/brick-qld-austral-blackbutt.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-freedom",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Freedom",
+   "tone": "Dark",
+   "hex": "#7d6f67",
+   "palette": [
+    {
+     "c": "#5c473d",
+     "w": 0.308
+    },
+    {
+     "c": "#604c41",
+     "w": 0.225
+    },
+    {
+     "c": "#554238",
+     "w": 0.214
+    },
+    {
+     "c": "#57473f",
+     "w": 0.097
+    },
+    {
+     "c": "#66544a",
+     "w": 0.079
+    },
+    {
+     "c": "#5d4e46",
+     "w": 0.078
+    }
+   ],
+   "img": "swatches/brick-qld-austral-freedom.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-blue-gum",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Blue Gum",
+   "tone": "Dark",
+   "hex": "#85807a",
+   "palette": [
+    {
+     "c": "#464749",
+     "w": 0.355
+    },
+    {
+     "c": "#3e3e40",
+     "w": 0.277
+    },
+    {
+     "c": "#505053",
+     "w": 0.212
+    },
+    {
+     "c": "#323233",
+     "w": 0.075
+    },
+    {
+     "c": "#676462",
+     "w": 0.054
+    },
+    {
+     "c": "#938b84",
+     "w": 0.026
+    }
+   ],
+   "img": "swatches/brick-qld-austral-blue-gum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-flooded-gum",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Flooded Gum",
+   "tone": "Medium",
+   "hex": "#aba7a6",
+   "palette": [
+    {
+     "c": "#a29f9e",
+     "w": 0.375
+    },
+    {
+     "c": "#969291",
+     "w": 0.266
+    },
+    {
+     "c": "#aeaaaa",
+     "w": 0.184
+    },
+    {
+     "c": "#f2f0ef",
+     "w": 0.068
+    },
+    {
+     "c": "#7e7b7a",
+     "w": 0.059
+    },
+    {
+     "c": "#d0cccc",
+     "w": 0.048
+    }
+   ],
+   "img": "swatches/brick-qld-austral-flooded-gum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-sea-salt",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Sea Salt",
+   "tone": "Medium",
+   "hex": "#c3b5ad",
+   "palette": [
+    {
+     "c": "#c0b1a9",
+     "w": 0.319
+    },
+    {
+     "c": "#c7b9b1",
+     "w": 0.255
+    },
+    {
+     "c": "#b8a89f",
+     "w": 0.217
+    },
+    {
+     "c": "#cfc4bc",
+     "w": 0.106
+    },
+    {
+     "c": "#aa9a91",
+     "w": 0.061
+    },
+    {
+     "c": "#ddd5cd",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-qld-austral-sea-salt.webp",
+   "rec": false,
+   "offWhite": true,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-oasis",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Oasis",
+   "tone": "Light",
+   "hex": "#cec1b3",
+   "palette": [
+    {
+     "c": "#cdbdab",
+     "w": 0.362
+    },
+    {
+     "c": "#c8b9a8",
+     "w": 0.263
+    },
+    {
+     "c": "#d0c2b2",
+     "w": 0.16
+    },
+    {
+     "c": "#ddd7d2",
+     "w": 0.125
+    },
+    {
+     "c": "#c0b2a3",
+     "w": 0.076
+    }
+   ],
+   "img": "swatches/brick-qld-austral-oasis.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-mirage",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Mirage",
+   "tone": "Medium",
+   "hex": "#d9bca1",
+   "palette": [
+    {
+     "c": "#d4b28f",
+     "w": 0.375
+    },
+    {
+     "c": "#ccaa87",
+     "w": 0.248
+    },
+    {
+     "c": "#ddbc9a",
+     "w": 0.132
+    },
+    {
+     "c": "#f4eee7",
+     "w": 0.104
+    },
+    {
+     "c": "#cfbca9",
+     "w": 0.078
+    },
+    {
+     "c": "#e7dacd",
+     "w": 0.063
+    }
+   ],
+   "img": "swatches/brick-qld-austral-mirage.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-dessert",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Dessert",
+   "tone": "Medium",
+   "hex": "#d7baac",
+   "palette": [
+    {
+     "c": "#d5b1a1",
+     "w": 0.493
+    },
+    {
+     "c": "#d6b6a9",
+     "w": 0.224
+    },
+    {
+     "c": "#ccaea0",
+     "w": 0.125
+    },
+    {
+     "c": "#f1e5db",
+     "w": 0.076
+    },
+    {
+     "c": "#e0d1c5",
+     "w": 0.063
+    }
+   ],
+   "img": "swatches/brick-qld-austral-dessert.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-newport",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Newport",
+   "tone": "Dark",
+   "hex": "#b2a6a1",
+   "palette": [
+    {
+     "c": "#a2948f",
+     "w": 0.29
+    },
+    {
+     "c": "#9e8f8b",
+     "w": 0.281
+    },
+    {
+     "c": "#9a8b87",
+     "w": 0.163
+    },
+    {
+     "c": "#a89a95",
+     "w": 0.163
+    },
+    {
+     "c": "#938480",
+     "w": 0.053
+    },
+    {
+     "c": "#aea39e",
+     "w": 0.051
+    }
+   ],
+   "img": "swatches/brick-qld-austral-newport.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-mirador",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Mirador",
+   "tone": "Medium",
+   "hex": "#cdbbae",
+   "palette": [
+    {
+     "c": "#c6af9f",
+     "w": 0.372
+    },
+    {
+     "c": "#cab5a7",
+     "w": 0.278
+    },
+    {
+     "c": "#c0a999",
+     "w": 0.157
+    },
+    {
+     "c": "#f1ebe6",
+     "w": 0.102
+    },
+    {
+     "c": "#e3d9d0",
+     "w": 0.053
+    },
+    {
+     "c": "#d2c4bb",
+     "w": 0.038
+    }
+   ],
+   "img": "swatches/brick-qld-austral-mirador.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-emery",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range C",
+   "name": "Emery",
+   "tone": "Dark",
+   "hex": "#6a6865",
+   "palette": [
+    {
+     "c": "#32302f",
+     "w": 0.255
+    },
+    {
+     "c": "#292827",
+     "w": 0.255
+    },
+    {
+     "c": "#3c3a3a",
+     "w": 0.192
+    },
+    {
+     "c": "#212020",
+     "w": 0.177
+    },
+    {
+     "c": "#191817",
+     "w": 0.083
+    },
+    {
+     "c": "#4f4d4a",
+     "w": 0.039
+    }
+   ],
+   "img": "swatches/brick-qld-austral-emery.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-whitehaven",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range C",
+   "name": "Whitehaven",
+   "tone": "Light",
+   "hex": "#ddd6ce",
+   "palette": [
+    {
+     "c": "#d8d1c8",
+     "w": 0.34
+    },
+    {
+     "c": "#d4ccc3",
+     "w": 0.224
+    },
+    {
+     "c": "#ddd5ce",
+     "w": 0.214
+    },
+    {
+     "c": "#f3ede8",
+     "w": 0.088
+    },
+    {
+     "c": "#cec6bd",
+     "w": 0.071
+    },
+    {
+     "c": "#e6e0da",
+     "w": 0.063
+    }
+   ],
+   "img": "swatches/brick-qld-austral-whitehaven.webp",
+   "rec": true,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-bronze",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range C",
+   "name": "Bronze",
+   "tone": "Dark",
+   "hex": "#8f8987",
+   "palette": [
+    {
+     "c": "#615a59",
+     "w": 0.258
+    },
+    {
+     "c": "#58504f",
+     "w": 0.24
+    },
+    {
+     "c": "#6a6463",
+     "w": 0.187
+    },
+    {
+     "c": "#4c4443",
+     "w": 0.147
+    },
+    {
+     "c": "#756e6d",
+     "w": 0.112
+    },
+    {
+     "c": "#837c7a",
+     "w": 0.056
+    }
+   ],
+   "img": "swatches/brick-qld-austral-bronze.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-warm-tan",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range D",
+   "name": "Warm Tan",
+   "tone": "Dark",
+   "hex": "#b29581",
+   "palette": [
+    {
+     "c": "#9f7859",
+     "w": 0.315
+    },
+    {
+     "c": "#a77f5f",
+     "w": 0.259
+    },
+    {
+     "c": "#a77a52",
+     "w": 0.176
+    },
+    {
+     "c": "#987050",
+     "w": 0.145
+    },
+    {
+     "c": "#967a66",
+     "w": 0.07
+    },
+    {
+     "c": "#a68e7e",
+     "w": 0.036
+    }
+   ],
+   "img": "swatches/brick-qld-austral-warm-tan.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-fired-umber",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range D",
+   "name": "Fired Umber",
+   "tone": "Dark",
+   "hex": "#aa8a80",
+   "palette": [
+    {
+     "c": "#936452",
+     "w": 0.269
+    },
+    {
+     "c": "#a27660",
+     "w": 0.258
+    },
+    {
+     "c": "#986c5d",
+     "w": 0.247
+    },
+    {
+     "c": "#83574d",
+     "w": 0.101
+    },
+    {
+     "c": "#a07b71",
+     "w": 0.083
+    },
+    {
+     "c": "#a88c85",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-qld-austral-fired-umber.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-clay-blush",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range D",
+   "name": "Clay Blush",
+   "tone": "Dark",
+   "hex": "#c19d82",
+   "palette": [
+    {
+     "c": "#bd8e63",
+     "w": 0.462
+    },
+    {
+     "c": "#b1825c",
+     "w": 0.28
+    },
+    {
+     "c": "#ebe1da",
+     "w": 0.118
+    },
+    {
+     "c": "#bc9e89",
+     "w": 0.055
+    },
+    {
+     "c": "#92624d",
+     "w": 0.045
+    },
+    {
+     "c": "#d6c1b3",
+     "w": 0.04
+    }
+   ],
+   "img": "swatches/brick-qld-austral-clay-blush.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "qld-austral-flamed-earth",
+   "region": "qld",
+   "supplier": "Austral",
+   "range": "Range D",
+   "name": "Flamed Earth",
+   "tone": "Dark",
+   "hex": "#9c857b",
+   "palette": [
+    {
+     "c": "#7a5f55",
+     "w": 0.345
+    },
+    {
+     "c": "#846861",
+     "w": 0.257
+    },
+    {
+     "c": "#8a6350",
+     "w": 0.214
+    },
+    {
+     "c": "#98725b",
+     "w": 0.103
+    },
+    {
+     "c": "#a08e88",
+     "w": 0.045
+    },
+    {
+     "c": "#695248",
+     "w": 0.036
+    }
+   ],
+   "img": "swatches/brick-qld-austral-flamed-earth.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-washed-white",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Washed White",
+   "tone": null,
+   "hex": "#e8e3dc",
+   "palette": [
+    {
+     "c": "#e9e6e1",
+     "w": 0.243
+    },
+    {
+     "c": "#e7e1d9",
+     "w": 0.241
+    },
+    {
+     "c": "#ede9e4",
+     "w": 0.184
+    },
+    {
+     "c": "#e2dcd3",
+     "w": 0.163
+    },
+    {
+     "c": "#ebe5dd",
+     "w": 0.119
+    },
+    {
+     "c": "#d8d2ca",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-washed-white.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-fresh-white",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Fresh White",
+   "tone": null,
+   "hex": "#e4dbcf",
+   "palette": [
+    {
+     "c": "#ebe3d9",
+     "w": 0.391
+    },
+    {
+     "c": "#e6ded3",
+     "w": 0.36
+    },
+    {
+     "c": "#dfd4c6",
+     "w": 0.106
+    },
+    {
+     "c": "#d5c7b4",
+     "w": 0.094
+    },
+    {
+     "c": "#c4b4a1",
+     "w": 0.044
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-fresh-white.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-montauk",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Montauk",
+   "tone": null,
+   "hex": "#d2cbc0",
+   "palette": [
+    {
+     "c": "#d3ccc1",
+     "w": 0.383
+    },
+    {
+     "c": "#d6cfc5",
+     "w": 0.35
+    },
+    {
+     "c": "#cdc6bb",
+     "w": 0.114
+    },
+    {
+     "c": "#dbd4cb",
+     "w": 0.071
+    },
+    {
+     "c": "#a8a094",
+     "w": 0.045
+    },
+    {
+     "c": "#c1b9ad",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-montauk.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-lightning",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Lightning",
+   "tone": null,
+   "hex": "#aeaaa6",
+   "palette": [
+    {
+     "c": "#aca8a4",
+     "w": 0.36
+    },
+    {
+     "c": "#a7a39f",
+     "w": 0.289
+    },
+    {
+     "c": "#b3b0ab",
+     "w": 0.173
+    },
+    {
+     "c": "#a19d99",
+     "w": 0.1
+    },
+    {
+     "c": "#c2bfb8",
+     "w": 0.072
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-lightning.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-breeze",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Breeze",
+   "tone": null,
+   "hex": "#beb6ae",
+   "palette": [
+    {
+     "c": "#b8b3ad",
+     "w": 0.37
+    },
+    {
+     "c": "#b5aea6",
+     "w": 0.231
+    },
+    {
+     "c": "#beb8b2",
+     "w": 0.221
+    },
+    {
+     "c": "#d2c6b8",
+     "w": 0.076
+    },
+    {
+     "c": "#ada49b",
+     "w": 0.063
+    },
+    {
+     "c": "#e0d5c7",
+     "w": 0.038
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-breeze.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-sculpted-grey",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sculpted Grey",
+   "tone": null,
+   "hex": "#baac9f",
+   "palette": [
+    {
+     "c": "#b3a498",
+     "w": 0.423
+    },
+    {
+     "c": "#ad9e92",
+     "w": 0.252
+    },
+    {
+     "c": "#bbada0",
+     "w": 0.122
+    },
+    {
+     "c": "#ded3c6",
+     "w": 0.086
+    },
+    {
+     "c": "#cec2b4",
+     "w": 0.075
+    },
+    {
+     "c": "#a69689",
+     "w": 0.043
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sculpted-grey.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-manchester-blend",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Manchester Blend",
+   "tone": null,
+   "hex": "#c19176",
+   "palette": [
+    {
+     "c": "#bf8766",
+     "w": 0.312
+    },
+    {
+     "c": "#c39477",
+     "w": 0.235
+    },
+    {
+     "c": "#b97151",
+     "w": 0.166
+    },
+    {
+     "c": "#a37761",
+     "w": 0.133
+    },
+    {
+     "c": "#a76043",
+     "w": 0.124
+    },
+    {
+     "c": "#755744",
+     "w": 0.03
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-manchester-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-maidstone-blend",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Maidstone Blend",
+   "tone": null,
+   "hex": "#b9937b",
+   "palette": [
+    {
+     "c": "#bf896b",
+     "w": 0.349
+    },
+    {
+     "c": "#c69d82",
+     "w": 0.206
+    },
+    {
+     "c": "#9e7b67",
+     "w": 0.123
+    },
+    {
+     "c": "#e5d0bc",
+     "w": 0.123
+    },
+    {
+     "c": "#a96c54",
+     "w": 0.113
+    },
+    {
+     "c": "#7f6350",
+     "w": 0.086
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-maidstone-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-graphite",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Graphite",
+   "tone": null,
+   "hex": "#a4886e",
+   "palette": [
+    {
+     "c": "#9e7e62",
+     "w": 0.394
+    },
+    {
+     "c": "#947459",
+     "w": 0.23
+    },
+    {
+     "c": "#a7886d",
+     "w": 0.19
+    },
+    {
+     "c": "#d1c0a7",
+     "w": 0.093
+    },
+    {
+     "c": "#b9a58b",
+     "w": 0.069
+    },
+    {
+     "c": "#816246",
+     "w": 0.025
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-graphite.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-dorset",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Dorset",
+   "tone": null,
+   "hex": "#be8c7b",
+   "palette": [
+    {
+     "c": "#bc7a65",
+     "w": 0.342
+    },
+    {
+     "c": "#c58972",
+     "w": 0.238
+    },
+    {
+     "c": "#af6b5b",
+     "w": 0.214
+    },
+    {
+     "c": "#cdc2b7",
+     "w": 0.093
+    },
+    {
+     "c": "#bea193",
+     "w": 0.076
+    },
+    {
+     "c": "#915548",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-dorset.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-bedford-blend",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Bedford Blend",
+   "tone": null,
+   "hex": "#bf947c",
+   "palette": [
+    {
+     "c": "#c5977c",
+     "w": 0.249
+    },
+    {
+     "c": "#b6876d",
+     "w": 0.183
+    },
+    {
+     "c": "#cea58c",
+     "w": 0.166
+    },
+    {
+     "c": "#aa7159",
+     "w": 0.152
+    },
+    {
+     "c": "#9e5d42",
+     "w": 0.14
+    },
+    {
+     "c": "#e3cab3",
+     "w": 0.11
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-bedford-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-birmingham-blend",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Birmingham Blend",
+   "tone": null,
+   "hex": "#be937c",
+   "palette": [
+    {
+     "c": "#c89476",
+     "w": 0.24
+    },
+    {
+     "c": "#ae674b",
+     "w": 0.205
+    },
+    {
+     "c": "#b97e62",
+     "w": 0.166
+    },
+    {
+     "c": "#9a7561",
+     "w": 0.166
+    },
+    {
+     "c": "#b08f79",
+     "w": 0.116
+    },
+    {
+     "c": "#7a5d4a",
+     "w": 0.107
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-birmingham-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-pilbara",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Pilbara",
+   "tone": null,
+   "hex": "#b46d52",
+   "palette": [
+    {
+     "c": "#a84919",
+     "w": 0.282
+    },
+    {
+     "c": "#a94510",
+     "w": 0.234
+    },
+    {
+     "c": "#9d3e0e",
+     "w": 0.18
+    },
+    {
+     "c": "#b34f1c",
+     "w": 0.17
+    },
+    {
+     "c": "#9d4d29",
+     "w": 0.092
+    },
+    {
+     "c": "#ac6444",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-pilbara.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-surrey",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Surrey",
+   "tone": null,
+   "hex": "#a17e6e",
+   "palette": [
+    {
+     "c": "#936854",
+     "w": 0.224
+    },
+    {
+     "c": "#9b715d",
+     "w": 0.211
+    },
+    {
+     "c": "#895d4b",
+     "w": 0.187
+    },
+    {
+     "c": "#795245",
+     "w": 0.166
+    },
+    {
+     "c": "#a57b67",
+     "w": 0.126
+    },
+    {
+     "c": "#68453b",
+     "w": 0.086
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-surrey.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-gravel",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Gravel",
+   "tone": null,
+   "hex": "#9f7f74",
+   "palette": [
+    {
+     "c": "#8e6051",
+     "w": 0.301
+    },
+    {
+     "c": "#976959",
+     "w": 0.25
+    },
+    {
+     "c": "#845849",
+     "w": 0.198
+    },
+    {
+     "c": "#9f7465",
+     "w": 0.156
+    },
+    {
+     "c": "#764a3c",
+     "w": 0.048
+    },
+    {
+     "c": "#a6887e",
+     "w": 0.047
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-gravel.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-kalahari",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Kalahari",
+   "tone": null,
+   "hex": "#9f7258",
+   "palette": [
+    {
+     "c": "#8c563a",
+     "w": 0.232
+    },
+    {
+     "c": "#9d6243",
+     "w": 0.226
+    },
+    {
+     "c": "#905f45",
+     "w": 0.217
+    },
+    {
+     "c": "#a36e51",
+     "w": 0.169
+    },
+    {
+     "c": "#7d4b31",
+     "w": 0.084
+    },
+    {
+     "c": "#93745b",
+     "w": 0.071
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-kalahari.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-red-gum",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Red Gum",
+   "tone": null,
+   "hex": "#a26b55",
+   "palette": [
+    {
+     "c": "#8b4c3a",
+     "w": 0.263
+    },
+    {
+     "c": "#7b4336",
+     "w": 0.193
+    },
+    {
+     "c": "#945845",
+     "w": 0.165
+    },
+    {
+     "c": "#a65a3e",
+     "w": 0.145
+    },
+    {
+     "c": "#b26b4c",
+     "w": 0.123
+    },
+    {
+     "c": "#663a32",
+     "w": 0.111
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-red-gum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-frost",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Frost",
+   "tone": null,
+   "hex": "#e1d1bb",
+   "palette": [
+    {
+     "c": "#e2d2bb",
+     "w": 0.346
+    },
+    {
+     "c": "#e6d6c1",
+     "w": 0.31
+    },
+    {
+     "c": "#dbcab3",
+     "w": 0.176
+    },
+    {
+     "c": "#eadac7",
+     "w": 0.097
+    },
+    {
+     "c": "#c8b7a4",
+     "w": 0.052
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-frost.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-sheffield-blend",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sheffield Blend",
+   "tone": null,
+   "hex": "#a1816d",
+   "palette": [
+    {
+     "c": "#8d715e",
+     "w": 0.395
+    },
+    {
+     "c": "#7a5f4c",
+     "w": 0.28
+    },
+    {
+     "c": "#e0cab4",
+     "w": 0.094
+    },
+    {
+     "c": "#b77254",
+     "w": 0.085
+    },
+    {
+     "c": "#ac6142",
+     "w": 0.081
+    },
+    {
+     "c": "#baa18d",
+     "w": 0.064
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sheffield-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-sinai",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sinai",
+   "tone": null,
+   "hex": "#967e61",
+   "palette": [
+    {
+     "c": "#a2886a",
+     "w": 0.268
+    },
+    {
+     "c": "#977e61",
+     "w": 0.263
+    },
+    {
+     "c": "#8a7357",
+     "w": 0.172
+    },
+    {
+     "c": "#af9474",
+     "w": 0.131
+    },
+    {
+     "c": "#786448",
+     "w": 0.087
+    },
+    {
+     "c": "#665535",
+     "w": 0.079
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sinai.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-dark-rum",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Dark Rum",
+   "tone": null,
+   "hex": "#8a7360",
+   "palette": [
+    {
+     "c": "#7a5d48",
+     "w": 0.252
+    },
+    {
+     "c": "#6f533f",
+     "w": 0.227
+    },
+    {
+     "c": "#846753",
+     "w": 0.217
+    },
+    {
+     "c": "#614734",
+     "w": 0.137
+    },
+    {
+     "c": "#8f7461",
+     "w": 0.125
+    },
+    {
+     "c": "#4e3422",
+     "w": 0.043
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-dark-rum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-gibson",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Gibson",
+   "tone": null,
+   "hex": "#886f5a",
+   "palette": [
+    {
+     "c": "#7a5c43",
+     "w": 0.373
+    },
+    {
+     "c": "#87694e",
+     "w": 0.25
+    },
+    {
+     "c": "#6c5039",
+     "w": 0.214
+    },
+    {
+     "c": "#99836e",
+     "w": 0.063
+    },
+    {
+     "c": "#e1d4c3",
+     "w": 0.054
+    },
+    {
+     "c": "#b9ab98",
+     "w": 0.047
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-gibson.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-fossil",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Fossil",
+   "tone": null,
+   "hex": "#92765f",
+   "palette": [
+    {
+     "c": "#7e5b40",
+     "w": 0.349
+    },
+    {
+     "c": "#856247",
+     "w": 0.289
+    },
+    {
+     "c": "#755338",
+     "w": 0.165
+    },
+    {
+     "c": "#8a6a51",
+     "w": 0.122
+    },
+    {
+     "c": "#947962",
+     "w": 0.052
+    },
+    {
+     "c": "#624027",
+     "w": 0.023
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-fossil.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-zephyr",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Zephyr",
+   "tone": null,
+   "hex": "#7f7d7a",
+   "palette": [
+    {
+     "c": "#5d5c5c",
+     "w": 0.317
+    },
+    {
+     "c": "#636262",
+     "w": 0.25
+    },
+    {
+     "c": "#575656",
+     "w": 0.232
+    },
+    {
+     "c": "#504f4e",
+     "w": 0.099
+    },
+    {
+     "c": "#6e6c6a",
+     "w": 0.075
+    },
+    {
+     "c": "#87827d",
+     "w": 0.026
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-zephyr.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-whirlwind",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Whirlwind",
+   "tone": null,
+   "hex": "#888680",
+   "palette": [
+    {
+     "c": "#797974",
+     "w": 0.39
+    },
+    {
+     "c": "#6f6f6a",
+     "w": 0.273
+    },
+    {
+     "c": "#888681",
+     "w": 0.112
+    },
+    {
+     "c": "#cbc6bd",
+     "w": 0.093
+    },
+    {
+     "c": "#605f5a",
+     "w": 0.07
+    },
+    {
+     "c": "#adaaa0",
+     "w": 0.061
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-whirlwind.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-stone",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Stone",
+   "tone": null,
+   "hex": "#9d989a",
+   "palette": [
+    {
+     "c": "#908686",
+     "w": 0.269
+    },
+    {
+     "c": "#958b8c",
+     "w": 0.268
+    },
+    {
+     "c": "#999193",
+     "w": 0.184
+    },
+    {
+     "c": "#8b8180",
+     "w": 0.179
+    },
+    {
+     "c": "#9e9a9f",
+     "w": 0.06
+    },
+    {
+     "c": "#817876",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-stone.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-thunder",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Thunder",
+   "tone": null,
+   "hex": "#7a7571",
+   "palette": [
+    {
+     "c": "#4f4a49",
+     "w": 0.391
+    },
+    {
+     "c": "#4a4544",
+     "w": 0.24
+    },
+    {
+     "c": "#544f4e",
+     "w": 0.235
+    },
+    {
+     "c": "#443f3d",
+     "w": 0.072
+    },
+    {
+     "c": "#615b58",
+     "w": 0.039
+    },
+    {
+     "c": "#79736f",
+     "w": 0.023
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-thunder.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-monsoon",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Monsoon",
+   "tone": null,
+   "hex": "#807876",
+   "palette": [
+    {
+     "c": "#544b4b",
+     "w": 0.338
+    },
+    {
+     "c": "#595151",
+     "w": 0.264
+    },
+    {
+     "c": "#4f4645",
+     "w": 0.19
+    },
+    {
+     "c": "#625a5a",
+     "w": 0.123
+    },
+    {
+     "c": "#483f3f",
+     "w": 0.054
+    },
+    {
+     "c": "#78706e",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-monsoon.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-ocean-mist-double-height",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Ocean Mist - Double Height",
+   "tone": null,
+   "hex": "#ded1c4",
+   "palette": [
+    {
+     "c": "#e0d5c9",
+     "w": 0.233
+    },
+    {
+     "c": "#e5dcd2",
+     "w": 0.22
+    },
+    {
+     "c": "#dbccbe",
+     "w": 0.193
+    },
+    {
+     "c": "#d4c3b3",
+     "w": 0.174
+    },
+    {
+     "c": "#f4e6d6",
+     "w": 0.109
+    },
+    {
+     "c": "#c8b5a4",
+     "w": 0.071
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-ocean-mist-double-height.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": true
+  },
+  {
+   "id": "nsw-cc-pgh-perisher-double-height",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Perisher - Double Height",
+   "tone": null,
+   "hex": "#d4ccbf",
+   "palette": [
+    {
+     "c": "#d2cabb",
+     "w": 0.318
+    },
+    {
+     "c": "#d6d0c2",
+     "w": 0.257
+    },
+    {
+     "c": "#cdc3b3",
+     "w": 0.199
+    },
+    {
+     "c": "#dad4c8",
+     "w": 0.158
+    },
+    {
+     "c": "#bdb2a3",
+     "w": 0.042
+    },
+    {
+     "c": "#a4998b",
+     "w": 0.027
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-perisher-double-height.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": true
+  },
+  {
+   "id": "nsw-cc-pgh-rockhampton",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Rockhampton",
+   "tone": null,
+   "hex": "#bab0a2",
+   "palette": [
+    {
+     "c": "#b3a798",
+     "w": 0.276
+    },
+    {
+     "c": "#ada191",
+     "w": 0.248
+    },
+    {
+     "c": "#b9afa1",
+     "w": 0.183
+    },
+    {
+     "c": "#d6cfc3",
+     "w": 0.126
+    },
+    {
+     "c": "#a59989",
+     "w": 0.092
+    },
+    {
+     "c": "#c5bdb0",
+     "w": 0.075
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-rockhampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-ocean-mist",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Ocean Mist",
+   "tone": null,
+   "hex": "#d7cec3",
+   "palette": [
+    {
+     "c": "#dad3c8",
+     "w": 0.315
+    },
+    {
+     "c": "#d5ccc0",
+     "w": 0.245
+    },
+    {
+     "c": "#dfd8ce",
+     "w": 0.188
+    },
+    {
+     "c": "#d0c2b4",
+     "w": 0.161
+    },
+    {
+     "c": "#c3b4a6",
+     "w": 0.074
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-ocean-mist.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-scandalwood",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Scandalwood",
+   "tone": null,
+   "hex": "#d3c4bf",
+   "palette": [
+    {
+     "c": "#cdbdb7",
+     "w": 0.366
+    },
+    {
+     "c": "#d0c1bb",
+     "w": 0.342
+    },
+    {
+     "c": "#c8b8b2",
+     "w": 0.085
+    },
+    {
+     "c": "#d5c8c3",
+     "w": 0.072
+    },
+    {
+     "c": "#e2d7d3",
+     "w": 0.069
+    },
+    {
+     "c": "#e9e1dd",
+     "w": 0.066
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-scandalwood.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-sage",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sage",
+   "tone": null,
+   "hex": "#a7a49a",
+   "palette": [
+    {
+     "c": "#99968b",
+     "w": 0.363
+    },
+    {
+     "c": "#9e9c92",
+     "w": 0.22
+    },
+    {
+     "c": "#929085",
+     "w": 0.177
+    },
+    {
+     "c": "#e3dfd7",
+     "w": 0.111
+    },
+    {
+     "c": "#96988d",
+     "w": 0.071
+    },
+    {
+     "c": "#bcb8af",
+     "w": 0.057
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sage.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-sea-fossil",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sea Fossil",
+   "tone": null,
+   "hex": "#a89f99",
+   "palette": [
+    {
+     "c": "#a29a94",
+     "w": 0.271
+    },
+    {
+     "c": "#988f89",
+     "w": 0.242
+    },
+    {
+     "c": "#8b827b",
+     "w": 0.188
+    },
+    {
+     "c": "#aea6a1",
+     "w": 0.135
+    },
+    {
+     "c": "#796f69",
+     "w": 0.102
+    },
+    {
+     "c": "#605551",
+     "w": 0.062
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sea-fossil.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-elkhorn",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Elkhorn",
+   "tone": null,
+   "hex": "#bdaca2",
+   "palette": [
+    {
+     "c": "#bba397",
+     "w": 0.256
+    },
+    {
+     "c": "#cfc2b9",
+     "w": 0.233
+    },
+    {
+     "c": "#c5b2a7",
+     "w": 0.232
+    },
+    {
+     "c": "#ab9185",
+     "w": 0.135
+    },
+    {
+     "c": "#734e47",
+     "w": 0.079
+    },
+    {
+     "c": "#8f6f66",
+     "w": 0.064
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-elkhorn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-truffle",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Truffle",
+   "tone": null,
+   "hex": "#877b72",
+   "palette": [
+    {
+     "c": "#6d615e",
+     "w": 0.397
+    },
+    {
+     "c": "#766a66",
+     "w": 0.288
+    },
+    {
+     "c": "#635854",
+     "w": 0.152
+    },
+    {
+     "c": "#daccb8",
+     "w": 0.065
+    },
+    {
+     "c": "#bfb09d",
+     "w": 0.061
+    },
+    {
+     "c": "#9b8b7c",
+     "w": 0.038
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-truffle.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-juniper",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Juniper",
+   "tone": null,
+   "hex": "#9a978e",
+   "palette": [
+    {
+     "c": "#87857c",
+     "w": 0.384
+    },
+    {
+     "c": "#8c8a81",
+     "w": 0.271
+    },
+    {
+     "c": "#827f76",
+     "w": 0.167
+    },
+    {
+     "c": "#e3ded6",
+     "w": 0.089
+    },
+    {
+     "c": "#a6a098",
+     "w": 0.049
+    },
+    {
+     "c": "#c9c5bc",
+     "w": 0.04
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-juniper.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-elderberry",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Elderberry",
+   "tone": null,
+   "hex": "#8e7166",
+   "palette": [
+    {
+     "c": "#764f42",
+     "w": 0.292
+    },
+    {
+     "c": "#724b3d",
+     "w": 0.275
+    },
+    {
+     "c": "#7b5345",
+     "w": 0.199
+    },
+    {
+     "c": "#6c4637",
+     "w": 0.114
+    },
+    {
+     "c": "#7c584b",
+     "w": 0.1
+    },
+    {
+     "c": "#7e6157",
+     "w": 0.02
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-elderberry.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-leura",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range B",
+   "name": "Leura",
+   "tone": null,
+   "hex": "#9f8374",
+   "palette": [
+    {
+     "c": "#8e6754",
+     "w": 0.231
+    },
+    {
+     "c": "#7c5a4b",
+     "w": 0.227
+    },
+    {
+     "c": "#816960",
+     "w": 0.208
+    },
+    {
+     "c": "#937567",
+     "w": 0.162
+    },
+    {
+     "c": "#8f4a3c",
+     "w": 0.088
+    },
+    {
+     "c": "#a7654b",
+     "w": 0.085
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-leura.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-blackheath",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range B",
+   "name": "Blackheath",
+   "tone": null,
+   "hex": "#9b8372",
+   "palette": [
+    {
+     "c": "#816351",
+     "w": 0.257
+    },
+    {
+     "c": "#8d6d58",
+     "w": 0.206
+    },
+    {
+     "c": "#947966",
+     "w": 0.149
+    },
+    {
+     "c": "#7e6d61",
+     "w": 0.148
+    },
+    {
+     "c": "#6e635b",
+     "w": 0.122
+    },
+    {
+     "c": "#715a4c",
+     "w": 0.119
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-blackheath.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-matterhorn",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Matterhorn",
+   "tone": null,
+   "hex": "#c6bbaf",
+   "palette": [
+    {
+     "c": "#c4baaf",
+     "w": 0.352
+    },
+    {
+     "c": "#bdb3a7",
+     "w": 0.322
+    },
+    {
+     "c": "#ccc2b7",
+     "w": 0.159
+    },
+    {
+     "c": "#e4d7c9",
+     "w": 0.088
+    },
+    {
+     "c": "#b2a699",
+     "w": 0.067
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-matterhorn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-olympus",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Olympus",
+   "tone": null,
+   "hex": "#989088",
+   "palette": [
+    {
+     "c": "#817a75",
+     "w": 0.386
+    },
+    {
+     "c": "#88817c",
+     "w": 0.265
+    },
+    {
+     "c": "#7c746d",
+     "w": 0.184
+    },
+    {
+     "c": "#dfd2c4",
+     "w": 0.095
+    },
+    {
+     "c": "#beb2a5",
+     "w": 0.036
+    },
+    {
+     "c": "#a2968a",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-olympus.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-chocolatto",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Chocolatto",
+   "tone": null,
+   "hex": "#816c62",
+   "palette": [
+    {
+     "c": "#61483e",
+     "w": 0.35
+    },
+    {
+     "c": "#674e44",
+     "w": 0.252
+    },
+    {
+     "c": "#5c4339",
+     "w": 0.226
+    },
+    {
+     "c": "#71584e",
+     "w": 0.068
+    },
+    {
+     "c": "#553c32",
+     "w": 0.067
+    },
+    {
+     "c": "#8a7469",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-chocolatto.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-espresso",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Espresso",
+   "tone": null,
+   "hex": "#777168",
+   "palette": [
+    {
+     "c": "#3e3e3e",
+     "w": 0.436
+    },
+    {
+     "c": "#383837",
+     "w": 0.259
+    },
+    {
+     "c": "#454544",
+     "w": 0.232
+    },
+    {
+     "c": "#867f73",
+     "w": 0.029
+    },
+    {
+     "c": "#645e52",
+     "w": 0.022
+    },
+    {
+     "c": "#a2998a",
+     "w": 0.02
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-espresso.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-vino",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Vino",
+   "tone": null,
+   "hex": "#7f7069",
+   "palette": [
+    {
+     "c": "#4b3c3b",
+     "w": 0.275
+    },
+    {
+     "c": "#524141",
+     "w": 0.269
+    },
+    {
+     "c": "#594847",
+     "w": 0.264
+    },
+    {
+     "c": "#463635",
+     "w": 0.122
+    },
+    {
+     "c": "#66564f",
+     "w": 0.054
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-vino.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-urban-blue",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Urban Blue",
+   "tone": null,
+   "hex": "#7d7a78",
+   "palette": [
+    {
+     "c": "#55575c",
+     "w": 0.298
+    },
+    {
+     "c": "#5c5f64",
+     "w": 0.24
+    },
+    {
+     "c": "#4e5054",
+     "w": 0.222
+    },
+    {
+     "c": "#64696f",
+     "w": 0.127
+    },
+    {
+     "c": "#464647",
+     "w": 0.068
+    },
+    {
+     "c": "#6c6661",
+     "w": 0.045
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-urban-blue.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-apollo",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Apollo",
+   "tone": null,
+   "hex": "#686258",
+   "palette": [
+    {
+     "c": "#31302c",
+     "w": 0.293
+    },
+    {
+     "c": "#2b2b26",
+     "w": 0.27
+    },
+    {
+     "c": "#383733",
+     "w": 0.203
+    },
+    {
+     "c": "#252520",
+     "w": 0.137
+    },
+    {
+     "c": "#46423b",
+     "w": 0.062
+    },
+    {
+     "c": "#645a4d",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-apollo.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-brooklyn",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Brooklyn",
+   "tone": null,
+   "hex": "#987f74",
+   "palette": [
+    {
+     "c": "#684741",
+     "w": 0.237
+    },
+    {
+     "c": "#775750",
+     "w": 0.194
+    },
+    {
+     "c": "#8a6b63",
+     "w": 0.157
+    },
+    {
+     "c": "#5b3b34",
+     "w": 0.146
+    },
+    {
+     "c": "#baa094",
+     "w": 0.137
+    },
+    {
+     "c": "#a08379",
+     "w": 0.128
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-brooklyn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-east-hampton",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "East Hampton",
+   "tone": null,
+   "hex": "#d9b99c",
+   "palette": [
+    {
+     "c": "#e2c6a9",
+     "w": 0.309
+    },
+    {
+     "c": "#e7cdb2",
+     "w": 0.232
+    },
+    {
+     "c": "#ddbd9e",
+     "w": 0.217
+    },
+    {
+     "c": "#d3af90",
+     "w": 0.131
+    },
+    {
+     "c": "#c1997a",
+     "w": 0.079
+    },
+    {
+     "c": "#a67b5d",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-east-hampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-chelsea",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Chelsea",
+   "tone": null,
+   "hex": "#bea186",
+   "palette": [
+    {
+     "c": "#b69a80",
+     "w": 0.255
+    },
+    {
+     "c": "#bea78e",
+     "w": 0.229
+    },
+    {
+     "c": "#ae8c71",
+     "w": 0.183
+    },
+    {
+     "c": "#cfb396",
+     "w": 0.142
+    },
+    {
+     "c": "#a47e61",
+     "w": 0.131
+    },
+    {
+     "c": "#98694d",
+     "w": 0.06
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-chelsea.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-pgh-tribeca",
+   "region": "nsw-cc",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Tribeca",
+   "tone": null,
+   "hex": "#ca8f70",
+   "palette": [
+    {
+     "c": "#c96e4b",
+     "w": 0.251
+    },
+    {
+     "c": "#ca987c",
+     "w": 0.176
+    },
+    {
+     "c": "#b66041",
+     "w": 0.164
+    },
+    {
+     "c": "#d8af91",
+     "w": 0.162
+    },
+    {
+     "c": "#c98160",
+     "w": 0.148
+    },
+    {
+     "c": "#954936",
+     "w": 0.1
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-tribeca.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-freedom",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Freedom",
+   "tone": null,
+   "hex": "#8c7970",
+   "palette": [
+    {
+     "c": "#694c3f",
+     "w": 0.304
+    },
+    {
+     "c": "#6f5245",
+     "w": 0.231
+    },
+    {
+     "c": "#634739",
+     "w": 0.224
+    },
+    {
+     "c": "#5d4133",
+     "w": 0.143
+    },
+    {
+     "c": "#765e52",
+     "w": 0.064
+    },
+    {
+     "c": "#523628",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-freedom.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-freedom",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Freedom",
+   "tone": null,
+   "hex": "#8c7970",
+   "palette": [
+    {
+     "c": "#694c3f",
+     "w": 0.304
+    },
+    {
+     "c": "#6f5245",
+     "w": 0.231
+    },
+    {
+     "c": "#634739",
+     "w": 0.224
+    },
+    {
+     "c": "#5d4133",
+     "w": 0.143
+    },
+    {
+     "c": "#765e52",
+     "w": 0.064
+    },
+    {
+     "c": "#523628",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-freedom.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-engage",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Engage",
+   "tone": null,
+   "hex": "#cab097",
+   "palette": [
+    {
+     "c": "#bfa183",
+     "w": 0.299
+    },
+    {
+     "c": "#c5a88b",
+     "w": 0.272
+    },
+    {
+     "c": "#b8997a",
+     "w": 0.168
+    },
+    {
+     "c": "#cab197",
+     "w": 0.115
+    },
+    {
+     "c": "#f1dfce",
+     "w": 0.096
+    },
+    {
+     "c": "#ddc8b4",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-engage.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-engage",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Engage",
+   "tone": null,
+   "hex": "#cab097",
+   "palette": [
+    {
+     "c": "#bfa183",
+     "w": 0.299
+    },
+    {
+     "c": "#c5a88b",
+     "w": 0.272
+    },
+    {
+     "c": "#b8997a",
+     "w": 0.168
+    },
+    {
+     "c": "#cab197",
+     "w": 0.115
+    },
+    {
+     "c": "#f1dfce",
+     "w": 0.096
+    },
+    {
+     "c": "#ddc8b4",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-engage.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-leisure",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Leisure",
+   "tone": null,
+   "hex": "#c6ab91",
+   "palette": [
+    {
+     "c": "#b59373",
+     "w": 0.323
+    },
+    {
+     "c": "#bd9c7d",
+     "w": 0.284
+    },
+    {
+     "c": "#ac8a68",
+     "w": 0.155
+    },
+    {
+     "c": "#f7e9da",
+     "w": 0.101
+    },
+    {
+     "c": "#c3aa91",
+     "w": 0.089
+    },
+    {
+     "c": "#dcc8b3",
+     "w": 0.048
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-leisure.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-leisure",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Leisure",
+   "tone": null,
+   "hex": "#c6ab91",
+   "palette": [
+    {
+     "c": "#b59373",
+     "w": 0.323
+    },
+    {
+     "c": "#bd9c7d",
+     "w": 0.284
+    },
+    {
+     "c": "#ac8a68",
+     "w": 0.155
+    },
+    {
+     "c": "#f7e9da",
+     "w": 0.101
+    },
+    {
+     "c": "#c3aa91",
+     "w": 0.089
+    },
+    {
+     "c": "#dcc8b3",
+     "w": 0.048
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-leisure.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-unwind",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Unwind",
+   "tone": null,
+   "hex": "#a98377",
+   "palette": [
+    {
+     "c": "#925b47",
+     "w": 0.305
+    },
+    {
+     "c": "#8c5541",
+     "w": 0.258
+    },
+    {
+     "c": "#98614f",
+     "w": 0.225
+    },
+    {
+     "c": "#844d39",
+     "w": 0.091
+    },
+    {
+     "c": "#9a6c5c",
+     "w": 0.079
+    },
+    {
+     "c": "#a47f73",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-unwind.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-unwind",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Unwind",
+   "tone": null,
+   "hex": "#a98377",
+   "palette": [
+    {
+     "c": "#925b47",
+     "w": 0.305
+    },
+    {
+     "c": "#8c5541",
+     "w": 0.258
+    },
+    {
+     "c": "#98614f",
+     "w": 0.225
+    },
+    {
+     "c": "#844d39",
+     "w": 0.091
+    },
+    {
+     "c": "#9a6c5c",
+     "w": 0.079
+    },
+    {
+     "c": "#a47f73",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-unwind.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-stimulate",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Stimulate",
+   "tone": null,
+   "hex": "#b58478",
+   "palette": [
+    {
+     "c": "#a55b46",
+     "w": 0.292
+    },
+    {
+     "c": "#af634f",
+     "w": 0.24
+    },
+    {
+     "c": "#9d533e",
+     "w": 0.238
+    },
+    {
+     "c": "#b3705e",
+     "w": 0.102
+    },
+    {
+     "c": "#904935",
+     "w": 0.074
+    },
+    {
+     "c": "#b8867a",
+     "w": 0.053
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-stimulate.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-stimulate",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Stimulate",
+   "tone": null,
+   "hex": "#b58478",
+   "palette": [
+    {
+     "c": "#a55b46",
+     "w": 0.292
+    },
+    {
+     "c": "#af634f",
+     "w": 0.24
+    },
+    {
+     "c": "#9d533e",
+     "w": 0.238
+    },
+    {
+     "c": "#b3705e",
+     "w": 0.102
+    },
+    {
+     "c": "#904935",
+     "w": 0.074
+    },
+    {
+     "c": "#b8867a",
+     "w": 0.053
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-stimulate.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-escape",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Escape",
+   "tone": null,
+   "hex": "#d6a88c",
+   "palette": [
+    {
+     "c": "#d59c76",
+     "w": 0.309
+    },
+    {
+     "c": "#cf9670",
+     "w": 0.268
+    },
+    {
+     "c": "#dba37e",
+     "w": 0.177
+    },
+    {
+     "c": "#cb9f83",
+     "w": 0.092
+    },
+    {
+     "c": "#c78e69",
+     "w": 0.091
+    },
+    {
+     "c": "#d1ad96",
+     "w": 0.062
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-escape.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-escape",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Standard",
+   "name": "Escape",
+   "tone": null,
+   "hex": "#d6a88c",
+   "palette": [
+    {
+     "c": "#d59c76",
+     "w": 0.309
+    },
+    {
+     "c": "#cf9670",
+     "w": 0.268
+    },
+    {
+     "c": "#dba37e",
+     "w": 0.177
+    },
+    {
+     "c": "#cb9f83",
+     "w": 0.092
+    },
+    {
+     "c": "#c78e69",
+     "w": 0.091
+    },
+    {
+     "c": "#d1ad96",
+     "w": 0.062
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-escape.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-brampton",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Brampton",
+   "tone": null,
+   "hex": "#a08e7a",
+   "palette": [
+    {
+     "c": "#97826b",
+     "w": 0.366
+    },
+    {
+     "c": "#8f7963",
+     "w": 0.252
+    },
+    {
+     "c": "#9e8a75",
+     "w": 0.168
+    },
+    {
+     "c": "#c5b9ab",
+     "w": 0.111
+    },
+    {
+     "c": "#816c55",
+     "w": 0.056
+    },
+    {
+     "c": "#b1a291",
+     "w": 0.048
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-brampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-brampton",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Brampton",
+   "tone": null,
+   "hex": "#a08e7a",
+   "palette": [
+    {
+     "c": "#97826b",
+     "w": 0.366
+    },
+    {
+     "c": "#8f7963",
+     "w": 0.252
+    },
+    {
+     "c": "#9e8a75",
+     "w": 0.168
+    },
+    {
+     "c": "#c5b9ab",
+     "w": 0.111
+    },
+    {
+     "c": "#816c55",
+     "w": 0.056
+    },
+    {
+     "c": "#b1a291",
+     "w": 0.048
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-brampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-orpheus",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Orpheus",
+   "tone": null,
+   "hex": "#847567",
+   "palette": [
+    {
+     "c": "#615245",
+     "w": 0.404
+    },
+    {
+     "c": "#68594b",
+     "w": 0.319
+    },
+    {
+     "c": "#d8c8b5",
+     "w": 0.103
+    },
+    {
+     "c": "#5a4c3e",
+     "w": 0.102
+    },
+    {
+     "c": "#b8a795",
+     "w": 0.037
+    },
+    {
+     "c": "#867666",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-orpheus.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-orpheus",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Orpheus",
+   "tone": null,
+   "hex": "#847567",
+   "palette": [
+    {
+     "c": "#615245",
+     "w": 0.404
+    },
+    {
+     "c": "#68594b",
+     "w": 0.319
+    },
+    {
+     "c": "#d8c8b5",
+     "w": 0.103
+    },
+    {
+     "c": "#5a4c3e",
+     "w": 0.102
+    },
+    {
+     "c": "#b8a795",
+     "w": 0.037
+    },
+    {
+     "c": "#867666",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-orpheus.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-silver-birch",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Silver Birch",
+   "tone": null,
+   "hex": "#c6bfba",
+   "palette": [
+    {
+     "c": "#c2bbb5",
+     "w": 0.322
+    },
+    {
+     "c": "#bab2ac",
+     "w": 0.268
+    },
+    {
+     "c": "#eae5e2",
+     "w": 0.131
+    },
+    {
+     "c": "#cdc6c1",
+     "w": 0.129
+    },
+    {
+     "c": "#afa7a1",
+     "w": 0.119
+    },
+    {
+     "c": "#9d958f",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-silver-birch.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-silver-birch",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Silver Birch",
+   "tone": null,
+   "hex": "#c6bfba",
+   "palette": [
+    {
+     "c": "#c2bbb5",
+     "w": 0.322
+    },
+    {
+     "c": "#bab2ac",
+     "w": 0.268
+    },
+    {
+     "c": "#eae5e2",
+     "w": 0.131
+    },
+    {
+     "c": "#cdc6c1",
+     "w": 0.129
+    },
+    {
+     "c": "#afa7a1",
+     "w": 0.119
+    },
+    {
+     "c": "#9d958f",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-silver-birch.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-bluegum",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Bluegum",
+   "tone": null,
+   "hex": "#81746b",
+   "palette": [
+    {
+     "c": "#585254",
+     "w": 0.233
+    },
+    {
+     "c": "#5c585c",
+     "w": 0.232
+    },
+    {
+     "c": "#625752",
+     "w": 0.222
+    },
+    {
+     "c": "#655e60",
+     "w": 0.169
+    },
+    {
+     "c": "#544d4a",
+     "w": 0.119
+    },
+    {
+     "c": "#756255",
+     "w": 0.025
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-bluegum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-bluegum",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Bluegum",
+   "tone": null,
+   "hex": "#81746b",
+   "palette": [
+    {
+     "c": "#585254",
+     "w": 0.233
+    },
+    {
+     "c": "#5c585c",
+     "w": 0.232
+    },
+    {
+     "c": "#625752",
+     "w": 0.222
+    },
+    {
+     "c": "#655e60",
+     "w": 0.169
+    },
+    {
+     "c": "#544d4a",
+     "w": 0.119
+    },
+    {
+     "c": "#756255",
+     "w": 0.025
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-bluegum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-blackbutt",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Blackbutt",
+   "tone": null,
+   "hex": "#83766f",
+   "palette": [
+    {
+     "c": "#605554",
+     "w": 0.3
+    },
+    {
+     "c": "#5b504e",
+     "w": 0.247
+    },
+    {
+     "c": "#665b59",
+     "w": 0.219
+    },
+    {
+     "c": "#64564e",
+     "w": 0.088
+    },
+    {
+     "c": "#70625f",
+     "w": 0.081
+    },
+    {
+     "c": "#534844",
+     "w": 0.066
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-blackbutt.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-blackbutt",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range A",
+   "name": "Blackbutt",
+   "tone": null,
+   "hex": "#83766f",
+   "palette": [
+    {
+     "c": "#605554",
+     "w": 0.3
+    },
+    {
+     "c": "#5b504e",
+     "w": 0.247
+    },
+    {
+     "c": "#665b59",
+     "w": 0.219
+    },
+    {
+     "c": "#64564e",
+     "w": 0.088
+    },
+    {
+     "c": "#70625f",
+     "w": 0.081
+    },
+    {
+     "c": "#534844",
+     "w": 0.066
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-blackbutt.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-silver",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Silver",
+   "tone": null,
+   "hex": "#d7c8ba",
+   "palette": [
+    {
+     "c": "#d2c0b2",
+     "w": 0.287
+    },
+    {
+     "c": "#d5c5b7",
+     "w": 0.287
+    },
+    {
+     "c": "#d9cabd",
+     "w": 0.183
+    },
+    {
+     "c": "#dfd4c8",
+     "w": 0.133
+    },
+    {
+     "c": "#ccbbad",
+     "w": 0.1
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-silver.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-silver",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Silver",
+   "tone": null,
+   "hex": "#d7c8ba",
+   "palette": [
+    {
+     "c": "#d2c0b2",
+     "w": 0.287
+    },
+    {
+     "c": "#d5c5b7",
+     "w": 0.287
+    },
+    {
+     "c": "#d9cabd",
+     "w": 0.183
+    },
+    {
+     "c": "#dfd4c8",
+     "w": 0.133
+    },
+    {
+     "c": "#ccbbad",
+     "w": 0.1
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-silver.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-chiffon",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Chiffon",
+   "tone": null,
+   "hex": "#9f968e",
+   "palette": [
+    {
+     "c": "#8e857e",
+     "w": 0.434
+    },
+    {
+     "c": "#857d75",
+     "w": 0.21
+    },
+    {
+     "c": "#978d85",
+     "w": 0.161
+    },
+    {
+     "c": "#cfc3b9",
+     "w": 0.1
+    },
+    {
+     "c": "#e3dbd3",
+     "w": 0.054
+    },
+    {
+     "c": "#a89e95",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-chiffon.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-chiffon",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Chiffon",
+   "tone": null,
+   "hex": "#9f968e",
+   "palette": [
+    {
+     "c": "#8e857e",
+     "w": 0.434
+    },
+    {
+     "c": "#857d75",
+     "w": 0.21
+    },
+    {
+     "c": "#978d85",
+     "w": 0.161
+    },
+    {
+     "c": "#cfc3b9",
+     "w": 0.1
+    },
+    {
+     "c": "#e3dbd3",
+     "w": 0.054
+    },
+    {
+     "c": "#a89e95",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-chiffon.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-pepper",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Pepper",
+   "tone": null,
+   "hex": "#897262",
+   "palette": [
+    {
+     "c": "#6e5444",
+     "w": 0.21
+    },
+    {
+     "c": "#745949",
+     "w": 0.203
+    },
+    {
+     "c": "#826654",
+     "w": 0.203
+    },
+    {
+     "c": "#7b5f4e",
+     "w": 0.198
+    },
+    {
+     "c": "#694f3f",
+     "w": 0.149
+    },
+    {
+     "c": "#877161",
+     "w": 0.036
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-pepper.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-pepper",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Pepper",
+   "tone": null,
+   "hex": "#897262",
+   "palette": [
+    {
+     "c": "#6e5444",
+     "w": 0.21
+    },
+    {
+     "c": "#745949",
+     "w": 0.203
+    },
+    {
+     "c": "#826654",
+     "w": 0.203
+    },
+    {
+     "c": "#7b5f4e",
+     "w": 0.198
+    },
+    {
+     "c": "#694f3f",
+     "w": 0.149
+    },
+    {
+     "c": "#877161",
+     "w": 0.036
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-pepper.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-dove",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Dove",
+   "tone": null,
+   "hex": "#d7d4cf",
+   "palette": [
+    {
+     "c": "#d7d5d0",
+     "w": 0.304
+    },
+    {
+     "c": "#e1ded9",
+     "w": 0.258
+    },
+    {
+     "c": "#cecbc6",
+     "w": 0.233
+    },
+    {
+     "c": "#edebe6",
+     "w": 0.091
+    },
+    {
+     "c": "#bdbbb6",
+     "w": 0.072
+    },
+    {
+     "c": "#a4a19c",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-dove.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-dove",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Dove",
+   "tone": null,
+   "hex": "#d7d4cf",
+   "palette": [
+    {
+     "c": "#d7d5d0",
+     "w": 0.304
+    },
+    {
+     "c": "#e1ded9",
+     "w": 0.258
+    },
+    {
+     "c": "#cecbc6",
+     "w": 0.233
+    },
+    {
+     "c": "#edebe6",
+     "w": 0.091
+    },
+    {
+     "c": "#bdbbb6",
+     "w": 0.072
+    },
+    {
+     "c": "#a4a19c",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-dove.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-canvas",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Canvas",
+   "tone": null,
+   "hex": "#aca79f",
+   "palette": [
+    {
+     "c": "#a6a199",
+     "w": 0.373
+    },
+    {
+     "c": "#9f9991",
+     "w": 0.268
+    },
+    {
+     "c": "#b0aba4",
+     "w": 0.193
+    },
+    {
+     "c": "#938d86",
+     "w": 0.081
+    },
+    {
+     "c": "#cfcbc4",
+     "w": 0.05
+    },
+    {
+     "c": "#ece9e4",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-canvas.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-canvas",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Canvas",
+   "tone": null,
+   "hex": "#aca79f",
+   "palette": [
+    {
+     "c": "#a6a199",
+     "w": 0.373
+    },
+    {
+     "c": "#9f9991",
+     "w": 0.268
+    },
+    {
+     "c": "#b0aba4",
+     "w": 0.193
+    },
+    {
+     "c": "#938d86",
+     "w": 0.081
+    },
+    {
+     "c": "#cfcbc4",
+     "w": 0.05
+    },
+    {
+     "c": "#ece9e4",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-canvas.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-oatmeal",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Oatmeal",
+   "tone": null,
+   "hex": "#d3cdc3",
+   "palette": [
+    {
+     "c": "#d4cdc3",
+     "w": 0.34
+    },
+    {
+     "c": "#cac3b8",
+     "w": 0.265
+    },
+    {
+     "c": "#dfd9d0",
+     "w": 0.211
+    },
+    {
+     "c": "#bbb4ab",
+     "w": 0.095
+    },
+    {
+     "c": "#f3efea",
+     "w": 0.054
+    },
+    {
+     "c": "#a29c94",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-oatmeal.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-oatmeal",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Oatmeal",
+   "tone": null,
+   "hex": "#d3cdc3",
+   "palette": [
+    {
+     "c": "#d4cdc3",
+     "w": 0.34
+    },
+    {
+     "c": "#cac3b8",
+     "w": 0.265
+    },
+    {
+     "c": "#dfd9d0",
+     "w": 0.211
+    },
+    {
+     "c": "#bbb4ab",
+     "w": 0.095
+    },
+    {
+     "c": "#f3efea",
+     "w": 0.054
+    },
+    {
+     "c": "#a29c94",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-oatmeal.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-cc-austral-natural-linen",
+   "region": "nsw-cc",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Natural Linen",
+   "tone": null,
+   "hex": "#c6bfb4",
+   "palette": [
+    {
+     "c": "#c0b8ac",
+     "w": 0.304
+    },
+    {
+     "c": "#cbc4b8",
+     "w": 0.252
+    },
+    {
+     "c": "#b5aca0",
+     "w": 0.214
+    },
+    {
+     "c": "#d8d1c6",
+     "w": 0.115
+    },
+    {
+     "c": "#9f988d",
+     "w": 0.066
+    },
+    {
+     "c": "#ede9e1",
+     "w": 0.049
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-natural-linen.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-austral-natural-linen",
+   "region": "nsw-syd",
+   "supplier": "Austral",
+   "range": "Range B",
+   "name": "Natural Linen",
+   "tone": null,
+   "hex": "#c6bfb4",
+   "palette": [
+    {
+     "c": "#c0b8ac",
+     "w": 0.304
+    },
+    {
+     "c": "#cbc4b8",
+     "w": 0.252
+    },
+    {
+     "c": "#b5aca0",
+     "w": 0.214
+    },
+    {
+     "c": "#d8d1c6",
+     "w": 0.115
+    },
+    {
+     "c": "#9f988d",
+     "w": 0.066
+    },
+    {
+     "c": "#ede9e1",
+     "w": 0.049
+    }
+   ],
+   "img": "swatches/brick-nsw-austral-natural-linen.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-fresh-white",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Fresh White",
+   "tone": null,
+   "hex": "#e4dbcf",
+   "palette": [
+    {
+     "c": "#e8e0d6",
+     "w": 0.374
+    },
+    {
+     "c": "#ece4db",
+     "w": 0.23
+    },
+    {
+     "c": "#e3dbd0",
+     "w": 0.185
+    },
+    {
+     "c": "#ddd2c2",
+     "w": 0.085
+    },
+    {
+     "c": "#d4c6b3",
+     "w": 0.085
+    },
+    {
+     "c": "#c3b3a0",
+     "w": 0.041
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-fresh-white.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-breeze",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Breeze",
+   "tone": null,
+   "hex": "#beb6ae",
+   "palette": [
+    {
+     "c": "#b8b3ad",
+     "w": 0.376
+    },
+    {
+     "c": "#b5aea6",
+     "w": 0.23
+    },
+    {
+     "c": "#bfb8b2",
+     "w": 0.224
+    },
+    {
+     "c": "#d7cabc",
+     "w": 0.093
+    },
+    {
+     "c": "#ada49b",
+     "w": 0.061
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-breeze.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sculpted-grey",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sculpted Grey",
+   "tone": null,
+   "hex": "#baac9f",
+   "palette": [
+    {
+     "c": "#b3a498",
+     "w": 0.401
+    },
+    {
+     "c": "#ad9e92",
+     "w": 0.246
+    },
+    {
+     "c": "#baab9f",
+     "w": 0.152
+    },
+    {
+     "c": "#dcd0c2",
+     "w": 0.098
+    },
+    {
+     "c": "#ccbfb2",
+     "w": 0.065
+    },
+    {
+     "c": "#a59588",
+     "w": 0.037
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sculpted-grey.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-lightning",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Lightning",
+   "tone": null,
+   "hex": "#aeaaa6",
+   "palette": [
+    {
+     "c": "#aaa6a3",
+     "w": 0.287
+    },
+    {
+     "c": "#afaba7",
+     "w": 0.257
+    },
+    {
+     "c": "#a6a29e",
+     "w": 0.236
+    },
+    {
+     "c": "#b7b4af",
+     "w": 0.093
+    },
+    {
+     "c": "#a09c98",
+     "w": 0.075
+    },
+    {
+     "c": "#c4c1ba",
+     "w": 0.053
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-lightning.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-maidstone-blend",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Maidstone Blend",
+   "tone": null,
+   "hex": "#bb947d",
+   "palette": [
+    {
+     "c": "#c28a6a",
+     "w": 0.285
+    },
+    {
+     "c": "#c4987d",
+     "w": 0.224
+    },
+    {
+     "c": "#ae8067",
+     "w": 0.212
+    },
+    {
+     "c": "#8e715e",
+     "w": 0.123
+    },
+    {
+     "c": "#a76951",
+     "w": 0.11
+    },
+    {
+     "c": "#735846",
+     "w": 0.045
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-maidstone-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-graphite",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Graphite",
+   "tone": null,
+   "hex": "#a4886d",
+   "palette": [
+    {
+     "c": "#9e7f63",
+     "w": 0.305
+    },
+    {
+     "c": "#98785c",
+     "w": 0.265
+    },
+    {
+     "c": "#a4866b",
+     "w": 0.207
+    },
+    {
+     "c": "#907155",
+     "w": 0.134
+    },
+    {
+     "c": "#ab9279",
+     "w": 0.071
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-graphite.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-manchester-blend",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Manchester Blend",
+   "tone": null,
+   "hex": "#bd9279",
+   "palette": [
+    {
+     "c": "#bf8565",
+     "w": 0.268
+    },
+    {
+     "c": "#c79677",
+     "w": 0.23
+    },
+    {
+     "c": "#b1684b",
+     "w": 0.205
+    },
+    {
+     "c": "#a47660",
+     "w": 0.141
+    },
+    {
+     "c": "#b29078",
+     "w": 0.106
+    },
+    {
+     "c": "#845944",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-manchester-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-bedford-blend",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Bedford Blend",
+   "tone": null,
+   "hex": "#bf937b",
+   "palette": [
+    {
+     "c": "#c4987d",
+     "w": 0.256
+    },
+    {
+     "c": "#b8886e",
+     "w": 0.177
+    },
+    {
+     "c": "#cfa58b",
+     "w": 0.156
+    },
+    {
+     "c": "#aa725b",
+     "w": 0.156
+    },
+    {
+     "c": "#9e5d43",
+     "w": 0.145
+    },
+    {
+     "c": "#e2c9b2",
+     "w": 0.11
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-bedford-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-fossil",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Fossil",
+   "tone": null,
+   "hex": "#91755d",
+   "palette": [
+    {
+     "c": "#7f5b40",
+     "w": 0.353
+    },
+    {
+     "c": "#856247",
+     "w": 0.282
+    },
+    {
+     "c": "#765338",
+     "w": 0.167
+    },
+    {
+     "c": "#8a6a51",
+     "w": 0.124
+    },
+    {
+     "c": "#927760",
+     "w": 0.051
+    },
+    {
+     "c": "#624027",
+     "w": 0.024
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-fossil.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-pilbara",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Pilbara",
+   "tone": null,
+   "hex": "#b3694f",
+   "palette": [
+    {
+     "c": "#a84614",
+     "w": 0.389
+    },
+    {
+     "c": "#b04d1c",
+     "w": 0.218
+    },
+    {
+     "c": "#9f3e0d",
+     "w": 0.202
+    },
+    {
+     "c": "#9d4922",
+     "w": 0.1
+    },
+    {
+     "c": "#a85d3c",
+     "w": 0.052
+    },
+    {
+     "c": "#b6765b",
+     "w": 0.04
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-pilbara.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-dorset",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Dorset",
+   "tone": null,
+   "hex": "#be8b7a",
+   "palette": [
+    {
+     "c": "#bd7b65",
+     "w": 0.343
+    },
+    {
+     "c": "#b06c5c",
+     "w": 0.243
+    },
+    {
+     "c": "#c38b74",
+     "w": 0.218
+    },
+    {
+     "c": "#d1c7bd",
+     "w": 0.08
+    },
+    {
+     "c": "#c0a79a",
+     "w": 0.077
+    },
+    {
+     "c": "#93584a",
+     "w": 0.039
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-dorset.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-birmingham-blend",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Birmingham Blend",
+   "tone": null,
+   "hex": "#be937c",
+   "palette": [
+    {
+     "c": "#c59577",
+     "w": 0.27
+    },
+    {
+     "c": "#b2876d",
+     "w": 0.193
+    },
+    {
+     "c": "#b77255",
+     "w": 0.162
+    },
+    {
+     "c": "#987460",
+     "w": 0.153
+    },
+    {
+     "c": "#a86347",
+     "w": 0.126
+    },
+    {
+     "c": "#785c4a",
+     "w": 0.095
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-birmingham-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-surrey",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Surrey",
+   "tone": null,
+   "hex": "#a17e6e",
+   "palette": [
+    {
+     "c": "#936854",
+     "w": 0.224
+    },
+    {
+     "c": "#9b715d",
+     "w": 0.211
+    },
+    {
+     "c": "#895d4b",
+     "w": 0.187
+    },
+    {
+     "c": "#795245",
+     "w": 0.166
+    },
+    {
+     "c": "#a57b67",
+     "w": 0.126
+    },
+    {
+     "c": "#68453b",
+     "w": 0.086
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-surrey.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-gravel",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Gravel",
+   "tone": null,
+   "hex": "#9f7f74",
+   "palette": [
+    {
+     "c": "#8d6050",
+     "w": 0.3
+    },
+    {
+     "c": "#976858",
+     "w": 0.258
+    },
+    {
+     "c": "#845848",
+     "w": 0.183
+    },
+    {
+     "c": "#9f7364",
+     "w": 0.166
+    },
+    {
+     "c": "#a4867a",
+     "w": 0.049
+    },
+    {
+     "c": "#764a3b",
+     "w": 0.044
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-gravel.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-red-gum",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Red Gum",
+   "tone": null,
+   "hex": "#a26c57",
+   "palette": [
+    {
+     "c": "#8d4e3c",
+     "w": 0.271
+    },
+    {
+     "c": "#7c4336",
+     "w": 0.208
+    },
+    {
+     "c": "#a0583e",
+     "w": 0.207
+    },
+    {
+     "c": "#b66746",
+     "w": 0.131
+    },
+    {
+     "c": "#673b33",
+     "w": 0.127
+    },
+    {
+     "c": "#9a6b56",
+     "w": 0.056
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-red-gum.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sheffield-blend",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sheffield Blend",
+   "tone": null,
+   "hex": "#9f7b67",
+   "palette": [
+    {
+     "c": "#846855",
+     "w": 0.322
+    },
+    {
+     "c": "#937763",
+     "w": 0.199
+    },
+    {
+     "c": "#af6648",
+     "w": 0.186
+    },
+    {
+     "c": "#725846",
+     "w": 0.138
+    },
+    {
+     "c": "#e1cbb5",
+     "w": 0.096
+    },
+    {
+     "c": "#baa18c",
+     "w": 0.059
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sheffield-blend.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sinai",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Sinai",
+   "tone": null,
+   "hex": "#967e60",
+   "palette": [
+    {
+     "c": "#9e8467",
+     "w": 0.325
+    },
+    {
+     "c": "#92795d",
+     "w": 0.261
+    },
+    {
+     "c": "#ac9171",
+     "w": 0.172
+    },
+    {
+     "c": "#806c51",
+     "w": 0.132
+    },
+    {
+     "c": "#695838",
+     "w": 0.105
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sinai.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-gibson",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Gibson",
+   "tone": null,
+   "hex": "#876f59",
+   "palette": [
+    {
+     "c": "#7a5c43",
+     "w": 0.368
+    },
+    {
+     "c": "#87684e",
+     "w": 0.246
+    },
+    {
+     "c": "#6c5039",
+     "w": 0.216
+    },
+    {
+     "c": "#97826c",
+     "w": 0.072
+    },
+    {
+     "c": "#ddd0be",
+     "w": 0.063
+    },
+    {
+     "c": "#b7a895",
+     "w": 0.035
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-gibson.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-zephyr",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Zephyr",
+   "tone": null,
+   "hex": "#7f7d7a",
+   "palette": [
+    {
+     "c": "#5d5d5d",
+     "w": 0.319
+    },
+    {
+     "c": "#585757",
+     "w": 0.246
+    },
+    {
+     "c": "#646363",
+     "w": 0.222
+    },
+    {
+     "c": "#50504f",
+     "w": 0.125
+    },
+    {
+     "c": "#716f6c",
+     "w": 0.054
+    },
+    {
+     "c": "#8a8681",
+     "w": 0.033
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-zephyr.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-whirlwind",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Whirlwind",
+   "tone": null,
+   "hex": "#898881",
+   "palette": [
+    {
+     "c": "#797974",
+     "w": 0.37
+    },
+    {
+     "c": "#6f6f6a",
+     "w": 0.269
+    },
+    {
+     "c": "#85847f",
+     "w": 0.131
+    },
+    {
+     "c": "#cbc7bd",
+     "w": 0.093
+    },
+    {
+     "c": "#60605a",
+     "w": 0.071
+    },
+    {
+     "c": "#aca9a0",
+     "w": 0.067
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-whirlwind.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-stone",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Stone",
+   "tone": null,
+   "hex": "#9c9699",
+   "palette": [
+    {
+     "c": "#928889",
+     "w": 0.29
+    },
+    {
+     "c": "#978d8f",
+     "w": 0.259
+    },
+    {
+     "c": "#8d8382",
+     "w": 0.226
+    },
+    {
+     "c": "#9b9497",
+     "w": 0.113
+    },
+    {
+     "c": "#857b79",
+     "w": 0.068
+    },
+    {
+     "c": "#a0a0a6",
+     "w": 0.044
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-stone.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-thunder",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Thunder",
+   "tone": null,
+   "hex": "#7a7571",
+   "palette": [
+    {
+     "c": "#4f4a48",
+     "w": 0.378
+    },
+    {
+     "c": "#4a4544",
+     "w": 0.242
+    },
+    {
+     "c": "#544f4e",
+     "w": 0.241
+    },
+    {
+     "c": "#443f3d",
+     "w": 0.073
+    },
+    {
+     "c": "#605a57",
+     "w": 0.041
+    },
+    {
+     "c": "#79736e",
+     "w": 0.024
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-thunder.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-monsoon",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Monsoon",
+   "tone": null,
+   "hex": "#817a78",
+   "palette": [
+    {
+     "c": "#514848",
+     "w": 0.297
+    },
+    {
+     "c": "#564d4d",
+     "w": 0.286
+    },
+    {
+     "c": "#5c5353",
+     "w": 0.175
+    },
+    {
+     "c": "#4b4241",
+     "w": 0.128
+    },
+    {
+     "c": "#645c5b",
+     "w": 0.083
+    },
+    {
+     "c": "#78706c",
+     "w": 0.03
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-monsoon.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-ocean-mist-double-height",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Ocean Mist - Double Height",
+   "tone": null,
+   "hex": "#ded1c4",
+   "palette": [
+    {
+     "c": "#e0d6ca",
+     "w": 0.246
+    },
+    {
+     "c": "#dbcdbe",
+     "w": 0.199
+    },
+    {
+     "c": "#e5dcd3",
+     "w": 0.192
+    },
+    {
+     "c": "#d5c4b4",
+     "w": 0.179
+    },
+    {
+     "c": "#f3e3d2",
+     "w": 0.108
+    },
+    {
+     "c": "#c9b6a5",
+     "w": 0.076
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-ocean-mist-double-height.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": true
+  },
+  {
+   "id": "nsw-syd-pgh-perisher-double-height",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Standard",
+   "name": "Perisher - Double Height",
+   "tone": null,
+   "hex": "#d4ccbf",
+   "palette": [
+    {
+     "c": "#d2cbbb",
+     "w": 0.31
+    },
+    {
+     "c": "#d6d0c2",
+     "w": 0.256
+    },
+    {
+     "c": "#cdc4b4",
+     "w": 0.195
+    },
+    {
+     "c": "#dad4c8",
+     "w": 0.158
+    },
+    {
+     "c": "#c1b6a6",
+     "w": 0.049
+    },
+    {
+     "c": "#a69c8d",
+     "w": 0.032
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-perisher-double-height.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": true
+  },
+  {
+   "id": "nsw-syd-pgh-washed-white",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Washed White",
+   "tone": null,
+   "hex": "#e8e3db",
+   "palette": [
+    {
+     "c": "#e9e6e0",
+     "w": 0.257
+    },
+    {
+     "c": "#e7e2dc",
+     "w": 0.217
+    },
+    {
+     "c": "#e5dfd6",
+     "w": 0.176
+    },
+    {
+     "c": "#ebe8e3",
+     "w": 0.174
+    },
+    {
+     "c": "#e1dad1",
+     "w": 0.126
+    },
+    {
+     "c": "#d9d2c8",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-washed-white.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-montauk",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Montauk",
+   "tone": null,
+   "hex": "#d9d4c9",
+   "palette": [
+    {
+     "c": "#dcd7cd",
+     "w": 0.339
+    },
+    {
+     "c": "#d8d3c8",
+     "w": 0.326
+    },
+    {
+     "c": "#dfdbd3",
+     "w": 0.167
+    },
+    {
+     "c": "#d3cec2",
+     "w": 0.136
+    },
+    {
+     "c": "#c7c1b3",
+     "w": 0.027
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-montauk.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sandalwood",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sandalwood",
+   "tone": null,
+   "hex": "#d3c5bf",
+   "palette": [
+    {
+     "c": "#d0c1bb",
+     "w": 0.387
+    },
+    {
+     "c": "#ccbdb7",
+     "w": 0.301
+    },
+    {
+     "c": "#d4c6c1",
+     "w": 0.12
+    },
+    {
+     "c": "#e7deda",
+     "w": 0.084
+    },
+    {
+     "c": "#c6b7b1",
+     "w": 0.058
+    },
+    {
+     "c": "#e0d5d1",
+     "w": 0.05
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sandalwood.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-frost",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Frost",
+   "tone": null,
+   "hex": "#e0d0bb",
+   "palette": [
+    {
+     "c": "#e4d4be",
+     "w": 0.39
+    },
+    {
+     "c": "#dfceb7",
+     "w": 0.291
+    },
+    {
+     "c": "#e8d9c4",
+     "w": 0.19
+    },
+    {
+     "c": "#d3c2ad",
+     "w": 0.081
+    },
+    {
+     "c": "#baaa97",
+     "w": 0.043
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-frost.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-ocean-mist",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Ocean Mist",
+   "tone": null,
+   "hex": "#d7cec3",
+   "palette": [
+    {
+     "c": "#dad3c8",
+     "w": 0.315
+    },
+    {
+     "c": "#d5ccc0",
+     "w": 0.245
+    },
+    {
+     "c": "#dfd8ce",
+     "w": 0.188
+    },
+    {
+     "c": "#d0c2b4",
+     "w": 0.161
+    },
+    {
+     "c": "#c3b4a6",
+     "w": 0.074
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-ocean-mist.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-elkhorn",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Elkhorn",
+   "tone": null,
+   "hex": "#bdaca3",
+   "palette": [
+    {
+     "c": "#bba296",
+     "w": 0.249
+    },
+    {
+     "c": "#c5b1a6",
+     "w": 0.249
+    },
+    {
+     "c": "#cfc2b9",
+     "w": 0.243
+    },
+    {
+     "c": "#a98e82",
+     "w": 0.122
+    },
+    {
+     "c": "#724d45",
+     "w": 0.071
+    },
+    {
+     "c": "#8c6c63",
+     "w": 0.066
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-elkhorn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-rockhampton",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Rockhampton",
+   "tone": null,
+   "hex": "#b9afa1",
+   "palette": [
+    {
+     "c": "#b3a798",
+     "w": 0.281
+    },
+    {
+     "c": "#ada191",
+     "w": 0.256
+    },
+    {
+     "c": "#b9afa1",
+     "w": 0.17
+    },
+    {
+     "c": "#d6cfc2",
+     "w": 0.122
+    },
+    {
+     "c": "#a69989",
+     "w": 0.096
+    },
+    {
+     "c": "#c5bdb0",
+     "w": 0.075
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-rockhampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sea-fossil",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sea Fossil",
+   "tone": null,
+   "hex": "#a79e98",
+   "palette": [
+    {
+     "c": "#a29993",
+     "w": 0.29
+    },
+    {
+     "c": "#978e88",
+     "w": 0.248
+    },
+    {
+     "c": "#8a8079",
+     "w": 0.179
+    },
+    {
+     "c": "#aea5a1",
+     "w": 0.129
+    },
+    {
+     "c": "#786e68",
+     "w": 0.088
+    },
+    {
+     "c": "#615652",
+     "w": 0.065
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sea-fossil.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-sage",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Sage",
+   "tone": null,
+   "hex": "#a7a39a",
+   "palette": [
+    {
+     "c": "#97958a",
+     "w": 0.381
+    },
+    {
+     "c": "#9d9b90",
+     "w": 0.328
+    },
+    {
+     "c": "#908e83",
+     "w": 0.113
+    },
+    {
+     "c": "#e6e1d8",
+     "w": 0.087
+    },
+    {
+     "c": "#b0aca3",
+     "w": 0.05
+    },
+    {
+     "c": "#d1ccc3",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-sage.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-truffle",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Truffle",
+   "tone": null,
+   "hex": "#887b72",
+   "palette": [
+    {
+     "c": "#6c605d",
+     "w": 0.376
+    },
+    {
+     "c": "#756966",
+     "w": 0.301
+    },
+    {
+     "c": "#635854",
+     "w": 0.146
+    },
+    {
+     "c": "#dbcdb9",
+     "w": 0.087
+    },
+    {
+     "c": "#b7a895",
+     "w": 0.055
+    },
+    {
+     "c": "#8d7d71",
+     "w": 0.036
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-truffle.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-mitchell",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Mitchell",
+   "tone": null,
+   "hex": "#9b8471",
+   "palette": [
+    {
+     "c": "#80614b",
+     "w": 0.243
+    },
+    {
+     "c": "#7b5b46",
+     "w": 0.239
+    },
+    {
+     "c": "#77553f",
+     "w": 0.203
+    },
+    {
+     "c": "#846651",
+     "w": 0.163
+    },
+    {
+     "c": "#714e38",
+     "w": 0.089
+    },
+    {
+     "c": "#896e5b",
+     "w": 0.062
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-mitchell.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-juniper",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Juniper",
+   "tone": null,
+   "hex": "#9b978f",
+   "palette": [
+    {
+     "c": "#87847c",
+     "w": 0.405
+    },
+    {
+     "c": "#8c8a81",
+     "w": 0.304
+    },
+    {
+     "c": "#817e75",
+     "w": 0.122
+    },
+    {
+     "c": "#e2ddd5",
+     "w": 0.114
+    },
+    {
+     "c": "#a39e96",
+     "w": 0.036
+    },
+    {
+     "c": "#bbb6ad",
+     "w": 0.02
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-juniper.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-elderberry",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range A",
+   "name": "Elderberry",
+   "tone": null,
+   "hex": "#8e7166",
+   "palette": [
+    {
+     "c": "#754e41",
+     "w": 0.401
+    },
+    {
+     "c": "#7b5648",
+     "w": 0.238
+    },
+    {
+     "c": "#6e4839",
+     "w": 0.184
+    },
+    {
+     "c": "#e9d5cb",
+     "w": 0.104
+    },
+    {
+     "c": "#937b6f",
+     "w": 0.045
+    },
+    {
+     "c": "#bea79e",
+     "w": 0.028
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-elderberry.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-blackheath",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range B",
+   "name": "Blackheath",
+   "tone": null,
+   "hex": "#987f6e",
+   "palette": [
+    {
+     "c": "#7f6251",
+     "w": 0.256
+    },
+    {
+     "c": "#8e6b56",
+     "w": 0.177
+    },
+    {
+     "c": "#836e60",
+     "w": 0.171
+    },
+    {
+     "c": "#957965",
+     "w": 0.152
+    },
+    {
+     "c": "#6e5b4e",
+     "w": 0.13
+    },
+    {
+     "c": "#706761",
+     "w": 0.114
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-blackheath.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-leura",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range B",
+   "name": "Leura",
+   "tone": null,
+   "hex": "#9e8373",
+   "palette": [
+    {
+     "c": "#8f6855",
+     "w": 0.247
+    },
+    {
+     "c": "#7d5a4c",
+     "w": 0.242
+    },
+    {
+     "c": "#826a61",
+     "w": 0.218
+    },
+    {
+     "c": "#96796a",
+     "w": 0.144
+    },
+    {
+     "c": "#a6664d",
+     "w": 0.076
+    },
+    {
+     "c": "#904b3b",
+     "w": 0.072
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-leura.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-matterhorn",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Matterhorn",
+   "tone": null,
+   "hex": "#c6bbaf",
+   "palette": [
+    {
+     "c": "#c4baaf",
+     "w": 0.352
+    },
+    {
+     "c": "#bdb3a7",
+     "w": 0.322
+    },
+    {
+     "c": "#ccc2b7",
+     "w": 0.159
+    },
+    {
+     "c": "#e4d7c9",
+     "w": 0.088
+    },
+    {
+     "c": "#b2a699",
+     "w": 0.067
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-matterhorn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-olympus",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Olympus",
+   "tone": null,
+   "hex": "#989088",
+   "palette": [
+    {
+     "c": "#817a75",
+     "w": 0.386
+    },
+    {
+     "c": "#88817c",
+     "w": 0.265
+    },
+    {
+     "c": "#7c746d",
+     "w": 0.184
+    },
+    {
+     "c": "#dfd2c4",
+     "w": 0.095
+    },
+    {
+     "c": "#beb2a5",
+     "w": 0.036
+    },
+    {
+     "c": "#a2968a",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-olympus.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-urban-blue",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Urban Blue",
+   "tone": null,
+   "hex": "#7d7a77",
+   "palette": [
+    {
+     "c": "#55585d",
+     "w": 0.407
+    },
+    {
+     "c": "#636569",
+     "w": 0.243
+    },
+    {
+     "c": "#4b4c4f",
+     "w": 0.182
+    },
+    {
+     "c": "#e1d4c6",
+     "w": 0.087
+    },
+    {
+     "c": "#b8ada2",
+     "w": 0.042
+    },
+    {
+     "c": "#8b8279",
+     "w": 0.039
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-urban-blue.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-espresso",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Espresso",
+   "tone": null,
+   "hex": "#777168",
+   "palette": [
+    {
+     "c": "#3e3e3e",
+     "w": 0.436
+    },
+    {
+     "c": "#383837",
+     "w": 0.259
+    },
+    {
+     "c": "#454544",
+     "w": 0.232
+    },
+    {
+     "c": "#867f73",
+     "w": 0.029
+    },
+    {
+     "c": "#645e52",
+     "w": 0.022
+    },
+    {
+     "c": "#a2998a",
+     "w": 0.02
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-espresso.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-vino",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Vino",
+   "tone": null,
+   "hex": "#7f7069",
+   "palette": [
+    {
+     "c": "#534242",
+     "w": 0.276
+    },
+    {
+     "c": "#4c3c3c",
+     "w": 0.276
+    },
+    {
+     "c": "#594848",
+     "w": 0.234
+    },
+    {
+     "c": "#463736",
+     "w": 0.147
+    },
+    {
+     "c": "#67564f",
+     "w": 0.052
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-vino.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-chocolatto",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Chocolatto",
+   "tone": null,
+   "hex": "#816c62",
+   "palette": [
+    {
+     "c": "#61483e",
+     "w": 0.348
+    },
+    {
+     "c": "#674e44",
+     "w": 0.25
+    },
+    {
+     "c": "#5c4339",
+     "w": 0.225
+    },
+    {
+     "c": "#71584e",
+     "w": 0.068
+    },
+    {
+     "c": "#553c32",
+     "w": 0.067
+    },
+    {
+     "c": "#8c776b",
+     "w": 0.042
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-chocolatto.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-apollo",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "Range C",
+   "name": "Apollo",
+   "tone": null,
+   "hex": "#686258",
+   "palette": [
+    {
+     "c": "#31302c",
+     "w": 0.293
+    },
+    {
+     "c": "#2b2b26",
+     "w": 0.27
+    },
+    {
+     "c": "#383733",
+     "w": 0.203
+    },
+    {
+     "c": "#252520",
+     "w": 0.137
+    },
+    {
+     "c": "#46423b",
+     "w": 0.062
+    },
+    {
+     "c": "#645a4d",
+     "w": 0.034
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-apollo.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-brooklyn",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Brooklyn",
+   "tone": null,
+   "hex": "#987f74",
+   "palette": [
+    {
+     "c": "#684741",
+     "w": 0.237
+    },
+    {
+     "c": "#775750",
+     "w": 0.194
+    },
+    {
+     "c": "#8a6b63",
+     "w": 0.157
+    },
+    {
+     "c": "#5b3b34",
+     "w": 0.146
+    },
+    {
+     "c": "#baa094",
+     "w": 0.137
+    },
+    {
+     "c": "#a08379",
+     "w": 0.128
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-brooklyn.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-east-hampton",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "East Hampton",
+   "tone": null,
+   "hex": "#d9b99c",
+   "palette": [
+    {
+     "c": "#e2c6a9",
+     "w": 0.309
+    },
+    {
+     "c": "#e7cdb2",
+     "w": 0.232
+    },
+    {
+     "c": "#ddbd9e",
+     "w": 0.217
+    },
+    {
+     "c": "#d3af90",
+     "w": 0.131
+    },
+    {
+     "c": "#c1997a",
+     "w": 0.079
+    },
+    {
+     "c": "#a67b5d",
+     "w": 0.031
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-east-hampton.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-chelsea",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Chelsea",
+   "tone": null,
+   "hex": "#bea186",
+   "palette": [
+    {
+     "c": "#b69a80",
+     "w": 0.255
+    },
+    {
+     "c": "#bea78e",
+     "w": 0.229
+    },
+    {
+     "c": "#ae8c71",
+     "w": 0.183
+    },
+    {
+     "c": "#cfb396",
+     "w": 0.142
+    },
+    {
+     "c": "#a47e61",
+     "w": 0.131
+    },
+    {
+     "c": "#98694d",
+     "w": 0.06
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-chelsea.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  },
+  {
+   "id": "nsw-syd-pgh-tribeca",
+   "region": "nsw-syd",
+   "supplier": "PGH",
+   "range": "POA",
+   "name": "Tribeca",
+   "tone": null,
+   "hex": "#ca8f70",
+   "palette": [
+    {
+     "c": "#c96e4b",
+     "w": 0.251
+    },
+    {
+     "c": "#ca987c",
+     "w": 0.176
+    },
+    {
+     "c": "#b66041",
+     "w": 0.164
+    },
+    {
+     "c": "#d8af91",
+     "w": 0.162
+    },
+    {
+     "c": "#c98160",
+     "w": 0.148
+    },
+    {
+     "c": "#954936",
+     "w": 0.1
+    }
+   ],
+   "img": "swatches/brick-nsw-pgh-tribeca.webp",
+   "rec": false,
+   "offWhite": false,
+   "doubleHeight": false
+  }
+ ]
+}

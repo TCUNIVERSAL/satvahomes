@@ -1,0 +1,5528 @@
+{
+ "p27": [],
+ "p28": [
+  {
+   "label": "Bright Chrome Satin Chrome",
+   "x": 733,
+   "y": 299
+  },
+  {
+   "label": "Amelia",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p28-1-amelia.webp",
+   "hex": "#ced1d1",
+   "w": 62,
+   "h": 25
+  },
+  {
+   "label": "Bailey",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p28-2-bailey.webp",
+   "hex": "#eeedef",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Carla",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p28-3-carla.webp",
+   "hex": "#dcdfe0",
+   "w": 57,
+   "h": 25
+  },
+  {
+   "label": "Satin Chrome",
+   "x": 733,
+   "y": 314
+  },
+  {
+   "label": "Florence",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p28-5-florence.webp",
+   "hex": "#e3e3e3",
+   "w": 60,
+   "h": 26
+  },
+  {
+   "label": "Lianna",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p28-6-lianna.webp",
+   "hex": "#d7d9da",
+   "w": 62,
+   "h": 25
+  },
+  {
+   "label": "Olive",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p28-7-olive.webp",
+   "hex": "#f3f4f4",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Sierra",
+   "x": 866,
+   "y": 534,
+   "img": "swatches/int/p28-8-sierra.webp",
+   "hex": "#f5ede5",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Rivera",
+   "x": 1009,
+   "y": 534,
+   "img": "swatches/int/p28-9-rivera.webp",
+   "hex": "#dedddd",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Alba",
+   "x": 1152,
+   "y": 534,
+   "img": "swatches/int/p28-10-alba.webp",
+   "hex": "#e1e1e1",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Bright Chrome Brushed Satin Chrome",
+   "x": 733,
+   "y": 595
+  },
+  {
+   "label": "Brushed Satin Chrome Matte Black",
+   "x": 733,
+   "y": 609
+  },
+  {
+   "label": "Matte Black Satin Brass",
+   "x": 733,
+   "y": 623
+  },
+  {
+   "label": "Matte Black",
+   "x": 866,
+   "y": 634,
+   "img": "swatches/int/p28-14-matte-black.webp",
+   "hex": "#5f5f5f",
+   "w": 40,
+   "h": 40
+  },
+  {
+   "label": "Brushed Satin Chrome",
+   "x": 1009,
+   "y": 634,
+   "img": "swatches/int/p28-15-brushed-satin-chrome.webp",
+   "hex": "#bebfc1",
+   "w": 40,
+   "h": 40
+  },
+  {
+   "label": "Bright Chrome",
+   "x": 1152,
+   "y": 634,
+   "img": "swatches/int/p28-16-bright-chrome.webp",
+   "hex": "#c7c9c9",
+   "w": 40,
+   "h": 40
+  },
+  {
+   "label": "Satin Brass Satin Graphite",
+   "x": 733,
+   "y": 637
+  },
+  {
+   "label": "Satin Graphite",
+   "x": 733,
+   "y": 652
+  },
+  {
+   "label": "Satin Brass",
+   "x": 866,
+   "y": 732,
+   "img": "swatches/int/p28-19-satin-brass.webp",
+   "hex": "#d6ba79",
+   "w": 40,
+   "h": 40
+  },
+  {
+   "label": "Satin Graphite",
+   "x": 1009,
+   "y": 732,
+   "img": "swatches/int/p28-20-satin-graphite.webp",
+   "hex": "#6e6c6a",
+   "w": 40,
+   "h": 40
+  }
+ ],
+ "p29": [
+  {
+   "label": "Magnetic Door Stop",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p29-0-magnetic-door-stop.webp",
+   "hex": "#e1e1e0",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Tube Wall Door Stop",
+   "x": 472,
+   "y": 398,
+   "img": "swatches/int/p29-1-tube-wall-door-stop.webp",
+   "hex": "#d8d8d8",
+   "w": 122,
+   "h": 58
+  },
+  {
+   "label": "Flush Panel",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p29-2-flush-panel.webp",
+   "hex": "#d2d2d4",
+   "w": 60,
+   "h": 140
+  },
+  {
+   "label": "HA4",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p29-3-ha4.webp",
+   "hex": "#d3d3d5",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HA5",
+   "x": 329,
+   "y": 597,
+   "img": "swatches/int/p29-4-ha5.webp",
+   "hex": "#d2d2d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HA40",
+   "x": 472,
+   "y": 597,
+   "img": "swatches/int/p29-5-ha40.webp",
+   "hex": "#d2d2d3",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG6",
+   "x": 186,
+   "y": 795,
+   "img": "swatches/int/p29-6-hag6.webp",
+   "hex": "#d3d3d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG9",
+   "x": 329,
+   "y": 795,
+   "img": "swatches/int/p29-7-hag9.webp",
+   "hex": "#d2d2d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG11",
+   "x": 472,
+   "y": 795,
+   "img": "swatches/int/p29-8-hag11.webp",
+   "hex": "#d1d1d3",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG12",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p29-9-hag12.webp",
+   "hex": "#d1d1d3",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG14",
+   "x": 1009,
+   "y": 398,
+   "img": "swatches/int/p29-10-hag14.webp",
+   "hex": "#d1d1d3",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAG18",
+   "x": 1152,
+   "y": 398,
+   "img": "swatches/int/p29-11-hag18.webp",
+   "hex": "#d3d3d5",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM1",
+   "x": 866,
+   "y": 596,
+   "img": "swatches/int/p29-12-ham1.webp",
+   "hex": "#d2d2d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM1 - Frost Glass",
+   "x": 1009,
+   "y": 596,
+   "img": "swatches/int/p29-13-ham1-frost-glass.webp",
+   "hex": "#cfd7d7",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM4",
+   "x": 1152,
+   "y": 596,
+   "img": "swatches/int/p29-14-ham4.webp",
+   "hex": "#d2d2d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM4 - Frost Glass",
+   "x": 866,
+   "y": 795,
+   "img": "swatches/int/p29-15-ham4-frost-glass.webp",
+   "hex": "#cfd5d6",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM5",
+   "x": 1009,
+   "y": 795,
+   "img": "swatches/int/p29-16-ham5.webp",
+   "hex": "#d2d2d4",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "HAM5 - Frost Glass",
+   "x": 1152,
+   "y": 795,
+   "img": "swatches/int/p29-17-ham5-frost-glass.webp",
+   "hex": "#cfd6d6",
+   "w": 68,
+   "h": 170
+  }
+ ],
+ "p30": [
+  {
+   "label": "LIN1 - Clear Glass",
+   "x": 186,
+   "y": 398,
+   "img": "swatches/int/p30-0-lin1-clear-glass.webp",
+   "hex": "#a59b97",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "LIN1 - Translucent Glass",
+   "x": 329,
+   "y": 398,
+   "img": "swatches/int/p30-1-lin1-translucent-glass.webp",
+   "hex": "#cfcdca",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "LIN10 - Clear Glass Only available in 2040mm high",
+   "x": 472,
+   "y": 398,
+   "img": "swatches/int/p30-2-lin10-clear-glass-only-available-in-2040.webp",
+   "hex": "#aa9992",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "LIN10 - Translucent Glass Only available in 2040mm high",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p30-3-lin10-translucent-glass-only-available-i.webp",
+   "hex": "#cfc5c1",
+   "w": 68,
+   "h": 170
+  },
+  {
+   "label": "FBDU4",
+   "x": 186,
+   "y": 804,
+   "img": "swatches/int/p30-4-fbdu4.webp",
+   "hex": "#c3c3c5",
+   "w": 79,
+   "h": 170
+  },
+  {
+   "label": "Frontier Track",
+   "x": 329,
+   "y": 804,
+   "img": "swatches/int/p30-5-frontier-track.webp",
+   "hex": "#e3e3e3",
+   "w": 227,
+   "h": 164
+  },
+  {
+   "label": "Mirror Sliding Doors",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p30-6-mirror-sliding-doors.webp",
+   "hex": "#c7c4c1",
+   "w": 137,
+   "h": 170
+  },
+  {
+   "label": "White Melamine Towers",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p30-7-white-melamine-towers.webp",
+   "hex": "#a7a4a0",
+   "w": 140,
+   "h": 170
+  },
+  {
+   "label": "Custom Laminate Cabinetry",
+   "x": 863,
+   "y": 786,
+   "img": "swatches/int/p30-8-custom-laminate-cabinetry.webp",
+   "hex": "#878480",
+   "w": 281,
+   "h": 170
+  }
+ ],
+ "p31": [
+  {
+   "label": "Half Splayed",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p31-0-half-splayed.webp",
+   "hex": "#cdc0b4",
+   "w": 34,
+   "h": 71
+  },
+  {
+   "label": "Pencil Round",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p31-1-pencil-round.webp",
+   "hex": "#d2c3b3",
+   "w": 34,
+   "h": 71
+  },
+  {
+   "label": "Single Bevel",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p31-2-single-bevel.webp",
+   "hex": "#d3c5b6",
+   "w": 34,
+   "h": 71
+  },
+  {
+   "label": "75mm Cove",
+   "x": 186,
+   "y": 436,
+   "img": "swatches/int/p31-3-75mm-cove.webp",
+   "hex": "#dddddd",
+   "w": 104,
+   "h": 108
+  },
+  {
+   "label": "Cairo 3 Step",
+   "x": 186,
+   "y": 582,
+   "img": "swatches/int/p31-4-cairo-3-step.webp",
+   "hex": "#e3e3e3",
+   "w": 104,
+   "h": 108
+  },
+  {
+   "label": "75mm Manly",
+   "x": 329,
+   "y": 582,
+   "img": "swatches/int/p31-5-75mm-manly.webp",
+   "hex": "#e3e3e3",
+   "w": 104,
+   "h": 108
+  },
+  {
+   "label": "90mm New York",
+   "x": 472,
+   "y": 582,
+   "img": "swatches/int/p31-6-90mm-new-york.webp",
+   "hex": "#e2e2e2",
+   "w": 104,
+   "h": 108
+  },
+  {
+   "label": "Square Set",
+   "x": 186,
+   "y": 772,
+   "img": "swatches/int/p31-7-square-set.webp",
+   "hex": "#a9a59e",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Hardigroove Cladding",
+   "x": 866,
+   "y": 497,
+   "img": "swatches/int/p31-8-hardigroove-cladding.webp",
+   "hex": "#c3bdb5",
+   "w": 424,
+   "h": 269
+  },
+  {
+   "label": "Dado Rails",
+   "x": 866,
+   "y": 795,
+   "img": "swatches/int/p31-9-dado-rails.webp",
+   "hex": "#73716f",
+   "w": 424,
+   "h": 269
+  }
+ ],
+ "p32": [
+  {
+   "label": "Natural White",
+   "x": 866,
+   "y": 316,
+   "img": "swatches/int/p32-0-natural-white.webp",
+   "hex": "#efede5",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Snowy Mountains Half",
+   "x": 1009,
+   "y": 316,
+   "img": "swatches/int/p32-1-snowy-mountains-half.webp",
+   "hex": "#eceee5",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Whisper White",
+   "x": 1152,
+   "y": 316,
+   "img": "swatches/int/p32-2-whisper-white.webp",
+   "hex": "#eceae0",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Lexicon Quarter",
+   "x": 866,
+   "y": 435,
+   "img": "swatches/int/p32-3-lexicon-quarter.webp",
+   "hex": "#f1f2f1",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Lexicon",
+   "x": 1009,
+   "y": 435,
+   "img": "swatches/int/p32-4-lexicon.webp",
+   "hex": "#e7ebeb",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Terrace White",
+   "x": 1152,
+   "y": 435,
+   "img": "swatches/int/p32-5-terrace-white.webp",
+   "hex": "#dbdbdb",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Rottnest Island",
+   "x": 866,
+   "y": 553,
+   "img": "swatches/int/p32-6-rottnest-island.webp",
+   "hex": "#ddded6",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Silver Tea Set",
+   "x": 1009,
+   "y": 553,
+   "img": "swatches/int/p32-7-silver-tea-set.webp",
+   "hex": "#d5d6d1",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Winter Terrace",
+   "x": 1152,
+   "y": 553,
+   "img": "swatches/int/p32-8-winter-terrace.webp",
+   "hex": "#cfccc0",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Wash & Wear Matt Finish",
+   "x": 733,
+   "y": 635
+  },
+  {
+   "label": "envirO2",
+   "x": 1019,
+   "y": 635
+  }
+ ],
+ "p33": [
+  {
+   "label": "Laminate",
+   "x": 866,
+   "y": 223
+  },
+  {
+   "label": "Engineered Timber",
+   "x": 1087,
+   "y": 223
+  },
+  {
+   "label": "Vinyl Hybrid",
+   "x": 866,
+   "y": 284
+  },
+  {
+   "label": "Carpet",
+   "x": 866,
+   "y": 354
+  },
+  {
+   "label": "Timber-Look Flooring Option",
+   "x": 866,
+   "y": 468
+  },
+  {
+   "label": "Ceramic Floor Tiling Option",
+   "x": 1087,
+   "y": 468
+  },
+  {
+   "label": "Upgraded Carpet with 10mm Foam Underlay",
+   "x": 866,
+   "y": 519
+  }
+ ],
+ "p34": [
+  {
+   "label": "Hamptons Staircase Option",
+   "x": 866,
+   "y": 583,
+   "img": "swatches/int/p34-0-hamptons-staircase-option.webp",
+   "hex": "#c2bdb8",
+   "w": 204,
+   "h": 158
+  },
+  {
+   "label": "Statement Staircase Option or",
+   "x": 1086,
+   "y": 583,
+   "img": "swatches/int/p34-1-statement-staircase-option-or.webp",
+   "hex": "#a6a09b",
+   "w": 204,
+   "h": 158
+  }
+ ],
+ "p35": [
+  {
+   "label": "Cat 1 - Pure White",
+   "x": 866,
+   "y": 406,
+   "img": "swatches/int/p35-0-cat-1-pure-white.webp",
+   "hex": "#fbfcfc",
+   "w": 139,
+   "h": 171
+  }
+ ],
+ "p36": [
+  {
+   "label": "White Black",
+   "x": 53,
+   "y": 546
+  },
+  {
+   "label": "Black Matte Satin",
+   "x": 53,
+   "y": 560
+  },
+  {
+   "label": "Matte Satin",
+   "x": 53,
+   "y": 574
+  },
+  {
+   "label": "Non Decorative Track",
+   "x": 186,
+   "y": 688,
+   "img": "swatches/int/p36-3-non-decorative-track.webp",
+   "hex": "#e6e6e6",
+   "w": 209,
+   "h": 176,
+   "tex": "swatches/int/p36-3-non-decorative-track-tex.webp"
+  },
+  {
+   "label": "Decorative Track",
+   "x": 403,
+   "y": 688,
+   "img": "swatches/int/p36-4-decorative-track.webp",
+   "hex": "#d8d7d8",
+   "w": 208,
+   "h": 176,
+   "tex": "swatches/int/p36-4-decorative-track-tex.webp"
+  },
+  {
+   "label": "Moonlight",
+   "x": 866,
+   "y": 368,
+   "img": "swatches/int/p36-5-moonlight.webp",
+   "hex": "#e9e9e8",
+   "w": 138,
+   "h": 140,
+   "tex": "swatches/int/p36-5-moonlight-tex.webp"
+  },
+  {
+   "label": "Mist",
+   "x": 1009,
+   "y": 368,
+   "img": "swatches/int/p36-6-mist.webp",
+   "hex": "#c8c9be",
+   "w": 138,
+   "h": 140,
+   "tex": "swatches/int/p36-6-mist-tex.webp"
+  },
+  {
+   "label": "Linen",
+   "x": 1152,
+   "y": 368,
+   "img": "swatches/int/p36-7-linen.webp",
+   "hex": "#a6a193",
+   "w": 138,
+   "h": 140,
+   "tex": "swatches/int/p36-7-linen-tex.webp"
+  },
+  {
+   "label": "Quartz",
+   "x": 866,
+   "y": 537,
+   "img": "swatches/int/p36-8-quartz.webp",
+   "hex": "#d3baab",
+   "w": 138,
+   "h": 140,
+   "tex": "swatches/int/p36-8-quartz-tex.webp"
+  },
+  {
+   "label": "Smoke",
+   "x": 1009,
+   "y": 537,
+   "img": "swatches/int/p36-9-smoke.webp",
+   "hex": "#a99b93",
+   "w": 138,
+   "h": 140,
+   "tex": "swatches/int/p36-9-smoke-tex.webp"
+  },
+  {
+   "label": "Sable",
+   "x": 1152,
+   "y": 537,
+   "img": "swatches/int/p36-10-sable.webp",
+   "hex": "#81756f",
+   "w": 138,
+   "h": 141,
+   "tex": "swatches/int/p36-10-sable-tex.webp"
+  },
+  {
+   "label": "Snow",
+   "x": 866,
+   "y": 636,
+   "img": "swatches/int/p36-11-snow.webp",
+   "hex": "#fafaf8",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-11-snow-tex.webp"
+  },
+  {
+   "label": "Tahini",
+   "x": 1009,
+   "y": 636,
+   "img": "swatches/int/p36-12-tahini.webp",
+   "hex": "#beb19d",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-12-tahini-tex.webp"
+  },
+  {
+   "label": "Frost",
+   "x": 1152,
+   "y": 636,
+   "img": "swatches/int/p36-13-frost.webp",
+   "hex": "#a9a393",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-13-frost-tex.webp"
+  },
+  {
+   "label": "Harbour",
+   "x": 866,
+   "y": 735,
+   "img": "swatches/int/p36-14-harbour.webp",
+   "hex": "#9e998d",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-14-harbour-tex.webp"
+  },
+  {
+   "label": "Pepper",
+   "x": 1009,
+   "y": 735,
+   "img": "swatches/int/p36-15-pepper.webp",
+   "hex": "#66625f",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-15-pepper-tex.webp"
+  },
+  {
+   "label": "Slate",
+   "x": 1152,
+   "y": 735,
+   "img": "swatches/int/p36-16-slate.webp",
+   "hex": "#494b4e",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-16-slate-tex.webp"
+  },
+  {
+   "label": "Coal",
+   "x": 866,
+   "y": 835,
+   "img": "swatches/int/p36-17-coal.webp",
+   "hex": "#121615",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p36-17-coal-tex.webp"
+  }
+ ],
+ "p37": [
+  {
+   "label": "Face Fit - Back Roll",
+   "x": 186,
+   "y": 366,
+   "img": "swatches/int/p37-0-face-fit-back-roll.webp",
+   "hex": "#b2a7a2",
+   "w": 281,
+   "h": 138,
+   "tex": "swatches/int/p37-0-face-fit-back-roll-tex.webp"
+  },
+  {
+   "label": "Reveal Fit - Front Roll",
+   "x": 186,
+   "y": 529,
+   "img": "swatches/int/p37-1-reveal-fit-front-roll.webp",
+   "hex": "#bfb1ac",
+   "w": 281,
+   "h": 138,
+   "tex": "swatches/int/p37-1-reveal-fit-front-roll-tex.webp"
+  },
+  {
+   "label": "Sliding Door - Spilt",
+   "x": 186,
+   "y": 692,
+   "img": "swatches/int/p37-2-sliding-door-spilt.webp",
+   "hex": "#b3968d",
+   "w": 281,
+   "h": 138,
+   "tex": "swatches/int/p37-2-sliding-door-spilt-tex.webp"
+  },
+  {
+   "label": "Bounty",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p37-3-bounty.webp",
+   "hex": "#f7f8f8",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-3-bounty-tex.webp"
+  },
+  {
+   "label": "Cluster",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p37-4-cluster.webp",
+   "hex": "#ebebeb",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-4-cluster-tex.webp"
+  },
+  {
+   "label": "Cashmere",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p37-5-cashmere.webp",
+   "hex": "#f5f1e4",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-5-cashmere-tex.webp"
+  },
+  {
+   "label": "Martini",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p37-6-martini.webp",
+   "hex": "#ebe9df",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-6-martini-tex.webp"
+  },
+  {
+   "label": "Greyshee",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p37-7-greyshee.webp",
+   "hex": "#c5c3c1",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-7-greyshee-tex.webp"
+  },
+  {
+   "label": "Illusion",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p37-8-illusion.webp",
+   "hex": "#c3c3b9",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-8-illusion-tex.webp"
+  },
+  {
+   "label": "Mario",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p37-9-mario.webp",
+   "hex": "#c1bba8",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-9-mario-tex.webp"
+  },
+  {
+   "label": "Oxide",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p37-10-oxide.webp",
+   "hex": "#9a9694",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-10-oxide-tex.webp"
+  },
+  {
+   "label": "Stonehenge",
+   "x": 1152,
+   "y": 498,
+   "img": "swatches/int/p37-11-stonehenge.webp",
+   "hex": "#a29c90",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-11-stonehenge-tex.webp"
+  },
+  {
+   "label": "Element",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p37-12-element.webp",
+   "hex": "#7e776a",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-12-element-tex.webp"
+  },
+  {
+   "label": "Zelda",
+   "x": 1009,
+   "y": 597,
+   "img": "swatches/int/p37-13-zelda.webp",
+   "hex": "#545648",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-13-zelda-tex.webp"
+  },
+  {
+   "label": "Metalcon",
+   "x": 1152,
+   "y": 597,
+   "img": "swatches/int/p37-14-metalcon.webp",
+   "hex": "#6d6966",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-14-metalcon-tex.webp"
+  },
+  {
+   "label": "Gravity",
+   "x": 866,
+   "y": 696,
+   "img": "swatches/int/p37-15-gravity.webp",
+   "hex": "#5b544c",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-15-gravity-tex.webp"
+  },
+  {
+   "label": "Yen",
+   "x": 1009,
+   "y": 696,
+   "img": "swatches/int/p37-16-yen.webp",
+   "hex": "#040504",
+   "w": 138,
+   "h": 71,
+   "tex": "swatches/int/p37-16-yen-tex.webp"
+  }
+ ],
+ "p38": [],
+ "p39": [
+  {
+   "label": "Intense White",
+   "x": 866,
+   "y": 328,
+   "img": "swatches/int/p39-1-intense-white.webp",
+   "hex": "#e9eae7",
+   "w": 138,
+   "h": 100,
+   "tex": "swatches/int/p39-1-intense-white-tex.webp"
+  },
+  {
+   "label": "Osprey",
+   "x": 1009,
+   "y": 328,
+   "img": "swatches/int/p39-2-osprey.webp",
+   "hex": "#f1ede5",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-2-osprey-tex.webp"
+  },
+  {
+   "label": "Ocean Foam",
+   "x": 1152,
+   "y": 328,
+   "img": "swatches/int/p39-3-ocean-foam.webp",
+   "hex": "#f1eae2",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-3-ocean-foam-tex.webp"
+  },
+  {
+   "label": "40mm benchtops 20mm Waterfall edge/s",
+   "x": 733,
+   "y": 407
+  },
+  {
+   "label": "20mm Waterfall edge/s",
+   "x": 733,
+   "y": 418
+  },
+  {
+   "label": "Snow",
+   "x": 866,
+   "y": 453,
+   "img": "swatches/int/p39-6-snow.webp",
+   "hex": "#f6f7f1",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-6-snow-tex.webp"
+  },
+  {
+   "label": "Oyster",
+   "x": 1009,
+   "y": 453,
+   "img": "swatches/int/p39-7-oyster.webp",
+   "hex": "#a79a92",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-7-oyster-tex.webp"
+  },
+  {
+   "label": "Raven",
+   "x": 1152,
+   "y": 453,
+   "img": "swatches/int/p39-8-raven.webp",
+   "hex": "#373332",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-8-raven-tex.webp"
+  },
+  {
+   "label": "Pure White",
+   "x": 866,
+   "y": 581,
+   "img": "swatches/int/p39-9-pure-white.webp",
+   "hex": "#f0f0ef",
+   "w": 138,
+   "h": 100,
+   "tex": "swatches/int/p39-9-pure-white-tex.webp"
+  },
+  {
+   "label": "Organic White",
+   "x": 1009,
+   "y": 581,
+   "img": "swatches/int/p39-10-organic-white.webp",
+   "hex": "#f7f7ef",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-10-organic-white-tex.webp"
+  },
+  {
+   "label": "Fresh Concrete",
+   "x": 1152,
+   "y": 581,
+   "img": "swatches/int/p39-11-fresh-concrete.webp",
+   "hex": "#ecebde",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-11-fresh-concrete-tex.webp"
+  },
+  {
+   "label": "Alpine Mist",
+   "x": 866,
+   "y": 711,
+   "img": "swatches/int/p39-12-alpine-mist.webp",
+   "hex": "#d2cec6",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-12-alpine-mist-tex.webp"
+  },
+  {
+   "label": "Raw Concrete",
+   "x": 1009,
+   "y": 711,
+   "img": "swatches/int/p39-13-raw-concrete.webp",
+   "hex": "#a9a6a1",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-13-raw-concrete-tex.webp"
+  },
+  {
+   "label": "Georgian Bluffs",
+   "x": 1152,
+   "y": 711,
+   "img": "swatches/int/p39-14-georgian-bluffs.webp",
+   "hex": "#c0c4c1",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p39-14-georgian-bluffs-tex.webp"
+  }
+ ],
+ "p40": [
+  {
+   "label": "Aterra Blanca",
+   "x": 186,
+   "y": 327,
+   "img": "swatches/int/p40-1-aterra-blanca.webp",
+   "hex": "#f4f0e5",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-1-aterra-blanca-tex.webp"
+  },
+  {
+   "label": "Frosty Carina",
+   "x": 329,
+   "y": 327,
+   "img": "swatches/int/p40-2-frosty-carina.webp",
+   "hex": "#ece7e2",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-2-frosty-carina-tex.webp"
+  },
+  {
+   "label": "White Attica",
+   "x": 472,
+   "y": 327,
+   "img": "swatches/int/p40-3-white-attica.webp",
+   "hex": "#dddad3",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-3-white-attica-tex.webp"
+  },
+  {
+   "label": "Bianco Drift",
+   "x": 186,
+   "y": 447,
+   "img": "swatches/int/p40-4-bianco-drift.webp",
+   "hex": "#cac5c0",
+   "w": 137,
+   "h": 99,
+   "tex": "swatches/int/p40-4-bianco-drift-tex.webp"
+  },
+  {
+   "label": "Statuario Maximus",
+   "x": 866,
+   "y": 328,
+   "img": "swatches/int/p40-6-statuario-maximus.webp",
+   "hex": "#e8e3de",
+   "w": 138,
+   "h": 100,
+   "tex": "swatches/int/p40-6-statuario-maximus-tex.webp"
+  },
+  {
+   "label": "Calacatta Nuvo",
+   "x": 1009,
+   "y": 328,
+   "img": "swatches/int/p40-7-calacatta-nuvo.webp",
+   "hex": "#e3ddd4",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-7-calacatta-nuvo-tex.webp"
+  },
+  {
+   "label": "Arabetto",
+   "x": 1152,
+   "y": 328,
+   "img": "swatches/int/p40-8-arabetto.webp",
+   "hex": "#e8e3db",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-8-arabetto-tex.webp"
+  },
+  {
+   "label": "Empira White",
+   "x": 866,
+   "y": 458,
+   "img": "swatches/int/p40-9-empira-white.webp",
+   "hex": "#f1eeeb",
+   "w": 138,
+   "h": 99,
+   "tex": "swatches/int/p40-9-empira-white-tex.webp"
+  }
+ ],
+ "p41": [
+  {
+   "label": "40mm benchtop",
+   "x": 186,
+   "y": 580,
+   "img": "swatches/int/p41-1-40mm-benchtop.webp",
+   "hex": "#a29990",
+   "w": 424,
+   "h": 169
+  },
+  {
+   "label": "20mm Waterfall ends",
+   "x": 186,
+   "y": 770,
+   "img": "swatches/int/p41-2-20mm-waterfall-ends.webp",
+   "hex": "#7c7773",
+   "w": 424,
+   "h": 170
+  },
+  {
+   "label": "80mm benchtop",
+   "x": 866,
+   "y": 396,
+   "img": "swatches/int/p41-4-80mm-benchtop.webp",
+   "hex": "#777571",
+   "w": 424,
+   "h": 170
+  },
+  {
+   "label": "40mm Waterfall ends",
+   "x": 866,
+   "y": 590,
+   "img": "swatches/int/p41-5-40mm-waterfall-ends.webp",
+   "hex": "#d1cbc5",
+   "w": 424,
+   "h": 170
+  },
+  {
+   "label": "Curved benchtop",
+   "x": 866,
+   "y": 782,
+   "img": "swatches/int/p41-6-curved-benchtop.webp",
+   "hex": "#b29b83",
+   "w": 424,
+   "h": 169
+  }
+ ],
+ "p42": [
+  {
+   "label": "Super White",
+   "x": 186,
+   "y": 405,
+   "img": "swatches/int/p42-0-super-white.webp",
+   "hex": "#f4f5f4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Polar White",
+   "x": 329,
+   "y": 405,
+   "img": "swatches/int/p42-1-polar-white.webp",
+   "hex": "#f8f9f4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Calm White",
+   "x": 472,
+   "y": 405,
+   "img": "swatches/int/p42-2-calm-white.webp",
+   "hex": "#fbfcf7",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Chalk White",
+   "x": 186,
+   "y": 505,
+   "img": "swatches/int/p42-3-chalk-white.webp",
+   "hex": "#fafbf6",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "White Linen",
+   "x": 329,
+   "y": 505,
+   "img": "swatches/int/p42-4-white-linen.webp",
+   "hex": "#fafaf2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "White",
+   "x": 472,
+   "y": 505,
+   "img": "swatches/int/p42-5-white.webp",
+   "hex": "#fbfbf3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Ghostgum",
+   "x": 186,
+   "y": 604,
+   "img": "swatches/int/p42-6-ghostgum.webp",
+   "hex": "#fcf9f0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Alabaster",
+   "x": 329,
+   "y": 604,
+   "img": "swatches/int/p42-7-alabaster.webp",
+   "hex": "#faf1e2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Surf",
+   "x": 472,
+   "y": 604,
+   "img": "swatches/int/p42-8-surf.webp",
+   "hex": "#f5efe3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Aries",
+   "x": 186,
+   "y": 703,
+   "img": "swatches/int/p42-9-aries.webp",
+   "hex": "#f0ece2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Pearl Grey",
+   "x": 329,
+   "y": 703,
+   "img": "swatches/int/p42-10-pearl-grey.webp",
+   "hex": "#cdc7bb",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Oyster Grey",
+   "x": 472,
+   "y": 703,
+   "img": "swatches/int/p42-11-oyster-grey.webp",
+   "hex": "#d7d3ca",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Seed",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p42-12-seed.webp",
+   "hex": "#c3c3aa",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Baye",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p42-13-baye.webp",
+   "hex": "#b8b0a1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Spinifex",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p42-14-spinifex.webp",
+   "hex": "#adbbb3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Fox",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p42-15-fox.webp",
+   "hex": "#b5b0ab",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Pewter",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p42-16-pewter.webp",
+   "hex": "#aaaca5",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Tornado",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p42-17-tornado.webp",
+   "hex": "#9d9893",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Lava Grey",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p42-18-lava-grey.webp",
+   "hex": "#878581",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Green Slate",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p42-19-green-slate.webp",
+   "hex": "#667261",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Winter Sky",
+   "x": 1152,
+   "y": 498,
+   "img": "swatches/int/p42-20-winter-sky.webp",
+   "hex": "#5a6d74",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Fossil",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p42-21-fossil.webp",
+   "hex": "#635b4d",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Battalion",
+   "x": 1009,
+   "y": 597,
+   "img": "swatches/int/p42-22-battalion.webp",
+   "hex": "#49494a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Possum",
+   "x": 1152,
+   "y": 597,
+   "img": "swatches/int/p42-23-possum.webp",
+   "hex": "#98917a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Gunmetal",
+   "x": 866,
+   "y": 696,
+   "img": "swatches/int/p42-24-gunmetal.webp",
+   "hex": "#686e71",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Stormcloud",
+   "x": 1009,
+   "y": 696,
+   "img": "swatches/int/p42-25-stormcloud.webp",
+   "hex": "#565452",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Charcoal",
+   "x": 1152,
+   "y": 696,
+   "img": "swatches/int/p42-26-charcoal.webp",
+   "hex": "#3c4046",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "French Navy",
+   "x": 866,
+   "y": 795,
+   "img": "swatches/int/p42-27-french-navy.webp",
+   "hex": "#13273c",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Terril",
+   "x": 1009,
+   "y": 795,
+   "img": "swatches/int/p42-28-terril.webp",
+   "hex": "#30363a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Black",
+   "x": 1152,
+   "y": 795,
+   "img": "swatches/int/p42-29-black.webp",
+   "hex": "#000000",
+   "w": 138,
+   "h": 72
+  }
+ ],
+ "p43": [
+  {
+   "label": "Classic Oak",
+   "x": 329,
+   "y": 391,
+   "img": "swatches/int/p43-0-classic-oak.webp",
+   "hex": "#baa484",
+   "w": 137,
+   "h": 163,
+   "tex": "swatches/int/p43-0-classic-oak-tex.webp"
+  },
+  {
+   "label": "Bleached Elm",
+   "x": 185,
+   "y": 392,
+   "img": "swatches/int/p43-1-bleached-elm.webp",
+   "hex": "#d4c3a8",
+   "w": 138,
+   "h": 163,
+   "tex": "swatches/int/p43-1-bleached-elm-tex.webp"
+  },
+  {
+   "label": "Delana Oak",
+   "x": 472,
+   "y": 392,
+   "img": "swatches/int/p43-2-delana-oak.webp",
+   "hex": "#a2927f",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-2-delana-oak-tex.webp"
+  },
+  {
+   "label": "Elegant Oak",
+   "x": 473,
+   "y": 583,
+   "img": "swatches/int/p43-3-elegant-oak.webp",
+   "hex": "#bc9265",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-3-elegant-oak-tex.webp"
+  },
+  {
+   "label": "Fox Teakwood",
+   "x": 186,
+   "y": 584,
+   "img": "swatches/int/p43-4-fox-teakwood.webp",
+   "hex": "#96938e",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-4-fox-teakwood-tex.webp"
+  },
+  {
+   "label": "Rural Oak",
+   "x": 330,
+   "y": 584,
+   "img": "swatches/int/p43-5-rural-oak.webp",
+   "hex": "#a58d71",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-5-rural-oak-tex.webp"
+  },
+  {
+   "label": "Planked Urban Oak",
+   "x": 186,
+   "y": 775,
+   "img": "swatches/int/p43-6-planked-urban-oak.webp",
+   "hex": "#ae8c64",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-6-planked-urban-oak-tex.webp"
+  },
+  {
+   "label": "Natural Walnut",
+   "x": 330,
+   "y": 775,
+   "img": "swatches/int/p43-7-natural-walnut.webp",
+   "hex": "#8a7355",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-7-natural-walnut-tex.webp"
+  },
+  {
+   "label": "Lustrous Elm",
+   "x": 473,
+   "y": 775,
+   "img": "swatches/int/p43-8-lustrous-elm.webp",
+   "hex": "#8f8378",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-8-lustrous-elm-tex.webp"
+  },
+  {
+   "label": "Milano Walnut",
+   "x": 1153,
+   "y": 392,
+   "img": "swatches/int/p43-9-milano-walnut.webp",
+   "hex": "#644a35",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-9-milano-walnut-tex.webp"
+  },
+  {
+   "label": "Oiled Legno",
+   "x": 866,
+   "y": 392,
+   "img": "swatches/int/p43-10-oiled-legno.webp",
+   "hex": "#8a684c",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-10-oiled-legno-tex.webp"
+  },
+  {
+   "label": "Aged Walnut",
+   "x": 1011,
+   "y": 392,
+   "img": "swatches/int/p43-11-aged-walnut.webp",
+   "hex": "#6a523d",
+   "w": 138,
+   "h": 163,
+   "tex": "swatches/int/p43-11-aged-walnut-tex.webp"
+  },
+  {
+   "label": "Blackened Legno",
+   "x": 1010,
+   "y": 584,
+   "img": "swatches/int/p43-12-blackened-legno.webp",
+   "hex": "#3b3332",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-12-blackened-legno-tex.webp"
+  },
+  {
+   "label": "Burnished Wood",
+   "x": 1153,
+   "y": 584,
+   "img": "swatches/int/p43-13-burnished-wood.webp",
+   "hex": "#393635",
+   "w": 138,
+   "h": 164,
+   "tex": "swatches/int/p43-13-burnished-wood-tex.webp"
+  },
+  {
+   "label": "Jarrah Legno",
+   "x": 866,
+   "y": 584,
+   "img": "swatches/int/p43-14-jarrah-legno.webp",
+   "hex": "#543e32",
+   "w": 138,
+   "h": 163,
+   "tex": "swatches/int/p43-14-jarrah-legno-tex.webp"
+  }
+ ],
+ "p44": [
+  {
+   "label": "Silk Finish",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p44-0-silk-finish.webp",
+   "hex": "#3e3e3e",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "AbsoluteMatte Finish",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p44-1-absolutematte-finish.webp",
+   "hex": "#1f1f1f",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Chalk Finish",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p44-2-chalk-finish.webp",
+   "hex": "#282828",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Nuance Finish",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p44-3-nuance-finish.webp",
+   "hex": "#2b2b2b",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Classic Square Edge",
+   "x": 186,
+   "y": 593,
+   "img": "swatches/int/p44-4-classic-square-edge.webp",
+   "hex": "#eceaed",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Country V",
+   "x": 329,
+   "y": 593,
+   "img": "swatches/int/p44-5-country-v.webp",
+   "hex": "#ecebee",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Settler",
+   "x": 472,
+   "y": 594,
+   "img": "swatches/int/p44-6-settler.webp",
+   "hex": "#ececec",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Shaker",
+   "x": 186,
+   "y": 785,
+   "img": "swatches/int/p44-7-shaker.webp",
+   "hex": "#ececec",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "1 Pane Square",
+   "x": 866,
+   "y": 393,
+   "img": "swatches/int/p44-8-1-pane-square.webp",
+   "hex": "#fafafa",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "4 Pane Square",
+   "x": 1009,
+   "y": 393,
+   "img": "swatches/int/p44-9-4-pane-square.webp",
+   "hex": "#fafafa",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Drawer Set",
+   "x": 866,
+   "y": 586,
+   "img": "swatches/int/p44-10-drawer-set.webp",
+   "hex": "#eaeaea",
+   "w": 126,
+   "h": 163
+  },
+  {
+   "label": "Drawer Bank",
+   "x": 1010,
+   "y": 586,
+   "img": "swatches/int/p44-11-drawer-bank.webp",
+   "hex": "#eaeaea",
+   "w": 133,
+   "h": 163
+  }
+ ],
+ "p45": [
+  {
+   "label": "Full Width",
+   "x": 186,
+   "y": 406,
+   "img": "swatches/int/p45-0-full-width.webp",
+   "hex": "#bebbb7",
+   "w": 424,
+   "h": 170
+  },
+  {
+   "label": "Two Door",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p45-1-two-door.webp",
+   "hex": "#bbb6af",
+   "w": 424,
+   "h": 170
+  },
+  {
+   "label": "Baldone 102mm",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p45-2-baldone-102mm.webp",
+   "hex": "#f4f3f4",
+   "w": 81,
+   "h": 48
+  },
+  {
+   "label": "Balmo 149mm",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p45-3-balmo-149mm.webp",
+   "hex": "#eae9e9",
+   "w": 80,
+   "h": 54
+  },
+  {
+   "label": "Hale 156/188mm",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p45-4-hale-156-188mm.webp",
+   "hex": "#eeecea",
+   "w": 89,
+   "h": 42
+  },
+  {
+   "label": "Matane Matte Black",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p45-5-matane-matte-black.webp",
+   "hex": "#b3b4b7",
+   "w": 70,
+   "h": 45
+  },
+  {
+   "label": "Empoli 38mm",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p45-6-empoli-38mm.webp",
+   "hex": "#e6e5e6",
+   "w": 78,
+   "h": 52
+  },
+  {
+   "label": "Baldone Matte Black 102mm",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p45-7-baldone-matte-black-102mm.webp",
+   "hex": "#eff0f0",
+   "w": 96,
+   "h": 71
+  },
+  {
+   "label": "Armento Matte Black",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p45-8-armento-matte-black.webp",
+   "hex": "#979a9f",
+   "w": 40,
+   "h": 43
+  },
+  {
+   "label": "Bell Knob",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p45-9-bell-knob.webp",
+   "hex": "#c3bcbd",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Botha Knob",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p45-10-botha-knob.webp",
+   "hex": "#bab9b9",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Teall Handle",
+   "x": 1009,
+   "y": 597,
+   "img": "swatches/int/p45-11-teall-handle.webp",
+   "hex": "#c7c5c4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Traditional Shell",
+   "x": 1152,
+   "y": 597,
+   "img": "swatches/int/p45-12-traditional-shell.webp",
+   "hex": "#c5c5c5",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Esbo",
+   "x": 866,
+   "y": 696,
+   "img": "swatches/int/p45-13-esbo.webp",
+   "hex": "#ededea",
+   "w": 83,
+   "h": 35
+  },
+  {
+   "label": "Matane",
+   "x": 1009,
+   "y": 696,
+   "img": "swatches/int/p45-14-matane.webp",
+   "hex": "#cecccc",
+   "w": 68,
+   "h": 44
+  },
+  {
+   "label": "Baldone 134",
+   "x": 1152,
+   "y": 696,
+   "img": "swatches/int/p45-15-baldone-134.webp",
+   "hex": "#f3f3f4",
+   "w": 81,
+   "h": 48
+  },
+  {
+   "label": "Baldone Matte Black 134",
+   "x": 866,
+   "y": 794,
+   "img": "swatches/int/p45-16-baldone-matte-black-134.webp",
+   "hex": "#eff0f0",
+   "w": 96,
+   "h": 71
+  }
+ ],
+ "p46": [
+  {
+   "label": "Clare Pull 16-128mm",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p46-0-clare-pull-16-128mm.webp",
+   "hex": "#bbaba0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Clare Knob",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p46-1-clare-knob.webp",
+   "hex": "#acaca8",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Binda 128-192mm",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p46-2-binda-128-192mm.webp",
+   "hex": "#9c9999",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Ribe Knob",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p46-3-ribe-knob.webp",
+   "hex": "#c2bab7",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Bargo Knob",
+   "x": 329,
+   "y": 399,
+   "img": "swatches/int/p46-4-bargo-knob.webp",
+   "hex": "#d1c2b1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Lounge Stainless Steel",
+   "x": 329,
+   "y": 498,
+   "img": "swatches/int/p46-5-lounge-stainless-steel.webp",
+   "hex": "#c6c3c1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Clare Pull 224mm",
+   "x": 472,
+   "y": 498,
+   "img": "swatches/int/p46-6-clare-pull-224mm.webp",
+   "hex": "#bbaba0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Lounge Matte Black",
+   "x": 186,
+   "y": 498,
+   "img": "swatches/int/p46-7-lounge-matte-black.webp",
+   "hex": "#bfc1c4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Archive",
+   "x": 186,
+   "y": 598,
+   "img": "swatches/int/p46-8-archive.webp",
+   "hex": "#c8b4a9",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Archive",
+   "x": 329,
+   "y": 598,
+   "img": "swatches/int/p46-9-archive.webp",
+   "hex": "#bab7b8",
+   "w": 137,
+   "h": 71
+  }
+ ],
+ "p47": [
+  {
+   "label": "Clark Punch 1.75 Inset",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p47-0-clark-punch-1-75-inset.webp",
+   "hex": "#cccccd",
+   "w": 110,
+   "h": 52
+  },
+  {
+   "label": "Clark Polar - Overmount",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p47-1-clark-polar-overmount.webp",
+   "hex": "#c3c3c3",
+   "w": 89,
+   "h": 51
+  },
+  {
+   "label": "Clark Polar - Undermount",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p47-2-clark-polar-undermount.webp",
+   "hex": "#c3c3c3",
+   "w": 89,
+   "h": 51
+  },
+  {
+   "label": "Franke City - Black",
+   "x": 186,
+   "y": 500,
+   "img": "swatches/int/p47-3-franke-city-black.webp",
+   "hex": "#31373a",
+   "w": 116,
+   "h": 50
+  },
+  {
+   "label": "Franke City - Undermount",
+   "x": 186,
+   "y": 599,
+   "img": "swatches/int/p47-4-franke-city-undermount.webp",
+   "hex": "#2a2a2a",
+   "w": 84,
+   "h": 63
+  },
+  {
+   "label": "Franke City - Undermount",
+   "x": 329,
+   "y": 599,
+   "img": "swatches/int/p47-5-franke-city-undermount.webp",
+   "hex": "#e3e2e4",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Franke Bow Single 360mm",
+   "x": 186,
+   "y": 699,
+   "img": "swatches/int/p47-6-franke-bow-single-360mm.webp",
+   "hex": "#bac0c5",
+   "w": 63,
+   "h": 71
+  },
+  {
+   "label": "Franke Bow Single 500mm",
+   "x": 329,
+   "y": 699,
+   "img": "swatches/int/p47-7-franke-bow-single-500mm.webp",
+   "hex": "#b7bdc2",
+   "w": 85,
+   "h": 71
+  },
+  {
+   "label": "Franke Bow Single 680mm",
+   "x": 472,
+   "y": 699,
+   "img": "swatches/int/p47-8-franke-bow-single-680mm.webp",
+   "hex": "#b9bfc4",
+   "w": 113,
+   "h": 71
+  },
+  {
+   "label": "Memo Zenna - Stainless Steel",
+   "x": 43,
+   "y": 799,
+   "img": "swatches/int/p47-9-memo-zenna-stainless-steel.webp",
+   "hex": "#cacaca",
+   "w": 62,
+   "h": 60
+  },
+  {
+   "label": "Memo Zenna - Gunmetal",
+   "x": 186,
+   "y": 799,
+   "img": "swatches/int/p47-10-memo-zenna-gunmetal.webp",
+   "hex": "#8f8f8f",
+   "w": 62,
+   "h": 60
+  },
+  {
+   "label": "Memo Zenna - Nickel",
+   "x": 329,
+   "y": 799,
+   "img": "swatches/int/p47-11-memo-zenna-nickel.webp",
+   "hex": "#8f8f89",
+   "w": 62,
+   "h": 62
+  },
+  {
+   "label": "Memo Zenna - Gold",
+   "x": 472,
+   "y": 799,
+   "img": "swatches/int/p47-12-memo-zenna-gold.webp",
+   "hex": "#ac9e72",
+   "w": 62,
+   "h": 60
+  },
+  {
+   "label": "Memo Zenna - Stainless Steel",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p47-13-memo-zenna-stainless-steel.webp",
+   "hex": "#c4c4c2",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Memo Zenna - Nickel",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p47-14-memo-zenna-nickel.webp",
+   "hex": "#a9aaa6",
+   "w": 97,
+   "h": 71
+  },
+  {
+   "label": "Memo Zenna - Gold",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p47-15-memo-zenna-gold.webp",
+   "hex": "#ada48e",
+   "w": 91,
+   "h": 71
+  },
+  {
+   "label": "Memo Zenna - Gunmetal",
+   "x": 866,
+   "y": 391,
+   "img": "swatches/int/p47-16-memo-zenna-gunmetal.webp",
+   "hex": "#8b8b8b",
+   "w": 93,
+   "h": 53
+  },
+  {
+   "label": "Memo Harper 462mm",
+   "x": 866,
+   "y": 490,
+   "img": "swatches/int/p47-17-memo-harper-462mm.webp",
+   "hex": "#e6e6e6",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Memo Harper 598mm",
+   "x": 1009,
+   "y": 490,
+   "img": "swatches/int/p47-18-memo-harper-598mm.webp",
+   "hex": "#e6e6e6",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Memo Harper Single Bowl",
+   "x": 866,
+   "y": 590,
+   "img": "swatches/int/p47-19-memo-harper-single-bowl.webp",
+   "hex": "#dbdbdb",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Memo Harper 1 3/4 Bowl",
+   "x": 1009,
+   "y": 590,
+   "img": "swatches/int/p47-20-memo-harper-1-3-4-bowl.webp",
+   "hex": "#dedede",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Draining Tray",
+   "x": 1152,
+   "y": 689,
+   "img": "swatches/int/p47-21-draining-tray.webp",
+   "hex": "#d7d7d7",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Chopping Board",
+   "x": 866,
+   "y": 690,
+   "img": "swatches/int/p47-22-chopping-board.webp",
+   "hex": "#decdaf",
+   "w": 91,
+   "h": 68
+  },
+  {
+   "label": "Draining Basket",
+   "x": 1009,
+   "y": 690,
+   "img": "swatches/int/p47-23-draining-basket.webp",
+   "hex": "#efefef",
+   "w": 89,
+   "h": 67
+  }
+ ],
+ "p48": [
+  {
+   "label": "Phoenix Arlo - Chrome",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p48-0-phoenix-arlo-chrome.webp",
+   "hex": "#f4f4f4",
+   "w": 44,
+   "h": 67
+  },
+  {
+   "label": "Caroma Cirrus - Chrome",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p48-1-caroma-cirrus-chrome.webp",
+   "hex": "#f1f2f2",
+   "w": 53,
+   "h": 70
+  },
+  {
+   "label": "Phoenix Arlo - Matte Black",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p48-2-phoenix-arlo-matte-black.webp",
+   "hex": "#e6e6e6",
+   "w": 43,
+   "h": 67
+  },
+  {
+   "label": "Phoenix Arlo - Chrome",
+   "x": 329,
+   "y": 399,
+   "img": "swatches/int/p48-3-phoenix-arlo-chrome.webp",
+   "hex": "#f4f4f4",
+   "w": 43,
+   "h": 67
+  },
+  {
+   "label": "Caroma Basis - Chrome",
+   "x": 472,
+   "y": 399,
+   "img": "swatches/int/p48-4-caroma-basis-chrome.webp",
+   "hex": "#efefef",
+   "w": 42,
+   "h": 65
+  },
+  {
+   "label": "Kado Era",
+   "x": 186,
+   "y": 499,
+   "img": "swatches/int/p48-5-kado-era.webp",
+   "hex": "#f5f5f5",
+   "w": 61,
+   "h": 71
+  },
+  {
+   "label": "Nobili Flag - Flexible Hose",
+   "x": 329,
+   "y": 499,
+   "img": "swatches/int/p48-6-nobili-flag-flexible-hose.webp",
+   "hex": "#f5f5f5",
+   "w": 53,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 53,
+   "y": 570
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 581
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 53,
+   "y": 593
+  },
+  {
+   "label": "Mizu Drift MKII Pull Out",
+   "x": 329,
+   "y": 598,
+   "img": "swatches/int/p48-10-mizu-drift-mkii-pull-out.webp",
+   "hex": "#f0ede8",
+   "w": 48,
+   "h": 71
+  },
+  {
+   "label": "Mizu Drift MKII Gooseneck",
+   "x": 186,
+   "y": 599,
+   "img": "swatches/int/p48-11-mizu-drift-mkii-gooseneck.webp",
+   "hex": "#f1efea",
+   "w": 44,
+   "h": 71
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 53,
+   "y": 604
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 295
+  },
+  {
+   "label": "Urbane II",
+   "x": 866,
+   "y": 298,
+   "img": "swatches/int/p48-14-urbane-ii.webp",
+   "hex": "#e2e2e2",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Urbane II Pull Out",
+   "x": 1009,
+   "y": 298,
+   "img": "swatches/int/p48-15-urbane-ii-pull-out.webp",
+   "hex": "#d5d5d5",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Liano II Pull Down Dual Mixer",
+   "x": 1152,
+   "y": 298,
+   "img": "swatches/int/p48-16-liano-ii-pull-down-dual-mixer.webp",
+   "hex": "#d6d6d6",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 306
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 317
+  },
+  {
+   "label": "Brushed Brass Gunmetal",
+   "x": 733,
+   "y": 328
+  },
+  {
+   "label": "Gunmetal",
+   "x": 733,
+   "y": 340
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 418
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 430
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 733,
+   "y": 441
+  },
+  {
+   "label": "Vivid Slimline 220mm",
+   "x": 866,
+   "y": 446,
+   "img": "swatches/int/p48-24-vivid-slimline-220mm.webp",
+   "hex": "#f6f6f6",
+   "w": 60,
+   "h": 60
+  },
+  {
+   "label": "Vivid Slimline Pull Out",
+   "x": 1009,
+   "y": 447,
+   "img": "swatches/int/p48-25-vivid-slimline-pull-out.webp",
+   "hex": "#f7f7f7",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Brushed Gold Brushed Carbon",
+   "x": 733,
+   "y": 452
+  },
+  {
+   "label": "Brushed Carbon",
+   "x": 733,
+   "y": 463
+  },
+  {
+   "label": "Blix Flexible Hose Matte Black",
+   "x": 1009,
+   "y": 546,
+   "img": "swatches/int/p48-28-blix-flexible-hose-matte-black.webp",
+   "hex": "#efefef",
+   "w": 60,
+   "h": 60
+  },
+  {
+   "label": "Blix Flexible Hose",
+   "x": 866,
+   "y": 547,
+   "img": "swatches/int/p48-29-blix-flexible-hose.webp",
+   "hex": "#f1f1f1",
+   "w": 53,
+   "h": 54
+  },
+  {
+   "label": "Sia Sensor",
+   "x": 866,
+   "y": 645,
+   "img": "swatches/int/p48-30-sia-sensor.webp",
+   "hex": "#f8f6f5",
+   "w": 108,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 670
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 681
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 733,
+   "y": 692
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 733,
+   "y": 703
+  }
+ ],
+ "p49": [
+  {
+   "label": "600mm Stainless Steel",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p49-0-600mm-stainless-steel.webp",
+   "hex": "#dedede",
+   "w": 97,
+   "h": 54
+  },
+  {
+   "label": "600mm Slideout",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p49-1-600mm-slideout.webp",
+   "hex": "#b8b8b6",
+   "w": 86,
+   "h": 23
+  },
+  {
+   "label": "900mm Deluxe Sensor Touch Canopy",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p49-2-900mm-deluxe-sensor-touch-canopy.webp",
+   "hex": "#d6d5d5",
+   "w": 100,
+   "h": 50
+  },
+  {
+   "label": "900mm Push Button Canopy",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p49-3-900mm-push-button-canopy.webp",
+   "hex": "#dbdadb",
+   "w": 95,
+   "h": 45
+  },
+  {
+   "label": "900mm Slideout",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p49-4-900mm-slideout.webp",
+   "hex": "#b9b8b7",
+   "w": 99,
+   "h": 21
+  },
+  {
+   "label": "700mm Concealed Undermount",
+   "x": 866,
+   "y": 506,
+   "img": "swatches/int/p49-5-700mm-concealed-undermount.webp",
+   "hex": "#b7bbbb",
+   "w": 92,
+   "h": 39
+  },
+  {
+   "label": "900mm Deluxe Sensor Touch Canopy",
+   "x": 1009,
+   "y": 506,
+   "img": "swatches/int/p49-6-900mm-deluxe-sensor-touch-canopy.webp",
+   "hex": "#d6d5d5",
+   "w": 100,
+   "h": 50
+  },
+  {
+   "label": "900mm Concealed Undermount",
+   "x": 866,
+   "y": 614,
+   "img": "swatches/int/p49-7-900mm-concealed-undermount.webp",
+   "hex": "#cacacc",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "520mm Concealed Undermount",
+   "x": 1009,
+   "y": 614,
+   "img": "swatches/int/p49-8-520mm-concealed-undermount.webp",
+   "hex": "#ced0d0",
+   "w": 94,
+   "h": 71
+  }
+ ],
+ "p50": [
+  {
+   "label": "600mm Ceramic Glass - CFE641-5",
+   "x": 186,
+   "y": 333,
+   "img": "swatches/int/p50-0-600mm-ceramic-glass-cfe641-5.webp",
+   "hex": "#060405",
+   "w": 112,
+   "h": 98
+  },
+  {
+   "label": "900mm Ceramic Glass - 95HTSS-5",
+   "x": 186,
+   "y": 470,
+   "img": "swatches/int/p50-1-900mm-ceramic-glass-95htss-5.webp",
+   "hex": "#020102",
+   "w": 155,
+   "h": 90
+  },
+  {
+   "label": "600mm Induction - TGC6IND-5",
+   "x": 186,
+   "y": 637,
+   "img": "swatches/int/p50-2-600mm-induction-tgc6ind-5.webp",
+   "hex": "#060405",
+   "w": 131,
+   "h": 117
+  },
+  {
+   "label": "900mm Induction - TGC9IND-5",
+   "x": 398,
+   "y": 637,
+   "img": "swatches/int/p50-3-900mm-induction-tgc9ind-5.webp",
+   "hex": "#040204",
+   "w": 184,
+   "h": 107
+  },
+  {
+   "label": "900mm Black Glass Gas Cooktop - TGC9GLBK",
+   "x": 186,
+   "y": 750,
+   "img": "swatches/int/p50-4-900mm-black-glass-gas-cooktop-tgc9glbk.webp",
+   "hex": "#2a2a29",
+   "w": 132,
+   "h": 76
+  },
+  {
+   "label": "900mm Black Glass Gas Cooktop - H950STBGFPRO",
+   "x": 398,
+   "y": 750,
+   "img": "swatches/int/p50-5-900mm-black-glass-gas-cooktop-h950stbgfp.webp",
+   "hex": "#3f4447",
+   "w": 132,
+   "h": 76
+  },
+  {
+   "label": "600mm Bellissmo Oven - TB60FDTSS-5",
+   "x": 866,
+   "y": 333,
+   "img": "swatches/int/p50-6-600mm-bellissmo-oven-tb60fdtss-5.webp",
+   "hex": "#70716d",
+   "w": 108,
+   "h": 100
+  },
+  {
+   "label": "900mm Built-in Oven - T948SS-6",
+   "x": 866,
+   "y": 444,
+   "img": "swatches/int/p50-7-900mm-built-in-oven-t948ss-6.webp",
+   "hex": "#353535",
+   "w": 135,
+   "h": 73
+  },
+  {
+   "label": "600mm 10 Function Built-in Oven - T0610TBX",
+   "x": 866,
+   "y": 621,
+   "img": "swatches/int/p50-8-600mm-10-function-built-in-oven-t0610tbx.webp",
+   "hex": "#282828",
+   "w": 100,
+   "h": 99
+  },
+  {
+   "label": "600mm 15 Function Built-in Oven with Air Fry - T0615AFBX",
+   "x": 1068,
+   "y": 621,
+   "img": "swatches/int/p50-9-600mm-15-function-built-in-oven-with-air.webp",
+   "hex": "#2a2a2a",
+   "w": 103,
+   "h": 102
+  },
+  {
+   "label": "900mm 10 Function Built-in Oven - TTDT910-6",
+   "x": 866,
+   "y": 751,
+   "img": "swatches/int/p50-10-900mm-10-function-built-in-oven-ttdt910-.webp",
+   "hex": "#1b1b1b",
+   "w": 135,
+   "h": 74
+  },
+  {
+   "label": "Belling 900mm 11 Function Built-in Oven - BDO9611BK",
+   "x": 1068,
+   "y": 751,
+   "img": "swatches/int/p50-11-belling-900mm-11-function-built-in-oven-.webp",
+   "hex": "#2c2d2f",
+   "w": 145,
+   "h": 82
+  }
+ ],
+ "p51": [
+  {
+   "label": "900mm Freestanding Dual Fuel Gas Cooker - TU950TME8",
+   "x": 186,
+   "y": 328,
+   "img": "swatches/int/p51-0-900mm-freestanding-dual-fuel-gas-cooker-.webp",
+   "hex": "#8c8f92",
+   "w": 93,
+   "h": 99
+  },
+  {
+   "label": "900mm Freestanding Dual Fuel Gas Cooker Matte Black - TEG95TBK",
+   "x": 186,
+   "y": 475,
+   "img": "swatches/int/p51-1-900mm-freestanding-dual-fuel-gas-cooker-.webp",
+   "hex": "#353537",
+   "w": 83,
+   "h": 88
+  },
+  {
+   "label": "Belling Richmond Deluxe 900mm Freestanding Dual Fuel Gas Cooker Black",
+   "x": 186,
+   "y": 612,
+   "img": "swatches/int/p51-2-belling-richmond-deluxe-900mm-freestandi.webp",
+   "hex": "#32302e",
+   "w": 94,
+   "h": 100
+  },
+  {
+   "label": "Belling Richmond Deluxe 900mm Freestanding Dual Fuel Gas Cooker White",
+   "x": 398,
+   "y": 612,
+   "img": "swatches/int/p51-3-belling-richmond-deluxe-900mm-freestandi.webp",
+   "hex": "#d8d8d8",
+   "w": 124,
+   "h": 99
+  },
+  {
+   "label": "Belling Richmond Deluxe 900mm Freestanding Dual Fuel Gas Cooker Red",
+   "x": 186,
+   "y": 750,
+   "img": "swatches/int/p51-4-belling-richmond-deluxe-900mm-freestandi.webp",
+   "hex": "#c26e6d",
+   "w": 133,
+   "h": 99
+  },
+  {
+   "label": "Belling Richmond Deluxe 900mm Freestanding Dual Fuel Gas Cooker Cream",
+   "x": 398,
+   "y": 750,
+   "img": "swatches/int/p51-5-belling-richmond-deluxe-900mm-freestandi.webp",
+   "hex": "#dcd8cc",
+   "w": 133,
+   "h": 99
+  },
+  {
+   "label": "600mm Freestanding Diswasher",
+   "x": 866,
+   "y": 328,
+   "img": "swatches/int/p51-6-600mm-freestanding-diswasher.webp",
+   "hex": "#9f9da3",
+   "w": 73,
+   "h": 95
+  },
+  {
+   "label": "600mm Fully Intergrated - TDX8SS-6",
+   "x": 866,
+   "y": 453,
+   "img": "swatches/int/p51-7-600mm-fully-intergrated-tdx8ss-6.webp",
+   "hex": "#dbdada",
+   "w": 73,
+   "h": 95
+  },
+  {
+   "label": "600mm Freestanding Matte Black",
+   "x": 1067,
+   "y": 453,
+   "img": "swatches/int/p51-8-600mm-freestanding-matte-black.webp",
+   "hex": "#2d2c30",
+   "w": 73,
+   "h": 95
+  },
+  {
+   "label": "28L Built-in Microwave Oven with Trim Kit",
+   "x": 866,
+   "y": 580,
+   "img": "swatches/int/p51-9-28l-built-in-microwave-oven-with-trim-ki.webp",
+   "hex": "#5d5d5d",
+   "w": 146,
+   "h": 99
+  },
+  {
+   "label": "Smeg Integrated Fridge",
+   "x": 866,
+   "y": 807,
+   "img": "swatches/int/p51-10-smeg-integrated-fridge.webp",
+   "hex": "#c0b5a6",
+   "w": 281,
+   "h": 198
+  }
+ ],
+ "p52": [],
+ "p53": [
+  {
+   "label": "Intense White",
+   "x": 866,
+   "y": 328,
+   "img": "swatches/int/p53-1-intense-white.webp",
+   "hex": "#e9eae7",
+   "w": 138,
+   "h": 100
+  },
+  {
+   "label": "Osprey",
+   "x": 1009,
+   "y": 328,
+   "img": "swatches/int/p53-2-osprey.webp",
+   "hex": "#f1ede5",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Ocean Foam",
+   "x": 1152,
+   "y": 328,
+   "img": "swatches/int/p53-3-ocean-foam.webp",
+   "hex": "#f1eae2",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Snow",
+   "x": 866,
+   "y": 453,
+   "img": "swatches/int/p53-4-snow.webp",
+   "hex": "#f6f7f1",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Oyster",
+   "x": 1009,
+   "y": 453,
+   "img": "swatches/int/p53-5-oyster.webp",
+   "hex": "#a79a92",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Raven",
+   "x": 1152,
+   "y": 453,
+   "img": "swatches/int/p53-6-raven.webp",
+   "hex": "#373332",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Pure White",
+   "x": 866,
+   "y": 581,
+   "img": "swatches/int/p53-7-pure-white.webp",
+   "hex": "#f0f0ef",
+   "w": 138,
+   "h": 100
+  },
+  {
+   "label": "Organic White",
+   "x": 1009,
+   "y": 581,
+   "img": "swatches/int/p53-8-organic-white.webp",
+   "hex": "#f7f7ef",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Fresh Concrete",
+   "x": 1152,
+   "y": 581,
+   "img": "swatches/int/p53-9-fresh-concrete.webp",
+   "hex": "#ecebde",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Alpine Mist",
+   "x": 866,
+   "y": 711,
+   "img": "swatches/int/p53-10-alpine-mist.webp",
+   "hex": "#d2cec6",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Raw Concrete",
+   "x": 1009,
+   "y": 711,
+   "img": "swatches/int/p53-11-raw-concrete.webp",
+   "hex": "#a9a6a1",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Georgian Bluffs",
+   "x": 1152,
+   "y": 711,
+   "img": "swatches/int/p53-12-georgian-bluffs.webp",
+   "hex": "#c0c4c1",
+   "w": 138,
+   "h": 99
+  }
+ ],
+ "p54": [
+  {
+   "label": "Aterra Blanca",
+   "x": 186,
+   "y": 327,
+   "img": "swatches/int/p54-1-aterra-blanca.webp",
+   "hex": "#f4f0e5",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Frosty Carina",
+   "x": 329,
+   "y": 327,
+   "img": "swatches/int/p54-2-frosty-carina.webp",
+   "hex": "#ece7e2",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "White Attica",
+   "x": 472,
+   "y": 327,
+   "img": "swatches/int/p54-3-white-attica.webp",
+   "hex": "#dddad3",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Bianco Drift",
+   "x": 186,
+   "y": 447,
+   "img": "swatches/int/p54-4-bianco-drift.webp",
+   "hex": "#cac5c0",
+   "w": 137,
+   "h": 99
+  },
+  {
+   "label": "Statuario Maximus",
+   "x": 866,
+   "y": 328,
+   "img": "swatches/int/p54-6-statuario-maximus.webp",
+   "hex": "#e8e3de",
+   "w": 138,
+   "h": 100
+  },
+  {
+   "label": "Calacatta Nuvo",
+   "x": 1009,
+   "y": 328,
+   "img": "swatches/int/p54-7-calacatta-nuvo.webp",
+   "hex": "#e3ddd4",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Arabetto",
+   "x": 1152,
+   "y": 328,
+   "img": "swatches/int/p54-8-arabetto.webp",
+   "hex": "#e8e3db",
+   "w": 138,
+   "h": 99
+  },
+  {
+   "label": "Empira White",
+   "x": 866,
+   "y": 458,
+   "img": "swatches/int/p54-9-empira-white.webp",
+   "hex": "#f1eeeb",
+   "w": 138,
+   "h": 99
+  }
+ ],
+ "p55": [
+  {
+   "label": "Super White",
+   "x": 186,
+   "y": 405,
+   "img": "swatches/int/p55-0-super-white.webp",
+   "hex": "#f4f5f4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Polar White",
+   "x": 329,
+   "y": 405,
+   "img": "swatches/int/p55-1-polar-white.webp",
+   "hex": "#f8f9f4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Calm White",
+   "x": 472,
+   "y": 405,
+   "img": "swatches/int/p55-2-calm-white.webp",
+   "hex": "#fbfcf7",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Chalk White",
+   "x": 186,
+   "y": 505,
+   "img": "swatches/int/p55-3-chalk-white.webp",
+   "hex": "#fafbf6",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "White Linen",
+   "x": 329,
+   "y": 505,
+   "img": "swatches/int/p55-4-white-linen.webp",
+   "hex": "#fafaf2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "White",
+   "x": 472,
+   "y": 505,
+   "img": "swatches/int/p55-5-white.webp",
+   "hex": "#fbfbf3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Ghostgum",
+   "x": 186,
+   "y": 604,
+   "img": "swatches/int/p55-6-ghostgum.webp",
+   "hex": "#fcf9f0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Alabaster",
+   "x": 329,
+   "y": 604,
+   "img": "swatches/int/p55-7-alabaster.webp",
+   "hex": "#faf1e2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Surf",
+   "x": 472,
+   "y": 604,
+   "img": "swatches/int/p55-8-surf.webp",
+   "hex": "#f5efe3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Aries",
+   "x": 186,
+   "y": 703,
+   "img": "swatches/int/p55-9-aries.webp",
+   "hex": "#f0ece2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Pearl Grey",
+   "x": 329,
+   "y": 703,
+   "img": "swatches/int/p55-10-pearl-grey.webp",
+   "hex": "#cdc7bb",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Oyster Grey",
+   "x": 472,
+   "y": 703,
+   "img": "swatches/int/p55-11-oyster-grey.webp",
+   "hex": "#d7d3ca",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Seed",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p55-12-seed.webp",
+   "hex": "#c3c3aa",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Baye",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p55-13-baye.webp",
+   "hex": "#b8b0a1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Spinifex",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p55-14-spinifex.webp",
+   "hex": "#adbbb3",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Fox",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p55-15-fox.webp",
+   "hex": "#b5b0ab",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Pewter",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p55-16-pewter.webp",
+   "hex": "#aaaca5",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Tornado",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p55-17-tornado.webp",
+   "hex": "#9d9893",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Lava Grey",
+   "x": 866,
+   "y": 505,
+   "img": "swatches/int/p55-18-lava-grey.webp",
+   "hex": "#878581",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Green Slate",
+   "x": 1009,
+   "y": 505,
+   "img": "swatches/int/p55-19-green-slate.webp",
+   "hex": "#667261",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Winter Sky",
+   "x": 1152,
+   "y": 505,
+   "img": "swatches/int/p55-20-winter-sky.webp",
+   "hex": "#5a6d74",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Fossil",
+   "x": 866,
+   "y": 604,
+   "img": "swatches/int/p55-21-fossil.webp",
+   "hex": "#635b4d",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Battalion",
+   "x": 1009,
+   "y": 604,
+   "img": "swatches/int/p55-22-battalion.webp",
+   "hex": "#49494a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Possum",
+   "x": 1152,
+   "y": 604,
+   "img": "swatches/int/p55-23-possum.webp",
+   "hex": "#98917a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Gunmetal",
+   "x": 866,
+   "y": 703,
+   "img": "swatches/int/p55-24-gunmetal.webp",
+   "hex": "#686e71",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Stormcloud",
+   "x": 1009,
+   "y": 703,
+   "img": "swatches/int/p55-25-stormcloud.webp",
+   "hex": "#565452",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Charcoal",
+   "x": 1152,
+   "y": 703,
+   "img": "swatches/int/p55-26-charcoal.webp",
+   "hex": "#3c4046",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "French Navy",
+   "x": 866,
+   "y": 802,
+   "img": "swatches/int/p55-27-french-navy.webp",
+   "hex": "#13273c",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Terril",
+   "x": 1009,
+   "y": 802,
+   "img": "swatches/int/p55-28-terril.webp",
+   "hex": "#30363a",
+   "w": 138,
+   "h": 72
+  },
+  {
+   "label": "Black",
+   "x": 1152,
+   "y": 802,
+   "img": "swatches/int/p55-29-black.webp",
+   "hex": "#000000",
+   "w": 138,
+   "h": 72
+  }
+ ],
+ "p56": [
+  {
+   "label": "Classic Oak",
+   "x": 329,
+   "y": 391,
+   "img": "swatches/int/p56-0-classic-oak.webp",
+   "hex": "#baa484",
+   "w": 137,
+   "h": 163
+  },
+  {
+   "label": "Bleached Elm",
+   "x": 185,
+   "y": 392,
+   "img": "swatches/int/p56-1-bleached-elm.webp",
+   "hex": "#d4c3a8",
+   "w": 138,
+   "h": 163
+  },
+  {
+   "label": "Delana Oak",
+   "x": 472,
+   "y": 392,
+   "img": "swatches/int/p56-2-delana-oak.webp",
+   "hex": "#a2927f",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Elegant Oak",
+   "x": 473,
+   "y": 583,
+   "img": "swatches/int/p56-3-elegant-oak.webp",
+   "hex": "#bc9265",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Fox Teakwood",
+   "x": 186,
+   "y": 584,
+   "img": "swatches/int/p56-4-fox-teakwood.webp",
+   "hex": "#96938e",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Rural Oak",
+   "x": 330,
+   "y": 584,
+   "img": "swatches/int/p56-5-rural-oak.webp",
+   "hex": "#a58d71",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Planked Urban Oak",
+   "x": 186,
+   "y": 775,
+   "img": "swatches/int/p56-6-planked-urban-oak.webp",
+   "hex": "#ae8c64",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Natural Walnut",
+   "x": 472,
+   "y": 775,
+   "img": "swatches/int/p56-7-natural-walnut.webp",
+   "hex": "#8a7355",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Lustrous Elm",
+   "x": 329,
+   "y": 776,
+   "img": "swatches/int/p56-8-lustrous-elm.webp",
+   "hex": "#8e8277",
+   "w": 138,
+   "h": 163
+  },
+  {
+   "label": "Milano Walnut",
+   "x": 1153,
+   "y": 392,
+   "img": "swatches/int/p56-9-milano-walnut.webp",
+   "hex": "#644a35",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Oiled Legno",
+   "x": 866,
+   "y": 392,
+   "img": "swatches/int/p56-10-oiled-legno.webp",
+   "hex": "#8a684c",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Aged Walnut",
+   "x": 1011,
+   "y": 392,
+   "img": "swatches/int/p56-11-aged-walnut.webp",
+   "hex": "#6a523d",
+   "w": 138,
+   "h": 163
+  },
+  {
+   "label": "Blackened Legno",
+   "x": 1010,
+   "y": 584,
+   "img": "swatches/int/p56-12-blackened-legno.webp",
+   "hex": "#3b3332",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Burnished Wood",
+   "x": 1153,
+   "y": 584,
+   "img": "swatches/int/p56-13-burnished-wood.webp",
+   "hex": "#393635",
+   "w": 138,
+   "h": 164
+  },
+  {
+   "label": "Jarrah Legno",
+   "x": 866,
+   "y": 584,
+   "img": "swatches/int/p56-14-jarrah-legno.webp",
+   "hex": "#543e32",
+   "w": 138,
+   "h": 163
+  }
+ ],
+ "p57": [
+  {
+   "label": "Silk Finish",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p57-0-silk-finish.webp",
+   "hex": "#3e3e3e",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "AbsoluteMatte Finish",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p57-1-absolutematte-finish.webp",
+   "hex": "#1f1f1f",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Chalk Finish",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p57-2-chalk-finish.webp",
+   "hex": "#282828",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Nuance Finish",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p57-3-nuance-finish.webp",
+   "hex": "#2b2b2b",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Classic Square Edge",
+   "x": 186,
+   "y": 593,
+   "img": "swatches/int/p57-4-classic-square-edge.webp",
+   "hex": "#eceaed",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Country V",
+   "x": 329,
+   "y": 593,
+   "img": "swatches/int/p57-5-country-v.webp",
+   "hex": "#ecebee",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Settler",
+   "x": 186,
+   "y": 785,
+   "img": "swatches/int/p57-6-settler.webp",
+   "hex": "#ececec",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Shaker",
+   "x": 329,
+   "y": 785,
+   "img": "swatches/int/p57-7-shaker.webp",
+   "hex": "#ececec",
+   "w": 114,
+   "h": 163
+  },
+  {
+   "label": "Drawer Bank 1",
+   "x": 866,
+   "y": 393,
+   "img": "swatches/int/p57-8-drawer-bank-1.webp",
+   "hex": "#eaeaea",
+   "w": 126,
+   "h": 163
+  },
+  {
+   "label": "Drawer Bank 2",
+   "x": 1009,
+   "y": 393,
+   "img": "swatches/int/p57-9-drawer-bank-2.webp",
+   "hex": "#eaeaea",
+   "w": 133,
+   "h": 163
+  }
+ ],
+ "p58": [
+  {
+   "label": "Wall Hung Vanity",
+   "x": 186,
+   "y": 498,
+   "img": "swatches/int/p58-0-wall-hung-vanity.webp",
+   "hex": "#bfb2a9",
+   "w": 424,
+   "h": 269
+  },
+  {
+   "label": "Full Height Vanity with Recessed Kick",
+   "x": 186,
+   "y": 795,
+   "img": "swatches/int/p58-1-full-height-vanity-with-recessed-kick.webp",
+   "hex": "#bdb9b4",
+   "w": 424,
+   "h": 269
+  }
+ ],
+ "p59": [
+  {
+   "label": "Baldone 102mm",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p59-0-baldone-102mm.webp",
+   "hex": "#f4f3f4",
+   "w": 81,
+   "h": 48
+  },
+  {
+   "label": "Balmo 149mm",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p59-1-balmo-149mm.webp",
+   "hex": "#eae9e9",
+   "w": 80,
+   "h": 54
+  },
+  {
+   "label": "Hale 156/188mm",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p59-2-hale-156-188mm.webp",
+   "hex": "#eeeceb",
+   "w": 89,
+   "h": 42
+  },
+  {
+   "label": "Matane Matte Black",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p59-3-matane-matte-black.webp",
+   "hex": "#b3b4b7",
+   "w": 70,
+   "h": 45
+  },
+  {
+   "label": "Empoli 38mm",
+   "x": 329,
+   "y": 399,
+   "img": "swatches/int/p59-4-empoli-38mm.webp",
+   "hex": "#e6e6e6",
+   "w": 78,
+   "h": 52
+  },
+  {
+   "label": "Baldone Matte Black 102mm",
+   "x": 472,
+   "y": 399,
+   "img": "swatches/int/p59-5-baldone-matte-black-102mm.webp",
+   "hex": "#eff0f0",
+   "w": 96,
+   "h": 71
+  },
+  {
+   "label": "Armento Matte Black",
+   "x": 186,
+   "y": 498,
+   "img": "swatches/int/p59-6-armento-matte-black.webp",
+   "hex": "#979a9f",
+   "w": 40,
+   "h": 43
+  },
+  {
+   "label": "Bell knob",
+   "x": 329,
+   "y": 498,
+   "img": "swatches/int/p59-7-bell-knob.webp",
+   "hex": "#c3bcbd",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Botha knob",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p59-8-botha-knob.webp",
+   "hex": "#bab9b9",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Teall handle",
+   "x": 329,
+   "y": 597,
+   "img": "swatches/int/p59-9-teall-handle.webp",
+   "hex": "#c7c5c4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Traditional shell",
+   "x": 472,
+   "y": 597,
+   "img": "swatches/int/p59-10-traditional-shell.webp",
+   "hex": "#c6c5c5",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Baldone Matte Black 134",
+   "x": 472,
+   "y": 695,
+   "img": "swatches/int/p59-11-baldone-matte-black-134.webp",
+   "hex": "#f0f0f0",
+   "w": 96,
+   "h": 71
+  },
+  {
+   "label": "Esbo",
+   "x": 186,
+   "y": 696,
+   "img": "swatches/int/p59-12-esbo.webp",
+   "hex": "#ededea",
+   "w": 83,
+   "h": 35
+  },
+  {
+   "label": "Matane",
+   "x": 329,
+   "y": 696,
+   "img": "swatches/int/p59-13-matane.webp",
+   "hex": "#cecccc",
+   "w": 68,
+   "h": 44
+  },
+  {
+   "label": "Binda 128-192mm",
+   "x": 472,
+   "y": 796,
+   "img": "swatches/int/p59-14-binda-128-192mm.webp",
+   "hex": "#9c9999",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Clare Pull 16-128mm",
+   "x": 186,
+   "y": 796,
+   "img": "swatches/int/p59-15-clare-pull-16-128mm.webp",
+   "hex": "#bbaba0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Clare Knob",
+   "x": 329,
+   "y": 796,
+   "img": "swatches/int/p59-16-clare-knob.webp",
+   "hex": "#acaba8",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Ribe knob",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p59-17-ribe-knob.webp",
+   "hex": "#c2bbb7",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Bargo Knob",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p59-18-bargo-knob.webp",
+   "hex": "#d2c2b1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Lounge Stainless Steel",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p59-19-lounge-stainless-steel.webp",
+   "hex": "#c6c3c1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Clare Pull 224mm",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p59-20-clare-pull-224mm.webp",
+   "hex": "#bbaba0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Lounge Matte Black",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p59-21-lounge-matte-black.webp",
+   "hex": "#bfc1c4",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Archive",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p59-22-archive.webp",
+   "hex": "#c8b4aa",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Archive",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p59-23-archive.webp",
+   "hex": "#bab7b8",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Finger pull",
+   "x": 866,
+   "y": 696,
+   "img": "swatches/int/p59-24-finger-pull.webp",
+   "hex": "#a58f80",
+   "w": 424,
+   "h": 171
+  }
+ ],
+ "p60": [
+  {
+   "label": "Clark Inset Basin \u2013 Round",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p60-0-clark-inset-basin-round.webp",
+   "hex": "#e1dfdc",
+   "w": 72,
+   "h": 56
+  },
+  {
+   "label": "Clark Inset Basin \u2013 Square",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p60-1-clark-inset-basin-square.webp",
+   "hex": "#e7e6e4",
+   "w": 79,
+   "h": 56
+  },
+  {
+   "label": "Caroma Luna Inset",
+   "x": 472,
+   "y": 299,
+   "img": "swatches/int/p60-2-caroma-luna-inset.webp",
+   "hex": "#e3e3e3",
+   "w": 77,
+   "h": 54
+  },
+  {
+   "label": "Caroma Tribute Inset Basin\u2013 Square",
+   "x": 186,
+   "y": 398,
+   "img": "swatches/int/p60-3-caroma-tribute-inset-basin-square.webp",
+   "hex": "#dededf",
+   "w": 72,
+   "h": 62
+  },
+  {
+   "label": "Clark Inset Basin \u2013 Round",
+   "x": 186,
+   "y": 497,
+   "img": "swatches/int/p60-4-clark-inset-basin-round.webp",
+   "hex": "#e1dfdc",
+   "w": 72,
+   "h": 56
+  },
+  {
+   "label": "Clark Inset Basin \u2013 Square",
+   "x": 329,
+   "y": 497,
+   "img": "swatches/int/p60-5-clark-inset-basin-square.webp",
+   "hex": "#e7e6e4",
+   "w": 79,
+   "h": 56
+  },
+  {
+   "label": "Caroma Luna Inset",
+   "x": 472,
+   "y": 497,
+   "img": "swatches/int/p60-6-caroma-luna-inset.webp",
+   "hex": "#e3e3e3",
+   "w": 77,
+   "h": 54
+  },
+  {
+   "label": "Semia Arko basin \u2013 Matte black",
+   "x": 186,
+   "y": 594,
+   "img": "swatches/int/p60-7-semia-arko-basin-matte-black.webp",
+   "hex": "#939495",
+   "w": 123,
+   "h": 65
+  },
+  {
+   "label": "Kado Lussi Thin Edge Solid Surface Above Counter",
+   "x": 186,
+   "y": 693,
+   "img": "swatches/int/p60-8-kado-lussi-thin-edge-solid-surface-above.webp",
+   "hex": "#d2d3cf",
+   "w": 97,
+   "h": 71
+  },
+  {
+   "label": "Kado Venice Solid Surface Inset",
+   "x": 329,
+   "y": 693,
+   "img": "swatches/int/p60-9-kado-venice-solid-surface-inset.webp",
+   "hex": "#ededee",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Roca Diverta Undermount",
+   "x": 472,
+   "y": 693,
+   "img": "swatches/int/p60-10-roca-diverta-undermount.webp",
+   "hex": "#dadada",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "400mm Round Inset Matte Black",
+   "x": 186,
+   "y": 801,
+   "img": "swatches/int/p60-11-400mm-round-inset-matte-black.webp",
+   "hex": "#aaaaaa",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "530mm Pill Inset Matte Black",
+   "x": 329,
+   "y": 801,
+   "img": "swatches/int/p60-12-530mm-pill-inset-matte-black.webp",
+   "hex": "#a1a1a1",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Dress Ring Brass (Optional)",
+   "x": 472,
+   "y": 801,
+   "img": "swatches/int/p60-13-dress-ring-brass-optional.webp",
+   "hex": "#ceccc7",
+   "w": 138,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - Black",
+   "x": 866,
+   "y": 300,
+   "img": "swatches/int/p60-14-aurora-385-black.webp",
+   "hex": "#a3a3a3",
+   "w": 85,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - Smokey Taupe",
+   "x": 1009,
+   "y": 300,
+   "img": "swatches/int/p60-15-aurora-385-smokey-taupe.webp",
+   "hex": "#c9bbb6",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - Forest",
+   "x": 1152,
+   "y": 300,
+   "img": "swatches/int/p60-16-aurora-385-forest.webp",
+   "hex": "#c8b9b4",
+   "w": 84,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - Winter Sea",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p60-17-aurora-385-winter-sea.webp",
+   "hex": "#aeb9bd",
+   "w": 82,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - White Silk",
+   "x": 1152,
+   "y": 399,
+   "img": "swatches/int/p60-18-aurora-385-white-silk.webp",
+   "hex": "#dadada",
+   "w": 82,
+   "h": 71
+  },
+  {
+   "label": "Aurora 385 - Rose Quartz",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p60-19-aurora-385-rose-quartz.webp",
+   "hex": "#d7c3c4",
+   "w": 82,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - Smokey Taupe",
+   "x": 1009,
+   "y": 489,
+   "img": "swatches/int/p60-20-aurora-530-smokey-taupe.webp",
+   "hex": "#cab9b1",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - Forest",
+   "x": 1152,
+   "y": 489,
+   "img": "swatches/int/p60-21-aurora-530-forest.webp",
+   "hex": "#8a8f8d",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - Black",
+   "x": 866,
+   "y": 489,
+   "img": "swatches/int/p60-22-aurora-530-black.webp",
+   "hex": "#8c8d8c",
+   "w": 85,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - Winter Sea",
+   "x": 1009,
+   "y": 588,
+   "img": "swatches/int/p60-23-aurora-530-winter-sea.webp",
+   "hex": "#afc0c8",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - White Silk",
+   "x": 1152,
+   "y": 588,
+   "img": "swatches/int/p60-24-aurora-530-white-silk.webp",
+   "hex": "#d9dddd",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Aurora 530 - Rose Quartz",
+   "x": 866,
+   "y": 589,
+   "img": "swatches/int/p60-25-aurora-530-rose-quartz.webp",
+   "hex": "#dbc5c9",
+   "w": 83,
+   "h": 71
+  },
+  {
+   "label": "Pop-Up Chrome",
+   "x": 866,
+   "y": 691,
+   "img": "swatches/int/p60-26-pop-up-chrome.webp",
+   "hex": "#bfbfbf",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Pop-Up Brushed Brass/Gold",
+   "x": 866,
+   "y": 790,
+   "img": "swatches/int/p60-27-pop-up-brushed-brass-gold.webp",
+   "hex": "#d3d2cf",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Pop-Up Black",
+   "x": 1009,
+   "y": 790,
+   "img": "swatches/int/p60-28-pop-up-black.webp",
+   "hex": "#cfcfcf",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Pop-Up Brushed Nickel",
+   "x": 1152,
+   "y": 791,
+   "img": "swatches/int/p60-29-pop-up-brushed-nickel.webp",
+   "hex": "#d7d6d6",
+   "w": 71,
+   "h": 71
+  }
+ ],
+ "p61": [
+  {
+   "label": "Phoenix Arlo",
+   "x": 186,
+   "y": 299,
+   "img": "swatches/int/p61-0-phoenix-arlo.webp",
+   "hex": "#e0e0e0",
+   "w": 45,
+   "h": 46
+  },
+  {
+   "label": "Phoenix Arlo - Wall mixer",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p61-1-phoenix-arlo-wall-mixer.webp",
+   "hex": "#e6e6e6",
+   "w": 80,
+   "h": 44
+  },
+  {
+   "label": "Phoenix Arlo \u2013 Wall basin/bath mixer \u2013 Chrome",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p61-2-phoenix-arlo-wall-basin-bath-mixer-chrom.webp",
+   "hex": "#e6e6e6",
+   "w": 84,
+   "h": 46
+  },
+  {
+   "label": "Phoenix Arlo \u2013 Wall basin/bath mixer \u2013 Black",
+   "x": 329,
+   "y": 399,
+   "img": "swatches/int/p61-3-phoenix-arlo-wall-basin-bath-mixer-black.webp",
+   "hex": "#c7c7c7",
+   "w": 84,
+   "h": 47
+  },
+  {
+   "label": "Caroma Basis \u2013 Wall basin/bath mixer \u2013 Chrome",
+   "x": 472,
+   "y": 399,
+   "img": "swatches/int/p61-4-caroma-basis-wall-basin-bath-mixer-chrom.webp",
+   "hex": "#ececec",
+   "w": 93,
+   "h": 56
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 53,
+   "y": 499
+  },
+  {
+   "label": "Arlo - Basin Mixer",
+   "x": 186,
+   "y": 507,
+   "img": "swatches/int/p61-6-arlo-basin-mixer.webp",
+   "hex": "#c3c3c3",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Arlo - Wall Basin Set",
+   "x": 329,
+   "y": 507,
+   "img": "swatches/int/p61-7-arlo-wall-basin-set.webp",
+   "hex": "#d8d8d8",
+   "w": 92,
+   "h": 71
+  },
+  {
+   "label": "Arlo - Wall Bath Set",
+   "x": 472,
+   "y": 507,
+   "img": "swatches/int/p61-8-arlo-wall-bath-set.webp",
+   "hex": "#d8d8d8",
+   "w": 92,
+   "h": 71
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 510
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 521
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 53,
+   "y": 532
+  },
+  {
+   "label": "Arlo - Shower Mixer",
+   "x": 186,
+   "y": 606,
+   "img": "swatches/int/p61-12-arlo-shower-mixer.webp",
+   "hex": "#c7c7c7",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Arlo - Shower Diverter",
+   "x": 329,
+   "y": 606,
+   "img": "swatches/int/p61-13-arlo-shower-diverter.webp",
+   "hex": "#c0c0c0",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 53,
+   "y": 697
+  },
+  {
+   "label": "Vivid Slimline - Basin Mixer",
+   "x": 186,
+   "y": 705,
+   "img": "swatches/int/p61-15-vivid-slimline-basin-mixer.webp",
+   "hex": "#e5e3e1",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Vivid Slimline - Wall Basin Set",
+   "x": 329,
+   "y": 705,
+   "img": "swatches/int/p61-16-vivid-slimline-wall-basin-set.webp",
+   "hex": "#edeceb",
+   "w": 77,
+   "h": 71
+  },
+  {
+   "label": "Vivid Slimline - Wall Bath Set",
+   "x": 472,
+   "y": 705,
+   "img": "swatches/int/p61-17-vivid-slimline-wall-bath-set.webp",
+   "hex": "#edeceb",
+   "w": 77,
+   "h": 71
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 708
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 720
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 53,
+   "y": 731
+  },
+  {
+   "label": "Gunmetal",
+   "x": 53,
+   "y": 742
+  },
+  {
+   "label": "Vivid Slimline - Shower Mixer",
+   "x": 186,
+   "y": 804,
+   "img": "swatches/int/p61-22-vivid-slimline-shower-mixer.webp",
+   "hex": "#eae9e8",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Vivid Slimline - Shower Diverter",
+   "x": 329,
+   "y": 804,
+   "img": "swatches/int/p61-23-vivid-slimline-shower-diverter.webp",
+   "hex": "#e1dfde",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 291
+  },
+  {
+   "label": "Drift MKII - Basin Mixer",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p61-25-drift-mkii-basin-mixer.webp",
+   "hex": "#e8e4de",
+   "w": 54,
+   "h": 64
+  },
+  {
+   "label": "Drift MKII - Wall Basin Set",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p61-26-drift-mkii-wall-basin-set.webp",
+   "hex": "#eae5dc",
+   "w": 85,
+   "h": 42
+  },
+  {
+   "label": "Drift MKII - Wall Bath Set",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p61-27-drift-mkii-wall-bath-set.webp",
+   "hex": "#eae5dc",
+   "w": 85,
+   "h": 42
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 302
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 313
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 325
+  },
+  {
+   "label": "Drift MKII - Shower Mixer",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p61-31-drift-mkii-shower-mixer.webp",
+   "hex": "#e6e2db",
+   "w": 64,
+   "h": 71
+  },
+  {
+   "label": "Drift MKII - Shower Diverter",
+   "x": 1009,
+   "y": 398,
+   "img": "swatches/int/p61-32-drift-mkii-shower-diverter.webp",
+   "hex": "#e5e0d7",
+   "w": 52,
+   "h": 68
+  },
+  {
+   "label": "Drift MKII - Wall Set 2 Cover Plates",
+   "x": 1152,
+   "y": 398,
+   "img": "swatches/int/p61-33-drift-mkii-wall-set-2-cover-plates.webp",
+   "hex": "#ece5da",
+   "w": 70,
+   "h": 41
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 489
+  },
+  {
+   "label": "Luna - Basin Mixer",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p61-35-luna-basin-mixer.webp",
+   "hex": "#dedcd9",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Luna - Wall Basin Set",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p61-36-luna-wall-basin-set.webp",
+   "hex": "#e0dedd",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Luna - Wall Bath Set",
+   "x": 1152,
+   "y": 498,
+   "img": "swatches/int/p61-37-luna-wall-bath-set.webp",
+   "hex": "#e0dedd",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 501
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 512
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 523
+  },
+  {
+   "label": "Luna - Shower Mixer",
+   "x": 866,
+   "y": 596,
+   "img": "swatches/int/p61-41-luna-shower-mixer.webp",
+   "hex": "#dcdad9",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Luna - Shower Diverter",
+   "x": 1009,
+   "y": 596,
+   "img": "swatches/int/p61-42-luna-shower-diverter.webp",
+   "hex": "#d2d0ce",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 699
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 710
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 733,
+   "y": 722
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 733,
+   "y": 733
+  },
+  {
+   "label": "Gunmetal",
+   "x": 733,
+   "y": 744
+  },
+  {
+   "label": "Vivid Slimlime - Floor Mount Bath Set",
+   "x": 866,
+   "y": 766,
+   "img": "swatches/int/p61-48-vivid-slimlime-floor-mount-bath-set.webp",
+   "hex": "#efede9",
+   "w": 42,
+   "h": 136
+  }
+ ],
+ "p62": [
+  {
+   "label": "Phoenix Vivid 5 Function Single Rail - Chrome",
+   "x": 198,
+   "y": 395,
+   "img": "swatches/int/p62-0-phoenix-vivid-5-function-single-rail-chr.webp",
+   "hex": "#eaeaea",
+   "w": 40,
+   "h": 150
+  },
+  {
+   "label": "Chrome",
+   "x": 233,
+   "y": 607,
+   "img": "swatches/int/p62-1-chrome.webp",
+   "hex": "#e7e7e7",
+   "w": 122,
+   "h": 161
+  },
+  {
+   "label": "Matte Black",
+   "x": 288,
+   "y": 607,
+   "img": "swatches/int/p62-2-matte-black.webp",
+   "hex": "#dcdcdc",
+   "w": 73,
+   "h": 160
+  },
+  {
+   "label": "Chrome",
+   "x": 450,
+   "y": 607,
+   "img": "swatches/int/p62-3-chrome.webp",
+   "hex": "#f6f5f5",
+   "w": 108,
+   "h": 155
+  },
+  {
+   "label": "Matte Black",
+   "x": 505,
+   "y": 607,
+   "img": "swatches/int/p62-4-matte-black.webp",
+   "hex": "#f0f0f0",
+   "w": 53,
+   "h": 152
+  },
+  {
+   "label": "Chrome (Standard option) Matte Black",
+   "x": 53,
+   "y": 698
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 709
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 720
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 53,
+   "y": 732
+  },
+  {
+   "label": "Gunmetal",
+   "x": 53,
+   "y": 743
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 191,
+   "y": 815,
+   "img": "swatches/int/p62-10-brushed-nickel.webp",
+   "hex": "#f1efec",
+   "w": 127,
+   "h": 164
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 266,
+   "y": 815,
+   "img": "swatches/int/p62-11-brushed-gold.webp",
+   "hex": "#eeece7",
+   "w": 123,
+   "h": 164
+  },
+  {
+   "label": "Gun Metal",
+   "x": 335,
+   "y": 815,
+   "img": "swatches/int/p62-12-gun-metal.webp",
+   "hex": "#f2f2f1",
+   "w": 157,
+   "h": 164
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 415,
+   "y": 815,
+   "img": "swatches/int/p62-13-brushed-nickel.webp",
+   "hex": "#f7f6f4",
+   "w": 126,
+   "h": 163
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 490,
+   "y": 815,
+   "img": "swatches/int/p62-14-brushed-gold.webp",
+   "hex": "#f4f3f0",
+   "w": 131,
+   "h": 164
+  },
+  {
+   "label": "Gun Metal",
+   "x": 559,
+   "y": 815,
+   "img": "swatches/int/p62-15-gun-metal.webp",
+   "hex": "#f1f1f0",
+   "w": 75,
+   "h": 164
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 1019,
+   "y": 292
+  },
+  {
+   "label": "300mm Ceiling Arm",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p62-17-300mm-ceiling-arm.webp",
+   "hex": "#f5f5f5",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 1019,
+   "y": 303
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 1019,
+   "y": 314
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 341
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 352
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 733,
+   "y": 363
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 733,
+   "y": 374
+  },
+  {
+   "label": "Gunmetal",
+   "x": 733,
+   "y": 386
+  },
+  {
+   "label": "230mm Shower Rose",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p62-25-230mm-shower-rose.webp",
+   "hex": "#a9a9a9",
+   "w": 137,
+   "h": 50
+  },
+  {
+   "label": "Lexi Twin Rail",
+   "x": 1152,
+   "y": 398,
+   "img": "swatches/int/p62-26-lexi-twin-rail.webp",
+   "hex": "#f9f9f9",
+   "w": 138,
+   "h": 165
+  },
+  {
+   "label": "300mm Ceiling Arm",
+   "x": 866,
+   "y": 500,
+   "img": "swatches/int/p62-27-300mm-ceiling-arm.webp",
+   "hex": "#fbf9f7",
+   "w": 82,
+   "h": 68
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 539
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 551
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 562
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 573
+  },
+  {
+   "label": "300mm Shower Rose",
+   "x": 866,
+   "y": 598,
+   "img": "swatches/int/p62-32-300mm-shower-rose.webp",
+   "hex": "#bcab97",
+   "w": 132,
+   "h": 48
+  },
+  {
+   "label": "Mizu Drift Single Rail",
+   "x": 1009,
+   "y": 598,
+   "img": "swatches/int/p62-33-mizu-drift-single-rail.webp",
+   "hex": "#fcfaf8",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Mizu Drift Twin Rail",
+   "x": 1152,
+   "y": 598,
+   "img": "swatches/int/p62-34-mizu-drift-twin-rail.webp",
+   "hex": "#fcfaf8",
+   "w": 138,
+   "h": 157
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 686
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 698
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 709
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 720
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 866,
+   "y": 793,
+   "img": "swatches/int/p62-39-brushed-brass.webp",
+   "hex": "#e7e6e4",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 1009,
+   "y": 793,
+   "img": "swatches/int/p62-40-brushed-nickel.webp",
+   "hex": "#e7e7e6",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Matte Black",
+   "x": 1152,
+   "y": 793,
+   "img": "swatches/int/p62-41-matte-black.webp",
+   "hex": "#dfdfdf",
+   "w": 138,
+   "h": 170
+  }
+ ],
+ "p63": [
+  {
+   "label": "Clark Round Freestanding 1600mm",
+   "x": 186,
+   "y": 322,
+   "img": "swatches/int/p63-0-clark-round-freestanding-1600mm.webp",
+   "hex": "#d9d8d9",
+   "w": 172,
+   "h": 84
+  },
+  {
+   "label": "Clark Round 1400mm",
+   "x": 186,
+   "y": 464,
+   "img": "swatches/int/p63-1-clark-round-1400mm.webp",
+   "hex": "#dadada",
+   "w": 178,
+   "h": 101
+  },
+  {
+   "label": "Clark Back to Wall - 1400mm",
+   "x": 386,
+   "y": 464,
+   "img": "swatches/int/p63-2-clark-back-to-wall-1400mm.webp",
+   "hex": "#dbdbdb",
+   "w": 187,
+   "h": 101
+  },
+  {
+   "label": "Clark Back to Wall - 1600mm",
+   "x": 386,
+   "y": 585,
+   "img": "swatches/int/p63-3-clark-back-to-wall-1600mm.webp",
+   "hex": "#d9d9d9",
+   "w": 178,
+   "h": 101
+  },
+  {
+   "label": "1500mm",
+   "x": 186,
+   "y": 598,
+   "img": "swatches/int/p63-4-1500mm.webp",
+   "hex": "#cccfca",
+   "w": 167,
+   "h": 100
+  },
+  {
+   "label": "1700mm",
+   "x": 249,
+   "y": 598,
+   "img": "swatches/int/p63-5-1700mm.webp",
+   "hex": "#cccfca",
+   "w": 167,
+   "h": 100
+  },
+  {
+   "label": "Kado Neue White 1730mm Available in White & Matte White",
+   "x": 386,
+   "y": 710,
+   "img": "swatches/int/p63-6-kado-neue-white-1730mm-available-in-whit.webp",
+   "hex": "#ecedee",
+   "w": 132,
+   "h": 95
+  },
+  {
+   "label": "Kado Neue Black 1730mm",
+   "x": 186,
+   "y": 711,
+   "img": "swatches/int/p63-7-kado-neue-black-1730mm.webp",
+   "hex": "#b4b4b5",
+   "w": 165,
+   "h": 107
+  },
+  {
+   "label": "1500mm",
+   "x": 259,
+   "y": 825
+  },
+  {
+   "label": "1780mm",
+   "x": 322,
+   "y": 825
+  },
+  {
+   "label": "Robe Hook x2",
+   "x": 866,
+   "y": 297,
+   "img": "swatches/int/p63-10-robe-hook-x2.webp",
+   "hex": "#d6d6d6",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "600mm Double Towel Rail",
+   "x": 1009,
+   "y": 298
+  },
+  {
+   "label": "Toilet Roll Holder",
+   "x": 1152,
+   "y": 298,
+   "img": "swatches/int/p63-12-toilet-roll-holder.webp",
+   "hex": "#ebebea",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Phoenix Radii Round toilet roll holder, robe hook and double towel rail - Chrome or Matte Black",
+   "x": 866,
+   "y": 436,
+   "img": "swatches/int/p63-13-phoenix-radii-round-toilet-roll-holder-r.webp",
+   "hex": "#d6d6d6",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Phoenix Radii Square toilet roll holder, robe hook and double towel rail - Chrome or Matte Black",
+   "x": 866,
+   "y": 544,
+   "img": "swatches/int/p63-14-phoenix-radii-square-toilet-roll-holder-.webp",
+   "hex": "#8c8c8c",
+   "w": 57,
+   "h": 57
+  },
+  {
+   "label": "Caroma Basis Round toilet roll holder, robe hooks or double towel rail \u2013 Chrome",
+   "x": 866,
+   "y": 645,
+   "img": "swatches/int/p63-15-caroma-basis-round-toilet-roll-holder-ro.webp",
+   "hex": "#e1e2e2",
+   "w": 35,
+   "h": 52
+  },
+  {
+   "label": "Chrome (standard option) Matte Black",
+   "x": 733,
+   "y": 737
+  },
+  {
+   "label": "Matte Black",
+   "x": 866,
+   "y": 745,
+   "img": "swatches/int/p63-17-matte-black.webp",
+   "hex": "#9d9d9d",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 1009,
+   "y": 746,
+   "img": "swatches/int/p63-18-brushed-nickel.webp",
+   "hex": "#c6c0bb",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 1152,
+   "y": 746,
+   "img": "swatches/int/p63-19-brushed-gold.webp",
+   "hex": "#dacaab",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 749
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 733,
+   "y": 760
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 733,
+   "y": 771
+  },
+  {
+   "label": "Gunmetal",
+   "x": 733,
+   "y": 782
+  }
+ ],
+ "p64": [
+  {
+   "label": "Brushed Nickel",
+   "x": 329,
+   "y": 299,
+   "img": "swatches/int/p64-0-brushed-nickel.webp",
+   "hex": "#f7f6f5",
+   "w": 130,
+   "h": 71
+  },
+  {
+   "label": "Matte Black",
+   "x": 186,
+   "y": 300,
+   "img": "swatches/int/p64-1-matte-black.webp",
+   "hex": "#f1f1f1",
+   "w": 121,
+   "h": 71
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 472,
+   "y": 300,
+   "img": "swatches/int/p64-2-brushed-gold.webp",
+   "hex": "#f9f8f4",
+   "w": 128,
+   "h": 71
+  },
+  {
+   "label": "Chrome (standard option) Matte Black",
+   "x": 53,
+   "y": 319
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 330
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 341
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 53,
+   "y": 353
+  },
+  {
+   "label": "Gunmetal",
+   "x": 53,
+   "y": 364
+  },
+  {
+   "label": "Chrome (standard option) Matte Black",
+   "x": 53,
+   "y": 466
+  },
+  {
+   "label": "Matte Black",
+   "x": 186,
+   "y": 475,
+   "img": "swatches/int/p64-9-matte-black.webp",
+   "hex": "#e6e6e6",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 329,
+   "y": 475,
+   "img": "swatches/int/p64-10-brushed-nickel.webp",
+   "hex": "#f0efee",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 472,
+   "y": 475,
+   "img": "swatches/int/p64-11-brushed-gold.webp",
+   "hex": "#f4f1e9",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 477
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 488
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 53,
+   "y": 499
+  },
+  {
+   "label": "Gunmetal",
+   "x": 53,
+   "y": 511
+  },
+  {
+   "label": "Gunmetal",
+   "x": 186,
+   "y": 573,
+   "img": "swatches/int/p64-16-gunmetal.webp",
+   "hex": "#e9e8e8",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 53,
+   "y": 664
+  },
+  {
+   "label": "Chrome",
+   "x": 186,
+   "y": 673,
+   "img": "swatches/int/p64-18-chrome.webp",
+   "hex": "#f6f6f6",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Matte Black",
+   "x": 329,
+   "y": 673,
+   "img": "swatches/int/p64-19-matte-black.webp",
+   "hex": "#ebebeb",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 472,
+   "y": 673,
+   "img": "swatches/int/p64-20-brushed-nickel.webp",
+   "hex": "#f4f4f3",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 53,
+   "y": 675
+  },
+  {
+   "label": "Brushed Nickel Brushed Gold",
+   "x": 53,
+   "y": 687
+  },
+  {
+   "label": "Brushed Gold Gunmetal",
+   "x": 53,
+   "y": 698
+  },
+  {
+   "label": "Gunmetal",
+   "x": 53,
+   "y": 709
+  },
+  {
+   "label": "Brushed Gold",
+   "x": 186,
+   "y": 771,
+   "img": "swatches/int/p64-25-brushed-gold.webp",
+   "hex": "#f8f6f1",
+   "w": 71,
+   "h": 71
+  },
+  {
+   "label": "Gunmetal",
+   "x": 329,
+   "y": 771,
+   "img": "swatches/int/p64-26-gunmetal.webp",
+   "hex": "#eeeded",
+   "w": 61,
+   "h": 61
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 292
+  },
+  {
+   "label": "Toilet Roll Holder",
+   "x": 866,
+   "y": 300,
+   "img": "swatches/int/p64-28-toilet-roll-holder.webp",
+   "hex": "#f1f0ed",
+   "w": 103,
+   "h": 67
+  },
+  {
+   "label": "300mm Towel Rail",
+   "x": 1009,
+   "y": 300,
+   "img": "swatches/int/p64-29-300mm-towel-rail.webp",
+   "hex": "#f4f3f0",
+   "w": 119,
+   "h": 71
+  },
+  {
+   "label": "Guest Towel Holder",
+   "x": 1152,
+   "y": 300,
+   "img": "swatches/int/p64-30-guest-towel-holder.webp",
+   "hex": "#efeeeb",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 303
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 314
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 325
+  },
+  {
+   "label": "700mm Double Towel Rail",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p64-34-700mm-double-towel-rail.webp",
+   "hex": "#eae7e2",
+   "w": 138,
+   "h": 52
+  },
+  {
+   "label": "Robe Hook",
+   "x": 1009,
+   "y": 399,
+   "img": "swatches/int/p64-35-robe-hook.webp",
+   "hex": "#d5d1c7",
+   "w": 58,
+   "h": 53
+  },
+  {
+   "label": "Toilet Roll Holder",
+   "x": 866,
+   "y": 498,
+   "img": "swatches/int/p64-36-toilet-roll-holder.webp",
+   "hex": "#dad8d7",
+   "w": 111,
+   "h": 71
+  },
+  {
+   "label": "Double Towel Rail",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p64-37-double-towel-rail.webp",
+   "hex": "#e0dddd",
+   "w": 107,
+   "h": 71
+  },
+  {
+   "label": "Hand Towel Rail",
+   "x": 1152,
+   "y": 498,
+   "img": "swatches/int/p64-38-hand-towel-rail.webp",
+   "hex": "#e2e0df",
+   "w": 88,
+   "h": 71
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 529
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 540
+  },
+  {
+   "label": "Brushed Nickel Brushed Brass",
+   "x": 733,
+   "y": 551
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 733,
+   "y": 562
+  },
+  {
+   "label": "Robe Hook",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p64-43-robe-hook.webp",
+   "hex": "#f0f0ef",
+   "w": 72,
+   "h": 72
+  },
+  {
+   "label": "Chrome Matte Black",
+   "x": 733,
+   "y": 699
+  },
+  {
+   "label": "Matte Black Brushed Nickel",
+   "x": 733,
+   "y": 710
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 733,
+   "y": 721
+  },
+  {
+   "label": "Matte Black",
+   "x": 1009,
+   "y": 728,
+   "img": "swatches/int/p64-47-matte-black.webp",
+   "hex": "#e7e7e7",
+   "w": 97,
+   "h": 97
+  },
+  {
+   "label": "Chrome",
+   "x": 866,
+   "y": 728,
+   "img": "swatches/int/p64-48-chrome.webp",
+   "hex": "#f3f3f3",
+   "w": 97,
+   "h": 97
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 1152,
+   "y": 728,
+   "img": "swatches/int/p64-49-brushed-nickel.webp",
+   "hex": "#f2f1ef",
+   "w": 101,
+   "h": 97
+  }
+ ],
+ "p65": [
+  {
+   "label": "Semi-frameless polished chrome",
+   "x": 186,
+   "y": 398,
+   "img": "swatches/int/p65-0-semi-frameless-polished-chrome.webp",
+   "hex": "#a29e97",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Matte Black Frames (Optional Upgrade)",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p65-1-matte-black-frames-optional-upgrade.webp",
+   "hex": "#85827e",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Standard Inclusion Square Chrome",
+   "x": 186,
+   "y": 718,
+   "img": "swatches/int/p65-2-standard-inclusion-square-chrome.webp",
+   "hex": "#dadcde",
+   "w": 64,
+   "h": 64
+  },
+  {
+   "label": "Upgrade Option Bermuda Tile Insert",
+   "x": 472,
+   "y": 718,
+   "img": "swatches/int/p65-3-upgrade-option-bermuda-tile-insert.webp",
+   "hex": "#c3bfba",
+   "w": 138,
+   "h": 92
+  },
+  {
+   "label": "900mm High to full width of vanity - Polished edge",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p65-4-900mm-high-to-full-width-of-vanity-polis.webp",
+   "hex": "#bdbab2",
+   "w": 281,
+   "h": 170
+  },
+  {
+   "label": "700mm High over bath mirror - Polished edge (Home specific)",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p65-5-700mm-high-over-bath-mirror-polished-edg.webp",
+   "hex": "#b3b0aa",
+   "w": 281,
+   "h": 170
+  },
+  {
+   "label": "Curved Edge",
+   "x": 866,
+   "y": 795,
+   "img": "swatches/int/p65-6-curved-edge.webp",
+   "hex": "#ccc8c1",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Round",
+   "x": 1009,
+   "y": 795,
+   "img": "swatches/int/p65-7-round.webp",
+   "hex": "#b5b2ad",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Arch",
+   "x": 1152,
+   "y": 795,
+   "img": "swatches/int/p65-8-arch.webp",
+   "hex": "#c0bbb4",
+   "w": 138,
+   "h": 170
+  }
+ ],
+ "p66": [
+  {
+   "label": "Posh Solus Round Close Coupled Toilet Suite",
+   "x": 186,
+   "y": 399,
+   "img": "swatches/int/p66-0-posh-solus-round-close-coupled-toilet-su.webp",
+   "hex": "#ebecea",
+   "w": 118,
+   "h": 170
+  },
+  {
+   "label": "Caroma Luna",
+   "x": 186,
+   "y": 597,
+   "img": "swatches/int/p66-1-caroma-luna.webp",
+   "hex": "#d6d5d5",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Caroma Luna 'Cleanflush'",
+   "x": 329,
+   "y": 597,
+   "img": "swatches/int/p66-2-caroma-luna-cleanflush.webp",
+   "hex": "#d6d5d5",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Roca In-Wash Inspira Rimless Smart Toilet Technology",
+   "x": 472,
+   "y": 795,
+   "img": "swatches/int/p66-3-roca-in-wash-inspira-rimless-smart-toile.webp",
+   "hex": "#e7e7e7",
+   "w": 135,
+   "h": 170
+  },
+  {
+   "label": "Caroma Profile II Close Coupled",
+   "x": 329,
+   "y": 795,
+   "img": "swatches/int/p66-4-caroma-profile-ii-close-coupled.webp",
+   "hex": "#d2d1d1",
+   "w": 137,
+   "h": 170
+  },
+  {
+   "label": "Caroma 'Urbane' Cleanflush Invisi II In-Wall Cistern",
+   "x": 186,
+   "y": 795,
+   "img": "swatches/int/p66-5-caroma-urbane-cleanflush-invisi-ii-in-wa.webp",
+   "hex": "#d3d3d3",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Chrome (Standard Inclusion)",
+   "x": 866,
+   "y": 299,
+   "img": "swatches/int/p66-6-chrome-standard-inclusion.webp",
+   "hex": "#c5c6c7",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Brushed Nickel",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p66-7-brushed-nickel.webp",
+   "hex": "#c7c4c0",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Brushed Brass",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p66-8-brushed-brass.webp",
+   "hex": "#c6c0b2",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Black",
+   "x": 866,
+   "y": 399,
+   "img": "swatches/int/p66-9-black.webp",
+   "hex": "#9c9c9c",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Flush Plate - Chrome",
+   "x": 866,
+   "y": 499,
+   "img": "swatches/int/p66-10-flush-plate-chrome.webp",
+   "hex": "#dbdcdf",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Flush Plate - Gunmetal",
+   "x": 1009,
+   "y": 499,
+   "img": "swatches/int/p66-11-flush-plate-gunmetal.webp",
+   "hex": "#84807d",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Flush Plate - Gold",
+   "x": 1152,
+   "y": 499,
+   "img": "swatches/int/p66-12-flush-plate-gold.webp",
+   "hex": "#c1b59a",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Flush Plate - Matte Black",
+   "x": 866,
+   "y": 598,
+   "img": "swatches/int/p66-13-flush-plate-matte-black.webp",
+   "hex": "#4e4e4e",
+   "w": 137,
+   "h": 71
+  },
+  {
+   "label": "Flush Plate - Brushed Nickel",
+   "x": 1009,
+   "y": 598,
+   "img": "swatches/int/p66-14-flush-plate-brushed-nickel.webp",
+   "hex": "#a09d99",
+   "w": 137,
+   "h": 71
+  }
+ ],
+ "p67": [
+  {
+   "label": "Caroma Luna Inset basin",
+   "x": 1152,
+   "y": 299,
+   "img": "swatches/int/p67-0-caroma-luna-inset-basin.webp",
+   "hex": "#efefef",
+   "w": 140,
+   "h": 73
+  },
+  {
+   "label": "Phoenix Arlo",
+   "x": 1009,
+   "y": 299,
+   "img": "swatches/int/p67-1-phoenix-arlo.webp",
+   "hex": "#e0e0e0",
+   "w": 45,
+   "h": 46
+  },
+  {
+   "label": "Laminate drop front vanity",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p67-2-laminate-drop-front-vanity.webp",
+   "hex": "#988a7e",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Phoenix Arlo Wall Mixer - Chrome",
+   "x": 1009,
+   "y": 498,
+   "img": "swatches/int/p67-3-phoenix-arlo-wall-mixer-chrome.webp",
+   "hex": "#e6e6e6",
+   "w": 80,
+   "h": 44
+  },
+  {
+   "label": "Caroma Luna Inset basin",
+   "x": 1152,
+   "y": 498,
+   "img": "swatches/int/p67-4-caroma-luna-inset-basin.webp",
+   "hex": "#e3e3e3",
+   "w": 79,
+   "h": 56
+  },
+  {
+   "label": "Caesarstone\u00ae Drop front vanity",
+   "x": 866,
+   "y": 597,
+   "img": "swatches/int/p67-5-caesarstone-drop-front-vanity.webp",
+   "hex": "#b2aeab",
+   "w": 138,
+   "h": 170
+  },
+  {
+   "label": "Phoenix Arlo Wall Mixer - Matte black",
+   "x": 1009,
+   "y": 605,
+   "img": "swatches/int/p67-6-phoenix-arlo-wall-mixer-matte-black.webp",
+   "hex": "#c6c6c6",
+   "w": 83,
+   "h": 47
+  },
+  {
+   "label": "Caroma Basis Wall basin mixer \u2013 Chrome",
+   "x": 1152,
+   "y": 605,
+   "img": "swatches/int/p67-7-caroma-basis-wall-basin-mixer-chrome.webp",
+   "hex": "#ececec",
+   "w": 93,
+   "h": 56
+  }
+ ],
+ "p68": [],
+ "p69": [
+  {
+   "label": "Stainless steel 45L drop in tub",
+   "x": 1152,
+   "y": 300,
+   "img": "swatches/int/p69-0-stainless-steel-45l-drop-in-tub.webp",
+   "hex": "#c1bab8",
+   "w": 94,
+   "h": 71
+  },
+  {
+   "label": "Stainless Steel Drop-in Tub with 760mm wide Laminate cabinet",
+   "x": 866,
+   "y": 398,
+   "img": "swatches/int/p69-1-stainless-steel-drop-in-tub-with-760mm-w.webp",
+   "hex": "#afaba4",
+   "w": 281,
+   "h": 170
+  },
+  {
+   "label": "Base MK2 Mixer",
+   "x": 1152,
+   "y": 398,
+   "img": "swatches/int/p69-2-base-mk2-mixer.webp",
+   "hex": "#e3e4e5",
+   "w": 80,
+   "h": 40
+  },
+  {
+   "label": "Stainless Steel Drop-in Tub with 20mm Caesarstone\u00ae benchtop",
+   "x": 866,
+   "y": 622,
+   "img": "swatches/int/p69-3-stainless-steel-drop-in-tub-with-20mm-ca.webp",
+   "hex": "#b3ada7",
+   "w": 424,
+   "h": 195
+  }
+ ]
+}

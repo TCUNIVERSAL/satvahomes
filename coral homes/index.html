@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>External Selections · Coral Homes</title>
+    <meta name="description" content="Design your new home's exterior in 3D — choose roof, gutters, fascia, cladding, bricks, render, windows, garage door and driveway from the Coral Homes Pre-Selection Guide." />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%23c2562f'/><path d='M14 34 32 18l18 16v14H14z' fill='%23fff'/></svg>" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body data-mood="day">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Selection Showroom home">
+        <span class="brand-mark">SELECTION<br />SHOWROOM</span>
+        <span class="brand-sub">Coral Homes · External Selections</span>
+      </a>
+      <div class="top-actions">
+        <button class="pill" data-act="region" title="Change build region">
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.3 6-10a6 6 0 10-12 0c0 4.7 6 10 6 10z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="currentColor"/></svg>
+          <span>Choose region</span>
+        </button>
+        <div class="top-progress" title="Items selected"><i></i><b>0/12</b></div>
+        <button class="btn btn-primary" data-act="done-top" disabled>Done</button>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="stage" aria-label="3D preview of your home">
+        <canvas id="renderCanvas" touch-action="none"></canvas>
+        <div class="loader"><div class="spinner"></div><p>Loading…</p></div>
+
+        <div class="dock" role="toolbar" aria-label="View controls">
+          <div class="dock-group">
+            <button data-view="home" class="on">Street</button>
+            <button data-view="front">Front</button>
+            <button data-view="left">Left</button>
+            <button data-view="right">Right</button>
+            <button data-view="aerial">Aerial</button>
+            <button data-view="back">Rear</button>
+          </div>
+          <div class="dock-group">
+            <button data-act="transparent" class="btn-transparent" title="Toggle Transparent / Look Inside Home">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M2.5 10c0 0 3-5 7.5-5s7.5 5 7.5 5-3 5-7.5 5-7.5-5-7.5-5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                <circle cx="10" cy="10" r="2.4" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              </svg>
+              <span>See Inside</span>
+            </button>
+          </div>
+          <div class="dock-group room-group" aria-label="Room views">
+            <button data-view="living" title="Inside Family & Dining">Living</button>
+            <button data-view="kitchen" title="Inside Kitchen & Island">Kitchen</button>
+            <button data-view="master" title="Inside Master Bedroom">Master</button>
+            <button data-view="media" title="Inside Media Room">Media</button>
+            <button data-view="alfresco" title="Inside Covered Alfresco">Alfresco</button>
+          </div>
+          <div class="dock-group">
+            <button data-mood="day" class="on" title="Daylight">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="3.6" fill="currentColor"/><path d="M10 1.8v2.4M10 15.8v2.4M1.8 10h2.4M15.8 10h2.4M4.2 4.2l1.7 1.7M14.1 14.1l1.7 1.7M4.2 15.8l1.7-1.7M14.1 5.9l1.7-1.7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+              <span>Day</span>
+            </button>
+            <button data-mood="dusk" title="Dusk with lights on">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M15.5 12.6A6.5 6.5 0 017.4 4.5a6.5 6.5 0 108.1 8.1z" fill="currentColor"/></svg>
+              <span>Dusk</span>
+            </button>
+          </div>
+          <div class="dock-group">
+            <button data-act="pins" class="on" title="Show A–L labels">A–L</button>
+            <button data-act="rotate" title="Slowly orbit the home">
+              <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10a6 6 0 11-2-4.5M16 3v3.5h-3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Orbit</span>
+            </button>
+          </div>
+        </div>
+        <p class="hint">Drag to orbit · scroll inside rooms · 'See Inside' for transparent 3D cutaway</p>
+        <button class="sheet-toggle" data-act="sheet">Selections</button>
+      </section>
+
+      <aside class="panel" aria-label="Selections"></aside>
+    </main>
+
+    <div id="region" class="modal" hidden>
+      <div class="modal-card dlg" role="dialog" aria-modal="true" aria-labelledby="regionTitle">
+        <div class="dlg-intro">
+          <p class="eyebrow">Selection Showroom</p>
+          <h2>Design your home’s exterior</h2>
+          <p>Start with a plain white home and choose each external finish from the Coral Homes Pre-Selection Guide. Watch your home change as you go, then download a summary for your selection appointment.</p>
+        </div>
+        <h3 id="regionTitle">Where are you building?</h3>
+        <p class="muted">Brick ranges and some standard inclusions depend on your build region.</p>
+        <div class="region-list"></div>
+        <button class="link" data-act="close">Close</button>
+      </div>
+    </div>
+
+    <div id="summary" class="modal" hidden></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
