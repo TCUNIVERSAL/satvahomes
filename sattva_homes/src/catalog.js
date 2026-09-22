@@ -293,6 +293,49 @@ const DOOR_FINISH_TYPES = [
   { id: 'df-stain', name: 'Stained timber', sub: 'Choose a stain colour', tier: 'Standard' },
 ];
 
+// ---------- colour equivalence across ranges ----------
+// When a sibling field swaps the option list out from under a chosen colour
+// (roof type, trim finish, garage profile), dropping the pick sends the material
+// back to its unselected white and the item back to "Not selected yet" — and
+// validate() skips null fields, so switching back never restores it. Match by
+// name first, then by nearest hex, so the customer keeps a colour either way.
+function rgb(hex) {
+  const h = String(hex || '').replace('#', '');
+  if (h.length !== 6) return null;
+  const n = Number.parseInt(h, 16);
+  return Number.isNaN(n) ? null : [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+}
+
+// Weighted RGB distance — closer to perceived difference than the raw metric,
+// without pulling in a colour-space library for four swatch lists.
+function colourGap(a, b) {
+  const x = rgb(a);
+  const y = rgb(b);
+  if (!x || !y) return Infinity;
+  const rm = (x[0] + y[0]) / 2;
+  const dr = x[0] - y[0];
+  const dg = x[1] - y[1];
+  const db = x[2] - y[2];
+  return (2 + rm / 256) * dr * dr + 4 * dg * dg + (2 + (255 - rm) / 256) * db * db;
+}
+
+function nearestColour(value, list) {
+  const cur = findOption(value);
+  if (!cur || !list?.length) return null;
+  const byName = list.find((o) => o.name === cur.name || (cur.short && o.short === cur.short));
+  if (byName) return byName.id;
+  let best = null;
+  let bestGap = Infinity;
+  for (const o of list) {
+    const gap = colourGap(cur.hex, o.hex);
+    if (gap < bestGap) {
+      bestGap = gap;
+      best = o;
+    }
+  }
+  return best?.id ?? null;
+}
+
 // ---------- categories ----------
 // Each category has fields; `primary` fields must be chosen before the item counts as done.
 // options(ctx) receives { region, sel } where sel is this category's current selection.
@@ -309,14 +352,12 @@ export const CATEGORIES = [
         key: 'colour', label: 'Colour', kind: 'swatches', primary: true,
         options: ({ sel }) => (sel.type === 'colorbond' ? COLORBOND : ROOF_TILES.filter((t) => t.profile === sel.type)),
         filters: ['tone'],
-        remap: (value, sel) => {
-          // keep the colour by name when switching roof type if it exists there
-          const all = [...COLORBOND, ...ROOF_TILES];
-          const cur = all.find((o) => o.id === value);
-          if (!cur) return null;
-          const list = sel.type === 'colorbond' ? COLORBOND : ROOF_TILES.filter((t) => t.profile === sel.type);
-          return list.find((o) => o.name === cur.name)?.id || null;
-        },
+        // Tile names and Colorbond names do not overlap, so a name-only match
+        // dropped the colour on every switch to or from the sheet roof.
+        remap: (value, sel) => nearestColour(
+          value,
+          sel.type === 'colorbond' ? COLORBOND : ROOF_TILES.filter((t) => t.profile === sel.type),
+        ),
       },
       {
         key: 'extras', label: 'Roof covering extras', kind: 'cards', default: 'rx-none',
@@ -408,7 +449,10 @@ export const CATEGORIES = [
       {
         key: 'colour', label: 'Colour', kind: 'swatches', primary: true,
         options: ({ sel }) => (sel.type === 'tt-colorbond' ? COLORBOND : sel.type === 'tt-paint' ? PAINTS : TIMBER),
-        remap: () => null,
+        remap: (value, sel) => nearestColour(
+          value,
+          sel.type === 'tt-colorbond' ? COLORBOND : sel.type === 'tt-paint' ? PAINTS : TIMBER,
+        ),
       },
     ],
   },
@@ -451,7 +495,12 @@ export const CATEGORIES = [
             ...TIMBER.map((o) => ({ ...o, group: 'Timber look finishes · upgrade' })),
           ]),
         filters: ['tone'],
-        remap: (value, sel) => (sel.profile === 'gd-battens' && !value?.startsWith('tb-') ? null : value),
+        // Battens are a timber-look-only profile, so carry a Colorbond pick
+        // across to the closest stain rather than clearing the selection.
+        remap: (value, sel) => {
+          if (sel.profile !== 'gd-battens') return value;
+          return value?.startsWith('tb-') ? value : nearestColour(value, TIMBER);
+        },
       },
     ],
   },
