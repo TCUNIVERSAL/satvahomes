@@ -217,7 +217,7 @@ export function createPanel({ root, store, onOpen, onDone }) {
       return `<div class="cards">${list
         .map((o) => {
           const img = o.kind && o.base ? drivewayThumb(o) : o.img;
-          const media = img ? `<img src="${esc(img)}" alt="" loading="lazy">` : `<i style="background:${esc(o.swatch || o.tint || o.hex || '#ddd')}"></i>`;
+          const media = img ? `<img src="${esc(img)}" alt="">` : `<i style="background:${esc(o.swatch || o.tint || o.hex || '#ddd')}"></i>`;
           return `<button class="card${o.id === current ? ' on' : ''}" data-field="${f.key}" data-id="${o.id}">
             <span class="card-media">${media}${o.id === current ? `<span class="tick">${ICON.check}</span>` : ''}</span>
             <span class="card-name">${esc(o.name)}</span>
@@ -240,7 +240,7 @@ export function createPanel({ root, store, onOpen, onDone }) {
       if (many && g) out += `<h4 class="group">${esc(g)}</h4>`;
       out += `<div class="swatches${f.large ? ' large' : ''}">${opts
         .map((o) => {
-          const media = o.img ? `<img src="${esc(o.img)}" alt="" loading="lazy">` : `<i style="background:${esc(o.hex)}"></i>`;
+          const media = o.img ? `<img src="${esc(o.img)}" alt="">` : `<i style="background:${esc(o.hex)}"></i>`;
           const tierImplied = /range|upgrade|standard|timber|price|elegance|designer/i.test(g);
           const showTier = o.tier && /upgrade/i.test(o.tier) && !tierImplied;
           const meta = [o.tone, showTier ? o.tier : null].filter(Boolean).join(' · ');

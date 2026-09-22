@@ -1,3 +1,5 @@
+import { jsPDF } from 'jspdf';
+import { STLExport } from '@babylonjs/serializers/stl/stlSerializer.js';
 import { summaryRows, interiorRows, regionName } from '../describe.js';
 import { NOTES } from '../catalog.js';
 import { ICON } from './panel.js';
@@ -161,7 +163,6 @@ export function createSummary({ root, store, capture, scene }) {
   async function buildPdf() {
     const rows = summaryRows(store.state);
     const irows = interiorRows(store.state);
-    const { jsPDF } = await import('jspdf');
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
     const W = 210;
     const H = 297;
@@ -409,7 +410,6 @@ export function createSummary({ root, store, capture, scene }) {
       (m) => m.metadata?.part && typeof m.getTotalVertices === 'function' && m.getTotalVertices() > 0,
     );
     if (!meshes.length) throw new Error('no exportable meshes found');
-    const { STLExport } = await import('@babylonjs/serializers/stl/stlSerializer.js');
     // download=true triggers the save directly; binary keeps the file small.
     STLExport.CreateSTL(meshes, true, `Sattva-Homes-Model-${ref}`, true, true, false, false, false);
   }
