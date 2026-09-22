@@ -18,15 +18,29 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
   let baseHemi = 0.9;
   let exteriorFill = EXTERIOR_FILL.day;
   let inside = false;
+  // What the sun should be outdoors for the current mood. Tracked separately so
+  // going inside can dim it to 0 and coming back out can restore the right value.
+  let sunIntensity = 8.5;
+
+  // Never call sun.setEnabled() to hide the sun. Disabling a light removes it
+  // from every mesh's lightSources, and re-enabling APPENDS it at the end of
+  // that list. With the interior point lights and sconces present the sun lands
+  // at index 11, past the materials' 8-light limit, so it gets no shader slot
+  // and silently stops lighting anything while still reporting isEnabled: true.
+  // Dimming keeps its original position in the list.
+  const setSun = (on) => {
+    sun.intensity = on ? sunIntensity : 0;
+    sun.shadowEnabled = on;
+  };
 
   async function setMood(mode) {
     const dusk = mode === 'dusk';
     await setSky(mode);
     sun.direction = (dusk ? SUN_DUSK : SUN_DAY).clone();
     sun.position = sun.direction.scale(-70);
-    sun.intensity = dusk ? 2.2 : 8.5;
     sun.diffuse = dusk ? new Color3(1, 0.62, 0.42) : new Color3(1, 0.96, 0.9);
-    sun.setEnabled(!inside);
+    sunIntensity = dusk ? 2.2 : 8.5;
+    setSun(!inside);
     baseHemi = dusk ? 0.35 : 0.9;
     exteriorFill = dusk ? EXTERIOR_FILL.dusk : EXTERIOR_FILL.day;
     hemi.intensity = inside ? baseHemi : exteriorFill;
@@ -53,9 +67,10 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
     house.setTransparent(on);
     interior.setTransparent(on);
     entryDoor?.setTransparent(on);
-    // Disabling the sun also stops its shadow-map from rendering,
-    // which removes the harsh wall shadows that rake across the fit-out.
-    sun.setEnabled(!on);
+    // Dimming the sun and switching its shadows off removes the harsh wall
+    // shadows that rake across the fit-out, without dropping the light out of
+    // the meshes' light lists (see setSun).
+    setSun(!on);
     // with the roof off, lift the ambient so rooms read the way they do on site
     scene.environmentIntensity = on ? baseEnv * 1.7 : baseEnv;
     // the faded exterior walls still block the sun, so fill the rooms indoors
