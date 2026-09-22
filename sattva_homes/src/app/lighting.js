@@ -26,6 +26,7 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
     sun.position = sun.direction.scale(-70);
     sun.intensity = dusk ? 2.2 : 8.5;
     sun.diffuse = dusk ? new Color3(1, 0.62, 0.42) : new Color3(1, 0.96, 0.9);
+    sun.setEnabled(!inside);
     baseHemi = dusk ? 0.35 : 0.9;
     exteriorFill = dusk ? EXTERIOR_FILL.dusk : EXTERIOR_FILL.day;
     hemi.intensity = inside ? baseHemi : exteriorFill;
@@ -52,6 +53,9 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
     house.setTransparent(on);
     interior.setTransparent(on);
     entryDoor?.setTransparent(on);
+    // Disabling the sun also stops its shadow-map from rendering,
+    // which removes the harsh wall shadows that rake across the fit-out.
+    sun.setEnabled(!on);
     // with the roof off, lift the ambient so rooms read the way they do on site
     scene.environmentIntensity = on ? baseEnv * 1.7 : baseEnv;
     // the faded exterior walls still block the sun, so fill the rooms indoors
