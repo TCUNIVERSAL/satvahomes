@@ -1,4 +1,5 @@
-import { Vector3, Matrix, Ray, Color3 } from '../scene/babylon.js';
+import { Vector3, Matrix, Ray } from '../scene/babylon.js';
+import { createTinter } from './hoverTint.js';
 import { CATEGORIES } from '../catalog.js';
 import { describe } from '../describe.js';
 
@@ -27,6 +28,7 @@ export function createOverlay({ stage, scene, camera, engine, anchors, partMeshe
   });
 
   let showPins = true;
+  let enabled = true; // muted while the Internal tab is open
   let active = null;
   const tmp = new Vector3();
   const identity = Matrix.Identity();
@@ -70,22 +72,18 @@ export function createOverlay({ stage, scene, camera, engine, anchors, partMeshe
   refreshStates();
 
   // ---- hover highlight in the 3D view
-  const accent = Color3.FromHexString('#ff8a57');
+  const tinter = createTinter();
   let hovered = null;
   function highlight(part) {
     if (hovered === part) return;
-    for (const m of partMeshes(hovered)) m.renderOverlay = false;
     hovered = part;
-    for (const m of partMeshes(part)) {
-      m.overlayColor = accent;
-      m.overlayAlpha = 0.22;
-      m.renderOverlay = true;
-    }
+    tinter.set(part ? partMeshes(part) : null);
   }
 
   let last = 0;
   const canvas = engine.getRenderingCanvas();
   canvas.addEventListener('pointermove', (e) => {
+    if (!enabled) return;
     if (e.buttons) {
       tip.hidden = true;
       return;
@@ -111,18 +109,34 @@ export function createOverlay({ stage, scene, camera, engine, anchors, partMeshe
     tip.hidden = true;
   });
   let down = null;
+  let pending = null;
+  const cancelTap = () => {
+    clearTimeout(pending);
+    pending = null;
+  };
   canvas.addEventListener('pointerdown', (e) => {
     down = { x: e.clientX, y: e.clientY, t: performance.now() };
   });
   canvas.addEventListener('pointerup', (e) => {
-    if (!down) return;
+    if (!enabled || !down) {
+      down = null;
+      return;
+    }
     const moved = Math.hypot(e.clientX - down.x, e.clientY - down.y);
     if (moved < 6 && performance.now() - down.t < 500) {
       const pick = scene.pick(scene.pointerX, scene.pointerY, (m) => !!m.metadata?.part);
-      if (pick?.hit) onPick(pick.pickedMesh.metadata.part);
+      if (pick?.hit) {
+        const key = pick.pickedMesh.metadata.part;
+        cancelTap();
+        pending = setTimeout(() => {
+          pending = null;
+          onPick(key);
+        }, 240); // a second tap means "recentre", not "open this item"
+      }
     }
     down = null;
   });
+  canvas.addEventListener('dblclick', cancelTap);
 
   return {
     setActive(key) {
@@ -131,7 +145,17 @@ export function createOverlay({ stage, scene, camera, engine, anchors, partMeshe
     },
     setPins(on) {
       showPins = on;
-      layer.hidden = !on;
+      layer.hidden = !on || !enabled;
+    },
+    // External pins and part hovers are switched off while choosing Internal items
+    cancelTap,
+    setEnabled(on) {
+      enabled = on;
+      layer.hidden = !on || !showPins;
+      if (!on) {
+        highlight(null);
+        tip.hidden = true;
+      }
     },
     flash(key) {
       highlight(key);

@@ -29,7 +29,7 @@ function tierClass(tier = '') {
 }
 
 const TABS = [
-  { key: 'ext', name: 'External', title: 'External Selections', lede: 'Choose each item <b>A–L</b>. Your home updates as you go.' },
+  { key: 'ext', name: 'External', title: 'External Selections', lede: 'Choose each item <b>A–M</b>. Your home updates as you go.' },
   { key: 'int', name: 'Internal', title: 'Internal Selections', lede: 'Flooring, paint, kitchen, bathrooms and more — see inside as you choose.' },
 ];
 

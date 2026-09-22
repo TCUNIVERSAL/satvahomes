@@ -48,14 +48,18 @@ export const VIEWS = {
   back: { alpha: Math.PI / 2 + 0.35, beta: 1.35, radius: 24, target: [-0.15, 1.8, 9.5] },
   // per-category focus views
   roof: { alpha: -Math.PI / 2 - 0.5, beta: 1.05, radius: 24, target: [-0.15, 3.2, -4.0] },
-  eaves: { alpha: -Math.PI / 2 - 0.35, beta: 1.42, radius: 10, target: [2.5, 2.7, -11.0] },
+  // Gutter and fascia are a 100 mm band under the roof edge, so they get their
+  // own close views looking up at the eave rather than one wide elevation.
+  eaves: { alpha: 0.16, beta: 1.44, radius: 2.6, target: [5.92, 2.80, -7.2] },
+  fascia: { alpha: 0.16, beta: 1.58, radius: 1.8, target: [5.92, 2.70, -7.2] },
   downpipe: { alpha: -Math.PI / 2 - 0.3, beta: 1.40, radius: 8, target: [-5.6, 1.6, -9.7] },
   cladding: { alpha: -Math.PI / 2 - 0.25, beta: 1.40, radius: 9, target: [1.2, 1.8, -11.5] },
   flashing: { alpha: -Math.PI / 2 - 0.2, beta: 1.40, radius: 7.5, target: [1.2, 2.8, -11.5] },
   entry: { alpha: -Math.PI / 2 - 0.25, beta: 1.42, radius: 9.5, target: [1.2, 1.7, -11.5] },
+  entrydoor: { alpha: -Math.PI / 2 - 0.02, beta: 1.47, radius: 2.9, target: [0.75, 1.30, -9.62] },
   bricks: { alpha: -Math.PI / 2 + 0.55, beta: 1.38, radius: 12, target: [5.2, 1.7, -6.5] },
   trim: { alpha: -Math.PI / 2 - 0.15, beta: 1.42, radius: 9, target: [4.0, 1.6, -9.6] },
-  windows: { alpha: -Math.PI / 2 - 0.1, beta: 1.42, radius: 11, target: [3.9, 1.6, -9.6] },
+  windows: { alpha: -Math.PI / 2 - 0.06, beta: 1.47, radius: 3.1, target: [4.05, 1.42, -9.62] },
   garage: { alpha: -Math.PI / 2 - 0.35, beta: 1.42, radius: 14, target: [-2.9, 1.4, -9.7] },
   driveway: { alpha: -Math.PI / 2 - 0.35, beta: 1.15, radius: 20, target: [-2.9, 0.2, -15.0] },
   // Interior view presets & dollhouse cutaway
@@ -65,7 +69,9 @@ export const VIEWS = {
   pantry: { alpha: 0.75, beta: 1.34, radius: 1.2, target: [-5.2, 1.15, -2.70] },
   master: { alpha: 0.69, beta: 1.30, radius: 3.1, target: [2.6, 1.10, -8.30] },
   media: { alpha: Math.PI, beta: 1.40, radius: 3.15, target: [5.1, 1.15, 0.20] },
-  bathroom: { alpha: -0.90, beta: 1.32, radius: 1.45, target: [3.0, 1.25, 6.35] },
+  bathroom: { alpha: 2.415, beta: 1.30, radius: 1.24, target: [4.70, 1.10, 5.90] },
+  vanity: { alpha: -2.01, beta: 1.30, radius: 1.31, target: [3.54, 1.20, 8.20] },
+  wc: { alpha: -2.064, beta: 1.15, radius: 0.95, target: [4.83, 0.45, 7.95] },
   ensuite: { alpha: -1.18, beta: 1.32, radius: 1.62, target: [3.4, 1.10, -4.40] },
   laundry: { alpha: 0, beta: 1.32, radius: 3.0, target: [2.2, 1.15, -3.40] },
   hall: { alpha: 1.545, beta: 1.42, radius: 4.2, target: [0.9, 1.35, -5.60] },
@@ -82,7 +88,7 @@ export function createScene(engine, canvas) {
   const v = VIEWS.home;
   const camera = new ArcRotateCamera('cam', v.alpha, v.beta, v.radius, new Vector3(...v.target), scene);
   camera.lowerBetaLimit = 0.05; // allows steep dollhouse overhead look
-  camera.upperBetaLimit = 1.55;
+  camera.upperBetaLimit = 1.62; // a little past level, so you can look up into the eaves
   camera.lowerRadiusLimit = 0.2; // allows scrolling directly inside rooms
   camera.upperRadiusLimit = 65;
   camera.wheelDeltaPercentage = 0.012;
@@ -211,6 +217,27 @@ export function flyTo(camera, view, duration = 1150) {
       camera.beta = from.b + (v.beta - from.b) * e;
       camera.radius = from.r + (v.radius - from.r) * e;
       Vector3.LerpToRef(from.t, toT, e, camera.target);
+      if (k === 1) {
+        cancelFlight(camera);
+        resolve();
+      }
+    });
+    flight = { obs, scene, resolve };
+  });
+}
+
+// Glide the orbit pivot to a point the customer double-tapped.
+export function focusPoint(camera, point, duration = 420) {
+  const scene = camera.getScene();
+  cancelFlight(camera);
+  const from = camera.target.clone();
+  const to = point.clone ? point.clone() : new Vector3(point[0], point[1], point[2]);
+  const start = performance.now();
+  return new Promise((resolve) => {
+    const obs = scene.onBeforeRenderObservable.add(() => {
+      const k = Math.min(1, (performance.now() - start) / duration);
+      const e = 1 - (1 - k) ** 3;
+      Vector3.LerpToRef(from, to, e, camera.target);
       if (k === 1) {
         cancelFlight(camera);
         resolve();

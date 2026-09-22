@@ -17,10 +17,6 @@
         <span class="brand-sub">Coral Homes · External Selections</span>
       </a>
       <div class="top-actions">
-        <button class="pill" data-act="region" title="Change build region">
-          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 18s6-5.3 6-10a6 6 0 10-12 0c0 4.7 6 10 6 10z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="10" cy="8" r="2.2" fill="currentColor"/></svg>
-          <span>Choose region</span>
-        </button>
         <div class="top-progress" title="Items selected"><i></i><b>0/12</b></div>
         <button class="btn btn-primary" data-act="done-top" disabled>Done</button>
       </div>
@@ -67,33 +63,19 @@
             </button>
           </div>
           <div class="dock-group">
-            <button data-act="pins" class="on" title="Show A–L labels">A–L</button>
+            <button data-act="pins" class="on" title="Show A–M labels">A–M</button>
             <button data-act="rotate" title="Slowly orbit the home">
               <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 10a6 6 0 11-2-4.5M16 3v3.5h-3.5" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
               <span>Orbit</span>
             </button>
           </div>
         </div>
-        <p class="hint">Drag to orbit · scroll inside rooms · 'See Inside' for transparent 3D cutaway</p>
+        <p class="hint">Drag to orbit · double-click to centre on any spot · scroll to zoom</p>
         <button class="sheet-toggle" data-act="sheet">Selections</button>
       </section>
 
       <aside class="panel" aria-label="Selections"></aside>
     </main>
-
-    <div id="region" class="modal" hidden>
-      <div class="modal-card dlg" role="dialog" aria-modal="true" aria-labelledby="regionTitle">
-        <div class="dlg-intro">
-          <p class="eyebrow">Selection Showroom</p>
-          <h2>Design your home’s exterior</h2>
-          <p>Start with a plain white home and choose each external finish from the Coral Homes Pre-Selection Guide. Watch your home change as you go, then download a summary for your selection appointment.</p>
-        </div>
-        <h3 id="regionTitle">Where are you building?</h3>
-        <p class="muted">Brick ranges and some standard inclusions depend on your build region.</p>
-        <div class="region-list"></div>
-        <button class="link" data-act="close">Close</button>
-      </div>
-    </div>
 
     <div id="summary" class="modal" hidden></div>
 

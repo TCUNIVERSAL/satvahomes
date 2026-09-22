@@ -1,6 +1,10 @@
 import { PBRMaterial, Color3, DynamicTexture, Texture } from './babylon.js';
 import {
   makeCanvas,
+  screenCanvas,
+  screenTile,
+  barrierCanvas,
+  BARRIER_TILE,
   brickAlbedo,
   brickHeight,
   BRICK_TILE,
@@ -18,9 +22,10 @@ import { findOption, BRICKS } from '../catalog.js';
 const WHITE = '#f1efea';
 const toLinear = (hex) => Color3.FromHexString(hex).toLinearSpace();
 
-function dyn(name, canvas, scene, { wrap = true, aniso = 8 } = {}) {
+function dyn(name, canvas, scene, { wrap = true, aniso = 8, alpha = false } = {}) {
   const t = new DynamicTexture(name, canvas, scene, true, Texture.TRILINEAR_SAMPLINGMODE);
   t.update(true);
+  t.hasAlpha = alpha;
   t.anisotropicFilteringLevel = aniso;
   if (wrap) {
     t.wrapU = Texture.WRAP_ADDRESSMODE;
@@ -133,16 +138,16 @@ export async function createMaterials(scene) {
 
   // ---------------- bricks
   M.bricks = pbr('bricks', scene, { rough: 0.9 });
-  const brickFade = new FadeTexture('brickAlb', [size, size], scene, brickAlbedo(size, { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, '#e6e3de', 'stretcher'));
+  const brickFade = new FadeTexture('brickAlb', [size, size], scene, brickAlbedo(size, { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, '#e6e3de', 'stretcher', 3, 'ironed'));
   M.bricks.albedoTexture = tile(brickFade.texture, BRICK_TILE.w, BRICK_TILE.h);
   const brickNormals = new Map();
-  const brickNormal = (bond, dh) => {
-    const k = `${bond}-${dh}`;
-    if (!brickNormals.has(k)) brickNormals.set(k, tile(dyn(`brickN-${k}`, brickHeight(size, bond, dh), scene), BRICK_TILE.w, BRICK_TILE.h));
+  const brickNormal = (bond, dh, joint) => {
+    const k = `${bond}-${dh}-${joint}`;
+    if (!brickNormals.has(k)) brickNormals.set(k, tile(dyn(`brickN-${k}`, brickHeight(size, bond, dh, joint), scene), BRICK_TILE.w, BRICK_TILE.h));
     return brickNormals.get(k);
   };
-  M.bricks.bumpTexture = brickNormal('stretcher', false);
-  M.bricks.bumpTexture.level = 0.9;
+  M.bricks.bumpTexture = brickNormal('stretcher', false, 'ironed');
+  M.bricks.bumpTexture.level = 1.15;
 
   // ---------------- cladding (paint colour × profile relief)
   M.cladding = pbr('cladding', scene, { rough: 0.62 });
@@ -195,7 +200,7 @@ export async function createMaterials(scene) {
     const t = roofTex(profile);
     M.roof.albedoTexture = t.albedo;
     M.roof.bumpTexture = t.normal;
-    M.roof.bumpTexture.level = profile === 'colorbond' ? 0.7 : 1;
+    M.roof.bumpTexture.level = profile === 'colorbond' ? 1.0 : 1.5;
     M.roof.ambientTexture = t.ao;
     M.roof.ambientTextureStrength = 1;
     const metal = profile === 'colorbond';
@@ -232,20 +237,75 @@ export async function createMaterials(scene) {
   M.glassFrosted.transparencyMode = PBRMaterial.PBRMATERIAL_ALPHABLEND;
   M.glassFrosted.emissiveColor = new Color3(0, 0, 0);
 
+  // ---------------- flyscreens & barrier screens (guide p.18-19)
+  // The weave is drawn at its real pitch and the gaps are genuinely
+  // transparent, so the screen darkens the glass behind it the way it does on
+  // site instead of reading as a flat grey panel.
+  const screenTex = new Map();
+  M.flyscreen = pbr('flyscreen', scene, { color: '#ffffff', rough: 0.68, twoSided: true });
+  M.flyscreen.transparencyMode = PBRMaterial.PBRMATERIAL_ALPHABLEND;
+  M.flyscreen.useAlphaFromAlbedoTexture = true;
+  M.flyscreen.environmentIntensity = 0.5;
+  M.flyscreen.specularIntensity = 0.35;
+  const setScreenMesh = (kind) => {
+    if (!screenTex.has(kind)) {
+      screenTex.set(kind, tile(dyn(`screen-${kind}`, screenCanvas(kind), scene, { aniso: 16, alpha: true }), screenTile(kind), screenTile(kind)));
+    }
+    M.flyscreen.albedoTexture = screenTex.get(kind);
+    M.flyscreen.opacityTexture = screenTex.get(kind);
+  };
+  setScreenMesh('fibreglass');
+
+  M.barrier = pbr('barrier', scene, { color: '#ffffff', rough: 0.5, metal: 0.25, twoSided: true });
+  M.barrier.transparencyMode = PBRMaterial.PBRMATERIAL_ALPHABLEND;
+  M.barrier.useAlphaFromAlbedoTexture = true;
+  M.barrier.environmentIntensity = 0.7;
+  const barrierTex = {
+    diamond: tile(dyn('barrier-diamond', barrierCanvas(), scene, { aniso: 16, alpha: true }), BARRIER_TILE, BARRIER_TILE),
+    homestyle: tile(dyn('barrier-homestyle', screenCanvas('homestyle'), scene, { aniso: 16, alpha: true }), screenTile('homestyle'), screenTile('homestyle')),
+  };
+  const setBarrier = (kind) => {
+    const t = barrierTex[kind] || barrierTex.diamond;
+    M.barrier.albedoTexture = t;
+    M.barrier.opacityTexture = t;
+  };
+  setBarrier('diamond');
+
   // ---------------- garage door
   M.garage = pbr('garage', scene, { rough: 0.45, metal: 0.1 });
   const garageFade = new FadeTexture('garageAlb', [1024, 512], scene, solid(WHITE, 1024, 512));
   M.garage.albedoTexture = garageFade.texture;
   const garageCache = new Map();
+  let garageProfile = 'flatline';
   const setGarageProfile = (kind) => {
     if (!garageCache.has(kind)) {
       const m = garageMaps(kind);
-      garageCache.set(kind, { normal: dyn(`garN-${kind}`, m.normal, scene, { wrap: false }), ao: dyn(`garAO-${kind}`, m.ao, scene, { wrap: false }) });
+      garageCache.set(kind, {
+        normal: dyn(`garN-${kind}`, m.normal, scene, { wrap: false }),
+        ao: dyn(`garAO-${kind}`, m.ao, scene, { wrap: false }),
+        shade: m.shade,
+      });
     }
     const g = garageCache.get(kind);
+    garageProfile = kind;
     M.garage.bumpTexture = g.normal;
+    M.garage.bumpTexture.level = 1.4;
     M.garage.ambientTexture = g.ao;
     M.garage.ambientTextureStrength = 1;
+  };
+  // Multiply the profile's baked shading over the door colour so the panels read
+  // on dark colours, where the normal map alone disappears into the shade.
+  const garageSkin = (src) => {
+    const c = makeCanvas(1024, 512);
+    const x = c.getContext('2d');
+    x.drawImage(src, 0, 0, 1024, 512);
+    const g = garageCache.get(garageProfile);
+    if (g?.shade) {
+      x.globalCompositeOperation = 'multiply';
+      x.drawImage(g.shade, 0, 0, 1024, 512);
+      x.globalCompositeOperation = 'source-over';
+    }
+    return c;
   };
   setGarageProfile('flatline');
 
@@ -265,6 +325,12 @@ export async function createMaterials(scene) {
   M.carpet = pbr('carpet', scene, { color: '#a89f92', rough: 0.98 });
   M.door = pbr('door', scene, { color: '#e8e4dc', rough: 0.5 });
   M.metalDark = pbr('metalDark', scene, { color: '#1b1b1b', rough: 0.35, metal: 0.6 });
+  // galvanised steel lintel angle over brick openings (guide p.21)
+  M.metalGalv = pbr('metalGalv', scene, { color: '#9aa0a3', rough: 0.52, metal: 0.75 });
+  // front entry door: leaf, its groove shadows, and the handle hardware
+  M.entryDoor = pbr('entryDoor', scene, { color: '#f1efea', rough: 0.62 });
+  M.entryDoorShade = pbr('entryDoorShade', scene, { color: '#c9c5bd', rough: 0.62 });
+  M.entryHardware = pbr('entryHardware', scene, { color: '#d8dce0', rough: 0.12, metal: 0.95 });
   M.porchTile = pbr('porchTile', scene, { color: '#9c978f', rough: 0.6 });
   M.backing = pbr('backing', scene, { color: '#262626', rough: 0.9 });
 
@@ -376,15 +442,17 @@ export async function createMaterials(scene) {
         const brick = BRICKS.find((b) => b.id === sel.brick);
         const mortar = findOption(sel.mortar) || findOption('mo-natural');
         const bond = sel.bond === 'bond-stack' ? 'stack' : 'stretcher';
-        const k = `${sel.brick}|${mortar.id}|${bond}`;
+        const joint = sel.joint === 'mj-flush' ? 'flush' : 'ironed';
+        const k = `${sel.brick}|${mortar.id}|${bond}|${joint}`;
         let canvas = brickCanvasCache.get(k);
         if (!canvas) {
-          canvas = brickAlbedo(size, brick || { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, brick ? mortar.hex : '#e6e3de', bond, 3);
+          canvas = brickAlbedo(size, brick || { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, brick ? mortar.hex : '#e6e3de', bond, 3, joint);
           brickCanvasCache.set(k, canvas);
         }
         brickFade.set(canvas, d);
-        const bt = brickNormal(bond, !!brick?.doubleHeight);
-        bt.level = 0.9;
+        const bt = brickNormal(bond, !!brick?.doubleHeight, joint);
+        // a tooled joint throws a real shadow line; a flush joint barely does
+        bt.level = joint === 'flush' ? 0.45 : 1.15;
         M.bricks.bumpTexture = bt;
         flash(M.bricks);
         break;
@@ -411,6 +479,13 @@ export async function createMaterials(scene) {
         else M.glass.albedoColor = toLinear(g.tint);
         M.glass.alpha = g.alpha;
         M.glass.roughness = g.rough;
+        // obscure glass scatters instead of mirroring the sky
+        M.glass.environmentIntensity = g.obscure ? 0.35 : 1.4;
+        const fs = findOption(sel.flyscreen);
+        if (fs?.mesh) setScreenMesh(fs.mesh);
+        const bs = findOption(sel.barrier);
+        if (bs?.barrier) setBarrier(bs.barrier);
+        M.barrier.metallic = bs?.barrier === 'homestyle' ? 0.45 : 0.25;
         flash(M.frame);
         break;
       }
@@ -436,7 +511,7 @@ export async function createMaterials(scene) {
             for (let k = 0; k < 8; k++) x.drawImage(img, offset(k), 0, sw, img.height, 0, k * 64, 1024, 65);
           }
         } else src = solid(opt?.hex || WHITE, 1024, 512);
-        garageFade.set(src, d);
+        garageFade.set(garageSkin(src), d);
         M.garage.roughness = opt?.timber ? 0.55 : 0.42;
         M.garage.metallic = opt?.timber ? 0 : 0.15;
         flash(M.garage);

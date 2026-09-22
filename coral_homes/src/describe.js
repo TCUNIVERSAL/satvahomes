@@ -9,6 +9,8 @@ export function describe(cat, sel, region) {
   let primary = null;
   let upgrade = false;
   for (const f of cat.fields) {
+    // a field that its own guard switches off is not part of the selection
+    if (f.when && !f.when(sel || {})) continue;
     const id = sel?.[f.key];
     if (!id) continue;
     let opt = findOption(id);

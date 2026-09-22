@@ -1,4 +1,4 @@
-import { CATEGORIES, defaultSelection, isComplete } from './catalog.js';
+import { BUILD_REGION, CATEGORIES, defaultSelection, isComplete } from './catalog.js';
 import { INTERIOR_CATEGORIES, interiorDefaults, interiorComplete } from './interiorCatalog.js';
 
 const KEY = 'coral-homes.external-selections.v1';
@@ -52,14 +52,14 @@ function validateInt(cat, sel) {
 export function createStore() {
   const saved = load();
   const state = {
-    region: saved?.region || null,
+    region: BUILD_REGION,
     sel: {},
     int: {}, // internal (interior) selections
     intDone: Array.isArray(saved?.intDone) ? saved.intDone.slice() : [], // confirmed by the customer
   };
   for (const c of CATEGORIES) {
     const sel = { ...defaultSelection(c), ...(saved?.sel?.[c.key] || {}) };
-    state.sel[c.key] = state.region ? validate(c, sel, state.region) : sel;
+    state.sel[c.key] = validate(c, sel, state.region);
   }
   for (const c of INTERIOR_CATEGORIES) {
     state.int[c.key] = validateInt(c, { ...interiorDefaults(c), ...(saved?.int?.[c.key] || {}) });
@@ -83,11 +83,6 @@ export function createStore() {
     subscribe(fn) {
       listeners.add(fn);
       return () => listeners.delete(fn);
-    },
-    setRegion(region) {
-      state.region = region;
-      for (const c of CATEGORIES) state.sel[c.key] = validate(c, { ...state.sel[c.key] }, region);
-      emit({ type: 'region' });
     },
     set(catKey, fieldKey, value) {
       const cat = CATEGORIES.find((c) => c.key === catKey);

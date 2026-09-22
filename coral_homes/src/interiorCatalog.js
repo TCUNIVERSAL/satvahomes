@@ -581,7 +581,7 @@ export const INTERIOR_CATEGORIES = [
 
   // ============================================================== BATHROOM
   {
-    key: 'b-benchtop', letter: 'B1', section: 'bathroom', name: 'Bathroom benchtop', view: 'bathroom',
+    key: 'b-benchtop', letter: 'B1', section: 'bathroom', name: 'Bathroom benchtop', view: 'vanity',
     notes: ['Applies to the main bathroom and ensuite vanities. The Caesarstone® colour selected here is also used in the laundry if the benchtop upgrade is chosen.'],
     fields: [
       { key: 'colour', label: 'Caesarstone® colour', kind: 'swatches', primary: true, default: 'cs-snow', options: () => STONE },
@@ -595,7 +595,7 @@ export const INTERIOR_CATEGORIES = [
     ],
   },
   {
-    key: 'b-vanity', letter: 'B2', section: 'bathroom', name: 'Vanity units', view: 'bathroom',
+    key: 'b-vanity', letter: 'B2', section: 'bathroom', name: 'Vanity units', view: 'vanity',
     fields: [
       {
         key: 'style', label: 'Vanity style', kind: 'cards', default: 'vs-wall-hung', primary: true, large: true,
@@ -632,7 +632,7 @@ export const INTERIOR_CATEGORIES = [
     ],
   },
   {
-    key: 'b-basin', letter: 'B3', section: 'bathroom', name: 'Basins & tapware', view: 'bathroom',
+    key: 'b-basin', letter: 'B3', section: 'bathroom', name: 'Basins & tapware', view: 'vanity',
     fields: [
       {
         key: 'basin', label: 'Basin', kind: 'swatches', primary: true, default: 'bn-clark-round', large: true,
@@ -758,7 +758,7 @@ export const INTERIOR_CATEGORIES = [
     ],
   },
   {
-    key: 'b-toilet', letter: 'B6', section: 'bathroom', name: 'Toilet suites', view: 'bathroom',
+    key: 'b-toilet', letter: 'B6', section: 'bathroom', name: 'Toilet suites', view: 'wc',
     fields: [
       {
         key: 'suite', label: 'Toilet suite', kind: 'swatches', primary: true, default: 'tl-posh-solus', large: true,

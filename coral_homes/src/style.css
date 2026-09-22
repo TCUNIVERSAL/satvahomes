@@ -520,3 +520,17 @@ img { display: block; max-width: 100%; }
 .sum-lists { min-width: 0; }
 .sum-lists .sum-sec:first-child { margin-top: 0; }
 @media (max-width: 820px) { .gallery-int { grid-template-columns: repeat(2, 1fr); } .sum-visuals { position: static; } }
+
+/* ------------------------------------------- interior hover + pivot feedback */
+.tip-int { border-left: 3px solid var(--accent); }
+.mode-int .pins { display: none; }
+.mode-int [data-act="pins"] { opacity: 0.4; pointer-events: none; }
+.pivot-ping {
+  position: absolute; width: 14px; height: 14px; margin: -7px 0 0 -7px;
+  border: 2px solid var(--accent); border-radius: 50%; pointer-events: none; opacity: 0;
+}
+.pivot-ping.on { animation: pivot 0.6s ease-out; }
+@keyframes pivot {
+  0% { transform: scale(0.4); opacity: 0.95; }
+  100% { transform: scale(2.6); opacity: 0; }
+}

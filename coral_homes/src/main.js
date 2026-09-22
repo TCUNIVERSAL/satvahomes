@@ -1,16 +1,19 @@
 import './style.css';
-import { Color3, Vector3, PointLight } from './scene/babylon.js';
-import { createEngine, createScene, flyTo, setView, cancelFlight, VIEWS, SUN_DAY, SUN_DUSK } from './scene/setup.js';
+import { createEngine, createScene, flyTo, focusPoint, cancelFlight, VIEWS } from './scene/setup.js';
 import { createMaterials } from './scene/materials.js';
 import { buildHouse } from './scene/house.js';
+import { buildEntryDoor } from './scene/entryDoor.js';
 import { buildLandscape } from './scene/landscape.js';
-import { buildInterior } from './scene/interior.js';
-import { CATEGORIES, REGIONS } from './catalog.js';
+import { buildInterior } from './scene/interior/index.js';
+import { CATEGORIES, findOption } from './catalog.js';
 import { INTERIOR_CATEGORIES } from './interiorCatalog.js';
 import { createStore } from './state.js';
 import { createPanel } from './ui/panel.js';
 import { createOverlay } from './ui/overlay.js';
+import { createInteriorPicker } from './ui/interiorPicker.js';
 import { createSummary } from './ui/summary.js';
+import { createLighting } from './app/lighting.js';
+import { createCapture } from './app/capture.js';
 
 const $ = (s) => document.querySelector(s);
 const canvas = $('#renderCanvas');
@@ -36,14 +39,33 @@ async function boot() {
   await tick();
   const house = buildHouse(scene, M, shadows);
   const ground = buildLandscape(scene, M, shadows);
+  // The entry door leaf is cut to the selected profile, so it lives in its own
+  // rebuildable module rather than in the merged house geometry.
+  const entryDoor = buildEntryDoor({ scene, M, shadows, ...house.entryOpening });
 
   const store = createStore();
   for (const c of CATEGORIES) await apply(c.key, store.state.sel[c.key], false);
+  entryDoor.apply(store.state.sel.entry);
 
   setLoad('Fitting out the interior…');
   await tick();
   const interior = await buildInterior({ scene, M, shadows, house });
   await interior.buildAll(store.state.int);
+
+  // Guide p.18-19 extras are geometry, not just materials, so they are toggled
+  // alongside the frame material whenever the Window Frame selection changes.
+  const syncWindowExtras = () => {
+    const sel = store.state.sel.frame || {};
+    house.setWindowExtras({
+      flyscreen: !!findOption(sel.flyscreen)?.mesh,
+      barrier: !!findOption(sel.barrier)?.barrier,
+      boutique: findOption(sel.boutique)?.boutique || null,
+    });
+  };
+  syncWindowExtras();
+  // Guide p.21 — brick infill with a steel lintel, or fibre cement sheeting.
+  const syncInfill = () => house.setInfill(findOption(store.state.sel.bricks?.infill)?.infill || 'brick');
+  syncInfill();
 
   // part → meshes (for hover highlight)
   const partMeshes = (part) => {
@@ -51,39 +73,13 @@ async function boot() {
     return scene.meshes.filter((m) => m.metadata?.part === part);
   };
 
-  // ------------------------------------------------ mood (day / dusk)
-  const duskLights = house.lightSpots.map(([x, y, z], i) => {
-    const zOff = z > 0 ? 0.35 : -0.35;
-    const l = new PointLight(`sconce${i}`, new Vector3(x, y - 0.1, z + zOff), scene);
-    l.diffuse = new Color3(1, 0.72, 0.42);
-    l.intensity = 0;
-    l.range = 7;
-    return l;
+  // ------------------------------------------------ light, mood & cutaway
+  const lighting = createLighting({
+    scene, sun, hemi, pipeline, M, house, ground, interior, entryDoor, setSky,
+    onInside: (on) => $('[data-act="transparent"]').classList.toggle('on', on),
   });
-  const interiorMats = [M.interiorWall, M.interiorCeil, M.interiorFloor, M.carpet];
-  let baseEnv = 0.65;
-  let baseHemi = 0.9;
-  async function setMood(mode) {
-    const dusk = mode === 'dusk';
-    await setSky(mode);
-    sun.direction = (dusk ? SUN_DUSK : SUN_DAY).clone();
-    sun.position = sun.direction.scale(-70);
-    sun.intensity = dusk ? 2.2 : 8.5;
-    sun.diffuse = dusk ? new Color3(1, 0.62, 0.42) : new Color3(1, 0.96, 0.9);
-    baseHemi = dusk ? 0.35 : 0.9;
-    hemi.intensity = isTransparent ? baseHemi : 0;
-    baseEnv = dusk ? 0.38 : 0.65;
-    scene.environmentIntensity = isTransparent ? baseEnv * 1.7 : baseEnv;
-    pipeline.imageProcessing.exposure = dusk ? 1.2 : 0.95;
-    for (const m of interiorMats) m.emissiveColor = dusk ? new Color3(1.0, 0.7, 0.42).scale(m === M.interiorFloor || m === M.carpet ? 0.35 : 0.75) : Color3.Black();
-    M.glassFrosted.emissiveColor = dusk ? new Color3(0.9, 0.66, 0.4) : Color3.Black();
-    M.glass.environmentIntensity = dusk ? 0.6 : 1.4;
-    house.glow.setEnabled(dusk);
-    ground.setMood(dusk);
-    interior.setMood(dusk);
-    for (const l of duskLights) l.intensity = dusk ? 1.6 : 0;
-    document.body.dataset.mood = mode;
-  }
+  const setMood = lighting.setMood;
+  const setInside = lighting.setInside;
 
   // ------------------------------------------------ UI
   let autoRotate = false;
@@ -91,11 +87,10 @@ async function boot() {
     root: $('.panel'),
     store,
     onOpen: (cat, tab) => {
+      setMode(tab);
       overlay.setActive(tab === 'int' ? null : cat?.key || null);
       if (!cat) return;
       stopRotate();
-      // internal selections are only visible with the roof off
-      if (tab === 'int') setInside(true);
       flyTo(camera, cat.view);
       if (tab !== 'int') overlay.flash(cat.key);
     },
@@ -115,51 +110,41 @@ async function boot() {
     },
   });
 
-  const summary = createSummary({
-    root: $('#summary'),
+  const interiorPick = createInteriorPicker({
+    stage,
+    scene,
+    engine,
     store,
-    capture: async (views, { inside = false } = {}) => {
-      const saved = { alpha: camera.alpha, beta: camera.beta, radius: camera.radius, target: camera.target.clone() };
-      const wasRotating = autoRotate;
-      const wasInside = isTransparent;
-      stopRotate();
-      if (inside !== wasInside) setInside(inside);
-      const shots = [];
-      // render at a fixed landscape size so snapshots match on phones and desktops
-      engine.setSize(1600, 1000, true);
-      for (const v of views) {
-        setView(camera, v);
-        for (let i = 0; i < 4; i++) await new Promise((r) => engine.onEndFrameObservable.addOnce(r));
-        shots.push(grab());
-      }
-      engine.resize(true);
-      if (inside !== wasInside) setInside(wasInside);
-      camera.alpha = saved.alpha;
-      camera.beta = saved.beta;
-      camera.radius = saved.radius;
-      camera.target.copyFrom(saved.target);
-      if (wasRotating) toggleRotate();
-      return shots;
+    onPick: (key) => {
+      if (panel.openKey !== key) panel.open(key);
+      document.body.classList.add('sheet-open');
     },
   });
 
-  // crop the canvas to 16:10 and export as JPEG
-  function grab() {
-    const W = canvas.width;
-    const H = canvas.height;
-    const ratio = 1.6;
-    let cw = W;
-    let ch = W / ratio;
-    if (ch > H) {
-      ch = H;
-      cw = H * ratio;
-    }
-    const out = document.createElement('canvas');
-    out.width = 1600;
-    out.height = 1000;
-    out.getContext('2d').drawImage(canvas, (W - cw) / 2, (H - ch) / 2, cw, ch, 0, 0, 1600, 1000);
-    return out.toDataURL('image/jpeg', 0.9);
+  // External mode shows the A–L pins; Internal mode hides them and makes every
+  // configurable item in the house hoverable instead.
+  let mode = 'ext';
+  function setMode(next) {
+    if (!next || mode === next) return;
+    mode = next;
+    const internal = mode === 'int';
+    overlay.setEnabled(!internal);
+    interiorPick.setEnabled(internal);
+    document.body.classList.toggle('mode-int', internal);
+    if (internal) setInside(true);
   }
+
+  const summary = createSummary({
+    root: $('#summary'),
+    store,
+    capture: createCapture({
+      engine,
+      canvas,
+      camera,
+      lighting,
+      rotate: { isOn: () => autoRotate, stop: () => stopRotate(), toggle: () => toggleRotate() },
+    }),
+  });
 
   // re-apply materials when selections change
   let prevSel = JSON.stringify(store.state.sel);
@@ -169,7 +154,12 @@ async function boot() {
     const before = JSON.parse(prevSel);
     prevSel = JSON.stringify(now);
     for (const c of CATEGORIES) {
-      if (JSON.stringify(before[c.key]) !== JSON.stringify(now[c.key])) await apply(c.key, now[c.key], true);
+      if (JSON.stringify(before[c.key]) !== JSON.stringify(now[c.key])) {
+        await apply(c.key, now[c.key], true);
+        if (c.key === 'frame') syncWindowExtras();
+        if (c.key === 'bricks') syncInfill();
+        if (c.key === 'entry') entryDoor.apply(now.entry);
+      }
     }
     const nowInt = state.int;
     const beforeInt = JSON.parse(prevInt);
@@ -177,39 +167,7 @@ async function boot() {
     for (const c of INTERIOR_CATEGORIES) {
       if (JSON.stringify(beforeInt[c.key]) !== JSON.stringify(nowInt[c.key])) await interior.apply(c.key, nowInt[c.key]);
     }
-    if (change.type === 'region') updateRegionLabel();
   });
-
-  // ------------------------------------------------ region
-  const regionDlg = $('#region');
-  const regionBtn = $('[data-act="region"]');
-  function updateRegionLabel() {
-    const r = REGIONS.find((x) => x.id === store.state.region);
-    regionBtn.querySelector('span').textContent = r ? r.name : 'Choose region';
-  }
-  function askRegion(first = false) {
-    regionDlg.querySelector('.region-list').innerHTML = REGIONS.map(
-      (r) => `<button class="region-card${store.state.region === r.id ? ' on' : ''}" data-region="${r.id}">
-        <b>${r.name}</b><span>${r.detail}</span></button>`,
-    ).join('');
-    regionDlg.querySelector('.dlg-intro').hidden = !first;
-    regionDlg.hidden = false;
-    document.body.classList.add('modal-open');
-  }
-  regionDlg.addEventListener('click', (e) => {
-    const b = e.target.closest('[data-region]');
-    if (b) {
-      store.setRegion(b.dataset.region);
-      regionDlg.hidden = true;
-      document.body.classList.remove('modal-open');
-      if (!panel.openKey) panel.open(CATEGORIES.find((c) => !store.completed().includes(c))?.key || 'roof');
-    } else if (e.target.closest('[data-act="close"]') && store.state.region) {
-      regionDlg.hidden = true;
-      document.body.classList.remove('modal-open');
-    }
-  });
-  regionBtn.addEventListener('click', () => askRegion(false));
-  updateRegionLabel();
 
   // ------------------------------------------------ dock
   const dock = $('.dock');
@@ -228,19 +186,6 @@ async function boot() {
     dock.querySelector('[data-act="rotate"]').classList.toggle('on', autoRotate);
   }
 
-  let isTransparent = false;
-  const transBtn = $('[data-act="transparent"]');
-  function setInside(on) {
-    if (isTransparent === on) return;
-    isTransparent = on;
-    house.setTransparent(on);
-    interior.setTransparent(on);
-    // with the roof off, lift the ambient so rooms read the way they do on site
-    scene.environmentIntensity = on ? baseEnv * 1.7 : baseEnv;
-    // the faded exterior walls still block the sun, so fill the rooms indoors
-    hemi.intensity = on ? baseHemi : 0;
-    transBtn.classList.toggle('on', on);
-  }
 
   dock.addEventListener('click', (e) => {
     const v = e.target.closest('[data-view]');
@@ -252,8 +197,8 @@ async function boot() {
     }
     const t = e.target.closest('[data-act="transparent"]');
     if (t) {
-      setInside(!isTransparent);
-      if (isTransparent) {
+      setInside(!lighting.isInside());
+      if (lighting.isInside()) {
         stopRotate();
         flyTo(camera, 'dollhouse');
         for (const b of dock.querySelectorAll('[data-view]')) b.classList.remove('on');
@@ -280,6 +225,52 @@ async function boot() {
   };
   canvas.addEventListener('pointerdown', userMoved);
   canvas.addEventListener('wheel', userMoved, { passive: true });
+
+  // Double-click (or double-tap) anywhere to make that spot the pivot, so you can
+  // orbit around whatever you are looking at.
+  function recentre(e) {
+    const pick = scene.pick(scene.pointerX, scene.pointerY, (m) => m.isPickable && m.isVisible && m.name !== 'skybox');
+    if (!pick?.hit || !pick.pickedPoint) return;
+    overlay.cancelTap();
+    interiorPick.cancelTap();
+    stopRotate();
+    focusPoint(camera, pick.pickedPoint);
+    ping(e);
+  }
+  canvas.addEventListener('dblclick', recentre);
+  let lastTap = 0;
+  let lastXY = null;
+  canvas.addEventListener('pointerup', (e) => {
+    if (e.pointerType === 'mouse') return;
+    const now = performance.now();
+    const near = lastXY && Math.hypot(e.clientX - lastXY.x, e.clientY - lastXY.y) < 26;
+    if (now - lastTap < 330 && near) {
+      recentre(e);
+      lastTap = 0;
+    } else {
+      lastTap = now;
+      lastXY = { x: e.clientX, y: e.clientY };
+    }
+  });
+  // brief marker so the new pivot is obvious
+  const pingEl = document.createElement('div');
+  pingEl.className = 'pivot-ping';
+  pingEl.hidden = true;
+  stage.appendChild(pingEl);
+  let pingTimer = null;
+  function ping(e) {
+    const r = stage.getBoundingClientRect();
+    pingEl.style.left = `${e.clientX - r.left}px`;
+    pingEl.style.top = `${e.clientY - r.top}px`;
+    pingEl.hidden = false;
+    pingEl.classList.remove('on');
+    void pingEl.offsetWidth;
+    pingEl.classList.add('on');
+    clearTimeout(pingTimer);
+    pingTimer = setTimeout(() => {
+      pingEl.hidden = true;
+    }, 700);
+  }
   $('[data-act="done-top"]').addEventListener('click', () => summary.show());
   store.subscribe(() => updateTopDone());
   function updateTopDone() {
@@ -305,8 +296,7 @@ async function boot() {
   await scene.whenReadyAsync();
   loader.classList.add('gone');
   setTimeout(() => loader.remove(), 800);
-  if (!store.state.region) askRegion(true);
-  else if (store.completed().length < CATEGORIES.length) {
+  if (store.completed().length < CATEGORIES.length) {
     // gentle intro sweep
     const v = VIEWS.home;
     camera.alpha = v.alpha - 0.5;

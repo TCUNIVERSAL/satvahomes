@@ -122,6 +122,14 @@ function wrapRect(ctx, W, H, x, y, w, h, draw) {
 // ---------------------------------------------------------------- bricks
 // World tile covers BRICK_TILE metres. Brick 230 × 76 (+10 mortar) → 240 × 86 mm.
 export const BRICK_TILE = { w: 1.68, h: 1.72 }; // 7 bricks × 20 courses
+
+// Guide p.20. A round (ironed) joint is tooled concave so it throws a shadow
+// line along every course; a flush joint is struck level with the brick face
+// and almost disappears.
+export const BRICK_JOINTS = {
+  ironed: { depth: 1.0, shadow: 0.42, arris: 0.30, width: 1.0 },
+  flush: { depth: 0.18, shadow: 0.10, arris: 0.08, width: 0.92 },
+};
 function brickLayout(bond, doubleHeight) {
   const cols = 7;
   const rows = doubleHeight ? 10 : 20;
@@ -133,7 +141,8 @@ function brickLayout(bond, doubleHeight) {
   return { cols, rows, rowsOut };
 }
 
-export function brickAlbedo(size, brick, mortarHex, bond, seed = 3) {
+export function brickAlbedo(size, brick, mortarHex, bond, seed = 3, joint = 'ironed') {
+  const J = BRICK_JOINTS[joint] || BRICK_JOINTS.ironed;
   const W = size;
   const H = size;
   const c = makeCanvas(W, H);
@@ -142,7 +151,7 @@ export function brickAlbedo(size, brick, mortarHex, bond, seed = 3) {
   const { cols, rows, rowsOut } = brickLayout(bond, brick?.doubleHeight);
   const bw = W / cols;
   const bh = H / rows;
-  const mortar = Math.max(2, Math.round(bh * (brick?.doubleHeight ? 0.06 : 0.12)));
+  const mortar = Math.max(2, Math.round(bh * (brick?.doubleHeight ? 0.06 : 0.12) * J.width));
   // mortar bed
   ctx.fillStyle = mortarHex;
   ctx.fillRect(0, 0, W, H);
@@ -209,12 +218,37 @@ export function brickAlbedo(size, brick, mortarHex, bond, seed = 3) {
       });
     }
   }
+
+  // --- baked joint shading
+  // The tooled joint sits below the brick face, so the head of each bed course
+  // is in shadow and the arris under it catches the light. Baking it here is
+  // what keeps the coursing readable from the street, where the normal map has
+  // already mipped away to a flat wall.
+  const shadeBand = Math.max(1, Math.round(mortar * 0.62));
+  for (const { r, offset } of rowsOut) {
+    for (let k = 0; k < cols; k++) {
+      const x = (k + offset) * bw + mortar / 2;
+      const y = r * bh + mortar / 2;
+      const w = bw - mortar;
+      const h = bh - mortar;
+      wrapRect(ctx, W, H, x - mortar / 2, y - mortar / 2, w + mortar, h + mortar, (px, py, pw, ph) => {
+        // shadow across the top of the perpend + bed joint
+        ctx.fillStyle = `rgba(0,0,0,${J.shadow})`;
+        ctx.fillRect(px, py, pw, shadeBand);
+        ctx.fillRect(px, py, shadeBand, ph);
+        // light catching the brick arris below the joint
+        ctx.fillStyle = `rgba(255,255,255,${J.arris})`;
+        ctx.fillRect(px, py + mortar - shadeBand * 0.5, pw, shadeBand * 0.6);
+      });
+    }
+  }
   return c;
 }
 
 const heightCache = new Map();
-export function brickHeight(size, bond, doubleHeight) {
-  const key = `${size}-${bond}-${doubleHeight}`;
+export function brickHeight(size, bond, doubleHeight, joint = 'ironed') {
+  const J = BRICK_JOINTS[joint] || BRICK_JOINTS.ironed;
+  const key = `${size}-${bond}-${doubleHeight}-${joint}`;
   if (heightCache.has(key)) return heightCache.get(key);
   const W = size;
   const H = size;
@@ -223,10 +257,12 @@ export function brickHeight(size, bond, doubleHeight) {
   const { cols, rows, rowsOut } = brickLayout(bond, doubleHeight);
   const bw = W / cols;
   const bh = H / rows;
-  const mortar = Math.max(2, Math.round(bh * (doubleHeight ? 0.06 : 0.12)));
-  ctx.fillStyle = '#404040';
+  const mortar = Math.max(2, Math.round(bh * (doubleHeight ? 0.06 : 0.12) * J.width));
+  // how far the joint is recessed below the brick face
+  const bed = Math.round(224 - 190 * J.depth);
+  ctx.fillStyle = `rgb(${bed},${bed},${bed})`;
   ctx.fillRect(0, 0, W, H);
-  ctx.filter = 'blur(1.2px)';
+  ctx.filter = `blur(${(1.2 * (0.4 + J.depth)).toFixed(2)}px)`;
   for (const { r, offset } of rowsOut) {
     for (let k = 0; k < cols; k++) {
       wrapRect(ctx, W, H, (k + offset) * bw + mortar / 2, r * bh + mortar / 2, bw - mortar, bh - mortar, (x, y, w, h) => {
@@ -245,108 +281,213 @@ export function brickHeight(size, bond, doubleHeight) {
   return normal;
 }
 
+// Small preview tile for the mortar-joint option cards.
+export function jointSwatch(joint, w = 220, h = 120) {
+  const J = BRICK_JOINTS[joint] || BRICK_JOINTS.ironed;
+  const c = makeCanvas(w, h);
+  const x = c.getContext('2d');
+  const rows = 3;
+  const cols = 2;
+  const bh = h / rows;
+  const bw = w / cols;
+  const m = Math.max(3, bh * 0.14 * J.width);
+  x.fillStyle = '#cfc9bd';
+  x.fillRect(0, 0, w, h);
+  for (let r = 0; r < rows; r++) {
+    for (let k = -1; k <= cols; k++) {
+      const px = (k + (r % 2 ? 0.5 : 0)) * bw + m / 2;
+      const py = r * bh + m / 2;
+      const pw = bw - m;
+      const ph = bh - m;
+      x.fillStyle = '#b4674a';
+      x.fillRect(px, py, pw, ph);
+      x.fillStyle = `rgba(0,0,0,${J.shadow})`;
+      x.fillRect(px - m / 2, py - m / 2, pw + m, m * 0.62);
+      x.fillStyle = `rgba(255,255,255,${J.arris})`;
+      x.fillRect(px, py, pw, m * 0.38);
+    }
+  }
+  return c;
+}
+
 // ---------------------------------------------------------------- roof
-export const ROOF_TILE_SIZE = { w: 1.2, h: 1.38 }; // world metres per texture tile
+// Concrete tiles are 300 mm cover x 320 mm gauge, so one texture spans four
+// tiles across and four courses down.
+export const ROOF_TILE_SIZE = { w: 1.2, h: 1.28 };
+const ROOF_COLS = 4;
+const ROOF_ROWS = 4;
+
+// Cross-section of one tile, u = 0..1 across its cover width.
+// Returns { h: 0..1 relief, s: -1..1 shading bias (+ crown, - valley) }.
+const ROOF_PROFILE = {
+  // Marseille-style pan tile: one bold barrel roll then a flat pan.
+  designer(u) {
+    if (u < 0.42) {
+      const k = u / 0.42; // 0..1 across the roll
+      const h = Math.sin(k * Math.PI) ** 0.7;
+      return { h: 0.28 + 0.72 * h, s: Math.cos((k - 0.42) * Math.PI) * 0.9 };
+    }
+    const k = (u - 0.42) / 0.58;
+    return { h: 0.34 + 0.1 * Math.sin(k * Math.PI), s: -0.25 + 0.2 * Math.sin(k * Math.PI) };
+  },
+  // Low-profile tile: a narrow roll at the side lap, the rest a flat pan.
+  classic(u) {
+    if (u < 0.2) {
+      const k = u / 0.2;
+      const h = Math.sin(k * Math.PI) ** 0.6;
+      return { h: 0.3 + 0.7 * h, s: Math.cos((k - 0.4) * Math.PI) * 0.8 };
+    }
+    const k = (u - 0.2) / 0.8;
+    return { h: 0.36 + 0.07 * Math.sin(k * Math.PI), s: -0.18 + 0.14 * Math.sin(k * Math.PI) };
+  },
+  // Flat slate-look tile: square butt, a fine groove at each side lap.
+  prestige(u) {
+    if (u < 0.035) return { h: 0.04, s: -1 };
+    if (u > 0.975) return { h: 0.3, s: 0.35 };
+    return { h: 0.62, s: -0.05 };
+  },
+};
+
+// Where the course line sits across one tile. Rolled tiles ride up over the
+// roll below them, so the shadow line is scalloped, not straight.
+const ROOF_COURSE = {
+  designer: (u) => (u < 0.42 ? 0.055 + 0.075 * Math.sin((u / 0.42) * Math.PI) : 0.05),
+  classic: (u) => (u < 0.2 ? 0.05 + 0.055 * Math.sin((u / 0.2) * Math.PI) : 0.045),
+  prestige: () => 0.05,
+};
+
 export function roofMaps(profile, size = 1024) {
   const W = size;
   const H = size;
-  const hc = makeCanvas(W, H);
-  const hx = hc.getContext('2d');
-  const ao = makeCanvas(W, H);
-  const ax = ao.getContext('2d');
   const alb = makeCanvas(W, H);
   const bx = alb.getContext('2d');
-  const rand = rng(profile.length * 31);
-  bx.fillStyle = '#fff';
-  bx.fillRect(0, 0, W, H);
-  ax.fillStyle = '#fff';
-  ax.fillRect(0, 0, W, H);
+  const hc = makeCanvas(W, H);
+  const ao = makeCanvas(W, H);
 
-  if (profile === 'colorbond') {
-    // Classic corrugated sheet: 76 mm pitch, ribs run down the slope (v).
-    const img = hx.createImageData(W, H);
-    const pitch = W / Math.round(1.2 / 0.076);
-    for (let x = 0; x < W; x++) {
-      const v = 128 + 110 * Math.sin((x / pitch) * Math.PI * 2);
-      for (let y = 0; y < H; y++) {
-        const i = (y * W + x) * 4;
-        img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
-        img.data[i + 3] = 255;
-      }
-    }
-    hx.putImageData(img, 0, 0);
-    // sheet laps every 1.2 m horizontally (texture edge)
-    ax.fillStyle = 'rgba(0,0,0,0.25)';
-    ax.fillRect(0, 0, 3, H);
-    const n = noiseCanvas(256, { base: 4, octaves: 3, seed: 91 });
-    bx.globalAlpha = 0.08;
-    bx.drawImage(n, 0, 0, W, H);
-    return { albedo: alb, normal: heightToNormal(hc, 2.2), ao };
+  if (profile === 'colorbond') return corrugatedMaps(W, H, alb, bx, hc, ao);
+
+  const prof = ROOF_PROFILE[profile] || ROOF_PROFILE.designer;
+  const course = ROOF_COURSE[profile] || ROOF_COURSE.designer;
+  const tw = W / ROOF_COLS;
+  const th = H / ROOF_ROWS;
+  const rand = rng(profile.length * 131 + 7);
+
+  // Per-tile tone variation, the way a real concrete roof never sits flat.
+  const tone = [];
+  for (let r = 0; r < ROOF_ROWS; r++) {
+    tone[r] = [];
+    for (let c = 0; c < ROOF_COLS; c++) tone[r][c] = 1 + (rand() - 0.5) * 0.17;
   }
 
-  // Concrete tiles: 6 rows (230 mm exposure), 4 tiles per 1.2 m (300 mm cover).
-  const rows = 6;
-  const cols = 4;
-  const tw = W / cols;
-  const th = H / rows;
-  const img = hx.createImageData(W, H);
-  const prof = (u) => {
-    // u in [0,1) across a tile
-    if (profile === 'designer') {
-      // low double-roll profile
-      return 0.5 + 0.35 * Math.sin(u * Math.PI * 4 - 0.6) * (0.8 + 0.2 * Math.cos(u * Math.PI * 2));
-    }
-    if (profile === 'classic') {
-      // flat pan with a raised roll near the side lap
-      const r = Math.exp(-((u - 0.15) ** 2) / 0.004) * 0.45 + Math.exp(-((u - 0.62) ** 2) / 0.01) * 0.12;
-      return 0.4 + r;
-    }
-    // prestige: flat slate-like with fine side groove
-    return u < 0.025 ? 0.2 : 0.55;
-  };
+  const albImg = bx.createImageData(W, H);
+  const hImg = hc.getContext('2d').createImageData(W, H);
+  const aoCtx = ao.getContext('2d');
+  const aoImg = aoCtx.createImageData(W, H);
+  const stagger = profile === 'prestige';
+
   for (let y = 0; y < H; y++) {
     const row = Math.floor(y / th);
-    const t = (y - row * th) / th; // 0 at top (up-slope), 1 at lower (down-slope) edge
-    const off = row % 2 && profile === 'prestige' ? tw / 2 : 0;
+    const t = (y - row * th) / th; // 0 at the head (covered), 1 at the exposed butt
+    const off = stagger && row % 2 ? tw / 2 : 0;
     for (let x = 0; x < W; x++) {
-      const u = (((x + off) % tw) + tw) % tw / tw;
-      // tile thickens toward its exposed lower edge, then drops to the next course
-      const lap = 0.25 + 0.75 * t;
-      const v = Math.min(1, prof(u) * 0.65 + lap * 0.35) * 255;
+      const col = Math.floor((((x + off) % W) + W) % W / tw);
+      const u = ((((x + off) % tw) + tw) % tw) / tw;
+      const p = prof(u);
+      const head = course(u);
+
+      // Head of the course: the tile above laps over it — a hard, dark step.
+      const lap = t < head ? t / head : 1;
+      const stepped = t < head;
+      const relief = stepped ? p.h * 0.18 : p.h;
+
+      // Side lap between neighbouring tiles reads as a fine dark line.
+      const sideLap = u < 0.02 || u > 0.985;
+
+      // --- albedo: tone + baked course shadow + roll shading
+      let k = tone[row][col];
+      k *= stepped ? 0.30 + 0.45 * lap : 1;        // shadow under the overlap
+      k *= 1 + p.s * 0.13;                          // crown lighter, valley darker
+      if (sideLap) k *= 0.62;
+      if (!stepped && t < head + 0.07) k *= 0.80 + 0.2 * ((t - head) / 0.07); // contact shade
+      k *= 0.97 + rand() * 0.06;                    // fine grain
+      const v = Math.max(0, Math.min(255, 238 * k));
       const i = (y * W + x) * 4;
-      img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
-      img.data[i + 3] = 255;
+      albImg.data[i] = albImg.data[i + 1] = albImg.data[i + 2] = v;
+      albImg.data[i + 3] = 255;
+
+      // --- height
+      hImg.data[i] = hImg.data[i + 1] = hImg.data[i + 2] = Math.round(
+        (sideLap ? relief * 0.35 : relief) * 255,
+      );
+      hImg.data[i + 3] = 255;
+
+      // --- ambient occlusion
+      let occ = 1;
+      if (stepped) occ = 0.18 + 0.5 * lap;
+      else if (t < head + 0.1) occ = 0.68 + 0.32 * ((t - head) / 0.1);
+      if (sideLap) occ *= 0.55;
+      occ *= 0.82 + 0.18 * (p.h);
+      const o = Math.round(Math.max(0, Math.min(1, occ)) * 255);
+      aoImg.data[i] = aoImg.data[i + 1] = aoImg.data[i + 2] = o;
+      aoImg.data[i + 3] = 255;
     }
   }
-  hx.putImageData(img, 0, 0);
-  hx.filter = 'blur(1px)';
+  bx.putImageData(albImg, 0, 0);
+  hc.getContext('2d').putImageData(hImg, 0, 0);
+  aoCtx.putImageData(aoImg, 0, 0);
+
+  // soften the height a touch so the normals are not stair-stepped
+  const hx = hc.getContext('2d');
+  hx.filter = 'blur(1.2px)';
   hx.drawImage(hc, 0, 0);
   hx.filter = 'none';
-  // AO: shadow under each course edge + per-tile tone variation in albedo
-  for (let r = 0; r < rows; r++) {
-    const y = r * th;
-    const g = ax.createLinearGradient(0, y, 0, y + th * 0.35);
-    g.addColorStop(0, 'rgba(0,0,0,0.55)');
-    g.addColorStop(1, 'rgba(0,0,0,0)');
-    ax.fillStyle = g;
-    ax.fillRect(0, y, W, th * 0.35);
-    const off = r % 2 && profile === 'prestige' ? tw / 2 : 0;
-    for (let k = -1; k < cols + 1; k++) {
-      bx.fillStyle = `rgba(${rand() < 0.5 ? '0,0,0' : '255,255,255'},${0.03 + rand() * 0.06})`;
-      bx.fillRect(k * tw - off, y, tw, th);
-      if (profile !== 'designer') {
-        ax.fillStyle = 'rgba(0,0,0,0.35)';
-        ax.fillRect(k * tw - off, y, 2, th);
-      }
+
+  const grain = noiseCanvas(512, { base: 28, octaves: 3, seed: 17 });
+  bx.globalAlpha = 0.1;
+  bx.globalCompositeOperation = 'multiply';
+  bx.drawImage(grain, 0, 0, W, H);
+  bx.globalCompositeOperation = 'source-over';
+  bx.globalAlpha = 1;
+
+  return { albedo: alb, normal: heightToNormal(hc, profile === 'prestige' ? 4 : 5.5), ao };
+}
+
+// Colorbond Classic corrugated sheet: 76 mm pitch, ribs running down the slope.
+function corrugatedMaps(W, H, alb, bx, hc, ao) {
+  const pitch = W / Math.round(ROOF_TILE_SIZE.w / 0.076);
+  const hImg = hc.getContext('2d').createImageData(W, H);
+  const albImg = bx.createImageData(W, H);
+  const aoCtx = ao.getContext('2d');
+  const aoImg = aoCtx.createImageData(W, H);
+  for (let x = 0; x < W; x++) {
+    const phase = ((x / pitch) % 1) * Math.PI * 2;
+    const h = 0.5 + 0.5 * Math.sin(phase);
+    // baked cylinder shading so the ribs read even in flat light
+    const shade = 0.86 + 0.16 * Math.sin(phase - 0.5);
+    for (let y = 0; y < H; y++) {
+      const i = (y * W + x) * 4;
+      // sheets lap every 1.2 m down the slope
+      const lap = y < 4 ? 0.55 + 0.11 * y : 1;
+      const v = Math.max(0, Math.min(255, 240 * shade * lap));
+      albImg.data[i] = albImg.data[i + 1] = albImg.data[i + 2] = v;
+      albImg.data[i + 3] = 255;
+      hImg.data[i] = hImg.data[i + 1] = hImg.data[i + 2] = Math.round(h * 255);
+      hImg.data[i + 3] = 255;
+      const o = Math.round(Math.min(1, (0.72 + 0.28 * h) * lap) * 255);
+      aoImg.data[i] = aoImg.data[i + 1] = aoImg.data[i + 2] = o;
+      aoImg.data[i + 3] = 255;
     }
   }
-  const n = noiseCanvas(512, { base: 24, octaves: 3, seed: 17 });
-  bx.globalAlpha = 0.12;
+  bx.putImageData(albImg, 0, 0);
+  hc.getContext('2d').putImageData(hImg, 0, 0);
+  aoCtx.putImageData(aoImg, 0, 0);
+  const n = noiseCanvas(256, { base: 4, octaves: 3, seed: 91 });
+  bx.globalAlpha = 0.05;
   bx.globalCompositeOperation = 'multiply';
   bx.drawImage(n, 0, 0, W, H);
   bx.globalCompositeOperation = 'source-over';
   bx.globalAlpha = 1;
-  return { albedo: alb, normal: heightToNormal(hc, profile === 'prestige' ? 3 : 4), ao };
+  return { albedo: alb, normal: heightToNormal(hc, 3), ao };
 }
 
 // ---------------------------------------------------------------- cladding
@@ -441,18 +582,54 @@ export function garageMaps(kind, W = 1024, H = 512) {
   const hx = hc.getContext('2d');
   const ao = makeCanvas(W, H);
   const ax = ao.getContext('2d');
+  // Baked shading: multiplied over whatever colour the door is painted, so the
+  // profile still reads on Monument as clearly as it does on Surfmist.
+  const sh = makeCanvas(W, H);
+  const sx = sh.getContext('2d');
   hx.fillStyle = '#909090';
   hx.fillRect(0, 0, W, H);
   ax.fillStyle = '#fff';
   ax.fillRect(0, 0, W, H);
+  sx.fillStyle = '#fff';
+  sx.fillRect(0, 0, W, H);
+
+  // A raised panel: light along its top/left arris, dark along bottom/right.
+  const emboss = (x, y, w, h, depth = 1) => {
+    sx.lineWidth = Math.max(2, W * 0.004);
+    sx.strokeStyle = `rgba(0,0,0,${0.30 * depth})`;
+    sx.beginPath();
+    sx.moveTo(x, y + h);
+    sx.lineTo(x + w, y + h);
+    sx.lineTo(x + w, y);
+    sx.stroke();
+    sx.strokeStyle = `rgba(255,255,255,${0.42 * depth})`;
+    sx.beginPath();
+    sx.moveTo(x, y + h);
+    sx.lineTo(x, y);
+    sx.lineTo(x + w, y);
+    sx.stroke();
+    // slight dish inside the panel
+    const g = sx.createLinearGradient(0, y, 0, y + h);
+    g.addColorStop(0, `rgba(0,0,0,${0.10 * depth})`);
+    g.addColorStop(1, 'rgba(255,255,255,0.05)');
+    sx.fillStyle = g;
+    sx.fillRect(x, y, w, h);
+  };
+
   const sections = 4;
-  const sh = H / sections;
+  const sh_ = H / sections;
   const joint = (y) => {
     hx.fillStyle = '#202020';
     hx.fillRect(0, y - 2, W, 4);
     ax.fillStyle = 'rgba(0,0,0,0.55)';
     ax.fillRect(0, y - 2, W, 5);
+    // hard shadow line under each section, with a highlight on the lip below
+    sx.fillStyle = 'rgba(0,0,0,0.42)';
+    sx.fillRect(0, y - 3, W, 6);
+    sx.fillStyle = 'rgba(255,255,255,0.22)';
+    sx.fillRect(0, y + 3, W, 3);
   };
+
   if (kind === 'battens') {
     const n = 60;
     const p = W / n;
@@ -461,18 +638,26 @@ export function garageMaps(kind, W = 1024, H = 512) {
       hx.fillRect(i * p, 0, p * 0.28, H);
       ax.fillStyle = 'rgba(0,0,0,0.5)';
       ax.fillRect(i * p, 0, p * 0.3, H);
+      sx.fillStyle = 'rgba(0,0,0,0.45)';
+      sx.fillRect(i * p, 0, p * 0.28, H);
+      sx.fillStyle = 'rgba(255,255,255,0.20)';
+      sx.fillRect(i * p + p * 0.28, 0, p * 0.16, H);
     }
   } else {
-    for (let s = 0; s < sections; s++) {
-      const y0 = s * sh;
-      if (s) joint(y0);
+    for (let s2 = 0; s2 < sections; s2++) {
+      const y0 = s2 * sh_;
+      if (s2) joint(y0);
       if (kind === 'slimline') {
         for (let k = 1; k < 5; k++) {
-          const y = y0 + (sh * k) / 5;
+          const y = y0 + (sh_ * k) / 5;
           hx.fillStyle = '#6a6a6a';
           hx.fillRect(0, y - 1, W, 2);
           ax.fillStyle = 'rgba(0,0,0,0.15)';
           ax.fillRect(0, y, W, 2);
+          sx.fillStyle = 'rgba(0,0,0,0.26)';
+          sx.fillRect(0, y - 1, W, 2);
+          sx.fillStyle = 'rgba(255,255,255,0.16)';
+          sx.fillRect(0, y + 1, W, 2);
         }
       } else if (kind === 'ranch' || kind === 'heritage') {
         const n = kind === 'ranch' ? 2 : 6;
@@ -481,8 +666,8 @@ export function garageMaps(kind, W = 1024, H = 512) {
         const pw = (W - mx * 2 - gap * (n - 1)) / n;
         for (let k = 0; k < n; k++) {
           const x = mx + k * (pw + gap);
-          const y = y0 + sh * 0.18;
-          const h = sh * 0.64;
+          const y = y0 + sh_ * 0.18;
+          const h = sh_ * 0.64;
           hx.fillStyle = '#5a5a5a';
           hx.fillRect(x, y, pw, h);
           hx.fillStyle = '#b8b8b8';
@@ -490,15 +675,17 @@ export function garageMaps(kind, W = 1024, H = 512) {
           ax.strokeStyle = 'rgba(0,0,0,0.25)';
           ax.lineWidth = 3;
           ax.strokeRect(x + 1.5, y + 1.5, pw - 3, h - 3);
+          emboss(x, y, pw, h);
         }
       }
+      // Flatline is a plain pan — the section joints alone carry it.
     }
   }
   const nz = noiseCanvas(256, { base: 32, octaves: 2, seed: 8, w: 512, h: 256 });
   hx.globalAlpha = 0.04;
   hx.drawImage(nz, 0, 0, W, H);
   hx.globalAlpha = 1;
-  return { normal: heightToNormal(hc, kind === 'battens' ? 4 : 3), ao };
+  return { normal: heightToNormal(hc, kind === 'battens' ? 4 : 3), ao, shade: sh };
 }
 
 // ---------------------------------------------------------------- ground surfaces
@@ -679,4 +866,63 @@ export function loadImage(src) {
     img.onerror = reject;
     img.src = src;
   });
+}
+
+// ---------------------------------------------------------------- window screens
+// Flyscreen and barrier screen weaves (guide p.18-19). Threads are drawn at
+// their real pitch and the gaps stay transparent, so the screen reads as a fine
+// veil at street distance and as a weave close up.
+export const SCREEN_MESH = {
+  fibreglass: { pitch: 0.0022, thread: 0.34, hex: '#2f2f2f', alpha: 1 },
+  aluminium: { pitch: 0.0024, thread: 0.32, hex: '#9d9d9d', alpha: 1 },
+  stainless: { pitch: 0.0022, thread: 0.38, hex: '#8b8b8b', alpha: 1 },
+  midge: { pitch: 0.0013, thread: 0.46, hex: '#4a4a4a', alpha: 1 },
+  pet: { pitch: 0.0035, thread: 0.5, hex: '#262626', alpha: 1 },
+  homestyle: { pitch: 0.0021, thread: 0.52, hex: '#6f6f6f', alpha: 1 },
+};
+const SCREEN_THREADS = 24; // threads across one texture tile
+
+export const screenTile = (kind) => (SCREEN_MESH[kind] || SCREEN_MESH.fibreglass).pitch * SCREEN_THREADS;
+
+export function screenCanvas(kind, size = 256) {
+  const m = SCREEN_MESH[kind] || SCREEN_MESH.fibreglass;
+  const c = makeCanvas(size, size);
+  const x = c.getContext('2d');
+  x.clearRect(0, 0, size, size);
+  const p = size / SCREEN_THREADS;
+  const t = p * m.thread;
+  // warp then weft, the weft slightly darker where it passes under
+  x.fillStyle = m.hex;
+  for (let i = 0; i < SCREEN_THREADS; i++) x.fillRect(i * p, 0, t, size);
+  x.fillStyle = shade(m.hex, 0.82);
+  for (let i = 0; i < SCREEN_THREADS; i++) x.fillRect(0, i * p, size, t);
+  // a soft highlight along each warp thread so the weave catches the light
+  x.globalAlpha = 0.35;
+  x.fillStyle = shade(m.hex, 1.7);
+  for (let i = 0; i < SCREEN_THREADS; i++) x.fillRect(i * p, 0, Math.max(1, t * 0.3), size);
+  x.globalAlpha = 1;
+  return c;
+}
+
+// Diamond grille: 8 mm apertures in a powdercoated lattice, drawn as a repeat.
+export const BARRIER_TILE = 0.076;
+export function barrierCanvas(size = 256) {
+  const c = makeCanvas(size, size);
+  const x = c.getContext('2d');
+  x.clearRect(0, 0, size, size);
+  const n = 6; // diamonds per tile
+  const p = size / n;
+  x.lineWidth = Math.max(2, p * 0.22);
+  x.lineCap = 'square';
+  for (const [dir, hex] of [[1, '#7e7e7e'], [-1, '#5f5f5f']]) {
+    x.strokeStyle = hex;
+    x.beginPath();
+    for (let k = -n; k <= n * 2; k++) {
+      const off = k * p;
+      x.moveTo(dir > 0 ? off : off, 0);
+      x.lineTo(dir > 0 ? off + size : off - size, size);
+    }
+    x.stroke();
+  }
+  return c;
 }

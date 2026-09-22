@@ -53,7 +53,7 @@ const X_PANTRY_OPENING = -3.838; // walk-in pantry entry (from the kitchen)
 const X_BENCH_PIER = -4.841; // nib wall between kitchen bench and pantry bench
 const Z_ALFRESCO_START = 8.485; // Alfresco recess starts 3.34m from rear wall
 const Z_REAR_WALL = 11.825; // Rear wall line (5.09m setback to rear boundary)
-const X_ALFRESCO_INNER = -2.44; // Alfresco width = 3.34m from X = -5.78m
+const X_ALFRESCO_INNER = -1.64; // Bed 4 / Alfresco wall (Bed 4 = 3240 wide per plan)
 
 // Wall constructors
 const frontWall = (z, x0) => new Wall({ origin: [x0, 0, z], dir: [1, 0, 0], out: [0, 0, -1] });
@@ -65,6 +65,7 @@ export function buildHouse(scene, M, shadows) {
   const G = {};
   const geo = (k) => (G[k] = G[k] || new Geo());
   const windows = []; // {wall, s0, s1, y0, y1, frosted, slider, awning, fixed, mullions}
+  const lintels = []; // openings in brick walls -> steel lintel / fibre cement infill
   const caps = []; // Ridge and hip caps
 
   // Helper: solid wall with openings
@@ -73,7 +74,9 @@ export function buildHouse(scene, M, shadows) {
     const ops = openings.map((o) => ({ ...o, s0: s(o.a0), s1: s(o.a1) }));
     w.solid(geo(key), 0, a1 - a0, y0, y1, T, ops, opts);
     for (const o of ops) {
-      if (!o.noWindow) windows.push({ wall: w, ...o });
+      if (!o.noWindow) windows.push({ wall: w, mat: key, ...o });
+      // lintels and infills are a brickwork detail, so only brick walls get one
+      if (key === 'bricks') lintels.push({ wall: w, s0: o.s0, s1: o.s1, head: o.y1 });
     }
   };
 
@@ -171,7 +174,7 @@ export function buildHouse(scene, M, shadows) {
     0,
     WALL_H,
     [
-      { a0: -1.80, a1: -0.30, y0: 0.90, y1: 2.40, slider: true }, // Bed 4 ASW 1500x1500
+      { a0: -0.66, a1: 0.84, y0: 0.90, y1: 2.40, slider: true }, // Bed 4 ASW 1500x1500
     ]
   );
 
@@ -285,41 +288,17 @@ export function buildHouse(scene, M, shadows) {
   // =========================================================================
   // 4. FRONT ENTRANCE DOOR & HARDWARE
   // =========================================================================
-  const doorGeo = geo('door');
+  // The leaf itself is built by scene/entryDoor.js, which cuts it to the
+  // selected profile; the house only sets out the opening and its jamb.
   const dwall = frontWall(Z_BED1_FRONT, X_GARAGE_INNER);
   const DOOR_X0 = 0.18;
   const DOOR_X1 = 1.32;
   const DOOR_H = 2.34;
-
-  // Modern timber/composite door slab with subtle inset relief
-  dwall.box(doorGeo, DOOR_X0, DOOR_X1, 0.02, DOOR_H, -0.12, -0.18);
-  // Outer door jamb / frame
   const fr = geo('frame');
   dwall.box(fr, DOOR_X0 - 0.04, DOOR_X0, 0, DOOR_H + 0.04, -0.06, -0.20);
   dwall.box(fr, DOOR_X1, DOOR_X1 + 0.04, 0, DOOR_H + 0.04, -0.06, -0.20);
   dwall.box(fr, DOOR_X0 - 0.04, DOOR_X1 + 0.04, DOOR_H, DOOR_H + 0.04, -0.06, -0.20);
 
-  // Door vertical translucent vision glass strip
-  const dg = geo('glassFrosted');
-  dg.poly(
-    [
-      dwall.world(DOOR_X0 + 0.18, 0.20, -0.15),
-      dwall.world(DOOR_X0 + 0.32, 0.20, -0.15),
-      dwall.world(DOOR_X0 + 0.32, DOOR_H - 0.20, -0.15),
-      dwall.world(DOOR_X0 + 0.18, DOOR_H - 0.20, -0.15),
-    ],
-    [0, 0, -1]
-  );
-
-  // Architectural long vertical stainless pull handle (1.2m long) + deadlock
-  const metal = geo('metalDark');
-  // Handle standoffs
-  dwall.box(metal, DOOR_X1 - 0.16, DOOR_X1 - 0.12, 0.85, 0.88, -0.03, -0.12);
-  dwall.box(metal, DOOR_X1 - 0.16, DOOR_X1 - 0.12, 1.85, 1.88, -0.03, -0.12);
-  // Handle vertical bar
-  dwall.box(metal, DOOR_X1 - 0.16, DOOR_X1 - 0.12, 0.75, 1.95, -0.01, -0.04);
-  // Key cylinder escutcheon
-  dwall.box(metal, DOOR_X1 - 0.16, DOOR_X1 - 0.12, 1.00, 1.08, -0.11, -0.12);
 
   // =========================================================================
   // 5. AUTOMATIC SECTIONAL GARAGE DOOR (4.81m wide)
@@ -377,21 +356,34 @@ export function buildHouse(scene, M, shadows) {
     const width = s1 - s0;
     const height = y1 - y0;
 
-    // Panes and Mullions
+    // Mullions and transoms are built twice: the standard section and the slim
+    // Boutique section. Only one set is enabled at a time.
+    const isDoor = !!(w.stacker || w.slider);
+    const std = geo(isDoor ? 'mullDoorStd' : 'mullWinStd');
+    const bq = geo(isDoor ? 'mullDoorBq' : 'mullWinBq');
+    const BQ = 0.016; // half-width of a Boutique mullion (standard is 0.03)
     if (w.stacker) {
       // 3-panel sliding stacker door
       const pW = width / 3;
-      wall.box(fr, s0 + pW - 0.03, s0 + pW + 0.03, y0, y1, dOuter, dInner);
-      wall.box(fr, s0 + pW * 2 - 0.03, s0 + pW * 2 + 0.03, y0, y1, dOuter, dInner);
+      for (const k of [1, 2]) {
+        wall.box(std, s0 + pW * k - 0.03, s0 + pW * k + 0.03, y0, y1, dOuter, dInner);
+        wall.box(bq, s0 + pW * k - BQ, s0 + pW * k + BQ, y0, y1, dOuter, dInner);
+      }
+      boutiquePull(w, s0 + pW - 0.09, y0, y1);
     } else if (w.slider && width > 1.3) {
       // 2-panel slider with central interlock mullion
       const mid = s0 + width / 2;
-      wall.box(fr, mid - 0.03, mid + 0.03, y0, y1, dOuter, dInner);
+      wall.box(std, mid - 0.03, mid + 0.03, y0, y1, dOuter, dInner);
+      wall.box(bq, mid - BQ, mid + BQ, y0, y1, dOuter, dInner);
+      boutiquePull(w, mid - 0.09, y0, y1);
     } else if (w.awning && height > 1.8) {
       // Awning with lower fixed / transom bar
       const transY = y0 + height * 0.35;
-      wall.box(fr, s0, s1, transY - 0.025, transY + 0.025, dOuter, dInner);
+      wall.box(std, s0, s1, transY - 0.025, transY + 0.025, dOuter, dInner);
+      wall.box(bq, s0, s1, transY - 0.013, transY + 0.013, dOuter, dInner);
     }
+
+    addScreens(w, b, width);
 
     // Glass panel
     const g = geo(w.frosted ? 'glassFrosted' : 'glass');
@@ -400,6 +392,65 @@ export function buildHouse(scene, M, shadows) {
     const c = wall.world(s1 - b * 0.8, y1 - b * 0.8, -0.11);
     const dd = wall.world(s0 + b * 0.8, y1 - b * 0.8, -0.11);
     g.poly([a, bb, c, dd], wall.n);
+  }
+
+  // The flush vertical pull that marks out a Boutique sliding door.
+  function boutiquePull(w, s, y0, y1) {
+    const g = geo('mullDoorBq');
+    const cy = (y0 + y1) / 2;
+    w.wall.box(g, s - 0.016, s + 0.016, cy - 0.16, cy + 0.16, -0.028, -0.052);
+  }
+
+  // Flyscreen over the openable leaf, plus a barrier screen over the whole
+  // opening in its own frame. Fixed lights get neither.
+  function addScreens(w, b, width) {
+    const { wall, s0, s1, y0, y1 } = w;
+    if (w.fixed) return;
+    const D = -0.022; // screen plane, just proud of the window frame face
+
+    // --- flyscreen: one sliding leaf on a slider, the whole sash on an awning
+    let f0 = s0 + b * 0.6;
+    let f1 = s1 - b * 0.6;
+    if (w.stacker) f1 = s0 + width / 3;
+    else if (w.slider && width > 1.3) f1 = s0 + width / 2;
+    if (f1 - f0 > 0.12 && y1 - y0 > 0.2) {
+      const scr = geo('flyscreen');
+      scr.poly(
+        [
+          wall.world(f0, y0 + b * 0.6, D),
+          wall.world(f1, y0 + b * 0.6, D),
+          wall.world(f1, y1 - b * 0.6, D),
+          wall.world(f0, y1 - b * 0.6, D),
+        ],
+        wall.n,
+      );
+      // light screen frame around the leaf
+      const sf = geo('screenFrame');
+      const t = 0.018;
+      wall.box(sf, f0, f1, y0 + b * 0.6, y0 + b * 0.6 + t, D + 0.004, D - 0.012);
+      wall.box(sf, f0, f1, y1 - b * 0.6 - t, y1 - b * 0.6, D + 0.004, D - 0.012);
+      wall.box(sf, f0, f0 + t, y0 + b * 0.6, y1 - b * 0.6, D + 0.004, D - 0.012);
+      wall.box(sf, f1 - t, f1, y0 + b * 0.6, y1 - b * 0.6, D + 0.004, D - 0.012);
+    }
+
+    // --- barrier screen: full opening, in a heavier frame
+    const B = D - 0.016;
+    const bar = geo('barrier');
+    bar.poly(
+      [
+        wall.world(s0, y0, B),
+        wall.world(s1, y0, B),
+        wall.world(s1, y1, B),
+        wall.world(s0, y1, B),
+      ],
+      wall.n,
+    );
+    const bf = geo('barrierFrame');
+    const bt = 0.026;
+    wall.box(bf, s0, s1, y0, y0 + bt, B + 0.008, B - 0.016);
+    wall.box(bf, s0, s1, y1 - bt, y1, B + 0.008, B - 0.016);
+    wall.box(bf, s0, s0 + bt, y0, y1, B + 0.008, B - 0.016);
+    wall.box(bf, s1 - bt, s1, y0, y1, B + 0.008, B - 0.016);
   }
 
   // =========================================================================
@@ -529,8 +580,8 @@ export function buildHouse(scene, M, shadows) {
       caps.push([[x0, yBase, z0], ra], [[x1, yBase, z0], ra], [[x0, yBase, z1], rb], [[x1, yBase, z1], rb]);
     }
 
-    // Tile edge nose along perimeter
-    const e = 0.045;
+    // Tile edge nose along perimeter (kept shallow so the fascia band reads)
+    const e = 0.025;
     g.poly([[x0, yBase - e, z0], [x1, yBase - e, z0], [x1, yBase, z0], [x0, yBase, z0]], [0, 0, -1]);
     g.poly([[x0, yBase - e, z1], [x1, yBase - e, z1], [x1, yBase, z1], [x0, yBase, z1]], [0, 0, 1]);
     g.poly([[x0, yBase - e, z0], [x0, yBase - e, z1], [x0, yBase, z1], [x0, yBase, z0]], [-1, 0, 0]);
@@ -538,8 +589,30 @@ export function buildHouse(scene, M, shadows) {
   }
 
   // =========================================================================
+  // 7b. BRICKS & LINTELS — infill over every opening in a brick wall
+  // =========================================================================
+  // Standard is a galvanised steel angle carrying the brickwork over the head;
+  // the upgrade sheets the band from the head to the top plate in fibre cement.
+  for (const { wall: w, s0, s1, head } of lintels) {
+    if (s1 - s0 < 0.3) continue;
+    const bear = 0.11; // the lintel bears 110 mm each side of the opening
+    // steel angle, sitting in the bed joint directly over the opening
+    w.box(geo('lintel'), s0 - bear, s1 + bear, head + 0.004, head + 0.09, 0.012, -0.085);
+    // fibre cement sheet infill, head of opening up to the top plate
+    if (WALL_H - head > 0.12) {
+      w.box(geo('infill'), s0 - bear, s1 + bear, head + 0.004, WALL_H, 0.012, -0.02);
+      // shadow bead where the sheet meets the brickwork below
+      w.box(geo('lintelTrim'), s0 - bear, s1 + bear, head - 0.012, head + 0.014, 0.016, -0.03);
+    }
+  }
+
+  // =========================================================================
   // 8. COLORBOND FASCIA & QUAD GUTTER PROFILES
   // =========================================================================
+  // The fascia board carries its own Colorbond colour, so it sits proud of the
+  // wall line and runs deeper than the gutter: a band of it shows above the
+  // quad gutter (under the tile nose) and a skirt below it.
+  const FASCIA_T = 0.034; // board thickness, measured back from the eave line
   const gutterProfile = [
     [0.0, -0.03],
     [0.0, -0.14],
@@ -555,11 +628,11 @@ export function buildHouse(scene, M, shadows) {
     [0.122, -0.018],
   ];
   const fasciaProfile = [
-    [-0.03, 0.0],
+    [-FASCIA_T, 0.0],
     [0.0, 0.0],
-    [0.0, -0.22],
-    [-0.03, -0.22],
-    [-0.03, 0.0],
+    [0.0, -0.23],
+    [-FASCIA_T, -0.23],
+    [-FASCIA_T, 0.0],
   ];
 
   // Perimeter path for main house eaves
@@ -574,7 +647,8 @@ export function buildHouse(scene, M, shadows) {
     [X_GARAGE_OUTER - OVER, Z_REAR_WALL + OVER],
   ];
 
-  sweep(geo('gutter'), gutterProfile, mainPerimeter, true, ROOF_EDGE_Y - 0.01, [0, 0]);
+  // gutter hung tight under the tile nose, leaving the rest of the board showing
+  sweep(geo('gutter'), gutterProfile, mainPerimeter, true, ROOF_EDGE_Y - 0.005, [0, 0]);
   sweep(geo('fascia'), fasciaProfile, mainPerimeter, true, ROOF_EDGE_Y, [0, 0]);
 
   function sweep(g, profile, path, closed, y0, center = [0, 0]) {
@@ -777,22 +851,22 @@ export function buildHouse(scene, M, shadows) {
   const floorG = geo('interiorFloor');
   floorG.box(0.0, 0.01, -9.545, X_HALL, 0.03, -2.255); // Entry passage
   floorG.box(-2.44, 0.01, -2.255, X_HALL, 0.03, 8.585); // Family + Dining open plan
+  // (no corridor between Bed 3 and Bed 4 — they share one wall on the plan)
   floorG.box(X_GARAGE_OUTER, 0.01, Z_GARAGE_REAR, 0.0, 0.03, 8.485); // Kitchen, pantry, storage
-  floorG.box(0.80, 0.01, 8.045, X_HALL, 0.03, 11.825); // Bed 3 & Bed 4 hallway corridor
 
   // B. Plush Carpet (Bedrooms & Media Room)
   const carpetG = geo('carpet');
   carpetG.box(X_HALL, 0.01, -9.545, X_BED_OUTER, 0.03, -6.055); // Master Bed 1
   carpetG.box(X_HALL, 0.01, -2.255, X_BED_OUTER, 0.03, 2.145); // Media Room
-  carpetG.box(X_HALL, 0.01, 2.145, X_BED_OUTER, 0.03, 5.145); // Bed 2
-  carpetG.box(X_HALL, 0.01, 8.045, X_BED_OUTER, 0.03, 11.825); // Bed 3
-  carpetG.box(-2.44, 0.01, 8.585, 0.80, 0.03, 11.825); // Bed 4
+  carpetG.box(X_HALL, 0.01, 2.145, X_BED_OUTER, 0.03, 5.26); // Bed 2
+  carpetG.box(X_HALL, 0.01, 8.34, X_BED_OUTER, 0.03, 11.825); // Bed 3
+  carpetG.box(X_ALFRESCO_INNER, 0.01, 8.585, X_HALL, 0.03, 11.825); // Bed 4
 
   // C. Wet Area Matte Tiles (Ensuite, WIR, Laundry, Bathroom, Powder WC, Linen)
   const wetTileG = geo('tileWet');
   wetTileG.box(X_HALL, 0.01, -6.055, X_BED_OUTER, 0.03, -4.055); // WIR & Ensuite
   wetTileG.box(X_HALL, 0.01, -4.055, X_BED_OUTER, 0.03, -2.255); // Laundry
-  wetTileG.box(X_HALL, 0.01, 5.145, X_BED_OUTER, 0.03, 8.045); // Main Bath, Powder WC & Linen
+  wetTileG.box(X_HALL, 0.01, 5.26, X_BED_OUTER, 0.03, 8.34); // Main Bath, WC, Linen & vanity passage
 
   // D. Garage Finished Concrete Slab
   geo('driveway').box(X_GARAGE_OUTER, 0.01, Z_GARAGE_FRONT, 0.0, 0.03, Z_GARAGE_REAR);
@@ -880,7 +954,7 @@ export function buildHouse(scene, M, shadows) {
   inWallZ(-4.055, -2.255, X_HALL);
   inWallZ(-2.255, 2.145, X_HALL, { start: -0.50, width: 0.82 }); // Media Room door
   inWallZ(2.145, 5.145, X_HALL, { start: 2.25, width: 0.82 }); // Bed 2 door
-  inWallZ(8.045, 11.825, X_HALL, { start: 8.15, width: 0.82 }); // Bed 3 door
+  inWallZ(8.34, 11.825, X_HALL); // Bed 3 / Bed 4 dividing wall (single wall, no door)
 
   // 12. Media Room Rear Wall / Bed 2 Front Wall
   inWallX(X_HALL, X_BED_OUTER, 2.145);
@@ -889,38 +963,36 @@ export function buildHouse(scene, M, shadows) {
   inWallX(X_HALL, 2.34, 3.15); // Robe return partition
   addSlidingRobe(2.34, 3.15, 2.36, 5.05, 'x');
 
-  // 14. Bed 2 Rear Wall / Main Bathroom & Linen Front Wall
-  inWallX(X_HALL, X_BED_OUTER, 5.145);
+  // 14. Bed 2 Rear Wall / Main Bathroom & Linen Front Wall (bathroom is 1500 deep)
+  inWallX(X_HALL, X_BED_OUTER, 5.26);
 
-  // 15. Linen Cupboard (1500 wide x 600 deep, facing hallway per blueprint)
-  inWallZ(5.145, 6.645, 2.34); // Dividing wall between Linen and Bathroom
-  addSlidingRobe(X_HALL, 5.15, X_HALL + 0.02, 6.65, 'x');
+  // 15. Linen Cupboard (1500 x 600, opening to the hallway per blueprint)
+  inWallZ(5.26, 6.85, 2.345); // Dividing wall between Linen and the shower
+  addSlidingRobe(X_HALL, 5.31, X_HALL + 0.02, 6.80, 'x');
   for (const sy of [0.45, 0.90, 1.35, 1.80]) {
-    geo('cabinetryWood').box(X_HALL + 0.05, sy, 5.20, 2.30, sy + 0.02, 6.60);
+    geo('cabinetryWood').box(X_HALL + 0.05, sy, 5.35, 2.30, sy + 0.02, 6.76);
   }
 
-  // 16. Main Bathroom Access Door from hallway
-  inWallX(X_HALL, 2.34, 6.645, { start: 1.74, width: 0.72 });
-  // 17. Main Bathroom / Separate Toilet (WC) Dividing Wall
-  inWallX(2.34, X_BED_OUTER, 6.645, { start: 3.40, width: 0.72 }); // Main bathroom door (per plan)
+  // 16. Linen / passage wall (solid — the linen opens to the hallway, not the passage)
+  inWallX(X_HALL, 2.345, 6.85);
+  // 17. Main Bathroom front wall with its 820 door off the passage
+  inWallX(2.345, X_BED_OUTER, 6.85, { start: 3.42, width: 0.82 });
   // 18. Separate Toilet (WC 1400 x 1000) Front Wall with 720 door
-  inWallZ(6.645, 8.045, 4.23, { start: 6.80, width: 0.72 });
-  // 19. Bathroom / Toilet / Bed 3 Dividing Wall
-  inWallX(X_HALL, X_BED_OUTER, 8.045);
+  inWallZ(6.85, 8.34, 4.234, { start: 6.91, width: 0.72 });
+  // 19. Bathroom / Toilet / Bed 3 Dividing Wall, with the Bed 3 door off the passage
+  inWallX(X_HALL, X_BED_OUTER, 8.34, { start: 1.82, width: 0.82 });
 
-  // 20. Bed 3 Robe (ROB per blueprint along Bath/Toilet wall)
-  inWallZ(8.045, 8.645, 3.90); // Robe return wall
-  addSlidingRobe(2.00, 8.62, 3.90, 8.64, 'z');
+  // 20. Bed 3 Robe (ROB per blueprint, between the door and the outer wall)
+  inWallZ(8.34, 8.985, 2.85); // Robe return wall
+  addSlidingRobe(2.85, 8.94, 5.23, 8.96, 'z');
 
-  // 21. Bed 4 Front Wall (off Living/Hallway) with entry door (3250 x 3240 per blueprint)
-  inWallX(-2.44, 0.80, 8.585, { start: -0.15, width: 0.82 });
+  // 21. Bed 4 Front Wall (off Family) with entry door (3250 x 3240 per blueprint)
+  inWallX(X_ALFRESCO_INNER, X_HALL, 8.585, { start: 0.70, width: 0.82 });
   // 22. Bed 4 / Alfresco Dividing Wall
-  inWallZ(8.585, 11.825, -2.44);
-  // 23. Bed 4 / Hallway Dividing Wall
-  inWallZ(8.585, 11.825, 0.80);
-  // 24. Bed 4 Robe (ROB per blueprint)
-  inWallZ(8.585, 9.185, -0.35); // Robe return wall
-  addSlidingRobe(-2.25, 9.16, -0.35, 9.18, 'z');
+  inWallZ(8.585, 11.825, X_ALFRESCO_INNER);
+  // 23. Bed 4 Robe (ROB per blueprint, beside the door)
+  inWallZ(8.585, 9.185, 0.66); // Robe return wall
+  addSlidingRobe(-1.55, 9.16, 0.66, 9.18, 'z');
 
   // Kitchen joinery, bathroom fixtures, laundry and all furniture are built by
   // src/scene/interior.js so they can follow the Internal selections.
@@ -990,16 +1062,39 @@ export function buildHouse(scene, M, shadows) {
     downpipe: 'downpipe',
     flashing: 'flashing',
     trim: 'render', // Portal frame & trims
+    lintel: 'bricks',
+    lintelTrim: 'bricks',
+    infill: 'bricks',
     frame: 'frame',
     glass: 'frame',
     glassFrosted: 'frame',
+    mullWinStd: 'frame',
+    mullWinBq: 'frame',
+    mullDoorStd: 'frame',
+    mullDoorBq: 'frame',
+    flyscreen: 'frame',
+    screenFrame: 'frame',
+    barrier: 'frame',
+    barrierFrame: 'frame',
     garage: 'garage',
     porchTile: 'render',
   };
+  // the same meshes carry their Internal category, for the interior hover picker
+  const INT_OF = {
+    interiorFloor: 'flooring',
+    carpet: 'carpet',
+    interiorWall: 'paint',
+  };
 
+  // geo key -> material, where the two are not named the same
+  const MAT_OF = {
+    mullWinStd: 'frame', mullWinBq: 'frame', mullDoorStd: 'frame', mullDoorBq: 'frame',
+    screenFrame: 'frame', barrierFrame: 'frame',
+    lintel: 'metalGalv', lintelTrim: 'metalGalv', infill: 'render',
+  };
   const meshes = {};
   for (const [k, g] of Object.entries(G)) {
-    const m = g.toMesh(k, scene, M[k]);
+    const m = g.toMesh(k, scene, M[MAT_OF[k] || k]);
     meshes[k] = m;
   }
   meshes.downpipe = downpipe;
@@ -1026,11 +1121,13 @@ export function buildHouse(scene, M, shadows) {
   meshes.roofCap = roofCap;
 
   for (const [k, m] of Object.entries(meshes)) {
-    m.metadata = { part: PART_OF[k] || null };
+    m.metadata = { part: PART_OF[k] || null, int: INT_OF[k] || null };
     m.isPickable = true;
     const noShadow = new Set([
       'glass',
       'glassFrosted',
+      'flyscreen',
+      'barrier',
       'interiorWall',
       'interiorCeil',
       'interiorFloor',
@@ -1058,7 +1155,9 @@ export function buildHouse(scene, M, shadows) {
 
   // Transparent / Dollhouse Mode Controller
   const roofKeys = ['roof', 'roofCap', 'gutter', 'fascia', 'downpipe', 'soffit', 'interiorCeil', 'flashing'];
-  const extWallKeys = ['bricks', 'render', 'cladding', 'trim', 'garage', 'frame', 'glass', 'glassFrosted'];
+  const extWallKeys = ['bricks', 'render', 'cladding', 'trim', 'garage', 'frame', 'glass', 'glassFrosted',
+    'mullWinStd', 'mullWinBq', 'mullDoorStd', 'mullDoorBq', 'flyscreen', 'screenFrame', 'barrier', 'barrierFrame',
+    'lintel', 'lintelTrim', 'infill'];
 
   const setTransparent = (isTransparent) => {
     for (const k of roofKeys) {
@@ -1084,12 +1183,40 @@ export function buildHouse(scene, M, shadows) {
     bricks: new Vector3(X_BED_OUTER + 0.05, 1.4, Z_BED1_FRONT + 3.0),
     trim: new Vector3(X_BED_OUTER - 0.8, 1.4, Z_BED1_FRONT - 0.18),
     frame: new Vector3(3.95, 1.35, Z_BED1_FRONT - 0.14),
+    entry: new Vector3(0.75, 1.7, Z_BED1_FRONT - 0.16),
     garage: new Vector3(X_GARAGE_OUTER + 2.85, 1.15, Z_GARAGE_FRONT - 0.12),
     driveway: new Vector3(X_GARAGE_OUTER + 2.85, 0.04, -14.2),
   };
 
+  // Guide p.18-19 extras. Every variant is already built, so switching is a
+  // matter of enabling the right meshes.
+  const show = (key, on) => meshes[key]?.setEnabled(on);
+  // Guide p.21: brick infill with a steel lintel, or a fibre cement sheet.
+  function setInfill(kind) {
+    const fc = kind === 'fc';
+    show('infill', fc);
+    show('lintelTrim', fc);
+    show('lintel', !fc);
+  }
+  setInfill('brick');
+
+  function setWindowExtras({ flyscreen, barrier, boutique } = {}) {
+    show('flyscreen', !!flyscreen);
+    show('screenFrame', !!flyscreen);
+    show('barrier', !!barrier);
+    show('barrierFrame', !!barrier);
+    const bqWin = boutique === 'window' || boutique === 'both';
+    const bqDoor = boutique === 'slider' || boutique === 'both';
+    show('mullWinBq', bqWin);
+    show('mullWinStd', !bqWin);
+    show('mullDoorBq', bqDoor);
+    show('mullDoorStd', !bqDoor);
+  }
+  setWindowExtras({ flyscreen: false, barrier: false, boutique: null });
+
   return {
-    meshes, anchors, glow, glowMat, lightSpots, setTransparent,
+    meshes, anchors, glow, glowMat, lightSpots, setTransparent, setWindowExtras, setInfill,
+    entryOpening: { wall: dwall, x0: DOOR_X0, x1: DOOR_X1, height: DOOR_H },
     plan: { windows, openings, robes, geoKeys: Object.keys(G) },
   };
 }
