@@ -325,11 +325,15 @@ export function jointSwatch(joint, w = 220, h = 120) {
 }
 
 // ---------------------------------------------------------------- roof
-// Concrete tiles are 300 mm cover x 320 mm gauge, so one texture spans four
-// tiles across and four courses down.
-export const ROOF_TILE_SIZE = { w: 1.2, h: 1.28 };
-const ROOF_COLS = 4;
-const ROOF_ROWS = 4;
+// Concrete tiles are 300 mm cover x 330 mm gauge. One texture spans six tiles
+// across and five courses down, so a roof plane repeats far less often than it
+// did at 4x4 — the give-away grid on a large hip was the repeat, not the relief.
+export const ROOF_TILE_SIZE = { w: 1.8, h: 1.65 };
+const ROOF_COLS = 6;
+const ROOF_ROWS = 5;
+
+// Ridge/hip capping: ~500 mm around the roll, laid in 330 mm pieces.
+export const ROOF_CAP_TILE = { w: 0.5, h: 0.33 };
 
 // Cross-section of one tile, u = 0..1 across its cover width.
 // Returns { h: 0..1 relief, s: -1..1 shading bias (+ crown, - valley) }.
@@ -370,6 +374,24 @@ const ROOF_COURSE = {
   prestige: () => 0.05,
 };
 
+// Concrete aggregate: fine sand plus scattered coarser stones, both on the
+// periodic lattice so the grain wraps with the rest of the map. Driving this
+// into the height map (not just the albedo) is what makes the surface read as
+// cast concrete instead of tinted plastic.
+function roofAggregate(size, seed) {
+  const fine = brickNoise(size, Math.round(size / 3), Math.round(size / 3), seed);
+  const coarse = brickNoise(size, Math.round(size / 13), Math.round(size / 13), seed + 17);
+  const out = new Float32Array(size * size);
+  for (let i = 0; i < out.length; i++) out[i] = fine[i] * 0.62 + coarse[i] * 0.38;
+  return out;
+}
+
+// Weathering that runs down the slope — rain streaks and patchy bloom. Low
+// frequency, so it breaks up the tile grid without looking like dirt.
+function roofWeathering(size, seed) {
+  return brickNoise(size, Math.round(size / 160), Math.round(size / 26), seed);
+}
+
 export function roofMaps(profile, size = 1024) {
   const W = size;
   const H = size;
@@ -377,8 +399,9 @@ export function roofMaps(profile, size = 1024) {
   const bx = alb.getContext('2d');
   const hc = makeCanvas(W, H);
   const ao = makeCanvas(W, H);
+  const rough = makeCanvas(W, H);
 
-  if (profile === 'colorbond') return corrugatedMaps(W, H, alb, bx, hc, ao);
+  if (profile === 'colorbond') return corrugatedMaps(W, H, alb, bx, hc, ao, rough);
 
   const prof = ROOF_PROFILE[profile] || ROOF_PROFILE.designer;
   const course = ROOF_COURSE[profile] || ROOF_COURSE.designer;
@@ -397,6 +420,10 @@ export function roofMaps(profile, size = 1024) {
   const hImg = hc.getContext('2d').createImageData(W, H);
   const aoCtx = ao.getContext('2d');
   const aoImg = aoCtx.createImageData(W, H);
+  const roughCtx = rough.getContext('2d');
+  const roughImg = roughCtx.createImageData(W, H);
+  const grit = roofAggregate(W, profile.length * 29 + 3);
+  const weather = roofWeathering(W, profile.length * 53 + 11);
   const stagger = profile === 'prestige';
 
   for (let y = 0; y < H; y++) {
@@ -417,21 +444,28 @@ export function roofMaps(profile, size = 1024) {
       // Side lap between neighbouring tiles reads as a fine dark line.
       const sideLap = u < 0.02 || u > 0.985;
 
+      const i = (y * W + x) * 4;
+      const g = grit[y * W + x];          // -1..1 aggregate
+      const wet = weather[y * W + x];     // -1..1 slope-run weathering
+
       // --- albedo: tone + baked course shadow + roll shading
       let k = tone[row][col];
       k *= stepped ? 0.30 + 0.45 * lap : 1;        // shadow under the overlap
       k *= 1 + p.s * 0.13;                          // crown lighter, valley darker
       if (sideLap) k *= 0.62;
       if (!stepped && t < head + 0.07) k *= 0.80 + 0.2 * ((t - head) / 0.07); // contact shade
-      k *= 0.97 + rand() * 0.06;                    // fine grain
+      k *= 1 + g * 0.05;                            // aggregate speckle
+      k *= 1 + wet * 0.045;                         // weathering bloom down the slope
       const v = Math.max(0, Math.min(255, 238 * k));
-      const i = (y * W + x) * 4;
       albImg.data[i] = albImg.data[i + 1] = albImg.data[i + 2] = v;
       albImg.data[i + 3] = 255;
 
-      // --- height
+      // --- height: macro tile relief + meso side lap + micro aggregate.
+      // The grain is deliberately small (0.012) — enough for the normal map to
+      // catch a grazing sun, not enough to fight the tile roll.
+      const macro = sideLap ? relief * 0.35 : relief;
       hImg.data[i] = hImg.data[i + 1] = hImg.data[i + 2] = Math.round(
-        (sideLap ? relief * 0.35 : relief) * 255,
+        clamp01(macro + g * 0.012) * 255,
       );
       hImg.data[i + 3] = 255;
 
@@ -441,38 +475,139 @@ export function roofMaps(profile, size = 1024) {
       else if (t < head + 0.1) occ = 0.68 + 0.32 * ((t - head) / 0.1);
       if (sideLap) occ *= 0.55;
       occ *= 0.82 + 0.18 * (p.h);
-      const o = Math.round(Math.max(0, Math.min(1, occ)) * 255);
+      occ *= 1 + g * 0.03;                          // grain catches its own shade
+      const o = Math.round(clamp01(occ) * 255);
       aoImg.data[i] = aoImg.data[i + 1] = aoImg.data[i + 2] = o;
       aoImg.data[i + 3] = 255;
+
+      // --- roughness (green channel; Babylon reads it off metallicTexture).
+      // Cast concrete is matte, but not uniformly so: crowns weather smoother,
+      // sheltered laps hold dirt and stay rough. A single flat roughness is
+      // what made the old roof read as plastic.
+      let r = 0.84;
+      r -= p.h * 0.07;                              // exposed crowns polish down
+      if (stepped) r += 0.05;                       // sheltered head of the course
+      if (sideLap) r += 0.04;
+      r += g * 0.05;                                // aggregate breaks the specular
+      r += wet * 0.03;
+      const rv = Math.round(clamp01(r) * 255);
+      roughImg.data[i] = 0;
+      roughImg.data[i + 1] = rv;                    // green = roughness
+      roughImg.data[i + 2] = 0;
+      roughImg.data[i + 3] = 255;
     }
   }
   bx.putImageData(albImg, 0, 0);
   hc.getContext('2d').putImageData(hImg, 0, 0);
   aoCtx.putImageData(aoImg, 0, 0);
+  roughCtx.putImageData(roughImg, 0, 0);
 
-  // soften the height a touch so the normals are not stair-stepped
+  // Soften the height just enough to take the stair-step off the hard course
+  // edge. The aggregate is smoothstep-interpolated already, so a light touch
+  // here keeps the grain the normals are built from.
   const hx = hc.getContext('2d');
-  hx.filter = 'blur(1.2px)';
+  hx.filter = 'blur(0.6px)';
   hx.drawImage(hc, 0, 0);
   hx.filter = 'none';
 
-  const grain = noiseCanvas(512, { base: 28, octaves: 3, seed: 17 });
-  bx.globalAlpha = 0.1;
-  bx.globalCompositeOperation = 'multiply';
-  bx.drawImage(grain, 0, 0, W, H);
-  bx.globalCompositeOperation = 'source-over';
-  bx.globalAlpha = 1;
+  return {
+    albedo: alb,
+    normal: heightToNormal(hc, profile === 'prestige' ? 4 : 5.5),
+    ao,
+    roughness: rough,
+  };
+}
 
-  return { albedo: alb, normal: heightToNormal(hc, profile === 'prestige' ? 4 : 5.5), ao };
+// Ridge and hip capping. The cylinder geometry supplies the roll, so this map
+// only has to carry the joint between pieces and the same concrete surface as
+// the field tiles — otherwise the hips read as bare plastic pipe.
+export function roofCapMaps(profile, size = 512) {
+  const W = size;
+  const H = size;
+  const alb = makeCanvas(W, H);
+  const bx = alb.getContext('2d');
+  const hc = makeCanvas(W, H);
+  const ao = makeCanvas(W, H);
+  const rough = makeCanvas(W, H);
+
+  const albImg = bx.createImageData(W, H);
+  const hImg = hc.getContext('2d').createImageData(W, H);
+  const aoCtx = ao.getContext('2d');
+  const aoImg = aoCtx.createImageData(W, H);
+  const roughCtx = rough.getContext('2d');
+  const roughImg = roughCtx.createImageData(W, H);
+
+  const metal = profile === 'colorbond';
+  const grit = roofAggregate(W, 71);
+  const weather = roofWeathering(W, 97);
+  // One cap piece per texture height; V runs along the ridge.
+  for (let y = 0; y < H; y++) {
+    const t = y / H;                     // 0..1 along one cap piece
+    // Each piece laps the next: a hard shadow step at the head of the piece.
+    const head = 0.08;
+    const stepped = t < head;
+    const lap = stepped ? t / head : 1;
+    for (let x = 0; x < W; x++) {
+      const i = (y * W + x) * 4;
+      const g = grit[y * W + x];
+      const wet = weather[y * W + x];
+
+      let k = stepped ? 0.42 + 0.48 * lap : 1;
+      if (!stepped && t < head + 0.06) k *= 0.84 + 0.16 * ((t - head) / 0.06);
+      k *= metal ? 1 + g * 0.012 : 1 + g * 0.05;
+      k *= 1 + wet * (metal ? 0.012 : 0.04);
+      const v = Math.max(0, Math.min(255, 238 * k));
+      albImg.data[i] = albImg.data[i + 1] = albImg.data[i + 2] = v;
+      albImg.data[i + 3] = 255;
+
+      // Height: the lap step, plus aggregate on concrete caps only.
+      const step = stepped ? 0.30 + 0.34 * lap : 0.64;
+      hImg.data[i] = hImg.data[i + 1] = hImg.data[i + 2] = Math.round(
+        clamp01(step + (metal ? 0 : g * 0.02)) * 255,
+      );
+      hImg.data[i + 3] = 255;
+
+      let occ = stepped ? 0.30 + 0.6 * lap : 1;
+      if (!stepped && t < head + 0.08) occ = 0.74 + 0.26 * ((t - head) / 0.08);
+      occ *= metal ? 1 : 1 + g * 0.03;
+      const o = Math.round(clamp01(occ) * 255);
+      aoImg.data[i] = aoImg.data[i + 1] = aoImg.data[i + 2] = o;
+      aoImg.data[i + 3] = 255;
+
+      let r = metal ? 0.42 : 0.84;
+      if (stepped) r += 0.05;
+      r += g * (metal ? 0.015 : 0.05);
+      r += wet * (metal ? 0.01 : 0.03);
+      roughImg.data[i] = 0;
+      roughImg.data[i + 1] = Math.round(clamp01(r) * 255);
+      roughImg.data[i + 2] = 0;
+      roughImg.data[i + 3] = 255;
+    }
+  }
+
+  bx.putImageData(albImg, 0, 0);
+  hc.getContext('2d').putImageData(hImg, 0, 0);
+  aoCtx.putImageData(aoImg, 0, 0);
+  roughCtx.putImageData(roughImg, 0, 0);
+
+  const hx = hc.getContext('2d');
+  hx.filter = 'blur(0.6px)';
+  hx.drawImage(hc, 0, 0);
+  hx.filter = 'none';
+
+  return { albedo: alb, normal: heightToNormal(hc, metal ? 2.5 : 4), ao, roughness: rough };
 }
 
 // Colorbond Classic corrugated sheet: 76 mm pitch, ribs running down the slope.
-function corrugatedMaps(W, H, alb, bx, hc, ao) {
+function corrugatedMaps(W, H, alb, bx, hc, ao, rough) {
   const pitch = W / Math.round(ROOF_TILE_SIZE.w / 0.076);
   const hImg = hc.getContext('2d').createImageData(W, H);
   const albImg = bx.createImageData(W, H);
   const aoCtx = ao.getContext('2d');
   const aoImg = aoCtx.createImageData(W, H);
+  const roughCtx = rough.getContext('2d');
+  const roughImg = roughCtx.createImageData(W, H);
+  const grit = roofAggregate(W, 5);
   for (let x = 0; x < W; x++) {
     const phase = ((x / pitch) % 1) * Math.PI * 2;
     const h = 0.5 + 0.5 * Math.sin(phase);
@@ -490,18 +625,26 @@ function corrugatedMaps(W, H, alb, bx, hc, ao) {
       const o = Math.round(Math.min(1, (0.72 + 0.28 * h) * lap) * 255);
       aoImg.data[i] = aoImg.data[i + 1] = aoImg.data[i + 2] = o;
       aoImg.data[i + 3] = 255;
+      // Painted steel: mostly smooth, with a little roll-forming variation so
+      // the sheet does not read as a mirror across the whole plane.
+      const r = 0.40 + (1 - h) * 0.06 + grit[y * W + x] * 0.02;
+      roughImg.data[i] = 0;
+      roughImg.data[i + 1] = Math.round(clamp01(r) * 255);
+      roughImg.data[i + 2] = 0;
+      roughImg.data[i + 3] = 255;
     }
   }
   bx.putImageData(albImg, 0, 0);
   hc.getContext('2d').putImageData(hImg, 0, 0);
   aoCtx.putImageData(aoImg, 0, 0);
+  roughCtx.putImageData(roughImg, 0, 0);
   const n = noiseCanvas(256, { base: 4, octaves: 3, seed: 91 });
   bx.globalAlpha = 0.05;
   bx.globalCompositeOperation = 'multiply';
   bx.drawImage(n, 0, 0, W, H);
   bx.globalCompositeOperation = 'source-over';
   bx.globalAlpha = 1;
-  return { albedo: alb, normal: heightToNormal(hc, 3), ao };
+  return { albedo: alb, normal: heightToNormal(hc, 3), ao, roughness: rough };
 }
 
 // ---------------------------------------------------------------- cladding

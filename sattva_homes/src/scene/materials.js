@@ -9,7 +9,9 @@ import {
   brickSurfaceMaps,
   BRICK_TILE,
   roofMaps,
+  roofCapMaps,
   ROOF_TILE_SIZE,
+  ROOF_CAP_TILE,
   claddingMaps,
   CLAD_TILE,
   renderMaps,
@@ -208,30 +210,58 @@ export async function createMaterials(scene) {
   // ---------------- roof (colour × profile)
   M.roof = pbr('roof', scene, { rough: 0.72 });
   M.roofCap = pbr('roofCap', scene, { rough: 0.72 });
+  // Roughness now comes from a map rather than a single scalar, so tell the
+  // PBR material to read it off the green channel (and ignore the rest).
+  for (const m of [M.roof, M.roofCap]) {
+    m.useRoughnessFromMetallicTextureAlpha = false;
+    m.useRoughnessFromMetallicTextureGreen = true;
+    m.useMetallnessFromMetallicTextureBlue = false;
+  }
+
   const roofCache = new Map();
   const roofTex = (profile) => {
     if (!roofCache.has(profile)) {
       const m = roofMaps(profile, size);
       const { w, h } = ROOF_TILE_SIZE;
+      const c = roofCapMaps(profile, size / 2);
+      const { w: cw, h: ch } = ROOF_CAP_TILE;
       roofCache.set(profile, {
         albedo: tile(dyn(`roofA-${profile}`, m.albedo, scene), w, h),
-        normal: tile(dyn(`roofN-${profile}`, m.normal, scene), w, h),
-        ao: tile(dyn(`roofAO-${profile}`, m.ao, scene), w, h),
+        normal: tile(dyn(`roofN-${profile}`, m.normal, scene, { data: true }), w, h),
+        ao: tile(dyn(`roofAO-${profile}`, m.ao, scene, { data: true }), w, h),
+        roughness: tile(dyn(`roofR-${profile}`, m.roughness, scene, { data: true }), w, h),
+        capAlbedo: tile(dyn(`roofCapA-${profile}`, c.albedo, scene), cw, ch),
+        capNormal: tile(dyn(`roofCapN-${profile}`, c.normal, scene, { data: true }), cw, ch),
+        capAo: tile(dyn(`roofCapAO-${profile}`, c.ao, scene, { data: true }), cw, ch),
+        capRoughness: tile(dyn(`roofCapR-${profile}`, c.roughness, scene, { data: true }), cw, ch),
       });
     }
     return roofCache.get(profile);
   };
   const setRoofProfile = (profile) => {
     const t = roofTex(profile);
+    const metal = profile === 'colorbond';
+
     M.roof.albedoTexture = t.albedo;
     M.roof.bumpTexture = t.normal;
-    M.roof.bumpTexture.level = profile === 'colorbond' ? 1.0 : 1.5;
+    M.roof.bumpTexture.level = metal ? 1.0 : 1.5;
     M.roof.ambientTexture = t.ao;
     M.roof.ambientTextureStrength = 1;
-    const metal = profile === 'colorbond';
+    M.roof.metallicTexture = t.roughness;
+
+    // The capping used to be an untextured cylinder — same concrete surface as
+    // the field tiles, so hips and ridges stop reading as bare pipe.
+    M.roofCap.albedoTexture = t.capAlbedo;
+    M.roofCap.bumpTexture = t.capNormal;
+    M.roofCap.bumpTexture.level = metal ? 0.7 : 1.1;
+    M.roofCap.ambientTexture = t.capAo;
+    M.roofCap.ambientTextureStrength = 1;
+    M.roofCap.metallicTexture = t.capRoughness;
+
     for (const m of [M.roof, M.roofCap]) {
       m.metallic = metal ? 0.35 : 0;
-      m.roughness = metal ? 0.42 : 0.72;
+      // scalar roughness is the fallback; the green channel of metallicTexture wins
+      m.roughness = metal ? 0.42 : 0.82;
     }
   };
   setRoofProfile('designer');
