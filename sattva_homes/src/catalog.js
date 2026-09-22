@@ -1,11 +1,11 @@
 // Selection catalogue for the external items: A–L are the twelve listed on
-// page 3 of the Coral Homes Pre-Selection Guide, M is the Front Entry Door
+// page 3 of the Sattva Homes Pre-Selection Guide, M is the Front Entry Door
 // section (guide p.40-47). Colours/images come from the guide itself
 // (extracted into data/pdf-swatches.json); items the guide does not detail
 // (driveway, downpipe, flashing cap, window trim) use sensible defaults.
 import pdf from './data/pdf-swatches.json';
 
-// Coral Homes builds in the Queensland & Northern NSW area, so the region is
+// Sattva Homes builds in the Queensland & Northern NSW area, so the region is
 // fixed. The NSW brick ranges stay in the data file for the day that changes.
 export const BUILD_REGION = 'qld';
 export const REGIONS = [
@@ -13,7 +13,7 @@ export const REGIONS = [
 ];
 
 const ENERGY_NOTE =
-  'Coral Recommended (⚡): solar absorptance of 0.40 or less. In Hervey Bay, Sunshine Coast, Brisbane, Gold Coast, Tweed, Ballina and Coffs Harbour the builder recommends light colours — additional costs may apply for medium or dark colours.';
+  'Sattva Recommended (⚡): solar absorptance of 0.40 or less. In Hervey Bay, Sunshine Coast, Brisbane, Gold Coast, Tweed, Ballina and Coffs Harbour the builder recommends light colours — additional costs may apply for medium or dark colours.';
 const SCREEN_NOTE = 'On-screen colours are indicative only. Please confirm with physical samples at your selection appointment.';
 
 // ---------- shared colour ranges ----------

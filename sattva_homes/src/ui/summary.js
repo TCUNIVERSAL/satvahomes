@@ -7,7 +7,7 @@ const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '
 const SECTION_NAMES = { general: 'Internal', kitchen: 'Kitchen', bathroom: 'Bathroom, Ensuite & Laundry' };
 
 const DISCLAIMER =
-  'Due to the continuing development of our product and subject to supplier availability, Coral Homes reserves the right to change product specifications and suppliers at any time and without notice. The 3D visualisation is indicative only — colours and textures on screen may differ from actual products. Please confirm all selections with physical samples at your selection appointment.';
+  'Due to the continuing development of our product and subject to supplier availability, Sattva Homes reserves the right to change product specifications and suppliers at any time and without notice. The 3D visualisation is indicative only — colours and textures on screen may differ from actual products. Please confirm all selections with physical samples at your selection appointment.';
 
 const SHOTS = [
   { view: 'home', label: 'Street view' },
@@ -22,7 +22,7 @@ const INT_SHOTS = [
   { view: 'master', label: 'Master bedroom' },
 ];
 
-export function createSummary({ root, store, capture }) {
+export function createSummary({ root, store, capture, scene }) {
   let shots = [];
   let intShots = [];
   let ref = '';
@@ -113,6 +113,7 @@ export function createSummary({ root, store, capture }) {
       <footer class="sum-foot">
         <button class="btn btn-ghost" data-act="close">Keep editing</button>
         <button class="btn btn-ghost" data-act="print">Print</button>
+        <button class="btn btn-ghost" data-act="stl">${ICON.download} Download 3D model (STL)</button>
         <button class="btn btn-primary" data-act="pdf">${ICON.download} Download PDF</button>
       </footer>
     </div>`;
@@ -122,26 +123,32 @@ export function createSummary({ root, store, capture }) {
     if (e.target === root || e.target.closest('[data-act="close"]')) return hide();
     const pdfBtn = e.target.closest('[data-act="pdf"]');
     const printBtn = e.target.closest('[data-act="print"]');
-    if (!pdfBtn && !printBtn) return;
-    const btn = pdfBtn || printBtn;
+    const stlBtn = e.target.closest('[data-act="stl"]');
+    if (!pdfBtn && !printBtn && !stlBtn) return;
+    const btn = pdfBtn || printBtn || stlBtn;
     // open the print window synchronously so popup blockers allow it
     const win = printBtn ? window.open('', '_blank') : null;
     btn.disabled = true;
     const label = btn.innerHTML;
     btn.textContent = 'Preparing…';
     try {
-      const doc = await buildPdf();
-      if (pdfBtn) doc.save(`Coral-Homes-Selections-${ref}.pdf`);
-      else {
-        doc.autoPrint();
-        const url = doc.output('bloburl');
-        if (win) win.location.href = url;
-        else window.open(url, '_blank');
+      if (stlBtn) {
+        await downloadStl();
+      } else {
+        const doc = await buildPdf();
+        if (pdfBtn) doc.save(`Sattva-Homes-Selections-${ref}.pdf`);
+        else {
+          doc.autoPrint();
+          const url = doc.output('bloburl');
+          if (win) win.location.href = url;
+          else window.open(url, '_blank');
+        }
       }
     } catch (err) {
       console.error(err);
       if (win) win.close();
-      alert('Sorry — the PDF could not be created. Please try again.');
+      alert(stlBtn ? 'Sorry — the 3D model could not be exported. Please try again.'
+                   : 'Sorry — the PDF could not be created. Please try again.');
     } finally {
       btn.disabled = false;
       btn.innerHTML = label;
@@ -175,7 +182,7 @@ export function createSummary({ root, store, capture }) {
       doc.setFont('helvetica', 'normal');
       doc.setFontSize(8);
       doc.setTextColor(...muted);
-      doc.text(`Coral Homes · Pre-Start Selection Guide · Ref ${ref}`, W - M, 11, { align: 'right' });
+      doc.text(`Sattva Homes · Pre-Start Selection Guide · Ref ${ref}`, W - M, 11, { align: 'right' });
     };
     const footer = (n, total) => {
       doc.setFont('helvetica', 'normal');
@@ -391,6 +398,20 @@ export function createSummary({ root, store, capture }) {
     }
     doc.setDrawColor(210, 205, 196);
     doc.rect(x, y, w, h, 'S');
+  }
+
+  // Exports a binary STL of every exterior part (metadata.part is set on the
+  // house, entry door and driveway). Interior fit-out and the studio ground
+  // are excluded — a 3D-printable model of what the customer picked.
+  async function downloadStl() {
+    if (!scene) throw new Error('scene not wired into summary');
+    const meshes = scene.meshes.filter(
+      (m) => m.metadata?.part && typeof m.getTotalVertices === 'function' && m.getTotalVertices() > 0,
+    );
+    if (!meshes.length) throw new Error('no exportable meshes found');
+    const { STLExport } = await import('@babylonjs/serializers/stl/stlSerializer.js');
+    // download=true triggers the save directly; binary keeps the file small.
+    STLExport.CreateSTL(meshes, true, `Sattva-Homes-Model-${ref}`, true, true, false, false, false);
   }
 
   return { show, hide };

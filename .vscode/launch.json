@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Run Coral Homes (Dev Server)",
+      "name": "Run Sattva Homes (Dev Server)",
       "type": "node",
       "request": "launch",
-      "cwd": "${workspaceFolder}/coral_homes",
+      "cwd": "${workspaceFolder}/sattva_homes",
       "runtimeExecutable": "npm.cmd",
       "runtimeArgs": ["run", "dev"]
     }

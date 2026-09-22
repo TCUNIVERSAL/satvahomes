@@ -1,7 +1,7 @@
 import { BUILD_REGION, CATEGORIES, defaultSelection, isComplete } from './catalog.js';
 import { INTERIOR_CATEGORIES, interiorDefaults, interiorComplete } from './interiorCatalog.js';
 
-const KEY = 'coral-homes.external-selections.v1';
+const KEY = 'sattva-homes.external-selections.v1';
 
 function load() {
   try {

@@ -1,7 +1,7 @@
 @echo off
-title Coral Homes - External Selections 3D
+title Sattva Homes - External Selections 3D
 echo ===================================================
-echo   Coral Homes - External Selections 3D (Windows)
+echo   Sattva Homes - External Selections 3D (Windows)
 echo ===================================================
 echo.
 echo Starting local development server...

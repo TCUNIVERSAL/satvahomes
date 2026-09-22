@@ -1,4 +1,4 @@
-// Internal (interior) selections, taken from pages 27–69 of the Coral Homes
+// Internal (interior) selections, taken from pages 27–69 of the Sattva Homes
 // Pre-Selection Guide. Images/colours are extracted from the guide itself
 // (src/data/pdf-interior.json). Every option carries the data the 3D scene
 // needs (shape, finish, size) so the model updates when a choice is made.

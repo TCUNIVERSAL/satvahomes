@@ -18,6 +18,7 @@ import { skyCanvas } from './textures.js';
 
 export const SUN_DAY = new Vector3(0.66, -0.6, 0.46).normalize();
 export const SUN_DUSK = new Vector3(0.9, -0.26, 0.35).normalize();
+export const EXTERIOR_FILL = { day: 0.9, dusk: 0.22 };
 
 // Flat studio backdrop behind the house, tuned to sit just off the lit floor so
 // the ground plane runs out of sight without showing an edge.
@@ -120,9 +121,10 @@ export function createScene(engine, canvas) {
   sun.shadowMaxZ = 140;
 
   const hemi = new HemisphericLight('hemi', new Vector3(0, 1, 0), scene);
-  hemi.intensity = 0;
-  hemi.diffuse = new Color3(0.85, 0.9, 1);
-  hemi.groundColor = new Color3(0.34, 0.35, 0.37); // neutral: no lawn to bounce green
+  // Diffuse sky/ground bounce keeps pale masonry readable on shaded elevations.
+  hemi.intensity = EXTERIOR_FILL.day;
+  hemi.diffuse = new Color3(0.96, 0.98, 1);
+  hemi.groundColor = new Color3(0.5, 0.48, 0.45);
   hemi.specular = Color3.Black();
 
   const shadows = new ShadowGenerator(MOBILE ? 2048 : 4096, sun);
@@ -162,9 +164,9 @@ export function createScene(engine, canvas) {
   let ssao = null;
   if (!MOBILE && engine.webGLVersion >= 2) {
     ssao = new SSAO2RenderingPipeline('ssao', scene, { ssaoRatio: 0.5, blurRatio: 1 }, [camera], true);
-    ssao.radius = 1.6;
-    ssao.totalStrength = 1.25;
-    ssao.base = 0.15;
+    ssao.radius = 0.35;
+    ssao.totalStrength = 0.85;
+    ssao.base = 0.3;
     ssao.samples = 24;
     ssao.maxZ = 120;
     ssao.minZAspect = 0.4;
@@ -179,7 +181,7 @@ export function createScene(engine, canvas) {
   ip.toneMappingEnabled = true;
   ip.toneMappingType = ImageProcessingConfiguration.TONEMAPPING_ACES;
   ip.exposure = 1.0;
-  ip.contrast = 1.15;
+  ip.contrast = 1.05;
   ip.vignetteEnabled = true;
   ip.vignetteWeight = 1.1;
   ip.vignetteColor = new Color4(0.08, 0.08, 0.10, 0);
@@ -189,7 +191,7 @@ export function createScene(engine, canvas) {
   pipeline.bloomKernel = 48;
   pipeline.bloomScale = 0.5;
   pipeline.sharpenEnabled = true;
-  pipeline.sharpen.edgeAmount = 0.24;
+  pipeline.sharpen.edgeAmount = 0.12;
 
   return { scene, camera, sun, hemi, shadows, pipeline, ssao, setSky };
 }

@@ -1,5 +1,5 @@
 {
-  "name": "coral-homes-external-selections",
+  "name": "sattva-homes-external-selections",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@babylonjs/core": "^8.0.0",
+    "@babylonjs/serializers": "^8.56.2",
     "jspdf": "^4.2.1"
   },
   "devDependencies": {

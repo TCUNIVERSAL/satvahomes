@@ -2,12 +2,12 @@
   "name": "satvahomes",
   "version": "1.0.0",
   "private": true,
-  "description": "Coral Homes - External Selections 3D",
+  "description": "Sattva Homes - External Selections 3D",
   "scripts": {
-    "postinstall": "npm --prefix coral_homes install",
-    "dev": "npm --prefix coral_homes run dev",
-    "start": "npm --prefix coral_homes run dev",
-    "build": "npm --prefix coral_homes run build && node -e \"const fs = require('fs'); fs.cpSync('coral_homes/dist', 'dist', { recursive: true });\"",
-    "preview": "npm --prefix coral_homes run preview"
+    "postinstall": "npm --prefix sattva_homes install",
+    "dev": "npm --prefix sattva_homes run dev",
+    "start": "npm --prefix sattva_homes run dev",
+    "build": "npm --prefix sattva_homes run build && node -e \"const fs = require('fs'); fs.cpSync('sattva_homes/dist', 'dist', { recursive: true });\"",
+    "preview": "npm --prefix sattva_homes run preview"
   }
 }

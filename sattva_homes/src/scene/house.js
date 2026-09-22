@@ -596,8 +596,12 @@ export function buildHouse(scene, M, shadows) {
   for (const { wall: w, s0, s1, head } of lintels) {
     if (s1 - s0 < 0.3) continue;
     const bear = 0.11; // the lintel bears 110 mm each side of the opening
-    // steel angle, sitting in the bed joint directly over the opening
-    w.box(geo('lintel'), s0 - bear, s1 + bear, head + 0.004, head + 0.09, 0.012, -0.085);
+    // The 6 mm support flange sits beneath the brickwork, slightly recessed
+    // from its face. Its upstand is concealed behind the brick veneer, so
+    // the opening reads as a fine steel edge rather than a solid metal beam.
+    const steel = geo('lintel');
+    w.box(steel, s0 - bear, s1 + bear, head - 0.006, head, -0.006, -0.115);
+    w.box(steel, s0 - bear, s1 + bear, head, head + 0.09, -0.109, -0.115);
     // fibre cement sheet infill, head of opening up to the top plate
     if (WALL_H - head > 0.12) {
       w.box(geo('infill'), s0 - bear, s1 + bear, head + 0.004, WALL_H, 0.012, -0.02);
@@ -1152,6 +1156,8 @@ export function buildHouse(scene, M, shadows) {
     m.freezeWorldMatrix();
   }
   if (meshes.soffit) meshes.soffit.receiveShadows = true;
+  // Eaves, recesses and window heads cast onto the masonry as well as the floor.
+  if (meshes.bricks) meshes.bricks.receiveShadows = true;
 
   // Transparent / Dollhouse Mode Controller
   const roofKeys = ['roof', 'roofCap', 'gutter', 'fascia', 'downpipe', 'soffit', 'interiorCeil', 'flashing'];

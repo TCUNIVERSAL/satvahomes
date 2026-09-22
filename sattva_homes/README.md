@@ -1,4 +1,4 @@
-# Coral Homes — External Selections 3D
+# Sattva Homes — External Selections 3D
 
 An interactive website where a customer designs the outside of their home in real-time 3D.
 The home starts plain white; the customer chooses each of the 12 external items listed on

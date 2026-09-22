@@ -6,7 +6,7 @@ import {
   barrierCanvas,
   BARRIER_TILE,
   brickAlbedo,
-  brickHeight,
+  brickSurfaceMaps,
   BRICK_TILE,
   roofMaps,
   ROOF_TILE_SIZE,
@@ -22,10 +22,11 @@ import { findOption, BRICKS } from '../catalog.js';
 const WHITE = '#f1efea';
 const toLinear = (hex) => Color3.FromHexString(hex).toLinearSpace();
 
-function dyn(name, canvas, scene, { wrap = true, aniso = 8, alpha = false } = {}) {
+function dyn(name, canvas, scene, { wrap = true, aniso = 8, alpha = false, data = false } = {}) {
   const t = new DynamicTexture(name, canvas, scene, true, Texture.TRILINEAR_SAMPLINGMODE);
   t.update(true);
   t.hasAlpha = alpha;
+  t.gammaSpace = !data;
   t.anisotropicFilteringLevel = aniso;
   if (wrap) {
     t.wrapU = Texture.WRAP_ADDRESSMODE;
@@ -137,17 +138,41 @@ export async function createMaterials(scene) {
   const timberCache = new Map();
 
   // ---------------- bricks
-  M.bricks = pbr('bricks', scene, { rough: 0.9 });
+  // The catalogue colour is already in the albedo map; keep its multiplier neutral.
+  M.bricks = pbr('bricks', scene, { color: '#ffffff', rough: 1 });
   const brickFade = new FadeTexture('brickAlb', [size, size], scene, brickAlbedo(size, { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, '#e6e3de', 'stretcher', 3, 'ironed'));
   M.bricks.albedoTexture = tile(brickFade.texture, BRICK_TILE.w, BRICK_TILE.h);
-  const brickNormals = new Map();
-  const brickNormal = (bond, dh, joint) => {
+  brickFade.texture.anisotropicFilteringLevel = 16;
+  const brickSurfaces = new Map();
+  const setBrickSurface = (bond, dh, joint) => {
     const k = `${bond}-${dh}-${joint}`;
-    if (!brickNormals.has(k)) brickNormals.set(k, tile(dyn(`brickN-${k}`, brickHeight(size, bond, dh, joint), scene), BRICK_TILE.w, BRICK_TILE.h));
-    return brickNormals.get(k);
+    if (!brickSurfaces.has(k)) {
+      const maps = brickSurfaceMaps(size, bond, dh, joint);
+      const textures = {};
+      for (const [name, canvas] of Object.entries(maps)) {
+        textures[name] = tile(dyn(`brick-${name}-${k}`, canvas, scene, { data: true, aniso: 16 }), BRICK_TILE.w, BRICK_TILE.h);
+      }
+      if (brickSurfaces.size >= 4) {
+        const oldest = brickSurfaces.keys().next().value;
+        for (const texture of Object.values(brickSurfaces.get(oldest))) texture.dispose();
+        brickSurfaces.delete(oldest);
+      }
+      brickSurfaces.set(k, textures);
+    }
+    const maps = brickSurfaces.get(k);
+    brickSurfaces.delete(k);
+    brickSurfaces.set(k, maps);
+    M.bricks.bumpTexture = maps.normal;
+    M.bricks.bumpTexture.level = 0.8;
+    M.bricks.ambientTexture = maps.ao;
+    M.bricks.ambientTextureStrength = 0.6;
+    M.bricks.metallicTexture = maps.roughness;
   };
-  M.bricks.bumpTexture = brickNormal('stretcher', false, 'ironed');
-  M.bricks.bumpTexture.level = 1.15;
+  M.bricks.useRoughnessFromMetallicTextureAlpha = false;
+  M.bricks.useRoughnessFromMetallicTextureGreen = true;
+  M.bricks.useMetallnessFromMetallicTextureBlue = false;
+  setBrickSurface('stretcher', false, 'ironed');
+  let brickLayoutKey = 'stretcher-false-ironed';
 
   // ---------------- cladding (paint colour × profile relief)
   M.cladding = pbr('cladding', scene, { rough: 0.62 });
@@ -447,14 +472,16 @@ export async function createMaterials(scene) {
         let canvas = brickCanvasCache.get(k);
         if (!canvas) {
           canvas = brickAlbedo(size, brick || { palette: [{ c: '#f4f2ee', w: 1 }], name: 'white' }, brick ? mortar.hex : '#e6e3de', bond, 3, joint);
+          // Bound retained canvases while browsing the full catalogue.
+          if (brickCanvasCache.size >= 12) brickCanvasCache.delete(brickCanvasCache.keys().next().value);
           brickCanvasCache.set(k, canvas);
         }
-        brickFade.set(canvas, d);
-        const bt = brickNormal(bond, !!brick?.doubleHeight, joint);
-        // a tooled joint throws a real shadow line; a flush joint barely does
-        bt.level = joint === 'flush' ? 0.45 : 1.15;
-        M.bricks.bumpTexture = bt;
-        flash(M.bricks);
+        const layout = `${bond}-${!!brick?.doubleHeight}-${joint}`;
+        // Switch coursing and its relief together; fading between bonds creates
+        // ghost joints. Colour-only changes can still blend without flashing.
+        brickFade.set(canvas, layout === brickLayoutKey ? Math.min(d, 280) : 0);
+        setBrickSurface(bond, !!brick?.doubleHeight, joint);
+        brickLayoutKey = layout;
         break;
       }
       case 'trim': {

@@ -137,6 +137,7 @@ async function boot() {
   const summary = createSummary({
     root: $('#summary'),
     store,
+    scene,
     capture: createCapture({
       engine,
       canvas,

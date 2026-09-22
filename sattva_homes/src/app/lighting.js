@@ -1,5 +1,5 @@
 import { Color3, Vector3, PointLight } from '../scene/babylon.js';
-import { SUN_DAY, SUN_DUSK } from '../scene/setup.js';
+import { SUN_DAY, SUN_DUSK, EXTERIOR_FILL } from '../scene/setup.js';
 
 // Day/dusk mood and the "See Inside" cutaway, which share the ambient levels:
 // with the roof off the rooms need more fill than the exterior does.
@@ -16,6 +16,7 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
 
   let baseEnv = 0.65;
   let baseHemi = 0.9;
+  let exteriorFill = EXTERIOR_FILL.day;
   let inside = false;
 
   async function setMood(mode) {
@@ -26,7 +27,8 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
     sun.intensity = dusk ? 2.2 : 8.5;
     sun.diffuse = dusk ? new Color3(1, 0.62, 0.42) : new Color3(1, 0.96, 0.9);
     baseHemi = dusk ? 0.35 : 0.9;
-    hemi.intensity = inside ? baseHemi : 0;
+    exteriorFill = dusk ? EXTERIOR_FILL.dusk : EXTERIOR_FILL.day;
+    hemi.intensity = inside ? baseHemi : exteriorFill;
     baseEnv = dusk ? 0.38 : 0.65;
     scene.environmentIntensity = inside ? baseEnv * 1.7 : baseEnv;
     pipeline.imageProcessing.exposure = dusk ? 1.2 : 0.95;
@@ -53,7 +55,7 @@ export function createLighting({ scene, sun, hemi, pipeline, M, house, ground, i
     // with the roof off, lift the ambient so rooms read the way they do on site
     scene.environmentIntensity = on ? baseEnv * 1.7 : baseEnv;
     // the faded exterior walls still block the sun, so fill the rooms indoors
-    hemi.intensity = on ? baseHemi : 0;
+    hemi.intensity = on ? baseHemi : exteriorFill;
     onInside?.(on);
   }
 

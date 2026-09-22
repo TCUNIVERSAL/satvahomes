@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Brick texture regression checks</title>
+    <style>
+      body { margin: 24px; font: 16px/1.5 system-ui, sans-serif; color: #252525; background: #f6f5f2; }
+      h1 { font-size: 24px; }
+      #results { white-space: pre-wrap; }
+      #gallery { display: flex; flex-wrap: wrap; gap: 20px; }
+      figure { margin: 0; width: 220px; }
+      canvas { display: block; width: 220px; height: 220px; border: 1px solid #aaa; }
+      figcaption { margin: 8px 0; }
+      [data-status="passed"] { color: #176533; }
+      [data-status="failed"] { color: #a41e1e; }
+    </style>
+  </head>
+  <body>
+    <h1>Brick texture regression checks</h1>
+    <p>Run <code>npm run dev</code> from <code>sattva_homes</code>, then open
+      <code>/tests/brick-textures.html</code> on that server. Reload to rerun.</p>
+    <p>These checks exercise the exported canvas generators without Babylon or a test library.
+      Inspect the gallery for texture detail; inspect the configurator for lighting and wall UVs.</p>
+    <pre id="results" role="status" aria-live="polite">Running…</pre>
+    <div id="gallery"></div>
+    <script type="module" src="./brick-textures.js"></script>
+  </body>
+</html>

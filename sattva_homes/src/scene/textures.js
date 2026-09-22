@@ -109,176 +109,190 @@ export function heightToNormal(hc, strength = 2) {
   return out;
 }
 
-// Wrap-aware rectangle drawing helper for tileable patterns.
-function wrapRect(ctx, W, H, x, y, w, h, draw) {
-  for (const ox of [0, -W, W]) {
-    for (const oy of [0, -H, H]) {
-      if (x + ox + w < 0 || x + ox > W || y + oy + h < 0 || y + oy > H) continue;
-      draw(x + ox, y + oy, w, h);
-    }
-  }
-}
-
 // ---------------------------------------------------------------- bricks
 // World tile covers BRICK_TILE metres. Brick 230 × 76 (+10 mortar) → 240 × 86 mm.
 export const BRICK_TILE = { w: 1.68, h: 1.72 }; // 7 bricks × 20 courses
 
-// Guide p.20. A round (ironed) joint is tooled concave so it throws a shadow
-// line along every course; a flush joint is struck level with the brick face
-// and almost disappears.
+// The joint is always 10 mm wide. Tooling changes its profile, not the brick
+// dimensions. Shading comes from the normal and AO maps, not black albedo lines.
 export const BRICK_JOINTS = {
-  ironed: { depth: 1.0, shadow: 0.42, arris: 0.30, width: 1.0 },
-  flush: { depth: 0.18, shadow: 0.10, arris: 0.08, width: 0.92 },
+  ironed: { depth: 1, shadow: 0.14, arris: 0.10, width: 1 },
+  flush: { depth: 0.13, shadow: 0.025, arris: 0.025, width: 1 },
 };
-function brickLayout(bond, doubleHeight) {
-  const cols = 7;
-  const rows = doubleHeight ? 10 : 20;
-  const rowsOut = [];
-  for (let r = 0; r < rows; r++) {
-    const offset = bond === 'stack' ? 0 : r % 2 ? 0.5 : 0;
-    rowsOut.push({ r, offset });
+const brickSurfaceCache = new Map();
+const clamp01 = (v) => Math.max(0, Math.min(1, v));
+const smooth01 = (v) => { const t = clamp01(v); return t * t * (3 - 2 * t); };
+const mod = (v, n) => ((v % n) + n) % n;
+
+// Periodic value noise evaluated at texel centres. Unlike cropped canvas
+// noise, interpolation wraps the lattice itself, including its derivatives.
+function brickNoise(size, nx, ny, seed) {
+  const random = rng(seed);
+  const grid = Float32Array.from({ length: nx * ny }, () => random() * 2 - 1);
+  const field = new Float32Array(size * size);
+  const x0 = new Uint16Array(size);
+  const x1 = new Uint16Array(size);
+  const tx = new Float32Array(size);
+  for (let x = 0; x < size; x++) {
+    const u = (x + 0.5) / size * nx;
+    x0[x] = Math.floor(u) % nx;
+    x1[x] = (x0[x] + 1) % nx;
+    tx[x] = smooth01(u - Math.floor(u));
   }
-  return { cols, rows, rowsOut };
+  for (let y = 0; y < size; y++) {
+    const v = (y + 0.5) / size * ny;
+    const y0 = Math.floor(v) % ny;
+    const y1 = (y0 + 1) % ny;
+    const ty = smooth01(v - Math.floor(v));
+    for (let x = 0; x < size; x++) {
+      const a = grid[y0 * nx + x0[x]];
+      const b = grid[y0 * nx + x1[x]];
+      const c = grid[y1 * nx + x0[x]];
+      const d = grid[y1 * nx + x1[x]];
+      field[y * size + x] = (a + (b - a) * tx[x]) * (1 - ty) + (c + (d - c) * tx[x]) * ty;
+    }
+  }
+  return field;
+}
+
+function brickSurface(size, bond, doubleHeight, joint, seed) {
+  const jointKind = joint === 'flush' ? 'flush' : 'ironed';
+  const key = `${size}-${bond === 'stack'}-${!!doubleHeight}-${jointKind}-${seed}`;
+  if (brickSurfaceCache.has(key)) return brickSurfaceCache.get(key);
+  const rows = doubleHeight ? 10 : 20;
+  const cols = 7;
+  const pitchX = BRICK_TILE.w / cols;
+  const pitchY = BRICK_TILE.h / rows;
+  const halfJoint = 0.005;
+  const pixelX = BRICK_TILE.w / size;
+  const pixelY = BRICK_TILE.h / size;
+  const aa = Math.max(pixelX, pixelY);
+  const jointDepth = 0.0035 * BRICK_JOINTS[jointKind].depth;
+  const broad = brickNoise(size, 35, 40, seed + 101);
+  const sand = brickNoise(size, 168, 172, seed + 307);
+  const grain = brickNoise(size, 560, 574, seed + 503);
+  const fine = brickNoise(size, 1008, 1032, seed + 709);
+  const height = new Float32Array(size * size);
+  const coverage = new Uint8Array(size * size);
+  const tone = new Int8Array(size * size);
+  const brickIds = new Uint8Array(size * size);
+  const normal = makeCanvas(size);
+  const ao = makeCanvas(size);
+  const roughness = makeCanvas(size);
+  const normalCtx = normal.getContext('2d');
+  const aoCtx = ao.getContext('2d');
+  const roughCtx = roughness.getContext('2d');
+  const normalImage = normalCtx.createImageData(size, size);
+  const aoImage = aoCtx.createImageData(size, size);
+  const roughImage = roughCtx.createImageData(size, size);
+
+  for (let y = 0; y < size; y++) {
+    const worldY = (y + 0.5) * pixelY;
+    const row = Math.min(rows - 1, Math.floor(worldY / pitchY));
+    const localY = worldY - row * pitchY;
+    const offset = bond !== 'stack' && row % 2 ? pitchX * 0.5 : 0;
+    for (let x = 0; x < size; x++) {
+      const p = y * size + x;
+      const worldX = mod((x + 0.5) * pixelX - offset, BRICK_TILE.w);
+      const col = Math.min(cols - 1, Math.floor(worldX / pitchX));
+      const localX = worldX - col * pitchX;
+      const corner = 0.0015;
+      const qx = Math.abs(localX - pitchX * 0.5) - (pitchX * 0.5 - halfJoint - corner);
+      const qy = Math.abs(localY - pitchY * 0.5) - (pitchY * 0.5 - halfJoint - corner);
+      // Signed distance gives slightly eased corners and irregular clay arrises
+      // without changing the course alignment or clipping a wrapped brick.
+      let edge = corner - Math.hypot(Math.max(qx, 0), Math.max(qy, 0)) - Math.min(Math.max(qx, qy), 0);
+      edge += sand[p] * 0.00065 + grain[p] * 0.0003;
+      const face = smooth01(edge / aa + 0.5);
+      const bevel = smooth01(edge / 0.002);
+      const bowl = Math.sqrt(Math.max(0, 1 - clamp01(1 + edge / halfJoint) ** 2));
+      const pore = Math.max(0, (grain[p] - 0.42) / 0.58) ** 2;
+      const clayRelief = broad[p] * 0.00016 + sand[p] * 0.00014 + grain[p] * 0.00010 - pore * 0.00035;
+      const clayHeight = clayRelief - (1 - bevel) * 0.00045;
+      const mortarHeight = -jointDepth * (0.55 + 0.45 * bowl) + fine[p] * 0.00008;
+      height[p] = clayHeight * face + mortarHeight * (1 - face);
+      coverage[p] = face * 255;
+      brickIds[p] = row * cols + col;
+      // Colour grain stays neutral: lighting and directional shadows are left
+      // to PBR. The same pores also alter relief, occlusion, and roughness.
+      const clayTone = broad[p] * 0.035 + sand[p] * 0.025 + grain[p] * 0.028 + fine[p] * 0.015 - pore * 0.10;
+      const mortarTone = sand[p] * 0.018 + grain[p] * 0.03 + fine[p] * 0.024;
+      tone[p] = Math.max(-127, Math.min(127, (clayTone * face + mortarTone * (1 - face)) * 1024));
+      const occ = (1 - pore * 0.06) * face + (1 - BRICK_JOINTS[jointKind].depth * (0.09 + 0.08 * bowl)) * (1 - face);
+      const rough = (0.84 + sand[p] * 0.04 + grain[p] * 0.035 + pore * 0.05) * face + (0.95 + fine[p] * 0.025) * (1 - face);
+      const i = p * 4;
+      aoImage.data[i] = aoImage.data[i + 1] = aoImage.data[i + 2] = occ * 255;
+      roughImage.data[i] = roughImage.data[i + 1] = roughImage.data[i + 2] = rough * 255;
+      aoImage.data[i + 3] = roughImage.data[i + 3] = 255;
+    }
+  }
+  // Heights are metres, so their gradients remain the same when texture
+  // resolution changes. Central differences wrap on both tile boundaries.
+  for (let y = 0; y < size; y++) {
+    const up = mod(y - 1, size) * size;
+    const down = (y + 1) % size * size;
+    for (let x = 0; x < size; x++) {
+      const p = y * size + x;
+      const dx = (height[y * size + (x + 1) % size] - height[y * size + mod(x - 1, size)]) / (2 * pixelX);
+      const dy = (height[down + x] - height[up + x]) / (2 * pixelY);
+      const inv = 1 / Math.sqrt(dx * dx + dy * dy + 1);
+      const i = p * 4;
+      normalImage.data[i] = (0.5 - dx * inv * 0.5) * 255;
+      normalImage.data[i + 1] = (0.5 + dy * inv * 0.5) * 255;
+      normalImage.data[i + 2] = (0.5 + inv * 0.5) * 255;
+      normalImage.data[i + 3] = 255;
+    }
+  }
+  normalCtx.putImageData(normalImage, 0, 0);
+  aoCtx.putImageData(aoImage, 0, 0);
+  roughCtx.putImageData(roughImage, 0, 0);
+  const result = { maps: { normal, ao, roughness }, coverage, tone, brickIds, count: rows * cols };
+  // Keep CPU memory bounded while switching combinations in the configurator.
+  if (brickSurfaceCache.size >= 4) brickSurfaceCache.delete(brickSurfaceCache.keys().next().value);
+  brickSurfaceCache.set(key, result);
+  return result;
+}
+
+export function brickSurfaceMaps(size, bond, doubleHeight, joint = 'ironed', seed = 3) {
+  return brickSurface(size, bond, doubleHeight, joint, seed).maps;
 }
 
 export function brickAlbedo(size, brick, mortarHex, bond, seed = 3, joint = 'ironed') {
-  const J = BRICK_JOINTS[joint] || BRICK_JOINTS.ironed;
-  const W = size;
-  const H = size;
-  const c = makeCanvas(W, H);
-  const ctx = c.getContext('2d');
+  const surface = brickSurface(size, bond, !!brick?.doubleHeight, joint, seed);
+  const palette = brick?.palette?.length ? brick.palette : [{ c: brick?.hex || '#f2f0ea', w: 1 }];
+  const colours = palette.map((p) => ({ rgb: hexToRgb(p.c), weight: Math.max(0, p.w ?? 1) }));
+  const total = colours.reduce((sum, p) => sum + p.weight, 0) || 1;
+  const mean = [0, 1, 2].map((channel) => colours.reduce((sum, p) => sum + p.rgb[channel] * p.weight, 0) / total);
   const rand = rng(seed);
-  const { cols, rows, rowsOut } = brickLayout(bond, brick?.doubleHeight);
-  const bw = W / cols;
-  const bh = H / rows;
-  const mortar = Math.max(2, Math.round(bh * (brick?.doubleHeight ? 0.06 : 0.12) * J.width));
-  // mortar bed
-  ctx.fillStyle = mortarHex;
-  ctx.fillRect(0, 0, W, H);
-  const grain = noiseCanvas(256, { base: 16, octaves: 3, seed: 11 });
-  ctx.globalAlpha = 0.35;
-  ctx.globalCompositeOperation = 'multiply';
-  ctx.drawImage(grain, 0, 0, W, H);
-  ctx.globalCompositeOperation = 'source-over';
-  ctx.globalAlpha = 1;
-
-  const pal = brick?.palette?.length ? brick.palette : [{ c: '#f2f0ea', w: 1 }];
-  const pick = () => {
-    let t = rand() * pal.reduce((s, p) => s + p.w, 0);
-    for (const p of pal) if ((t -= p.w) <= 0) return p.c;
-    return pal[0].c;
-  };
-  const fine = noiseCanvas(512, { base: 32, octaves: 3, seed: 23 });
-  const blend = pal.length > 3 && /blend|brooklyn|chelsea|tribeca|hampton|elkhorn|leura|blackheath|sea fossil|ocean mist/i.test(brick?.name || '');
-  for (const { r, offset } of rowsOut) {
-    for (let k = 0; k < cols; k++) {
-      const x = (k + offset) * bw + mortar / 2;
-      const y = r * bh + mortar / 2;
-      const w = bw - mortar;
-      const h = bh - mortar;
-      const base = pick();
-      const f = 0.9 + rand() * 0.18;
-      wrapRect(ctx, W, H, x, y, w, h, (px, py, pw, ph) => {
-        ctx.fillStyle = shade(base, f, 0.05, rand);
-        ctx.fillRect(px, py, pw, ph);
-        // surface grain
-        ctx.globalAlpha = 0.16;
-        ctx.globalCompositeOperation = 'overlay';
-        const sx = rand() * 400;
-        const sy = rand() * 400;
-        ctx.drawImage(fine, sx, sy, 100, 100 * (ph / pw), px, py, pw, ph);
-        ctx.globalCompositeOperation = 'source-over';
-        // mottled / blended bricks get patches of the other palette colours
-        const patches = blend ? 4 : 1;
-        for (let s = 0; s < patches; s++) {
-          ctx.globalAlpha = blend ? 0.38 : 0.1;
-          ctx.fillStyle = shade(pick(), 1, 0.1, rand);
-          const rw = pw * (0.15 + rand() * 0.45);
-          const rh = ph * (0.3 + rand() * 0.7);
-          ctx.beginPath();
-          ctx.ellipse(px + rand() * pw, py + rand() * ph, rw / 2, rh / 2, 0, 0, Math.PI * 2);
-          ctx.save();
-          ctx.clip(new Path2D(`M${px} ${py}h${pw}v${ph}h${-pw}z`));
-          ctx.fill();
-          ctx.restore();
-        }
-        // speckles
-        ctx.globalAlpha = 0.32;
-        const spots = 4 + (rand() * 8) | 0;
-        for (let s = 0; s < spots; s++) {
-          ctx.fillStyle = shade(pick(), rand() < 0.5 ? 0.7 : 1.15, 0.1, rand);
-          ctx.fillRect(px + rand() * pw, py + rand() * ph, 1 + rand() * 2, 1 + rand() * 2);
-        }
-        // soft edge darkening
-        ctx.globalAlpha = 0.16;
-        ctx.strokeStyle = '#000';
-        ctx.lineWidth = 1.5;
-        ctx.strokeRect(px + 0.75, py + 0.75, pw - 1.5, ph - 1.5);
-        ctx.globalAlpha = 1;
-      });
+  const blended = /blend|brooklyn|chelsea|tribeca|hampton|elkhorn|leura|blackheath|sea fossil|ocean mist/i.test(brick?.name || '');
+  const variation = blended ? 0.88 : 0.72;
+  const brickColours = Array.from({ length: surface.count }, () => {
+    let choice = rand() * total;
+    const selected = colours.find((p) => (choice -= p.weight) <= 0) || colours[0];
+    const tone = 0.98 + rand() * 0.04;
+    return selected.rgb.map((v, channel) => (v * variation + mean[channel] * (1 - variation)) * tone);
+  });
+  const mortar = hexToRgb(mortarHex || '#ddd8ce');
+  const canvas = makeCanvas(size);
+  const ctx = canvas.getContext('2d');
+  const pixels = ctx.createImageData(size, size);
+  for (let p = 0; p < size * size; p++) {
+    const colour = brickColours[surface.brickIds[p]];
+    const face = surface.coverage[p] / 255;
+    const grain = 1 + surface.tone[p] / 1024;
+    const i = p * 4;
+    for (let channel = 0; channel < 3; channel++) {
+      pixels.data[i + channel] = (colour[channel] * face + mortar[channel] * (1 - face)) * grain;
     }
+    pixels.data[i + 3] = 255;
   }
-
-  // --- baked joint shading
-  // The tooled joint sits below the brick face, so the head of each bed course
-  // is in shadow and the arris under it catches the light. Baking it here is
-  // what keeps the coursing readable from the street, where the normal map has
-  // already mipped away to a flat wall.
-  const shadeBand = Math.max(1, Math.round(mortar * 0.62));
-  for (const { r, offset } of rowsOut) {
-    for (let k = 0; k < cols; k++) {
-      const x = (k + offset) * bw + mortar / 2;
-      const y = r * bh + mortar / 2;
-      const w = bw - mortar;
-      const h = bh - mortar;
-      wrapRect(ctx, W, H, x - mortar / 2, y - mortar / 2, w + mortar, h + mortar, (px, py, pw, ph) => {
-        // shadow across the top of the perpend + bed joint
-        ctx.fillStyle = `rgba(0,0,0,${J.shadow})`;
-        ctx.fillRect(px, py, pw, shadeBand);
-        ctx.fillRect(px, py, shadeBand, ph);
-        // light catching the brick arris below the joint
-        ctx.fillStyle = `rgba(255,255,255,${J.arris})`;
-        ctx.fillRect(px, py + mortar - shadeBand * 0.5, pw, shadeBand * 0.6);
-      });
-    }
-  }
-  return c;
+  ctx.putImageData(pixels, 0, 0);
+  return canvas;
 }
 
-const heightCache = new Map();
+// Backward-compatible name: this function has always returned a normal map.
 export function brickHeight(size, bond, doubleHeight, joint = 'ironed') {
-  const J = BRICK_JOINTS[joint] || BRICK_JOINTS.ironed;
-  const key = `${size}-${bond}-${doubleHeight}-${joint}`;
-  if (heightCache.has(key)) return heightCache.get(key);
-  const W = size;
-  const H = size;
-  const c = makeCanvas(W, H);
-  const ctx = c.getContext('2d');
-  const { cols, rows, rowsOut } = brickLayout(bond, doubleHeight);
-  const bw = W / cols;
-  const bh = H / rows;
-  const mortar = Math.max(2, Math.round(bh * (doubleHeight ? 0.06 : 0.12) * J.width));
-  // how far the joint is recessed below the brick face
-  const bed = Math.round(224 - 190 * J.depth);
-  ctx.fillStyle = `rgb(${bed},${bed},${bed})`;
-  ctx.fillRect(0, 0, W, H);
-  ctx.filter = `blur(${(1.2 * (0.4 + J.depth)).toFixed(2)}px)`;
-  for (const { r, offset } of rowsOut) {
-    for (let k = 0; k < cols; k++) {
-      wrapRect(ctx, W, H, (k + offset) * bw + mortar / 2, r * bh + mortar / 2, bw - mortar, bh - mortar, (x, y, w, h) => {
-        ctx.fillStyle = '#e0e0e0';
-        ctx.fillRect(x, y, w, h);
-      });
-    }
-  }
-  ctx.filter = 'none';
-  const n = noiseCanvas(512, { base: 64, octaves: 2, seed: 5 });
-  ctx.globalAlpha = 0.18;
-  ctx.drawImage(n, 0, 0, W, H);
-  ctx.globalAlpha = 1;
-  const normal = heightToNormal(c, 3.2);
-  heightCache.set(key, normal);
-  return normal;
+  return brickSurfaceMaps(size, bond, doubleHeight, joint).normal;
 }
 
 // Small preview tile for the mortar-joint option cards.

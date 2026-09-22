@@ -246,7 +246,7 @@ export function createPanel({ root, store, onOpen, onDone }) {
           const meta = [o.tone, showTier ? o.tier : null].filter(Boolean).join(' · ');
           const flags = [o.offWhite ? 'Requires off-white mortar (upgrade)' : '', o.note || '', o.qldOnly ? 'QLD colour only' : ''].filter(Boolean).join('. ');
           return `<button class="sw${o.id === current ? ' on' : ''}" data-field="${f.key}" data-id="${o.id}" title="${esc(o.name + (flags ? ` — ${flags}` : ''))}">
-            <span class="sw-media">${media}${o.rec ? `<span class="rec" title="Coral Recommended — solar absorptance 0.40 or less">${ICON.bolt}</span>` : ''}${o.offWhite ? '<span class="uflag" title="Upgrade off-white mortar required">U</span>' : ''}${o.id === current ? `<span class="tick">${ICON.check}</span>` : ''}</span>
+            <span class="sw-media">${media}${o.rec ? `<span class="rec" title="Sattva Recommended — solar absorptance 0.40 or less">${ICON.bolt}</span>` : ''}${o.offWhite ? '<span class="uflag" title="Upgrade off-white mortar required">U</span>' : ''}${o.id === current ? `<span class="tick">${ICON.check}</span>` : ''}</span>
             <span class="sw-name">${esc(o.short || o.name)}</span>
             ${meta ? `<span class="sw-meta">${esc(meta)}</span>` : ''}
           </button>`;
